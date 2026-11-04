@@ -35,14 +35,15 @@ def detect_entry(work: Path):
         p = work / name
         if p.exists():
             if name.endswith(".py"):
-                return [sys.executable, name], f"auto-detected {name}"
+                # The sandbox mounts /usr, not the caller's venv or CI toolcache.
+                return ["/usr/bin/python3", name], f"auto-detected {name}"
             if name.endswith(".js"):
                 return ["node", name], f"auto-detected {name}"
             return ["/bin/sh", name], f"auto-detected {name}"
     for cand in sorted(work.glob("*.sh")):
         return ["/bin/sh", cand.name], f"auto-detected {cand.name}"
     for cand in sorted(work.glob("*.py")):
-        return [sys.executable, cand.name], f"auto-detected {cand.name}"
+        return ["/usr/bin/python3", cand.name], f"auto-detected {cand.name}"
     return [], "no executable artefact found -- declaration checks only"
 
 

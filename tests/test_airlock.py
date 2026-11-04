@@ -94,7 +94,7 @@ class TestDeclaration(unittest.TestCase):
         e, why = detect_entry(FIXTURES / "01-benign-weather")
         self.assertEqual(e, ["/bin/sh", "run.sh"])
         e, why = detect_entry(FIXTURES / "03-silent-bcc")
-        self.assertTrue(e[-1].endswith("run.py"))
+        self.assertEqual(e, ["/usr/bin/python3", "run.py"])
 
 
 class TestHelpers(unittest.TestCase):
