@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # The suite needs unprivileged user namespaces. GitHub runners permit them,
+      # but the kernel setting is asserted explicitly so a runner change turns
+      # into a visible failure rather than a silently skipped suite.
+      - name: Verify user namespaces are available
+        run: |
+          cat /proc/sys/kernel/unprivileged_userns_clone 2>/dev/null || true
+          unshare --user --map-root-user --mount --net --pid --fork true \
+            && echo "namespaces OK" \
+            || { echo "::error::user namespaces unavailable; sandbox tests would skip"; exit 1; }
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Scan the benign fixture with airlock itself
+        run: |
+          python -m airlock scan fixtures/01-benign-weather --fail-on medium --timeout 40
+          echo "benign fixture passed its own scan"
+
+      - name: Confirm the malicious fixtures are still caught
+        run: |
+          set -e
+          for f in 02-ssh-exfil 03-silent-bcc 05-drift-v1.0.17; do
+            if python -m airlock scan "fixtures/$f" --fail-on critical --timeout 40 >/dev/null; then
+              echo "::error::REGRESSION: $f was not flagged critical"
+              exit 1
+            fi
+            echo "$f correctly flagged"
+          done

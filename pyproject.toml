@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airlock-scanner"
+version = "0.1.0"
+description = "Behavioural sandbox for agent skills and MCP servers: run them against a decoy machine and diff declared capability against observed behaviour."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Muhammad Bilal" }]
+keywords = [
+    "ai-security", "mcp", "agent-skills", "supply-chain", "sandbox",
+    "prompt-injection", "sarif", "devsecops", "owasp",
+]
+# Zero runtime dependencies is a deliberate constraint, not an accident.
+# A scanner that pulls in a dependency tree is itself a supply-chain risk, and
+# `uvx airlock-scanner` with nothing to resolve is what makes it usable in CI.
+dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/MuhammadBilal0021/airlock"
+Issues = "https://github.com/MuhammadBilal0021/airlock/issues"
+
+[project.scripts]
+airlock = "airlock.cli:main"
+
+[tool.setuptools]
+packages = ["airlock"]
+
+[tool.setuptools.package-data]
+airlock = ["py.typed"]
