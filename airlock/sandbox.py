@@ -47,17 +47,20 @@ class FileState:
     mtime_ns: int
     atime_ns: int
     sha256: str
+    mode: int = 0
 
 
 @dataclass
 class FsEvent:
     sandbox_path: str
-    change: str          # created | modified | deleted | read
+    change: str          # created | modified | deleted | read | permissions
     host_path: str
     size: int = 0
     content: str = ""
     truncated: bool = False
     secret_id: str = ""
+    mode_before: int = 0
+    mode_after: int = 0
 
     @property
     def is_secret(self) -> bool:
@@ -116,7 +119,8 @@ def snapshot_dir(host_dir: Path) -> dict:
                 continue
             if not p.is_file():
                 continue
-            out[str(p)] = FileState(st.st_size, st.st_mtime_ns, st.st_atime_ns, "")
+            out[str(p)] = FileState(st.st_size, st.st_mtime_ns, st.st_atime_ns, "",
+                                   st.st_mode & 0o777)
     return out
 
 
@@ -284,6 +288,12 @@ def _diff_filesystems(run: Path, baseline, ds: DecoySet) -> list:
             st_before = before.get(hp)
             sp = _sandbox_path(run, hp)
             sid = secret_by_host.get(hp, "")
+            # chmod changes neither file content nor mtime. Record permissions
+            # independently so simultaneous writes do not mask a mode change.
+            if st_before is not None and st_before.mode != st_after.mode:
+                events.append(FsEvent(sp, "permissions", hp, st_after.size,
+                                      secret_id=sid, mode_before=st_before.mode,
+                                      mode_after=st_after.mode))
             if st_before is None:
                 content, trunc = _read_text(Path(hp))
                 events.append(FsEvent(sp, "created", hp, st_after.size, content, trunc, sid))

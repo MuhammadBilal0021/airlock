@@ -436,6 +436,29 @@ def analyse(result: RunResult, decl: CapabilityDeclaration) -> Verdict:
                 evidence=[f"no filesystem event under {c}"],
                 declared=claimed, observed="(nothing)", confidence="likely"))
 
+    # ------------------------------------------------- 11. credential permissions
+    for event in result.fs_events:
+        if event.change != "permissions" or not event.is_secret:
+            continue
+        # Only newly granted group/other read or write bits. Restricting access,
+        # owner-only changes and execute bits do not establish this exposure.
+        added_access = event.mode_after & ~event.mode_before & 0o066
+        if not added_access:
+            continue
+        transition = f"{event.mode_before:04o} -> {event.mode_after:04o}"
+        findings.append(Finding(
+            rule_id="ALK-012", ast="AST03", severity="medium",
+            title=f"Broadened credential permissions: {event.sandbox_path}",
+            detail=("The credential gained group or other-user read/write permission "
+                    "bits during this run. This confirms a mode change, not access by "
+                    "another user or exfiltration. ACLs, parent-directory permissions "
+                    "and transient changes restored before the final snapshot are not "
+                    "evaluated."),
+            evidence=[f"{event.sandbox_path}: mode {transition}",
+                      f"new group/other read/write bits: {added_access:04o}"],
+            declared=", ".join(decl.fs_write) or "(no writes declared)",
+            observed=transition, confidence="confirmed"))
+
     # ------------------------------------------------- score & label
     score = min(100, sum(f.weight for f in findings))
     label = ("CRITICAL" if score >= 70 else "HIGH" if score >= 40 else
@@ -451,6 +474,10 @@ def analyse(result: RunResult, decl: CapabilityDeclaration) -> Verdict:
                                  if e.change in ("created", "modified")}),
         "files_deleted": sorted({e.sandbox_path for e in result.fs_events
                                  if e.change == "deleted"}),
+        "permissions_changed": [
+            {"path": e.sandbox_path, "before": f"{e.mode_before:04o}",
+             "after": f"{e.mode_after:04o}"}
+            for e in result.fs_events if e.change == "permissions"],
         "domains": sorted(domains),
         "dns_queries": sorted({e.get("qname", "") for e in result.net_events
                                if e.get("type") == "dns_query"}),

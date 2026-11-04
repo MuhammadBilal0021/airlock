@@ -301,6 +301,7 @@ was filtered and disagree with it.
 | `ALK-009` | high *(heuristic)* | AST01 | Model-directed instruction hidden in text a UI may never render |
 | `ALK-010` | critical | AST06 | **Lethal Trifecta** satisfied |
 | `ALK-011` | info | AST03 | Permission declared but never exercised — safe to remove |
+| `ALK-012` | medium | AST03 | Decoy credential gained group/other read or write permission bits; mode change confirmed, access not inferred |
 | `ALK-090` | medium | AST08 | Run timed out; coverage incomplete |
 | `ALK-091` | low | AST08 | Fresh procfs unavailable; process tree not sampled |
 | `ALK-092` | medium | AST08 | No executable artefact; declaration-only checks |

@@ -30,6 +30,7 @@ _RULE_HELP = {
     "ALK-009": "Model-directed instructions were hidden in text a UI may never render.",
     "ALK-010": "Private data + untrusted content + external egress all observed in one run.",
     "ALK-011": "A declared permission was never exercised and can be removed.",
+    "ALK-012": "A decoy credential gained group or other-user read/write permission bits.",
     "ALK-090": "The run timed out, so the result does not prove absence of malice.",
     "ALK-091": "A fresh procfs could not be mounted, so the process tree was not sampled.",
     "ALK-093": "The sandbox could not be established; no behavioural assurance was obtained.",

@@ -27,7 +27,7 @@ from airlock.cli import detect_entry, build_parser
 from airlock.declared import _parse_simple_yaml, find_embedded_instructions, scan_tree
 from airlock.engine import analyse
 from airlock.engine import _domains
-from airlock.sandbox import _sandbox_path, run_skill
+from airlock.sandbox import _sandbox_path, run_skill, RunResult, FsEvent
 from airlock.sarif import to_sarif
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -155,6 +155,30 @@ class TestFailedRunner(unittest.TestCase):
             self.assertEqual(scan_tree(root).manifests_found, ["SKILL.md"])
 
 
+class TestCredentialPermissions(unittest.TestCase):
+    def test_only_new_group_or_other_access_to_secrets_is_flagged(self):
+        for before, after, secret, expected in (
+                (0o600, 0o644, "ssh", True),
+                (0o600, 0o620, "ssh", True),
+                (0o600, 0o602, "ssh", True),
+                (0o644, 0o600, "ssh", False),
+                (0o644, 0o644, "ssh", False),
+                (0o600, 0o700, "ssh", False),
+                (0o600, 0o611, "ssh", False),
+                (0o600, 0o644, "", False)):
+            with self.subTest(before=oct(before), after=oct(after), secret=secret):
+                result = RunResult(True, Path("unused"), 0, False, 0,
+                    fs_events=[FsEvent("/home/.ssh/id_rsa", "permissions", "unused",
+                                       secret_id=secret, mode_before=before,
+                                       mode_after=after)])
+                verdict = analyse(result, scan_tree(FIXTURES / "08-credential-permissions"))
+                findings = [f for f in verdict.findings if f.rule_id == "ALK-012"]
+                self.assertEqual(bool(findings), expected)
+                if expected:
+                    self.assertEqual(findings[0].confidence, "confirmed")
+                    self.assertEqual(findings[0].severity, "medium")
+
+
 @unittest.skipUnless(LINUX_NS, "needs Linux user namespaces")
 class TestSandboxBehaviour(unittest.TestCase):
     """End-to-end: the rules that matter must fire on the fixtures and stay quiet
@@ -244,6 +268,20 @@ class TestSandboxBehaviour(unittest.TestCase):
         for name in ("01-benign-weather", "06-over-broad"):
             control, _ = self._scan(name)
             self.assertNotIn("ALK-008", [f.rule_id for f in control.findings])
+
+    def test_credential_permission_change_without_read_is_detected(self):
+        verdict, result = self._scan("08-credential-permissions")
+        findings = [f for f in verdict.findings if f.rule_id == "ALK-012"]
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0].observed, "0600 -> 0644")
+        self.assertFalse(any(f.rule_id in ("ALK-001", "ALK-002")
+                             for f in verdict.findings))
+        self.assertEqual(result.net_events, [])
+        self.assertEqual(verdict.observed_summary["permissions_changed"],
+                         [{"path": "/home/.ssh/id_rsa", "before": "0600", "after": "0644"}])
+        for name in ("01-benign-weather", "06-over-broad"):
+            control, _ = self._scan(name)
+            self.assertNotIn("ALK-012", [f.rule_id for f in control.findings])
 
 
 if __name__ == "__main__":
