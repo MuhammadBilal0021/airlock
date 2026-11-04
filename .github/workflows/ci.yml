@@ -11,7 +11,9 @@ permissions:
 jobs:
   test:
     name: tests (Python ${{ matrix.python-version }})
-    runs-on: ubuntu-latest
+    # Pin the runner: Ubuntu 24.04's default AppArmor policy denies uid_map
+    # writes for unprivileged unshare. Keep the namespace assertion below.
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -44,8 +46,10 @@ jobs:
         run: |
           set -e
           for f in 02-ssh-exfil 03-silent-bcc 05-drift-v1.0.17; do
-            if python -m airlock scan "fixtures/$f" --fail-on critical --timeout 40 >/dev/null; then
-              echo "::error::REGRESSION: $f was not flagged critical"
+            status=0
+            python -m airlock scan "fixtures/$f" --fail-on critical --timeout 40 >/dev/null || status=$?
+            if [ "$status" -ne 1 ]; then
+              echo "::error::REGRESSION: $f expected findings exit 1, got $status"
               exit 1
             fi
             echo "$f correctly flagged"
