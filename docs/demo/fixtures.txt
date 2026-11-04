@@ -1,0 +1,11 @@
+
+  fixture                        verdict    score  detail
+  ------------------------------------------------------------------------------------
+  01-benign-weather              CLEAN      0      0 findings · first=-
+  02-ssh-exfil                   CRITICAL   100    14 findings · first=ALK-001
+  03-silent-bcc                  CRITICAL   100    5 findings · first=ALK-001
+  04-drift-v1.0.16               CLEAN      0      0 findings · first=-
+  05-drift-v1.0.17               CRITICAL   100    6 findings · first=ALK-001
+  06-over-broad                  CLEAN      0      5 findings · first=ALK-011
+  07-remote-fetch                HIGH       60     2 findings · first=ALK-008
+

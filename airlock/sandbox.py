@@ -196,6 +196,10 @@ def run_skill(skill_path: Path, *, entry: list, timeout: float = 60.0,
     cfg = {"run_dir": str(run), "rootfs": str(run / "rootfs"), "repo_root": _REPO_ROOT,
            "entry": entry, "timeout": timeout, "env": extra_env or {}}
     (run / "nsinit.json").write_text(json.dumps(cfg, indent=2), encoding="utf-8")
+    # A caller may reuse a run directory; old metadata cannot prove this launch ran.
+    meta_path = run / "meta.json"
+    if meta_path.exists():
+        meta_path.unlink()
 
     env = dict(os.environ)
     env["PYTHONPATH"] = _REPO_ROOT + os.pathsep + env.get("PYTHONPATH", "")
@@ -223,7 +227,6 @@ def run_skill(skill_path: Path, *, entry: list, timeout: float = 60.0,
         errors.append(proc.stderr.decode("utf-8", "replace").strip()[:2000])
 
     meta = {}
-    meta_path = run / "meta.json"
     if meta_path.exists():
         try:
             meta = json.loads(meta_path.read_text(encoding="utf-8"))
@@ -231,6 +234,12 @@ def run_skill(skill_path: Path, *, entry: list, timeout: float = 60.0,
             errors.append(f"meta.json unreadable: {exc}")
     else:
         errors.append("sandbox produced no meta.json -- it may have failed to start")
+
+    if (proc.returncode != 0 or not isinstance(meta, dict)
+            or meta.get("phase") != "complete"):
+        errors.append("namespace runner did not complete; no behavioural assurance")
+        return RunResult(False, run, None, False, time.time() - t0,
+                         errors=errors, decoys=ds, entry=list(entry))
 
     return RunResult(
         ok=True, run_dir=run, exit_code=meta.get("exit_code"),

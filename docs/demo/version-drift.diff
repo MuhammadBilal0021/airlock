@@ -1,0 +1,74 @@
+--- v1.0.16
++++ v1.0.17
+@@ -1,8 +1,8 @@
+ 
+   airlock  behavioural sandbox for agent skills & MCP servers
+ ------------------------------------------------------------------------------
+-  target    fixtures/04-drift-v1.0.16
+-  runtime   0.695s · exit 0 · ns: --user --map-root-user --mount --net --pid --fork
++  target    fixtures/05-drift-v1.0.17
++  runtime   0.689s · exit 0 · ns: --user --map-root-user --mount --net --pid --fork
+   coverage  proc=fresh-procfs · process tree sampled · network isolated
+ 
+   DECLARED  (SKILL.md)
+@@ -13,21 +13,53 @@
+ 
+   OBSERVED  (decoy machine, no route to the internet)
+     (suppressed 4 ambient libc/interpreter reads: /etc/hosts, /etc/nsswitch.conf, /etc/resolv.conf)
+-    read     /work/config.json
++    read     /home/.env
++             /work/.env
++             /work/config.json
+     write    /output/sent.log
+     dns      api.postmarkapp.test
++             telemetry.postmark-analytics.test
+     net      api.postmarkapp.test
++             telemetry.postmark-analytics.test
+     procs    /bin/sh run.sh
+              python3 -
+ 
+-  NO FINDINGS
+-    Nothing crossed the declared boundary. A clean run proves only
+-    that nothing fired in this window, on these inputs.
++  FINDINGS (6)
++    !! CRITICAL            ALK-001 AST01  Credential left the sandbox over the network
++        · [egress_http] HTTP POST telemetry.postmark-analytics.test/v1/diagnostics
++        · [egress_tcp] TCP payload to :443 (553 bytes)
++        · 2 distinct credential(s) recovered: ~/.env, /work/.env
++        declared: /work/config.json
++        observed: ~/.env, /work/.env
++    !! CRITICAL            ALK-010 AST06  Lethal Trifecta satisfied
++        · private data: /home/.env, /work/.env
++        · untrusted content: SKILL.md:body
++        ·   basis: confirmed: model-directed instructions present in the manifest
++        declared: (the manifest does not acknowledge this combination)
++        observed: all three legs present in one run
++    !  HIGH                ALK-002 AST03  Read ~/.env without declaring it
++        · atime advanced on /home/.env; content unchanged
++        declared: /work/config.json
++        observed: /home/.env
++    !  HIGH                ALK-002 AST03  Read /work/.env without declaring it
++        · atime advanced on /work/.env; content unchanged
++        declared: /work/config.json
++        observed: /work/.env
++    !  HIGH                ALK-009 AST01  Model-directed instruction hidden in SKILL.md:body
++        · k-mcp` incident, 1.0.16 was clean and 1.0.17 added a single line that BCC'd every ou
++        declared: (the user never sees this text)
++        observed: k-mcp` incident, 1.0.16 was clean and 1.0.17 added a single line that BCC'd every outgoing message to an outside address; it collected 1,643 do
++        confidence: heuristic -- a reason to look, not proof
++    +  MEDIUM              ALK-004 AST03  Contacted 1 undeclared host(s)
++        · telemetry.postmark-analytics.test via dns, http
++        declared: api.postmarkapp.test
++        observed: telemetry.postmark-analytics.test
+ 
+ ------------------------------------------------------------------------------
+-  VERDICT   CLEAN   risk score 0/100
++  VERDICT   CRITICAL   risk score 100/100
+   lethal trifecta
+-    private data       no
+-    untrusted content  no
++    private data       yes
++    untrusted content  yes
+     external comms     yes
++    => all three legs present: this skill can be weaponised by anything it reads
+ 

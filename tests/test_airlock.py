@@ -12,13 +12,18 @@ import json
 import shutil
 import struct
 import sys
+import subprocess
+import tempfile
 import unittest
+from unittest.mock import patch
+from contextlib import redirect_stdout, redirect_stderr
+from io import StringIO
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from airlock.canary import CanaryIndex, b64_variants, new_canary
-from airlock.cli import detect_entry
+from airlock.cli import detect_entry, build_parser
 from airlock.declared import _parse_simple_yaml, find_embedded_instructions, scan_tree
 from airlock.engine import analyse
 from airlock.engine import _domains
@@ -111,6 +116,45 @@ class TestHelpers(unittest.TestCase):
         self.assertEqual(_sandbox_path(run, "/tmp/runX/scratch/x"), "/tmp/x")
 
 
+class TestFailedRunner(unittest.TestCase):
+    def test_failed_or_incomplete_runner_is_unknown(self):
+        target = FIXTURES / "01-benign-weather"
+        for status, metadata in ((1, None), (0, None), (0, {"phase": "fatal"}),
+                                 (0, []), (0, "invalid JSON")):
+            with self.subTest(status=status, metadata=metadata):
+                def fake_run(cmd, **kwargs):
+                    if metadata is not None:
+                        path = Path(kwargs["cwd"]) / "meta.json"
+                        path.write_text(metadata if isinstance(metadata, str)
+                                        else json.dumps(metadata), encoding="utf-8")
+                    return subprocess.CompletedProcess(cmd, status, b"", b"runner failed")
+                with patch("airlock.sandbox.subprocess.run", side_effect=fake_run):
+                    result = run_skill(target, entry=["/bin/sh", "run.sh"])
+                try:
+                    self.assertFalse(result.ok)
+                    verdict = analyse(result, scan_tree(target))
+                    self.assertEqual(verdict.label, "UNKNOWN")
+                    self.assertIn("ALK-093", [f.rule_id for f in verdict.findings])
+                    with patch("airlock.cli.run_skill", return_value=result):
+                        for command in (["scan", str(target), "--fail-on", "none"],
+                                        ["policy", str(target)]):
+                            args = build_parser().parse_args(command)
+                            with redirect_stdout(StringIO()), redirect_stderr(StringIO()):
+                                self.assertEqual(args.func(args), 2)
+                finally:
+                    shutil.rmtree(result.run_dir, ignore_errors=True)
+
+    def test_alias_manifest_is_loaded_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "SKILL.md").write_text("---\nname: alias\n---\n", encoding="utf-8")
+            alias = root / "skill.md"
+            if not alias.exists():
+                import os
+                os.link(root / "SKILL.md", alias)
+            self.assertEqual(scan_tree(root).manifests_found, ["SKILL.md"])
+
+
 @unittest.skipUnless(LINUX_NS, "needs Linux user namespaces")
 class TestSandboxBehaviour(unittest.TestCase):
     """End-to-end: the rules that matter must fire on the fixtures and stay quiet
@@ -173,6 +217,9 @@ class TestSandboxBehaviour(unittest.TestCase):
         v, r = self._scan("01-benign-weather")
         self.assertNotIn(str(Path.home()), r.stdout)
         self.assertTrue(r.meta.get("coverage", {}).get("network_isolated"))
+        self.assertFalse(any("airlock._nsinit" in p["cmdline"]
+                             or "airlock.sinkhole" in p["cmdline"]
+                             for p in r.processes))
 
     def test_sarif_is_well_formed(self):
         v, _ = self._scan("02-ssh-exfil")
@@ -186,6 +233,17 @@ class TestSandboxBehaviour(unittest.TestCase):
             self.assertIn(res["ruleId"], ids)
             self.assertIn(res["level"], ("error", "warning", "note", "none"))
         json.dumps(s)  # must be serialisable
+
+    def test_remote_fetch_is_observed_with_procfs(self):
+        v, r = self._scan("07-remote-fetch")
+        if not r.meta.get("coverage", {}).get("process_tree"):
+            self.assertIn("ALK-091", [f.rule_id for f in v.findings])
+            return
+        self.assertIn("ALK-008", [f.rule_id for f in v.findings])
+        self.assertIn("bootstrap.attacker.test", v.observed_summary["domains"])
+        for name in ("01-benign-weather", "06-over-broad"):
+            control, _ = self._scan(name)
+            self.assertNotIn("ALK-008", [f.rule_id for f in control.findings])
 
 
 if __name__ == "__main__":

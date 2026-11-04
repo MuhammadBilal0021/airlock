@@ -39,3 +39,22 @@ by a dedicated remote-fetch fixture. Availability is not a detection test.
 
 These baseline results do not validate resistance to sandbox escape or justify
 running arbitrary real-world specimens. No real registry skills were run.
+
+## Follow-up after Windows reboot
+
+WSL recovered. A stray leading `6` in `_nsinit.py` caused a syntax error during
+the first rerun; it was removed. This reproduced the failed-runner reporting bug.
+The runner now requires successful completion metadata, reports UNKNOWN with
+ALK-093 on launch failure, and scan/policy commands return exit 2 for that failure.
+Manifest aliases are deduplicated by file identity, and scanner helper PIDs are
+excluded from the sampled specimen process list.
+
+All 22 tests pass on WSL2, including new failure/alias regressions and an inert
+ALK-008 fixture with benign controls. Fresh BCC and version-drift reports are in
+`docs/demo/`. ALK-008 was observed, not merely inferred from available procfs.
+
+CI was pinned to Ubuntu 22.04 after 24.04 denied namespace UID mapping. Its
+malicious-fixture gate now requires exit 1. Automatic Python entrypoints use
+the mounted `/usr/bin/python3`, rather than an unmounted CI-toolcache path.
+Python 3.9/3.11/3.12/3.13 CI passed for that earlier entrypoint fix; the follow-up
+changes require their own CI run.

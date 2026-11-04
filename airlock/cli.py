@@ -151,6 +151,8 @@ def cmd_scan(args) -> int:
         else:
             cleanup(run_dir)
 
+    if verdict.label == "UNKNOWN":
+        return 2
     worst = max((SEVERITY_ORDER.get(f.severity, 0) for f in verdict.findings), default=0)
     return 1 if worst >= _SEV_BY_NAME.get(args.fail_on, 99) else 0
 
@@ -170,6 +172,11 @@ def cmd_policy(args) -> int:
         print(f"airlock: cannot derive a policy -- {reason}", file=sys.stderr)
         return 2
     result = run_skill(target, entry=entry, timeout=args.timeout)
+    if not result.ok:
+        print("airlock: sandbox failed; cannot derive a policy", file=sys.stderr)
+        if not args.keep:
+            cleanup(result.run_dir)
+        return 2
     v = analyse(result, decl)
     o = v.observed_summary
     reads = sorted({p for p in o["files_read"] if p.startswith("/home") or p.startswith("/work")})

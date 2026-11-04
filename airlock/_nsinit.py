@@ -137,7 +137,7 @@ def setup_mounts(cfg: dict, mlog: MountLog) -> dict:
     return coverage
 
 
-def sample_proc(rootfs: Path, seen: dict, stop: dict) -> None:
+def sample_proc(rootfs: Path, seen: dict, stop: dict, excluded=()) -> None:
     """Poll the sandbox's own /proc to reconstruct the process tree."""
     proc = rootfs / "proc"
     while not stop["done"]:
@@ -149,7 +149,7 @@ def sample_proc(rootfs: Path, seen: dict, stop: dict) -> None:
             if not e.name.isdigit():
                 continue
             pid = int(e.name)
-            if pid in seen:
+            if pid in seen or pid in excluded:
                 continue
             try:
                 cmdline = (e / "cmdline").read_bytes().replace(b"\x00", b" ").decode("utf-8", "replace").strip()
@@ -199,7 +199,10 @@ def main() -> int:
     procs, stop = {}, {"done": False}
     sampler = None
     if coverage.get("proc") == "fresh-procfs":
-        sampler = threading.Thread(target=sample_proc, args=(rootfs, procs, stop), daemon=True)
+        # These are scanner infrastructure, not behaviour of the specimen.
+        excluded = {os.getpid(), meta.get("sinkhole_pid")}
+        sampler = threading.Thread(target=sample_proc,
+                                   args=(rootfs, procs, stop, excluded), daemon=True)
         sampler.start()
     coverage["process_tree"] = sampler is not None
 

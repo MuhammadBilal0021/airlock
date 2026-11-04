@@ -389,7 +389,10 @@ def scan_tree(root: Path) -> CapabilityDeclaration:
     seen = set()
     for path in candidates:
         try:
-            key = str(path.resolve())
+            st = path.stat()
+            # DrvFS can resolve SKILL.md and skill.md to the same file while
+            # preserving different spellings. Deduplicate by filesystem identity.
+            key = (st.st_dev, st.st_ino) if st.st_ino else str(path.resolve())
         except OSError:
             continue
         if key in seen or not path.is_file():

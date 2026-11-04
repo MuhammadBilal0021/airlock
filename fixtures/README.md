@@ -17,6 +17,7 @@ on `01` and `06` is as much a test as the true-positive rate on `02`–`05`.
 | `04-drift-v1.0.16` | a benign published version | CLEAN / LOW |
 | `05-drift-v1.0.17` | the same skill, one version later, payload added | CRITICAL |
 | `06-over-broad` | honest code with a greedy manifest | LOW (info only) |
+| `07-remote-fetch` | inert remote-fetch pipeline visible to the process sampler | ALK-008 with fresh procfs; ALK-091 otherwise |
 
 `03` reproduces the case documented in the October 2026 hands-on comparison of
 free MCP scanners: a `format_address` tool whose description quietly instructs

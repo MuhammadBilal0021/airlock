@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400">
+  <rect width="1000" height="400" rx="16" fill="#101820"/>
+  <g font-family="monospace" font-size="18" fill="#dce5ec">
+    <text x="32" y="44" fill="#76d7c4">airlock / WSL2 / recorded behavioural evidence</text>
+    <text x="32" y="88">$ python3 -m airlock scan fixtures/03-silent-bcc</text>
+    <text x="32" y="135">DECLARED   no sensitive reads · no network</text>
+    <text x="32" y="174">OBSERVED   read /home/.aws/credentials</text>
+    <text x="32" y="209">           DNS alck-awssecret-fbbqes4mttti.exfil.attacker.test</text>
+    <text x="32" y="260" fill="#ff8b85">CRITICAL 100/100 · ALK-001 · canary captured in DNS</text>
+    <text x="32" y="303">Fresh procfs · 5 findings · synthetic credentials</text>
+    <text x="32" y="356" fill="#76d7c4">▶ 60-second asciinema + raw reports + version drift diff</text>
+  </g>
+</svg>
