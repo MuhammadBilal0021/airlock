@@ -44,8 +44,28 @@ MS_BIND, MS_REMOUNT, MS_REC, MS_PRIVATE = 4096, 32, 16384, 1 << 18
 HOST_RO_BINDS = ("usr", "bin", "lib", "lib32", "lib64", "libx32", "sbin")
 
 
+DEFAULT_ADDRESS_SPACE = 512 * 1024 * 1024
+
+
 def specimen_limits(timeout):
-    return {"address_space_bytes": 512 * 1024 * 1024,
+    """Per-process limits for the specimen.
+
+    The address-space cap is a containment control: 512 MiB keeps a runaway
+    allocation from hurting the host. Some legitimate runtimes need more just to
+    start -- Node's V8 reserves address space up front and dies with SIGTRAP
+    under the default (corpus-004 measured 4 packages doing exactly that), so
+    the cap is overridable. Any override is reported verbatim in
+    ``coverage.resource_limits.address_space_bytes``; a result can never claim a
+    limit it did not apply.
+    """
+    address_space = DEFAULT_ADDRESS_SPACE
+    override = os.environ.get("AIRLOCK_ADDRESS_SPACE_BYTES")
+    if override:
+        try:
+            address_space = max(64 * 1024 * 1024, int(override))
+        except ValueError:
+            address_space = DEFAULT_ADDRESS_SPACE
+    return {"address_space_bytes": address_space,
             "file_size_bytes": 8 * 1024 * 1024, "open_files": 128,
             "cpu_seconds": max(1, math.ceil(timeout)), "core_bytes": 0}
 

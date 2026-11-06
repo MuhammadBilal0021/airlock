@@ -24,7 +24,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from airlock.cli import run_target  # noqa: E402
+from airlock.declared import scan_tree  # noqa: E402
+from airlock.engine import analyse  # noqa: E402
+from airlock.sandbox import run_skill  # noqa: E402
 
 CODE_SUFFIXES = ('.py', '.sh', '.js')
 # Absolute paths only: the sandbox executes the entry directly rather than
@@ -74,9 +76,50 @@ def choose(package: Path, files):
     return sorted(files, key=priority)[0], 'priority_artefact'
 
 
-def entry_argv(relative: Path):
+KNOWN_SHEBANG = {'node': '/usr/local/bin/node', 'bash': '/bin/bash',
+                 'sh': '/bin/sh', 'python3': '/usr/bin/python3',
+                 'python': '/usr/bin/python3'}
+
+
+def shebang_argv(first_line: str):
+    """Resolve a shebang to (program, leading arguments).
+
+    Handles ``#!/bin/bash``, ``#!/usr/bin/env bash`` and
+    ``#!/usr/bin/env -S node --flag``. corpus-004 caught the last two being run
+    as ``/usr/bin/env script``, which the kernel refuses ("use -[v]S to pass
+    options in shebang lines") -- a harness bug that looked like a broken skill.
+    """
+    tokens = first_line[2:].strip().split()
+    if not tokens:
+        return None, []
+    if tokens[0].rsplit('/', 1)[-1] == 'env':
+        rest = [token for token in tokens[1:] if not token.startswith('-')]
+        if not rest:
+            return None, []
+        return KNOWN_SHEBANG.get(rest[0], rest[0]), rest[1:]
+    return tokens[0], tokens[1:]
+
+
+def entry_argv(package: Path, relative: Path):
+    """Build the argv, honouring a shebang when the author wrote one.
+
+    corpus-004 found a package whose ``run.sh`` uses bash syntax; running it
+    under ``/bin/sh`` produced "Syntax error: unexpected word" and looked like a
+    broken skill. It was a broken harness: the package declared its own
+    interpreter and the harness ignored it.
+    """
     interpreter = INTERPRETER[relative.suffix]
-    argv = [interpreter, relative.as_posix()]
+    leading = []
+    try:
+        first_line = (package / relative).read_text(
+            encoding='utf-8', errors='replace').splitlines()[0]
+        if first_line.startswith('#!'):
+            resolved, leading = shebang_argv(first_line)
+            if resolved:
+                interpreter = resolved
+    except (IndexError, OSError):
+        leading = []
+    argv = [interpreter, *leading, relative.as_posix()]
     if relative.suffix in ('.py', '.js'):
         argv.append('--help')
     return argv
@@ -108,11 +151,17 @@ def main() -> int:
                          'status': 'no_code'})
             continue
         relative, why = choose(package, files)
-        argv = entry_argv(relative)
+        argv = entry_argv(package, relative)
         row = {'id': item['id'], 'addressable': True, 'harness': ' '.join(argv),
                'harness_source': why, 'code_files': len(files)}
         try:
-            verdict, run_dir = run_target(package, ' '.join(argv), args.timeout)
+            # Call the same primitives run_target() uses, but keep the RunResult:
+            # the specimen's stderr is what distinguishes "missing dependency"
+            # from "no input document provided". Without it, twelve exit-1
+            # packages are indistinguishable and the next work item is a guess.
+            declaration = scan_tree(package)
+            result = run_skill(package, entry=list(argv), timeout=args.timeout)
+            verdict = analyse(result, declaration)
             observed = verdict.observed_summary or {}
             coverage = verdict.coverage or {}
             positives = positive_findings(verdict)
@@ -125,6 +174,9 @@ def main() -> int:
                 'positive': bool(positives),
                 'rules': sorted({f.rule_id for f in positives}),
                 'severities': sorted({f.severity for f in positives}),
+                'stderr': (result.stderr or '')[:1500],
+                'stdout': (result.stdout or '')[:600],
+                'runner_errors': list(result.errors or [])[:5],
             })
         except Exception as exc:  # noqa: BLE001 - recorded, never lost
             row.update({'status': 'unreachable',
