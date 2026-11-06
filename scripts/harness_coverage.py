@@ -27,7 +27,11 @@ sys.path.insert(0, str(ROOT))
 from airlock.cli import run_target  # noqa: E402
 
 CODE_SUFFIXES = ('.py', '.sh', '.js')
-INTERPRETER = {'.py': '/usr/bin/python3', '.sh': '/bin/sh', '.js': 'node'}
+# Absolute paths only: the sandbox executes the entry directly rather than
+# through a shell, so a bare `node` is not resolved against PATH (corpus-004
+# measured exit 127 for it while /usr/local/bin/node returned 0).
+INTERPRETER = {'.py': '/usr/bin/python3', '.sh': '/bin/sh',
+               '.js': '/usr/local/bin/node'}
 ENTRY_STEMS = ('main', 'run', 'cli', 'entry', 'entrypoint', 'start', 'install',
                'setup', 'server')
 DISCLOSURE_RULES = {'ALK-090', 'ALK-091', 'ALK-092', 'ALK-093'}

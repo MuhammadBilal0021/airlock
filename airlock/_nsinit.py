@@ -161,6 +161,29 @@ def setup_mounts(cfg: dict, mlog: MountLog) -> dict:
         mlog.add(f"recursively read-only bind /{d}", str(tgt), True)
     coverage['runtime_mounts'] = 'recursively read-only and nosuid; verified'
 
+    # Optional hermetic runtime overlay, mounted read-only over /usr/local.
+    # The host filesystem decides what a skill can run; corpus-003 measured that
+    # cost (`node` absent -> exit 127 before any real work). An overlay lets a
+    # pinned runtime set be supplied without root and without trusting whatever
+    # the host image happens to carry.
+    overlay = cfg.get("runtime_overlay")
+    if overlay:
+        overlay_path = Path(overlay)
+        if not overlay_path.is_dir():
+            raise RuntimeError(f"runtime overlay is not a directory: {overlay_path}")
+        target = rootfs / "usr" / "local"
+        if not target.is_dir():
+            coverage['runtime_overlay'] = 'unavailable: /usr/local missing'
+            mlog.add("runtime overlay requested but /usr/local is missing",
+                     str(target), False)
+        else:
+            bind_runtime(str(overlay_path), target)
+            mlog.add("recursively read-only bind runtime overlay -> /usr/local",
+                     str(target), True)
+            coverage['runtime_overlay'] = 'mounted read-only at /usr/local'
+    else:
+        coverage['runtime_overlay'] = 'none'
+
     for host_rel, sandbox_rel in (("decoy/home", "home"), ("work", "work"),
                                   ("scratch", "tmp"), ("out", "output")):
         src, tgt = run / host_rel, rootfs / sandbox_rel

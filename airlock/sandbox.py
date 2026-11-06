@@ -294,7 +294,8 @@ def run_skill(skill_path: Path, *, entry: list, timeout: float = 60.0,
     baseline = {rel: snapshot_dir(run / rel) for rel, _ in JOURNALED}
 
     cfg = {"run_dir": str(run), "rootfs": str(run / "rootfs"), "repo_root": _REPO_ROOT,
-           "entry": entry, "timeout": timeout, "env": extra_env or {}}
+           "entry": entry, "timeout": timeout, "env": extra_env or {},
+           "runtime_overlay": os.environ.get("AIRLOCK_RUNTIME_OVERLAY") or None}
     (run / "nsinit.json").write_text(json.dumps(cfg, indent=2), encoding="utf-8")
     # A caller may reuse a run directory; old metadata cannot prove this launch ran.
     meta_path = run / "meta.json"
