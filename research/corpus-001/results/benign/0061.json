@@ -1,0 +1,75 @@
+{
+  "provenance": {
+    "id": "wshobson/agents:plugins/accessibility-compliance/skills/screen-reader-testing",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/accessibility-compliance/skills/screen-reader-testing",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0061.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "wshobson/agents:plugins/accessibility-compliance/skills/screen-reader-testing",
+    "verdict": "LOW",
+    "risk_score": 8,
+    "coverage": {
+      "proc": "n/a",
+      "process_tree": false,
+      "network_isolated": false,
+      "mount_isolation": false,
+      "namespace_flags": "none (not executed)",
+      "timed_out": false,
+      "duration_s": 0.0,
+      "static_only": true
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [],
+      "external_communication": [],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "screen-reader-testing",
+      "version": "",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [],
+      "fs_write_declared": false,
+      "fs_deny_write": [],
+      "net_allow": [],
+      "shell": null,
+      "tools": [],
+      "risk_tier": ""
+    },
+    "observed": {
+      "files_read": [],
+      "files_written": [],
+      "files_deleted": [],
+      "domains": [],
+      "dns_queries": [],
+      "processes": [],
+      "exit_code": null,
+      "duration_s": 0.0
+    },
+    "findings": [
+      {
+        "rule_id": "ALK-092",
+        "ast": "AST08",
+        "severity": "medium",
+        "title": "Dynamic analysis not possible for this target",
+        "detail": "Dataset requested declaration-only analysis. airlock found no executable artefact, so there is no behaviour to observe and only the declaration was checked. This is the weakest form of assurance and is the entire reason pattern-only scanners get bypassed -- do not read this result as a clean bill of health.",
+        "evidence": [
+          "target: wshobson/agents:plugins/accessibility-compliance/skills/screen-reader-testing"
+        ],
+        "declared": "",
+        "observed": "",
+        "confidence": "confirmed"
+      }
+    ]
+  }
+}

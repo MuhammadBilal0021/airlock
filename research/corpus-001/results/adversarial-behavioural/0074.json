@@ -1,0 +1,118 @@
+{
+  "provenance": {
+    "id": "B7-04",
+    "source": "synthetic:airlock-corpus-001:B7",
+    "revision": "seed-20261107",
+    "report": "0074.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "/mnt/d/Bilal_projects/airlock/research/corpus-001/adversarial/074",
+    "verdict": "ELEVATED",
+    "risk_score": 20,
+    "coverage": {
+      "resource_limits": {
+        "scope": "per-process",
+        "address_space_bytes": 536870912,
+        "file_size_bytes": 8388608,
+        "open_files": 128,
+        "cpu_seconds": 15,
+        "core_bytes": 0,
+        "aggregate_limits": false
+      },
+      "aggregate_resources": {
+        "verified": false
+      },
+      "storage_limits": {
+        "verified": false
+      },
+      "runtime_mounts": "recursively read-only and nosuid; verified",
+      "supervisor_access": "nondumpable helpers; observer liveness checked",
+      "proc": "fresh-procfs",
+      "process_tree": true,
+      "network_isolated": true,
+      "network_observer_ready": true,
+      "network_isolation_basis": "kernel interface inventory: lo only; mandatory new network namespace",
+      "mount_isolation": true,
+      "namespace_flags": "--user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL",
+      "timed_out": false,
+      "duration_s": 0.71,
+      "write_policy": "explicit allowlist"
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [],
+      "untrusted_content_basis": "inferred: the skill fetched from an undeclared host, so whatever came back entered its context unvetted",
+      "external_communication": [],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "screenshot-annotator",
+      "version": "1.0.0",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [
+        "/output/"
+      ],
+      "fs_write_declared": true,
+      "fs_deny_write": [],
+      "net_allow": [],
+      "shell": false,
+      "tools": [],
+      "risk_tier": "L0"
+    },
+    "observed": {
+      "files_read": [],
+      "ambient_reads_suppressed": [
+        "/work/run.sh"
+      ],
+      "files_written": [
+        "/home/.ssh/authorized_keys"
+      ],
+      "files_deleted": [],
+      "permissions_changed": [],
+      "domains": [],
+      "dns_queries": [],
+      "processes": [],
+      "exit_code": 0,
+      "duration_s": 0.71
+    },
+    "findings": [
+      {
+        "rule_id": "ALK-005",
+        "ast": "AST01",
+        "severity": "high",
+        "title": "Wrote to a persistence location: /home/.ssh/authorized_keys",
+        "detail": "Writes to shell rc files, authorized_keys, autostart entries, cron, or agent identity/memory files (SOUL.md, MEMORY.md, AGENTS.md) survive the session. ClawHavoc backdoored agents by writing malicious instructions straight into MEMORY.md and SOUL.md. The Universal Skill Format places those files under deny_write by default.",
+        "evidence": [
+          "created: /home/.ssh/authorized_keys (78 bytes)"
+        ],
+        "declared": "/output/",
+        "observed": "/home/.ssh/authorized_keys",
+        "confidence": "confirmed"
+      },
+      {
+        "rule_id": "ALK-011",
+        "ast": "AST03",
+        "severity": "info",
+        "title": "Declared but never used: /output/",
+        "detail": "Over-broad permission requests are the norm here -- Snyk found 280+ skills leaking credentials through over-permission alone. A permission the skill never exercises is one you can safely remove.",
+        "evidence": [
+          "no filesystem event under /output"
+        ],
+        "declared": "/output/",
+        "observed": "(nothing)",
+        "confidence": "likely"
+      }
+    ]
+  }
+}

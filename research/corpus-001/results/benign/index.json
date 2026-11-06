@@ -1,0 +1,2458 @@
+[
+  {
+    "id": "wshobson/agents:plugins/ui-design/skills/mobile-ios-design",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/mobile-ios-design",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0000.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/backend-development/skills/saga-orchestration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/saga-orchestration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0001.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/kubernetes-operations/skills/gitops-workflow",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/gitops-workflow",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0002.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-application-dev/skills/hybrid-search-implementation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/hybrid-search-implementation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0003.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/uv-package-manager",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/uv-package-manager",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0004.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-background-jobs",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-background-jobs",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0005.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-application-dev/skills/vector-index-tuning",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/vector-index-tuning",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0006.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-code-style",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-code-style",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0007.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/security-scanning/skills/threat-mitigation-mapping",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/threat-mitigation-mapping",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0008.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-error-handling",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-error-handling",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0009.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/dgx-spark-ops/skills/spark-memory-thermal-ops",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/dgx-spark-ops/skills/spark-memory-thermal-ops",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0010.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/payment-processing/skills/stripe-integration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/stripe-integration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0011.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-finetuning/skills/eval-harness-first",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-finetuning/skills/eval-harness-first",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0012.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/data-engineering/skills/data-quality-frameworks",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/data-engineering/skills/data-quality-frameworks",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0013.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-application-dev/skills/prompt-engineering-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/prompt-engineering-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0014.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/ui-design/skills/responsive-design",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/responsive-design",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0015.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/shell-scripting/skills/shellcheck-configuration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/shell-scripting/skills/shellcheck-configuration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0016.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-packaging",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-packaging",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0017.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-configuration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-configuration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0018.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/startup-business-analyst/skills/startup-metrics-framework",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/startup-business-analyst/skills/startup-metrics-framework",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0019.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/plugin-eval/skills/evaluation-methodology",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/plugin-eval/skills/evaluation-methodology",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0020.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/hr-legal-compliance/skills/employment-contract-templates",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/hr-legal-compliance/skills/employment-contract-templates",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0021.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/hr-legal-compliance/skills/gdpr-data-handling",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/hr-legal-compliance/skills/gdpr-data-handling",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0022.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/developer-essentials/skills/bazel-build-optimization",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/bazel-build-optimization",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0023.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/security-scanning/skills/security-requirement-extraction",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/security-requirement-extraction",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0024.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/ship-mate/skills/scan",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ship-mate/skills/scan",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0025.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/file-conversion/skills/file-conversion",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/file-conversion/skills/file-conversion",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0026.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/quantitative-trading/skills/risk-metrics-calculation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/quantitative-trading/skills/risk-metrics-calculation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0027.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-testing-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-testing-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0028.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/cloud-infrastructure/skills/mtls-configuration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cloud-infrastructure/skills/mtls-configuration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0029.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/payment-processing/skills/paypal-integration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/paypal-integration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0030.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/javascript-typescript/skills/typescript-advanced-types",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/javascript-typescript/skills/typescript-advanced-types",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0031.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-application-dev/skills/langchain-architecture",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/langchain-architecture",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0032.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/agent-teams/skills/team-composition-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/agent-teams/skills/team-composition-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0033.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/reverse-engineering/skills/protocol-reverse-engineering",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/reverse-engineering/skills/protocol-reverse-engineering",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0034.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/frontend-mobile-development/skills/react-state-management",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/react-state-management",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0035.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/agent-teams/skills/team-communication-protocols",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/agent-teams/skills/team-communication-protocols",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0036.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/cicd-automation/skills/github-actions-templates",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cicd-automation/skills/github-actions-templates",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0037.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/skill-forge-essentials/skills/visual-edit-precision",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/skill-forge-essentials/skills/visual-edit-precision",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0038.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/javascript-typescript/skills/javascript-testing-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/javascript-typescript/skills/javascript-testing-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0039.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/systems-programming/skills/go-concurrency-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/systems-programming/skills/go-concurrency-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0040.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/shell-scripting/skills/bash-defensive-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/shell-scripting/skills/bash-defensive-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0041.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/incident-response/skills/on-call-handoff-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/incident-response/skills/on-call-handoff-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0042.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/blockchain-web3/skills/web3-testing",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/blockchain-web3/skills/web3-testing",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0043.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/javascript-typescript/skills/modern-javascript-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/javascript-typescript/skills/modern-javascript-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0044.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/developer-essentials/skills/e2e-testing-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/e2e-testing-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0045.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-quality-gates",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-quality-gates",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0046.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/signed-audit-trails/skills/signed-audit-trails-recipe",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/signed-audit-trails/skills/signed-audit-trails-recipe",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0047.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/ui-design/skills/react-native-design",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/react-native-design",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0048.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/observability-monitoring/skills/slo-implementation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/observability-monitoring/skills/slo-implementation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0049.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/shell-scripting/skills/bats-testing-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/shell-scripting/skills/bats-testing-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0050.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/cicd-automation/skills/secrets-management",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cicd-automation/skills/secrets-management",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0051.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/machine-learning-ops/skills/ml-pipeline-workflow",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/machine-learning-ops/skills/ml-pipeline-workflow",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0052.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/backend-development/skills/architecture-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/architecture-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0053.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/security-scanning/skills/stride-analysis-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/stride-analysis-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0054.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/dotnet-contribution/skills/dotnet-backend-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/dotnet-contribution/skills/dotnet-backend-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0055.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-deck-context",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-deck-context",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0056.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/frontend-mobile-development/skills/nextjs-app-router-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/nextjs-app-router-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0057.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-finetuning/skills/grpo-rlvr-training",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-finetuning/skills/grpo-rlvr-training",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0058.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/backend-development/skills/microservices-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/microservices-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0059.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/brand-landingpage/skills/brand-landingpage",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/brand-landingpage/skills/brand-landingpage",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0060.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/accessibility-compliance/skills/screen-reader-testing",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/accessibility-compliance/skills/screen-reader-testing",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0061.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/incident-response/skills/postmortem-writing",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/incident-response/skills/postmortem-writing",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0062.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/ui-design/skills/visual-design-foundations",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/visual-design-foundations",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0063.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/backend-development/skills/event-store-design",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/event-store-design",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0064.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/developer-essentials/skills/sql-optimization-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/sql-optimization-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0065.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/payment-processing/skills/billing-automation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/billing-automation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0066.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/frontend-mobile-development/skills/react-native-architecture",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/react-native-architecture",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0067.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/developer-essentials/skills/nx-workspace-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/nx-workspace-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0068.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-design-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-design-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0069.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/documentation-generation/skills/openapi-spec-generation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-generation/skills/openapi-spec-generation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0070.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-application-dev/skills/rag-implementation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/rag-implementation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0071.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/business-analytics/skills/data-storytelling",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/business-analytics/skills/data-storytelling",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0072.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/conductor/skills/workflow-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/conductor/skills/workflow-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0073.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/documentation-standards/skills/hads",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-standards/skills/hads",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0074.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/ui-design/skills/web-component-design",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/web-component-design",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0075.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-application-dev/skills/llm-evaluation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/llm-evaluation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0076.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/game-development/skills/unity-ecs-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/game-development/skills/unity-ecs-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0077.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/protect-mcp/skills/protect-mcp-setup",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/protect-mcp/skills/protect-mcp-setup",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0078.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/kubernetes-operations/skills/k8s-security-policies",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/k8s-security-policies",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0079.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0080.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/observability-monitoring/skills/prometheus-configuration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/observability-monitoring/skills/prometheus-configuration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0081.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/machine-learning-ops/skills/recsys-pipeline-architect",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/machine-learning-ops/skills/recsys-pipeline-architect",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0082.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/ui-design/skills/design-system-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/design-system-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0083.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-anti-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-anti-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0084.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/agent-teams/skills/parallel-debugging",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/agent-teams/skills/parallel-debugging",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0085.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/cloud-infrastructure/skills/terraform-module-library",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cloud-infrastructure/skills/terraform-module-library",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0086.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/skill-forge-essentials/skills/session-guard",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/skill-forge-essentials/skills/session-guard",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0087.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/developer-essentials/skills/error-handling-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/error-handling-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0088.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/cicd-automation/skills/gitlab-ci-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cicd-automation/skills/gitlab-ci-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0089.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/framework-migration/skills/angular-migration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/framework-migration/skills/angular-migration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0090.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/data-engineering/skills/airflow-dag-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/data-engineering/skills/airflow-dag-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0091.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/developer-essentials/skills/auth-implementation-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/auth-implementation-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0092.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/dgx-spark-ops/skills/spark-environment-setup",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/dgx-spark-ops/skills/spark-environment-setup",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0093.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/game-development/skills/godot-gdscript-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/game-development/skills/godot-gdscript-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0094.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/documentation-standards/skills/grounded-vault",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-standards/skills/grounded-vault",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0095.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/incident-response/skills/connectivity-triage",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/incident-response/skills/connectivity-triage",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0096.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-slide-specification",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-slide-specification",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0097.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/llm-finetuning/skills/lora-qlora-recipes",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-finetuning/skills/lora-qlora-recipes",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0098.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/documentation-generation/skills/changelog-automation",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-generation/skills/changelog-automation",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0099.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/payment-processing/skills/pci-compliance",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/pci-compliance",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0100.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/async-python-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/async-python-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0101.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/data-engineering/skills/dbt-transformation-patterns",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/data-engineering/skills/dbt-transformation-patterns",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0102.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/content-marketing/skills/social-evidence-research",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/content-marketing/skills/social-evidence-research",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0103.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-performance-optimization",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-performance-optimization",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0104.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-reference-deck-analysis",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-reference-deck-analysis",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0105.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/frontend-mobile-development/skills/tailwind-design-system",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/tailwind-design-system",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0106.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/kubernetes-operations/skills/k8s-manifest-generator",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/k8s-manifest-generator",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0107.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/security-scanning/skills/sast-configuration",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/sast-configuration",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0108.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "wshobson/agents:plugins/python-development/skills/python-project-structure",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-project-structure",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0109.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/feishu/skills/feishu-perm",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/feishu/skills/feishu-perm",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0110.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/discord/skills/discord",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/discord/skills/discord",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0111.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/security-triage",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/security-triage",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0112.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-ci-limits",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-ci-limits",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0113.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/tag-duplicate-prs-issues",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/tag-duplicate-prs-issues",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0114.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:custodian-skills/diagnose-gateway",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/custodian-skills/diagnose-gateway",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0115.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/browser/skills/browser-automation",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/browser/skills/browser-automation",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0116.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/xurl",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/xurl",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0117.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/graincrawl",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/graincrawl",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0118.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-automation",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-automation",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0119.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/model-usage",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/model-usage",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0120.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/peekaboo",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/peekaboo",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0121.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/feishu/skills/feishu-drive",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/feishu/skills/feishu-drive",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0122.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-debugging",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-debugging",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0123.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-test-performance",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-test-performance",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0124.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-ingest",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-ingest",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0125.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/node-inspect-debugger",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/node-inspect-debugger",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0126.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/notion",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/notion",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0127.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/1password",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/1password",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0128.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/release-openclaw-plugin-testing",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/release-openclaw-plugin-testing",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0129.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/spike",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/spike",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0130.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-performance",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-performance",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0131.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/oracle",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/oracle",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0132.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/things-mac",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/things-mac",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0133.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/blucli",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/blucli",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0134.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/release-openclaw-mac",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/release-openclaw-mac",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0135.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/feishu/skills/feishu-doc",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/feishu/skills/feishu-doc",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0136.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/gemini",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/gemini",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0137.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/memory-wiki/skills/wiki-maintainer",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/memory-wiki/skills/wiki-maintainer",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0138.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/visualize",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/visualize",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0139.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/control-ui",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/control-ui",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0140.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/telegram-e2e-userbot",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/telegram-e2e-userbot",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0141.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-source-ingest",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-source-ingest",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0142.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/obsidian",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/obsidian",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0143.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/clawhub",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/clawhub",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0144.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/healthcheck",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/healthcheck",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0145.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/slack/skills/block-kit",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/slack/skills/block-kit",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0146.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/plugin-sdk-impact",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/plugin-sdk-impact",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0147.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-update",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-update",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0148.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/github",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/github",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0149.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/clawdtributor",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/clawdtributor",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0150.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:custodian-skills/cloud-image-bake",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/custodian-skills/cloud-image-bake",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0151.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/agent-transcript",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/agent-transcript",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0152.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/proof-video",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/proof-video",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0153.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/canvas/skills/canvas",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/canvas/skills/canvas",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0154.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/weather",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/weather",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0155.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/meme-maker",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/meme-maker",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0156.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/tmux",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/tmux",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0157.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-entities",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-entities",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0158.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/diagram-maker",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/diagram-maker",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0159.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/goplaces",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/goplaces",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0160.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:custodian-skills/configure-channel",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/custodian-skills/configure-channel",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0161.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/technical-documentation",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/technical-documentation",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0162.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/auto-qa",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/auto-qa",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0163.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/autoreview",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/autoreview",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0164.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/gifgrep",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/gifgrep",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0165.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/slack/skills/slack",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/slack/skills/slack",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0166.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/create-template",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/create-template",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0167.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-claim-consolidation",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-claim-consolidation",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0168.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/skill-creator",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/skill-creator",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0169.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/facetime/skills/facetime",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/facetime/skills/facetime",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0170.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/openhue",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/openhue",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0171.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-release-validation",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-release-validation",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0172.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/nano-pdf",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/nano-pdf",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0173.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/apple-reminders",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/apple-reminders",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0174.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/camsnap",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/camsnap",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0175.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/release-openclaw-maintainer",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/release-openclaw-maintainer",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0176.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/node-connect",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/node-connect",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0177.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/himalaya",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/himalaya",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0178.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-ghsa-maintainer",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-ghsa-maintainer",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0179.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/slack-e2e",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/slack-e2e",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0180.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/gog",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/gog",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0181.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-live-updater",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-live-updater",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0182.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-repair-sweep",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-repair-sweep",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0183.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-parallels-smoke",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-parallels-smoke",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0184.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/ordercli",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/ordercli",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0185.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/openclaw-changelog-update",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-changelog-update",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0186.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/sag",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/sag",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0187.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-correct",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-correct",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0188.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/python-debugpy",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/python-debugpy",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0189.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/crabbox/skills/crabbox-apps",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/crabbox/skills/crabbox-apps",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0190.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/sonoscli",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/sonoscli",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0191.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-recall",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-recall",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0192.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:skills/eightctl",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/eightctl",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0193.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/slacrawl",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/slacrawl",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0194.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/discord-user-post",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/discord-user-post",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0195.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/notcrawl",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/notcrawl",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0196.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-meeting-ingest",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-meeting-ingest",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0197.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:.agents/skills/channel-message-flows",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/channel-message-flows",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0198.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "openclaw/openclaw:extensions/voice-call/skills/voice-call",
+    "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/voice-call/skills/voice-call",
+    "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "report": "0199.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/brand-guidelines",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/brand-guidelines",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0200.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/doc-coauthoring",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/doc-coauthoring",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0201.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:template",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/template",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0202.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/webapp-testing",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/webapp-testing",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0203.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/canvas-design",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/canvas-design",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0204.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/web-artifacts-builder",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/web-artifacts-builder",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0205.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/mcp-builder",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0206.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/theme-factory",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/theme-factory",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0207.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/skill-creator",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/skill-creator",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0208.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/discernment-nudge",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/discernment-nudge",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0209.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/internal-comms",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/internal-comms",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0210.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/academy-guide",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/academy-guide",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0211.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/docx",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/docx",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0212.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/pptx",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/pptx",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0213.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/frontend-design",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/frontend-design",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0214.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/slack-gif-creator",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/slack-gif-creator",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0215.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/algorithmic-art",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/algorithmic-art",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0216.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/xlsx",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/xlsx",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0217.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "anthropics/skills:skills/pdf",
+    "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/pdf",
+    "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+    "report": "0218.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/using-superpowers",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/using-superpowers",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0219.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/test-driven-development",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/test-driven-development",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0220.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/dispatching-parallel-agents",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/dispatching-parallel-agents",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0221.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/diagnosing-superpowers",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/diagnosing-superpowers",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0222.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/executing-plans",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/executing-plans",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0223.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/writing-skills",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-skills",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0224.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/finishing-a-development-branch",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/finishing-a-development-branch",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0225.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/requesting-code-review",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/requesting-code-review",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0226.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/using-git-worktrees",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/using-git-worktrees",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0227.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/writing-plans",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-plans",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0228.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/subagent-driven-development",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/subagent-driven-development",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0229.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/verification-before-completion",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/verification-before-completion",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0230.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/receiving-code-review",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/receiving-code-review",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0231.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/brainstorming",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/brainstorming",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0232.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "obra/superpowers:skills/systematic-debugging",
+    "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/systematic-debugging",
+    "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "report": "0233.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/testing",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/testing",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0234.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/issue-create",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/issue-create",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0235.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/release",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/release",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0236.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/issue-triage",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/issue-triage",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0237.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/local-dev",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/local-dev",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0238.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/pr-flow",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/pr-flow",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0239.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/client-smoke",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/client-smoke",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0240.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/board-ops",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/board-ops",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0241.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/pre-push-gate",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/pre-push-gate",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0242.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/security-advisory",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/security-advisory",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0243.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "modelcontextprotocol/servers:.claude/skills/project-structure",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/project-structure",
+    "revision": "36380287ed3b15d115b55f546617d723072b1296",
+    "report": "0244.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "repo": "anthropics/skills",
+    "skill_dir": "skills/claude-api",
+    "reason": "package exceeds 1048576 bytes of text"
+  }
+]

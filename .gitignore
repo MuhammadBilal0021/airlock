@@ -29,6 +29,13 @@ _probe_wf.txt
 /research/heldout-candidates/
 /research/manifest-sample/
 /research/first-reports/
+
+# corpus-001: acquired upstream package contents and generated samples stay out of
+# git (licensing, and both are rebuilt by the acquisition/generation scripts).
+# Manifests, labels, reports and scan results are tracked: provenance and evidence
+# without redistributing third-party payloads.
+/research/corpus-001/benign/[0-9]*/
+/research/corpus-001/adversarial/[0-9]*/
 /research/**/*-run[0-9].json
 /research/**/mcp-execution.json
 /research/**/*.log
