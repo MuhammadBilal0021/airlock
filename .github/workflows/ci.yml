@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    # Every branch: a release candidate is only proven by the Linux run, and
+    # waiting for a pull request leaves exclusive work unvalidated.
+    branches: ['**']
   pull_request:
 
 permissions:
