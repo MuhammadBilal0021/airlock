@@ -98,37 +98,56 @@ for pid in helpers:
     def test_observer_termination_invalidates_run(self):
         with tempfile.TemporaryDirectory() as tmp:
             skill = Path(tmp)
-            # Wait for the observer to actually die before exiting. A fixed
-            # 100 ms sleep lost the race on a slow runner: the specimen exited
-            # while the observer was still shutting down, so the runner polled a
-            # live observer and reported a clean run.
+            # Record what the specimen can see and do. Without this, a failure
+            # cannot separate "the observer is invisible in this sandbox" from
+            # "the signal was refused" from "the observer ignored SIGTERM".
             (skill / 'run.py').write_text('''import os, signal, time
 from pathlib import Path
+seen = []
 for path in Path('/proc').iterdir():
-    if path.name.isdigit():
-        try: argv = (path / 'cmdline').read_bytes()
-        except OSError: continue
-        if b'airlock.sinkhole' in argv:
-            pid = int(path.name)
-            os.kill(pid, signal.SIGTERM)
-            deadline = time.monotonic() + 2
-            while time.monotonic() < deadline:
-                try:
-                    stat = Path('/proc/%d/stat' % pid).read_text()
-                except OSError:
-                    break
-                if stat.rsplit(')', 1)[1].split()[0] == 'Z':
-                    break
-                time.sleep(0.02)
+    if not path.name.isdigit():
+        continue
+    try:
+        argv = (path / 'cmdline').read_bytes()
+    except OSError as exc:
+        seen.append('%s read-error %r' % (path.name, exc))
+        continue
+    seen.append('%s %r' % (path.name, argv[:60]))
+    if b'airlock.sinkhole' not in argv:
+        continue
+    pid = int(path.name)
+    try:
+        os.kill(pid, signal.SIGTERM)
+    except OSError as exc:
+        seen.append('kill %d refused %r' % (pid, exc))
+        continue
+    deadline = time.monotonic() + 2
+    while time.monotonic() < deadline:
+        try:
+            stat = Path('/proc/%d/stat' % pid).read_text()
+        except OSError:
+            seen.append('pid %d gone' % pid)
+            break
+        if stat.rsplit(')', 1)[1].split()[0] == 'Z':
+            seen.append('pid %d zombie' % pid)
+            break
+        time.sleep(0.02)
+    else:
+        seen.append('pid %d survived 2s' % pid)
+Path('/output/probe.txt').write_text('uid=%d euid=%d\n' % (os.getuid(), os.geteuid())
+                                     + '\n'.join(seen))
 ''')
             result = run_skill(skill, entry=['/usr/bin/python3', 'run.py'], timeout=3)
             self.addCleanup(shutil.rmtree, result.run_dir, ignore_errors=True)
             # Carry the evidence: a bare "True is not false" cannot separate a
             # specimen that failed to signal the observer from a runner that
             # stopped noticing the observer died.
+            probe = result.run_dir / 'out' / 'probe.txt'
+            seen = probe.read_text(errors='replace')[:800] if probe.exists() else 'no probe output'
             self.assertFalse(result.ok, f'exit={result.exit_code} '
                                         f'errors={result.errors} '
-                                        f'coverage={result.meta.get("coverage")}')
+                                        f'coverage={result.meta.get("coverage")} '
+                                        f'probe={seen}')
             self.assertTrue(any('observer exited' in error for error in result.errors),
                             f'errors={result.errors}')
 
