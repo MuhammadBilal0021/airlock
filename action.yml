@@ -33,18 +33,24 @@ runs:
 
     - name: Install airlock
       shell: bash
-      run: python -m pip install --no-deps "${{ github.action_path }}"
+      env:
+        AIRLOCK_ACTION_PATH: ${{ github.action_path }}
+      run: python -m pip install --no-deps "$AIRLOCK_ACTION_PATH"
 
     - name: Scan
       shell: bash
       id: scan
       continue-on-error: true
+      env:
+        AIRLOCK_TARGET: ${{ inputs.path }}
+        AIRLOCK_TIMEOUT: ${{ inputs.timeout }}
+        AIRLOCK_FAIL_ON: ${{ inputs.fail-on }}
       run: |
         set -o pipefail
-        airlock scan "${{ inputs.path }}" \
+        airlock scan \
           --format sarif --output airlock.sarif \
-          --timeout "${{ inputs.timeout }}" \
-          --fail-on "${{ inputs.fail-on }}" | tee airlock.txt
+          --timeout "$AIRLOCK_TIMEOUT" \
+          --fail-on "$AIRLOCK_FAIL_ON" -- "$AIRLOCK_TARGET" | tee airlock.txt
 
     - name: Upload SARIF
       if: ${{ inputs.upload-sarif == 'true' && always() }}
@@ -57,8 +63,10 @@ runs:
     - name: Enforce verdict
       if: ${{ always() }}
       shell: bash
+      env:
+        AIRLOCK_SCAN_OUTCOME: ${{ steps.scan.outcome }}
       run: |
-        if [ "${{ steps.scan.outcome }}" = "failure" ]; then
-          echo "::error::airlock found behaviour crossing the declared boundary"
+        if [ "$AIRLOCK_SCAN_OUTCOME" != "success" ]; then
+          echo "::error::airlock scan failed, was skipped, or exceeded the findings threshold"
           exit 1
         fi

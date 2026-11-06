@@ -35,7 +35,7 @@ jobs:
             || { echo "::error::user namespaces unavailable; sandbox tests would skip"; exit 1; }
 
       - name: Run tests
-        run: python -m unittest discover -s tests -v
+        run: python scripts/run_tests.py
 
       - name: Scan the benign fixture with airlock itself
         run: |
@@ -45,12 +45,20 @@ jobs:
       - name: Confirm the malicious fixtures are still caught
         run: |
           set -e
-          for f in 02-ssh-exfil 03-silent-bcc 05-drift-v1.0.17; do
+          # fixture:fail-on -- every entry must exit 1 at its own threshold.
+          # 07 is ALK-008 (critical) only when a fresh procfs was mounted; when
+          # the kernel refuses one it degrades to ALK-091 (low) by design, so it
+          # is gated at low and must be flagged either way. 08 is ALK-012
+          # (medium).
+          for entry in 02-ssh-exfil:critical 03-silent-bcc:critical \
+                       05-drift-v1.0.17:critical 07-remote-fetch:low \
+                       08-credential-permissions:medium; do
+            f="${entry%%:*}"; threshold="${entry##*:}"
             status=0
-            python -m airlock scan "fixtures/$f" --fail-on critical --timeout 40 >/dev/null || status=$?
+            python -m airlock scan "fixtures/$f" --fail-on "$threshold" --timeout 40 >/dev/null || status=$?
             if [ "$status" -ne 1 ]; then
-              echo "::error::REGRESSION: $f expected findings exit 1, got $status"
+              echo "::error::REGRESSION: $f expected findings exit 1 at --fail-on $threshold, got $status"
               exit 1
             fi
-            echo "$f correctly flagged"
+            echo "$f correctly flagged at --fail-on $threshold"
           done

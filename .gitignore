@@ -12,3 +12,22 @@ dist/
 *.sarif
 /airlock-run-*/
 _probe_wf.txt
+
+# Local planning and diagnostic artifacts; curated research is reviewed separately.
+/.local-notes/
+/PROBE.txt
+/airlock-run-*.txt
+/airlock-run-*.stdout
+/airlock-run-*.stderr
+.env.*
+!.env.example
+
+# Corpus downloads and raw observations stay local. Publish reviewed summaries explicitly.
+/research/*-tree.json
+/research/tree.json
+/research/executable-candidates/
+/research/heldout-candidates/
+/research/manifest-sample/
+/research/first-reports/
+/research/**/*-run[0-9].json
+/research/**/mcp-execution.json

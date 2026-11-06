@@ -61,32 +61,15 @@ seven most-downloaded skills at peak infection were confirmed malware.**
 Microsoft Defender's advisory says OpenClaw "should be treated as untrusted code
 execution with persistent credentials."
 
-So there are scanners. The problem is that they do not work.
+Static analysis and runtime observation answer different questions. Airlock
+adds evidence from an exercised code path: decoy accesses, attempted network
+traffic, process observations and filesystem changes. It also uses text
+heuristics, which can miss attacks and flag benign documentation.
 
-In June 2026 Trail of Bits published *The Sorry State of Skill Distribution* and
-**bypassed every public skill scanner they tested in under an hour** — ClawHub's
-VirusTotal-plus-LLM-guard pipeline, Cisco's `skill-scanner`, and the skills.sh
-scanners. The bypasses were payload padding to force truncation, logic hidden in
-binary and archive formats, and **prompt-injecting the scanner's own LLM judge**.
-
-Separately, a hands-on comparison built a four-tool MCP server containing a
-`format_address` tool whose description quietly instructed the model to BCC every
-outgoing email to an outside address. No credential keyword, plain prose:
-
-| scanner | `add` (asks for `id_rsa`) | `convert_units` (asks for `.env`) | `format_address` (the BCC) |
-|---|---|---|---|
-| Cisco MCP Scanner, YARA | HIGH | HIGH | **SAFE — missed** |
-| NVIDIA SkillSpector, `--no-llm` | HIGH 90% | HIGH 60% | **not flagged** |
-| Snyk Agent Scan | — | — | needs a cloud token; descriptions leave your machine |
-
-Pattern matching fails on semantics. LLM judging can itself be prompt-injected.
-And OWASP's own AST10 skill-scanner-integration page still says:
-
-> An OWASP-maintained `@owasp/ast10-scanner` package is not currently published.
-
-**You cannot obfuscate a `connect()` syscall, and you cannot prompt-inject a
-file's access time.** That is the whole thesis. airlock looks at what happened,
-not at what the artifact says about itself.
+This repository does not establish that Airlock outperforms other scanners.
+A fair comparison needs pinned versions, configurations, a shared corpus and
+reproducible results. Behavior that does not execute remains outside a run's
+coverage.
 
 ---
 
@@ -193,9 +176,9 @@ advice you can act on.
     => all three legs present: this skill can be weaponised by anything it reads
 ```
 
-`03-silent-bcc` is a faithful reproduction of the case both free scanners
-returned `SAFE` for. airlock catches it twice over — statically, from the hidden
-model-directed instruction, and dynamically, from the DNS-tunnelled canary.
+`03-silent-bcc` is a synthetic illustration of a hidden BCC directive. Airlock
+checks its instruction text and observes its attempted DNS canary transfer.
+This fixture is not a comparative benchmark against other scanners.
 
 ---
 
@@ -246,9 +229,11 @@ suspected. airlock indexes the encodings a stealer is likely to use — base64
 (standard and URL-safe), hex, reversed, and both hostname-safe substitutions of
 `_` — so trivial obfuscation does not defeat it.
 
-Your real `$HOME` is never mounted. A skill airlock fails to flag still cannot
-reach your keys. **Isolation bounds the blast radius; detection only affects the
-report.**
+The default sandbox uses a synthetic home and a copy of the target. Host runtime
+directories are also mounted read-only so interpreters and libraries are
+available. Containment depends on the kernel and setup checks; it is not a
+proof against every escape. Use a disposable Linux environment without valuable
+credentials for untrusted specimens. See [SECURITY.md](SECURITY.md).
 
 **2. atime-based read detection.** Every decoy file's access time is anchored to
 2001 before the run. Any read advances it, and because the decoy tree is a
@@ -272,9 +257,10 @@ distinguishes them, and every finding is tagged with its confidence:
 - **likely** — strong but inferential (undeclared read, undeclared egress)
 - **heuristic** — inferred from text; a reason for a human to look, never a verdict on its own
 
-`ALK-009` is always heuristic. Fixture `05` demonstrates the limit honestly: its
-own documentation prose mentions a BCC and trips the rule. That false positive is
-left in place, on purpose, labelled as heuristic.
+`ALK-009` is always heuristic. Earlier evaluations flagged benign documentation
+and missed reworded attacks. Calibration corrected those known cases, but they
+are now development regressions, not fresh evidence of general accuracy. See
+[evaluation limits](research/README.md#detection-evaluation).
 
 ### Noise control
 
@@ -296,7 +282,7 @@ was filtered and disagree with it.
 | `ALK-004` | high / medium | AST03 | Egress to hosts absent from the declared allowlist |
 | `ALK-005` | high | AST01 | Write to a persistence location (rc files, `authorized_keys`, cron, `SOUL.md`, `MEMORY.md`, `AGENTS.md`) |
 | `ALK-006` | info | AST03 | Declared sensitive read occurred — recorded for visibility |
-| `ALK-007` | medium | AST03 | Write outside declared scope |
+| `ALK-007` | info / medium / high | AST03 | Grouped writes: missing policy / outside explicit allowlist / explicitly denied path |
 | `ALK-008` | critical | AST04 | Remote code fetched and executed |
 | `ALK-009` | high *(heuristic)* | AST01 | Model-directed instruction hidden in text a UI may never render |
 | `ALK-010` | critical | AST06 | **Lethal Trifecta** satisfied |
@@ -406,6 +392,40 @@ noticed. `fixtures/04` and `fixtures/05` reproduce it.
 
 ---
 
+## Use it as an MCP tool
+
+A scanner an agent has to remember to run is a scanner that does not run.
+`airlock serve` speaks MCP over stdio and exposes one tool, `scan_skill`, so the
+agent can put a skill in the airlock itself and read the structured verdict back:
+
+```json
+{
+  "mcpServers": {
+    "airlock": {
+      "command": "python3",
+      "args": ["-m", "airlock.bounded", "--wall-timeout", "3600", "serve"]
+    }
+  }
+}
+```
+
+The tool returns the same JSON report `scan --format json` prints, produced by
+the same code path — a library and a CLI that disagreed about a verdict would be
+worse than either. It executes untrusted code inside the sandbox, so point it at
+skills you were going to run anyway.
+
+Executable MCP calls require verified cgroup limits and private bounded tmpfs
+storage. Launch on Linux/WSL with delegated user cgroups using the configuration
+above; the outer session expires after one hour and the client must restart it.
+Direct `airlock serve` remains usable for declaration-only checks, but refuses
+execution when these containment gates are absent.
+
+`serve` starts on any platform so a client never gets a dead server; where
+namespaces are unavailable, each call comes back as an error (or an honest
+`ALK-093` report), never as a pass.
+
+---
+
 ## Limitations
 
 Stated plainly, because a security tool that overstates its coverage is worse
@@ -427,11 +447,14 @@ than no tool.
 - **Modification detection uses size + mtime.** A skill that deliberately
   preserves mtime could evade it. Phase 2 uses an overlayfs upper-dir diff, which
   is exact.
-- **The skill runs as root inside a user namespace.** Still isolated — it holds no
-  capability outside that namespace — but Phase 2 maps additional uids and drops
-  privileges before exec.
-- **`ALK-009` is a text heuristic** and will produce false positives. Fixture
-  `05` contains one, deliberately.
+- **Namespace root is not a complete security boundary.** The current runner
+  drops specimen capabilities and sets no_new_privs before execution. Kernel
+  vulnerabilities and untested interactions remain outside our assurance.
+- **Aggregate limits depend on the launcher.** Use `python3 -m airlock.bounded`
+  for verified cgroup and private-tmpfs bounds. Executable MCP calls require
+  those gates; ordinary CLI scans do not automatically enable them.
+- **`ALK-009` is a text heuristic** with false positives and missed attacks.
+  Read each finding's evidence and the revision-specific evaluation results.
 
 ---
 

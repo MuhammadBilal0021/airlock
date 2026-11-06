@@ -1,96 +1,76 @@
 # Security policy
 
-airlock is a security tool that executes untrusted code. That makes its own
-security posture part of its product, so this file is specific rather than
-boilerplate.
+Airlock executes untrusted code to collect behavioral evidence. It is a
+pre-1.0 research tool, not an independently audited isolation boundary. Run
+untrusted specimens in a disposable Linux environment without valuable secrets.
 
 ## Reporting a vulnerability
 
-Email **`airlock-security@bilal.dev`** — or, if that address is not yet live,
-open a GitHub Security Advisory on this repository (**Security → Report a
-vulnerability → Private**). Please do not open a public issue for anything that
-is not yet fixed.
+Use [GitHub private vulnerability reporting](https://github.com/MuhammadBilal0021/airlock/security/advisories/new)
+(Security → Report a vulnerability). The maintainer has selected this channel;
+enablement is pending maintainer verification. If the button is unavailable,
+open an issue requesting a private contact **without vulnerability details,
+exploit code, credentials or sensitive logs**. Do not disclose an unfixed
+vulnerability in a public issue.
 
-Include:
+Include the revision, installation method, Linux/WSL environment, minimal
+reproduction and expected versus observed behavior. Use synthetic data and
+redact logs. Response and remediation times depend on maintainer availability;
+no fixed response-time commitment is currently offered. Coordinated disclosure
+and credit preferences are welcome.
 
-- the airlock version and how it was installed (`pipx`, `git`, GitHub Action);
-- `uname -a` and whether you are on bare Linux, WSL2, or inside a container;
-- a minimal skill directory or script that reproduces the problem;
-- what you expected airlock to do versus what it did.
+## Intended boundaries and evidence
 
-We acknowledge reports within **72 hours** and aim to ship a fix or a documented
-mitigation within **14 days** for anything that breaks the isolation guarantee,
-and within **90 days** otherwise. Coordinated disclosure is welcome: tell us if
-you want credit in the release notes and we will add it.
+- The default specimen sees a copied target and synthetic home. Selected host
+  runtime directories are bound recursively read-only/nosuid to provide binaries
+  and libraries. These mounts are intended access, not a claim that no host
+  filesystem content is visible. Arbitrary host access or mutation is a bug.
+- The runner requires new user, mount, network and PID namespaces. Required setup
+  failures abort execution. Network topology is checked for loopback only;
+  observer readiness is checked separately. Neither check proves absence of all
+  kernel-level escapes.
+- Specimen capabilities are dropped and no_new_privs is set. Supervisor access,
+  mount setup and selected escape attempts have regression tests. This is not an
+  exhaustive adversarial audit, and namespaces share the host kernel.
+- Per-process limits apply inside the runner. Aggregate memory/task/CPU limits
+  and bounded writable storage require the bounded launcher and kernel support.
+  Executable MCP calls require those verified gates. Ordinary CLI scans do not
+  automatically enable the aggregate wrapper; inspect report coverage.
+- Decoy credentials are synthetic, inert canaries. A real usable credential in
+  a decoy would be a security bug. Confirmed findings must identify an observed
+  artifact; static instruction matching remains heuristic.
+- The core scanner has no telemetry. Research staging scripts explicitly fetch
+  upstream source when invoked; that is separate from specimen execution.
 
-## What counts as a security bug here
+## Coverage limitations
 
-The properties airlock claims, in priority order. Breaking any of these is a
-vulnerability, not a feature request:
+One run exercises one code path. A clean result is not proof of package safety.
+A timed-out or failed run cannot establish full coverage. Reports expose setup
+failure, static-only checks, missing process observations and collection limits.
 
-| # | guarantee | what breaking it means |
-|---|---|---|
-| 1 | **The scanned skill cannot reach the host filesystem.** Only the decoy home and a copy of the skill are bind-mounted into the namespace. | Any read or write of a path outside the run directory is critical. |
-| 2 | **The scanned skill cannot reach the network.** The net namespace has loopback only; DNS is answered by the sinkhole. | Any packet leaving the host, or any real DNS resolution, is critical. |
-| 3 | **airlock never runs a skill outside a namespace.** If `unshare` fails, it reports `UNKNOWN` and refuses. | Silent fallback to unsandboxed execution is critical. |
-| 4 | **Decoy secrets are inert.** They are random canary strings that authenticate nothing. | A decoy that is a real, usable credential anywhere is high. |
-| 5 | **Findings are not fabricated.** Every `confirmed` finding rests on an observed artefact. | A rule that reports exfiltration without a captured canary is high — false positives destroy the tool's value. |
-| 6 | **No telemetry.** airlock makes no network call of its own, ever. | Any outbound connection from the scanner process itself is critical. |
+Read detection uses access-time evidence, not complete syscall tracing. Process
+sampling can miss short-lived activity. TLS bodies are not decrypted. Text
+heuristics can miss attacks and flag benign prose; evaluation failures are
+retained rather than treated as proof of safety. Filesystem metadata checks and
+bounded collection can miss activity, with disclosed limitations.
 
-## Known limitations (not vulnerabilities, but read them)
+Linux namespaces are required for execution; WSL2 is the Windows path. The MCP
+server can answer declaration-only requests elsewhere, but cannot provide
+Linux runtime assurance there. Hostile interference, kernel attack surface and
+portability across hosts still need further review.
 
-These are honest gaps, tracked in the README's *Limitations* section. They are
-listed here too so a report about them can be closed quickly as by-design:
+## Test fixtures
 
-- **A clean run is not proof of safety.** Behaviour gated on a credential, a
-  date, an environment variable, or an input the run did not supply will not
-  fire. airlock reports coverage explicitly (`ALK-090` timeout, `ALK-091`
-  limited `/proc`, `ALK-092` static-only, `ALK-093` sandbox failure) precisely so
-  a clean result can be read with its blind spots attached.
-- **`atime`-based read detection is heuristic.** It proves access, not intent, so
-  `ALK-002` is marked `confidence: likely` rather than `confirmed`.
-- **`ALK-008` (remote code fetch) needs a sampled process tree.** Inside nested
-  containers where a fresh `procfs` mount is refused, that rule degrades and
-  `ALK-091` says so.
-- **`ALK-009` (embedded instructions) reads intent from text.** It is labelled
-  `confidence: heuristic` and is expected to produce the occasional false
-  positive on prose that merely mentions an attack. Suppressing those entirely
-  would mean missing the real ones.
-- **User namespaces are required.** On a kernel with
-  `unprivileged_userns_clone=0` and no `CAP_SYS_ADMIN`, airlock exits with
-  `UNKNOWN` rather than guessing.
-- **Windows is supported through WSL2 only.** The native Windows build has no
-  namespaces; `airlock` refuses to run there with an explicit message.
+Fixtures model credential access, persistence writes, exfiltration attempts and
+other behavior using synthetic inputs. They are source artifacts for review and
+sandbox testing, not commands to run directly on a real home directory. Some
+benign fixtures name real services; the sandbox redirects their traffic locally.
+Malicious destinations use reserved test names. Do not describe a fixture as
+harmless outside the controlled environment merely because it is a test.
 
-## Fixtures in this repository
+## Supported development line
 
-Everything under `fixtures/` is an **inert test specimen**. The "malicious"
-fixtures model real published attack patterns — credential harvesting, DNS
-tunnelling, a version-to-version rug pull, persistence writes — but they contain
-no working exploit, no live domain, and no real credential. Every address they
-touch (`*.evil.test`, `*.attacker.test`, `postmark-analytics.test`) is in a
-reserved TLD, and the secrets they steal are canary strings generated at runtime
-that exist nowhere else. They are safe to read, safe to run inside the sandbox,
-and safe to fork.
-
-If you believe a fixture is dangerous rather than illustrative, that is itself a
-security report — please send it through the channel above.
-
-## Scope of testing
-
-You may scan anything you are allowed to run, including your own skills and MCP
-servers. Please do not point airlock at third-party code you have no right to
-execute, and do not use it to attack a registry: the correct response to a
-malicious published skill is a report to the registry and to us, not a scan of
-someone else's infrastructure.
-
-## Supported versions
-
-| version | status |
-|---|---|
-| `0.1.x` | supported — current development line |
-| anything older | unsupported; upgrade |
-
-airlock is pre-1.0. Rule IDs (`ALK-001` … `ALK-093`) are treated as stable and
-will not be renumbered; finding *wording*, scoring weights and report layout may
-change between minor versions.
+The active development line is 0.1.x. Use revision-specific validation evidence;
+local working-tree results do not automatically apply to a published release.
+Rule IDs are intended to remain stable, while wording, scoring and report layout
+may change. Security corrections take priority over compatibility where needed.
