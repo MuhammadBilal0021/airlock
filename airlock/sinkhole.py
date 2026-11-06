@@ -28,6 +28,7 @@ import fcntl
 import json
 import os
 from pathlib import Path
+import signal
 import socket
 import struct
 import threading
@@ -320,12 +321,25 @@ def run_tcp(out_path: str, stop: threading.Event, ready=None) -> None:
     sel.close()
 
 
+def _exit_on_signal(signum, frame):
+    """Terminate even when SIGTERM was inherited as ignored.
+
+    A disposition is inherited across exec, so relying on the default action can
+    leave the observer alive after the supervisor (or a specimen) signals it. A
+    dead observer must invalidate the run, and that check happens as soon as the
+    specimen exits, so the exit has to be prompt.
+    """
+    raise SystemExit(0)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="airlock network sinkhole (internal)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--duration", type=float, default=120.0)
     ap.add_argument("--ready-fd", type=int)
     args = ap.parse_args()
+    signal.signal(signal.SIGTERM, _exit_on_signal)
+    signal.signal(signal.SIGINT, _exit_on_signal)
 
     from ._nsinit import protect_supervisor
     protect_supervisor()
