@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "tests": 63,
+  "skipped": [],
+  "failures": 0,
+  "errors": 0,
+  "rules_sha256": "4a9e0dd34efcd0c5c756228931c3a70fa96e43e186717e8202ac56036edd43b7",
+  "harness_sha256": "c96eac501627eca369f498fd2f4677c4056fabac204ab80fff629037320194bb"
+}

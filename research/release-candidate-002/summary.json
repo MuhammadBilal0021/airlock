@@ -1,0 +1,202 @@
+{
+  "cases": [
+    {
+      "id": "model-usage",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "model-usage",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "skill-creator",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "skill-creator",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "figma-code-connect",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "figma-code-connect",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "figma-design-rules",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "figma-design-rules",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "jupyter-notebook",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "jupyter-notebook",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "plugin-creator",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "plugin-creator",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "anthropic-pdf",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "anthropic-pdf",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "anthropic-pptx",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [
+        "ALK-007"
+      ],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "anthropic-pptx",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [
+        "ALK-007"
+      ],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "webapp-testing",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "webapp-testing",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "migrate-to-codex",
+      "status": "completed",
+      "repetition": 1,
+      "verdict": "CLEAN",
+      "rule_ids": [
+        "ALK-007"
+      ],
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "migrate-to-codex",
+      "status": "completed",
+      "repetition": 2,
+      "verdict": "CLEAN",
+      "rule_ids": [
+        "ALK-007"
+      ],
+      "expected_output_confirmed": true
+    }
+  ],
+  "completed_packages": [
+    "anthropic-pdf",
+    "anthropic-pptx",
+    "figma-code-connect",
+    "figma-design-rules",
+    "jupyter-notebook",
+    "migrate-to-codex",
+    "model-usage",
+    "plugin-creator",
+    "skill-creator",
+    "webapp-testing"
+  ],
+  "completed_count": 10,
+  "repeat_agreement": {
+    "anthropic-pdf": true,
+    "anthropic-pptx": true,
+    "figma-code-connect": true,
+    "figma-design-rules": true,
+    "jupyter-notebook": true,
+    "migrate-to-codex": true,
+    "model-usage": true,
+    "plugin-creator": true,
+    "skill-creator": true,
+    "webapp-testing": true
+  },
+  "repetitions": 2,
+  "staged_not_run": [
+    "tmux"
+  ],
+  "scope": "controlled real skill helper invocations"
+}

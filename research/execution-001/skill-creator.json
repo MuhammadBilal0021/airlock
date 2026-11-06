@@ -1,0 +1,320 @@
+{
+  "status": "completed",
+  "provenance": {
+    "id": "skill-creator",
+    "path": "skill-creator",
+    "source": "https://github.com/openclaw/openclaw",
+    "revision": "57c2077776745fe0f65881b24611afbb21a6a7de",
+    "files": {
+      "SKILL.md": "7da0631cb21fbd87630b5dbeb48010f66776c28e396c276235f5d245903fa6ed",
+      "license.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "scripts/package_skill.py": "fa2f7ba4915464221cd71c7048e6eb71a920cf94c793332b4172d2ac353dd65a",
+      "scripts/quick_validate.py": "580ccffbd9d4370bc35bca22c551da0353424e248d7499e8cd578eaec67dfd75",
+      "scripts/test_package_skill.py": "9d47d5a26c47cbe70b788a39141e453a54626ed391ee12952eef6ffb5b73a3f7",
+      "scripts/test_quick_validate.py": "349258a18c0130f0bf11dd60d361abffa493e426355bc14df4d1d3fc09a46f8a"
+    },
+    "status": "staged_not_executed"
+  },
+  "entry": [
+    "/usr/bin/python3",
+    "scripts/quick_validate.py",
+    "."
+  ],
+  "scenario": null,
+  "exercised": "Validate the complete pinned skill directory and its SKILL.md",
+  "expected_output_confirmed": true,
+  "implementation_sha256": "f14dde8839f132b70054ddf136792491955f5b0a9a686333519ee0888e277baa",
+  "limitations": [
+    "One controlled invocation, not exhaustive behaviour or a safety certification",
+    "No live accounts, external API or CodexBar installation exercised"
+  ],
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "skill-creator",
+    "verdict": "CLEAN",
+    "risk_score": 0,
+    "coverage": {
+      "resource_limits": {
+        "scope": "per-process",
+        "address_space_bytes": 536870912,
+        "file_size_bytes": 8388608,
+        "open_files": 128,
+        "cpu_seconds": 10,
+        "core_bytes": 0,
+        "aggregate_limits": true
+      },
+      "aggregate_resources": {
+        "memory_bytes": 805306368,
+        "swap_bytes": 0,
+        "tasks": 64,
+        "cpu_max": "100000 100000",
+        "scope": "scanner and descendants",
+        "backend": "cgroup-v2",
+        "verified": true
+      },
+      "storage_limits": {
+        "verified": true,
+        "backend": "tmpfs",
+        "bytes": 134217728,
+        "inodes": 4096,
+        "scope": "run directories and scanner temporary files"
+      },
+      "runtime_mounts": "recursively read-only and nosuid; verified",
+      "supervisor_access": "nondumpable helpers; observer liveness checked",
+      "proc": "fresh-procfs",
+      "process_tree": true,
+      "network_isolated": true,
+      "mount_isolation": true,
+      "namespace_flags": "--user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL",
+      "timed_out": false,
+      "duration_s": 0.791
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [],
+      "untrusted_content_basis": "inferred: the skill fetched from an undeclared host, so whatever came back entered its context unvetted",
+      "external_communication": [],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "skill-creator",
+      "version": "",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [],
+      "net_allow": [],
+      "shell": null,
+      "tools": [],
+      "risk_tier": ""
+    },
+    "observed": {
+      "files_read": [
+        "/work/SKILL.md",
+        "/work/scripts/quick_validate.py"
+      ],
+      "ambient_reads_suppressed": [],
+      "files_written": [],
+      "files_deleted": [],
+      "permissions_changed": [],
+      "domains": [],
+      "dns_queries": [],
+      "processes": [
+        "/usr/bin/python3 scripts/quick_validate.py ."
+      ],
+      "exit_code": 0,
+      "duration_s": 0.791
+    },
+    "findings": []
+  },
+  "raw": {
+    "stdout": "Skill is valid!\n",
+    "stderr": "",
+    "exit_code": 0,
+    "meta": {
+      "phase": "complete",
+      "pid_in_ns": 1,
+      "coverage": {
+        "proc": "fresh-procfs",
+        "dev": "minimal",
+        "network_isolated": true,
+        "etc": "synthetic",
+        "mount_isolation": true,
+        "runtime_mounts": "recursively read-only and nosuid; verified",
+        "storage_limits": {
+          "verified": true,
+          "backend": "tmpfs",
+          "bytes": 134217728,
+          "inodes": 4096,
+          "scope": "run directories and scanner temporary files"
+        },
+        "resource_limits": {
+          "scope": "per-process",
+          "address_space_bytes": 536870912,
+          "file_size_bytes": 8388608,
+          "open_files": 128,
+          "cpu_seconds": 10,
+          "core_bytes": 0,
+          "aggregate_limits": true
+        },
+        "aggregate_resources": {
+          "memory_bytes": 805306368,
+          "swap_bytes": 0,
+          "tasks": 64,
+          "cpu_max": "100000 100000",
+          "scope": "scanner and descendants",
+          "backend": "cgroup-v2",
+          "verified": true
+        },
+        "supervisor_access": "nondumpable helpers; observer liveness checked",
+        "process_tree": true
+      },
+      "mounts": [
+        {
+          "what": "make-rprivate /",
+          "target": "/",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /usr",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/usr",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /bin",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/bin",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /lib",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/lib",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /lib64",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/lib64",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /sbin",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/sbin",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind decoy/home/ -> /home",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/home",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind work/ -> /work",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/work",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind scratch/ -> /tmp",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/tmp",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind out/ -> /output",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/output",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "minimal /dev",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/dev",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "/proc mode: fresh-procfs",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/proc",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind etcroot/ -> /etc",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/etc",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "tmpfs /sys",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/rootfs/sys",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "started_at": 1793901257.5500257,
+      "sinkhole_pid": 2,
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.791,
+      "processes": [
+        {
+          "pid": 6,
+          "ppid": 1,
+          "cmdline": "/usr/bin/python3 scripts/quick_validate.py .",
+          "first_seen": 1793901258.2551
+        }
+      ]
+    },
+    "errors": [
+      "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+    ],
+    "network": [
+      {
+        "type": "sinkhole_start",
+        "loopback_up": true,
+        "pid": 2,
+        "ports": [
+          21,
+          22,
+          23,
+          25,
+          53,
+          80,
+          110,
+          143,
+          443,
+          445,
+          465,
+          587,
+          993,
+          995,
+          1433,
+          3128,
+          3306,
+          5432,
+          5672,
+          6379,
+          8000,
+          8080,
+          8443,
+          8888,
+          9000,
+          9200,
+          11211,
+          27017
+        ],
+        "ts": 1793901257.859595
+      }
+    ],
+    "filesystem": [
+      {
+        "sandbox_path": "/work/SKILL.md",
+        "change": "read",
+        "host_path": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/work/SKILL.md",
+        "size": 2301,
+        "content": "",
+        "truncated": false,
+        "secret_id": "",
+        "mode_before": 0,
+        "mode_after": 0
+      },
+      {
+        "sandbox_path": "/work/scripts/quick_validate.py",
+        "change": "read",
+        "host_path": "/tmp/airlock-storage-a4hzwip7/airlock-run-rtn4u4t9/work/scripts/quick_validate.py",
+        "size": 5419,
+        "content": "",
+        "truncated": false,
+        "secret_id": "",
+        "mode_before": 0,
+        "mode_after": 0
+      }
+    ]
+  }
+}

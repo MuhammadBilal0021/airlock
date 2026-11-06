@@ -34,7 +34,7 @@ WSL2, not PowerShell.
 ```bash
 git clone https://github.com/MuhammadBilal0021/airlock.git
 cd airlock
-python3 -m unittest discover -s tests -v     # 19 tests, no install step needed
+python3 scripts/run_tests.py               # 92 tests; a skip is a failure, not a pass
 python3 -m airlock demo --timeout 25         # run every fixture, print the table
 ```
 
@@ -44,7 +44,7 @@ Check your kernel allows the sandbox before debugging anything else:
 unshare --user --map-root-user --mount --net --pid --fork true && echo "namespaces OK"
 ```
 
-If that fails, the seven `TestSandboxBehaviour` tests skip and the pure-logic
+If that fails, the nine `TestSandboxBehaviour` tests skip and the pure-logic
 tests still run — but you will not be able to develop detection rules. Inside
 nested containers a fresh `procfs` mount is often refused; airlock falls back to
 an inert `/proc` and reports `ALK-091` rather than pretending it saw the process
@@ -63,7 +63,9 @@ tree. That is expected, and it resolves on a normal host or WSL2.
 | `airlock/engine.py` | turns evidence into findings and a risk score — **most rules are added here** |
 | `airlock/render.py` | terminal and Markdown output |
 | `airlock/sarif.py` | SARIF 2.1.0 for GitHub code scanning |
-| `airlock/cli.py` | `scan`, `policy`, `demo` |
+| `airlock/mcp.py` | MCP stdio server: one `scan_skill` tool over the same scan path as the CLI |
+| `airlock/bounded.py` | aggregate cgroup/tmpfs launcher; required for executable MCP calls |
+| `airlock/cli.py` | `scan`, `policy`, `demo`, `serve` |
 
 The data flow is one direction: `sandbox.py` produces a `RunResult`, `declared.py`
 produces a `CapabilityDeclaration`, and `engine.analyse()` joins them into a

@@ -29,6 +29,34 @@ was corrected, with unchanged scanner rules, for the reported helper rerun.
 known text errors. These developer-labeled cases now serve as regressions;
 they cannot support a fresh holdout or general accuracy claim.
 
+### Provenance caveats
+
+The digests recorded in these artifacts identify runs, not rebuildable
+checkouts. `heldout-002/plan.json` pins
+`rules_sha256 = 4a9e0dd34efcd0c5c756228931c3a70fa96e43e186717e8202ac56036edd43b7`,
+computed over an uncommitted local working tree at freeze time; no commit in
+this repository reproduces that value, and the
+frozen scanner state cannot be reconstructed from history. The
+release-candidate preflights carry `implementation_sha256` values
+(`9986c7be…`, `b7efe479…`) taken the same way, over Windows exports made before
+line endings were pinned.
+
+Commit `0f56967` pins LF in `.gitattributes`, and the hashing helpers now
+normalise CRLF, so freezes taken from now on are reproducible from a revision.
+The older values are not. `scripts/run_holdout.py` asserts equality with the
+frozen digest and therefore refuses to re-run those plans; that refusal is the
+intended behaviour, not a defect to work around. Re-freezing under the current
+scanner produces a new evaluation, not a reproduction of the original one.
+
+## Release-candidate preflights
+
+[Preflight 1](release-candidate-001/preflight.json) recorded three failures in 92
+tests; after the fix, [preflight 2](release-candidate-002/preflight.json) recorded
+92 tests passing with zero failures and zero skips, and
+[its summary](release-candidate-002/summary.json) covers the repeated helper
+runs. Both ran in Linux/WSL on 6 November 2026; neither is a CI run and neither
+hash matches a commit, as described above.
+
 ## Reproduce a new run
 
 Use a disposable Linux/WSL environment with user namespaces, systemd user scopes,

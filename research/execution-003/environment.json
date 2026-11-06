@@ -1,0 +1,9 @@
+{
+  "scanner_python": "3.14.4 (main, Apr  8 2026, 04:02:31) [GCC 15.2.0]",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "machine": "x86_64",
+  "specimen_python": "Python 3.14.4",
+  "util_linux": "unshare from util-linux 2.41.3",
+  "systemd": "systemd 259 (259.5-0ubuntu3)"
+}

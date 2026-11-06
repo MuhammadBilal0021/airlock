@@ -6,8 +6,9 @@ strings that exist nowhere else. No fixture touches the real filesystem and none
 of them can reach the network — the sandbox has no route out.
 
 They exist so the detection rules have something to fire on and something *not*
-to fire on. A scanner that flags all six is worthless; the false-positive rate
-on `01` and `06` is as much a test as the true-positive rate on `02`–`05`.
+to fire on. A scanner that flags all eight is worthless; the false-positive rate
+on `01` and `06` is as much a test as the true-positive rate on `02`, `03`,
+`05`, `07` and `08`.
 
 | fixture | models | expected |
 |---|---|---|

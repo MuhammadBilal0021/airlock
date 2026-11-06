@@ -1,0 +1,349 @@
+{
+  "status": "completed",
+  "provenance": {
+    "id": "model-usage",
+    "path": "model-usage",
+    "source": "https://github.com/openclaw/openclaw",
+    "revision": "57c2077776745fe0f65881b24611afbb21a6a7de",
+    "files": {
+      "SKILL.md": "f4e40f006365acc5f519a55f4efacb6c722788026792e498fcf46dc1a0f0c1d1",
+      "references/codexbar-cli.md": "58e57a7bf1359ed32b1fe80c7285e75f88127e82db6b0dbab2ec4dda6ffaca42",
+      "scripts/model_usage.py": "cd13c65d9d10faaff20bdf40d5f45f6d26a29dacc3e13d8a1e481a3a8a0f4874",
+      "scripts/test_model_usage.py": "1bc6fceb436d836532e6901edb6eb473a68a16eda25f45f94322d99beea4a3b2"
+    },
+    "status": "staged_not_executed"
+  },
+  "entry": [
+    "/usr/bin/python3",
+    "scripts/model_usage.py",
+    "--input",
+    "airlock-synthetic-input.json",
+    "--mode",
+    "all",
+    "--format",
+    "json"
+  ],
+  "scenario": {
+    "daily": [
+      {
+        "date": "2026-01-01",
+        "modelBreakdowns": [
+          {
+            "modelName": "synthetic-a",
+            "cost": 1.25
+          },
+          {
+            "modelName": "synthetic-b",
+            "cost": 2
+          }
+        ]
+      },
+      {
+        "date": "2026-01-02",
+        "modelBreakdowns": [
+          {
+            "modelName": "synthetic-a",
+            "cost": "0.75"
+          }
+        ]
+      }
+    ]
+  },
+  "exercised": "Aggregate synthetic local costs for two models across two days",
+  "expected_output_confirmed": true,
+  "implementation_sha256": "f14dde8839f132b70054ddf136792491955f5b0a9a686333519ee0888e277baa",
+  "limitations": [
+    "One controlled invocation, not exhaustive behaviour or a safety certification",
+    "No live accounts, external API or CodexBar installation exercised"
+  ],
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "model-usage",
+    "verdict": "CLEAN",
+    "risk_score": 0,
+    "coverage": {
+      "resource_limits": {
+        "scope": "per-process",
+        "address_space_bytes": 536870912,
+        "file_size_bytes": 8388608,
+        "open_files": 128,
+        "cpu_seconds": 10,
+        "core_bytes": 0,
+        "aggregate_limits": true
+      },
+      "aggregate_resources": {
+        "memory_bytes": 805306368,
+        "swap_bytes": 0,
+        "tasks": 64,
+        "cpu_max": "100000 100000",
+        "scope": "scanner and descendants",
+        "backend": "cgroup-v2",
+        "verified": true
+      },
+      "storage_limits": {
+        "verified": true,
+        "backend": "tmpfs",
+        "bytes": 134217728,
+        "inodes": 4096,
+        "scope": "run directories and scanner temporary files"
+      },
+      "runtime_mounts": "recursively read-only and nosuid; verified",
+      "supervisor_access": "nondumpable helpers; observer liveness checked",
+      "proc": "fresh-procfs",
+      "process_tree": true,
+      "network_isolated": true,
+      "mount_isolation": true,
+      "namespace_flags": "--user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL",
+      "timed_out": false,
+      "duration_s": 0.814
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [],
+      "untrusted_content_basis": "inferred: the skill fetched from an undeclared host, so whatever came back entered its context unvetted",
+      "external_communication": [],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "model-usage",
+      "version": "",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [],
+      "net_allow": [],
+      "shell": null,
+      "tools": [],
+      "risk_tier": ""
+    },
+    "observed": {
+      "files_read": [
+        "/work/scripts/model_usage.py"
+      ],
+      "ambient_reads_suppressed": [
+        "/work/airlock-synthetic-input.json"
+      ],
+      "files_written": [],
+      "files_deleted": [],
+      "permissions_changed": [],
+      "domains": [],
+      "dns_queries": [],
+      "processes": [
+        "/usr/bin/python3 scripts/model_usage.py --input airlock-synthetic-input.json --mode all --format json"
+      ],
+      "exit_code": 0,
+      "duration_s": 0.814
+    },
+    "findings": []
+  },
+  "raw": {
+    "stdout": "{\"provider\": \"codex\", \"mode\": \"all\", \"models\": [{\"model\": \"synthetic-a\", \"totalCostUSD\": 2.0}, {\"model\": \"synthetic-b\", \"totalCostUSD\": 2.0}]}\n",
+    "stderr": "",
+    "exit_code": 0,
+    "meta": {
+      "phase": "complete",
+      "pid_in_ns": 1,
+      "coverage": {
+        "proc": "fresh-procfs",
+        "dev": "minimal",
+        "network_isolated": true,
+        "etc": "synthetic",
+        "mount_isolation": true,
+        "runtime_mounts": "recursively read-only and nosuid; verified",
+        "storage_limits": {
+          "verified": true,
+          "backend": "tmpfs",
+          "bytes": 134217728,
+          "inodes": 4096,
+          "scope": "run directories and scanner temporary files"
+        },
+        "resource_limits": {
+          "scope": "per-process",
+          "address_space_bytes": 536870912,
+          "file_size_bytes": 8388608,
+          "open_files": 128,
+          "cpu_seconds": 10,
+          "core_bytes": 0,
+          "aggregate_limits": true
+        },
+        "aggregate_resources": {
+          "memory_bytes": 805306368,
+          "swap_bytes": 0,
+          "tasks": 64,
+          "cpu_max": "100000 100000",
+          "scope": "scanner and descendants",
+          "backend": "cgroup-v2",
+          "verified": true
+        },
+        "supervisor_access": "nondumpable helpers; observer liveness checked",
+        "process_tree": true
+      },
+      "mounts": [
+        {
+          "what": "make-rprivate /",
+          "target": "/",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /usr",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/usr",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /bin",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/bin",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /lib",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/lib",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /lib64",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/lib64",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "recursively read-only bind /sbin",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/sbin",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind decoy/home/ -> /home",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/home",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind work/ -> /work",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/work",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind scratch/ -> /tmp",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/tmp",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind out/ -> /output",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/output",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "minimal /dev",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/dev",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "/proc mode: fresh-procfs",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/proc",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "bind etcroot/ -> /etc",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/etc",
+          "ok": true,
+          "error": ""
+        },
+        {
+          "what": "tmpfs /sys",
+          "target": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/rootfs/sys",
+          "ok": true,
+          "error": ""
+        }
+      ],
+      "started_at": 1793901256.05508,
+      "sinkhole_pid": 2,
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.814,
+      "processes": [
+        {
+          "pid": 6,
+          "ppid": 1,
+          "cmdline": "/usr/bin/python3 scripts/model_usage.py --input airlock-synthetic-input.json --mode all --format json",
+          "first_seen": 1793901256.7432
+        }
+      ]
+    },
+    "errors": [
+      "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+    ],
+    "network": [
+      {
+        "type": "sinkhole_start",
+        "loopback_up": true,
+        "pid": 2,
+        "ports": [
+          21,
+          22,
+          23,
+          25,
+          53,
+          80,
+          110,
+          143,
+          443,
+          445,
+          465,
+          587,
+          993,
+          995,
+          1433,
+          3128,
+          3306,
+          5432,
+          5672,
+          6379,
+          8000,
+          8080,
+          8443,
+          8888,
+          9000,
+          9200,
+          11211,
+          27017
+        ],
+        "ts": 1793901256.313177
+      }
+    ],
+    "filesystem": [
+      {
+        "sandbox_path": "/work/airlock-synthetic-input.json",
+        "change": "read",
+        "host_path": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/work/airlock-synthetic-input.json",
+        "size": 232,
+        "content": "",
+        "truncated": false,
+        "secret_id": "",
+        "mode_before": 0,
+        "mode_after": 0
+      },
+      {
+        "sandbox_path": "/work/scripts/model_usage.py",
+        "change": "read",
+        "host_path": "/tmp/airlock-storage-a4hzwip7/airlock-run-6_rry02l/work/scripts/model_usage.py",
+        "size": 11490,
+        "content": "",
+        "truncated": false,
+        "secret_id": "",
+        "mode_before": 0,
+        "mode_after": 0
+      }
+    ]
+  }
+}

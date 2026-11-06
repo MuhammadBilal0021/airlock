@@ -19,11 +19,19 @@ sys.path.insert(0, str(ROOT))
 
 
 def implementation_hash():
+    """Hash the sources, ignoring line-ending form.
+
+    ``read_bytes()`` is EOL-sensitive, so the same commit checked out with CRLF
+    (a Windows worktree, or an export made before ``.gitattributes`` existed)
+    hashed differently and looked like a stale preflight. Normalising means the
+    digest names the code rather than the checkout.
+    """
     paths = sorted(list((ROOT / 'airlock').glob('*.py')) +
                    list((ROOT / 'tests').glob('test_*.py')) + [Path(__file__), ROOT / 'scripts/package_cases.py'])
     digest = hashlib.sha256()
     for path in paths:
-        digest.update(path.relative_to(ROOT).as_posix().encode() + b'\0' + path.read_bytes())
+        digest.update(path.relative_to(ROOT).as_posix().encode() + b'\0' +
+                      path.read_bytes().replace(b'\r\n', b'\n'))
     return digest.hexdigest()
 
 

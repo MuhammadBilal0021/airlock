@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "tests": 92,
+  "skipped": [],
+  "failures": 3,
+  "errors": 0,
+  "implementation_sha256": "9986c7bed5eef6165bad034c21dc118ddb167e5f37e3fc5107410cd53c3d8b28",
+  "time_utc": "2026-11-06T19:04:47.883664+00:00"
+}

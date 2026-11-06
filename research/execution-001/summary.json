@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "id": "model-usage",
+      "status": "completed",
+      "verdict": "CLEAN",
+      "expected_output_confirmed": true
+    },
+    {
+      "id": "skill-creator",
+      "status": "completed",
+      "verdict": "CLEAN",
+      "expected_output_confirmed": true
+    }
+  ],
+  "staged_not_run": [
+    "tmux"
+  ],
+  "scope": "two controlled real skill invocations"
+}

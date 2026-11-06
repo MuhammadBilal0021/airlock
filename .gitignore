@@ -31,3 +31,5 @@ _probe_wf.txt
 /research/first-reports/
 /research/**/*-run[0-9].json
 /research/**/mcp-execution.json
+/research/**/*.log
+/scripts/diagnose_wsl.sh

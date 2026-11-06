@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "rules_sha256": "4a9e0dd34efcd0c5c756228931c3a70fa96e43e186717e8202ac56036edd43b7",
+  "plan_unchanged": true,
+  "text_results_unchanged": true,
+  "packages": [
+    {
+      "id": "security-ownership-map",
+      "source_hashes_verified": true,
+      "two_expected_outputs_confirmed": true,
+      "controls_verified": true,
+      "repeated_inputs_and_findings_match": true
+    },
+    {
+      "id": "gh-fix-ci",
+      "source_hashes_verified": true,
+      "two_expected_outputs_confirmed": true,
+      "controls_verified": true,
+      "repeated_inputs_and_findings_match": true
+    },
+    {
+      "id": "skill-installer",
+      "source_hashes_verified": true,
+      "two_expected_outputs_confirmed": true,
+      "controls_verified": true,
+      "repeated_inputs_and_findings_match": true
+    }
+  ],
+  "note": "Evidence consistency audit; does not mean the text detector met its labels."
+}

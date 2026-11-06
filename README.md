@@ -111,6 +111,10 @@ python3 -m airlock demo
   07-remote-fetch                HIGH       60     2 findings · first=ALK-008
 ```
 
+That block is a captured run from before `08-credential-permissions` was added;
+`airlock demo` prints one row per directory under `fixtures/`, so re-run it for
+the current eight.
+
 `01` and `06` are the ones that matter as much as the rest. A scanner that flags
 every fixture is decoration, and a scanner that cries wolf gets uninstalled in week
 two. `06` declares SSH keys, cloud credentials, a Kubernetes config and shell
