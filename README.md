@@ -73,6 +73,38 @@ coverage.
 
 ---
 
+## Measured, not claimed
+
+Five pre-registered rounds against **245 real public skills** and **100 adversarial
+packages**. Each round is frozen before it runs, and every failure is published
+rather than summarised away.
+
+| Metric | Result |
+|---|---|
+| False positives on 245 real skills (declaration-only) | **0** — down from 2.45% (6 skills), with **no recall lost** |
+| Detection of instruction-level attacks | **55%** (text heuristics) |
+| Detection of code-level attacks — **text analysis** | **0 / 60** |
+| Detection of code-level attacks — **behavioural sandbox** | **92%** (55/60) |
+| Behavioural coverage of skills that ship code | **21 / 21 = 100%** |
+| Clean start of those executable skills | **8 / 21 = 38%**, every remaining failure attributed |
+| Real skills that are pure text (nothing to execute) | **224 / 245 = 91%** |
+
+The pair `0%` and `92%` is the point: on the same 60 code-level attacks, reading
+the text finds none and watching the sandbox run finds 55.
+
+**Stated honestly:** the 100 adversarial packages were authored for the project,
+so their recall is an optimistic ceiling, not a prediction about real malware.
+Real-world malicious-skill recall is **not measured**. See
+[ROADMAP](docs/ROADMAP.md) for what that would take.
+
+[corpus-001](research/corpus-001/REPORT.md) — baseline ·
+[corpus-002](research/corpus-002/REPORT.md) — precision fix round ·
+[corpus-003](research/corpus-003/REPORT.md) — coverage ·
+[corpus-004](research/corpus-004/DIAGNOSIS.md) — runtime baseline.
+Consolidated: [docs/MEASUREMENTS.md](docs/MEASUREMENTS.md).
+
+---
+
 ## Quick start
 
 Requires Linux with `unshare` (util-linux). On Windows, run inside WSL2.
