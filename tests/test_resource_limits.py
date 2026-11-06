@@ -98,6 +98,10 @@ for pid in helpers:
     def test_observer_termination_invalidates_run(self):
         with tempfile.TemporaryDirectory() as tmp:
             skill = Path(tmp)
+            # Wait for the observer to actually die before exiting. A fixed
+            # 100 ms sleep lost the race on a slow runner: the specimen exited
+            # while the observer was still shutting down, so the runner polled a
+            # live observer and reported a clean run.
             (skill / 'run.py').write_text('''import os, signal, time
 from pathlib import Path
 for path in Path('/proc').iterdir():
@@ -105,8 +109,17 @@ for path in Path('/proc').iterdir():
         try: argv = (path / 'cmdline').read_bytes()
         except OSError: continue
         if b'airlock.sinkhole' in argv:
-            os.kill(int(path.name), signal.SIGTERM)
-            time.sleep(0.1)
+            pid = int(path.name)
+            os.kill(pid, signal.SIGTERM)
+            deadline = time.monotonic() + 2
+            while time.monotonic() < deadline:
+                try:
+                    stat = Path('/proc/%d/stat' % pid).read_text()
+                except OSError:
+                    break
+                if stat.rsplit(')', 1)[1].split()[0] == 'Z':
+                    break
+                time.sleep(0.02)
 ''')
             result = run_skill(skill, entry=['/usr/bin/python3', 'run.py'], timeout=3)
             self.addCleanup(shutil.rmtree, result.run_dir, ignore_errors=True)
