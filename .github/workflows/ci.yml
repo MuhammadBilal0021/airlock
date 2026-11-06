@@ -54,6 +54,11 @@ jobs:
           echo "::notice title=scoped-limits::rc=$? out=$(tr '\n' ' ' < /tmp/limits.out) err=$(tr '\n' ' ' < /tmp/limits.err)"
 
       - name: Run tests
+        env:
+          # Hosted runners delegate memory and pids to the user manager but not
+          # cpu, so the bounded launcher refuses by design. That gap is reported
+          # as a coverage notice; any other skip still fails the job.
+          AIRLOCK_ALLOW_ENV_SKIPS: 'cgroup capability missing:'
         run: python scripts/run_tests.py
 
       - name: Scan the benign fixture with airlock itself

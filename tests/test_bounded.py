@@ -43,6 +43,26 @@ class TestBoundedRuntime(unittest.TestCase):
             raise unittest.SkipTest('systemd user manager unavailable')
         if check.stdout.strip() not in (b'running', b'degraded'):
             raise unittest.SkipTest('systemd user manager unavailable')
+        # A user manager can exist without carrying delegated controllers, which
+        # is what a GitHub-hosted runner looks like: memory and pids are
+        # delegated, cpu is not, so the launcher refuses and every test below
+        # would fail with nothing but "2". Check the precondition the tests
+        # actually need and name the missing capability instead.
+        probe = subprocess.run(
+            ['systemd-run', '--user', '--scope', '--quiet',
+             '--unit=airlock-probe-%d' % os.getpid(),
+             '-p', 'MemoryMax=%d' % DEFAULTS['memory_bytes'],
+             '-p', 'MemorySwapMax=0',
+             '-p', 'TasksMax=%d' % DEFAULTS['tasks'],
+             '-p', 'CPUQuota=100%',
+             sys.executable, '-c',
+             'import sys; sys.path.insert(0, %r); '
+             'from airlock.bounded import inspect_limits; inspect_limits()'
+             % str(Path(__file__).resolve().parents[1])],
+            capture_output=True, text=True, timeout=60)
+        if probe.returncode != 0:
+            detail = (probe.stderr.strip().splitlines() or ['no detail'])[-1]
+            raise unittest.SkipTest('cgroup capability missing: ' + detail)
 
     def test_kernel_task_limit_refuses_bounded_child_loop(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -110,8 +110,14 @@ for path in Path('/proc').iterdir():
 ''')
             result = run_skill(skill, entry=['/usr/bin/python3', 'run.py'], timeout=3)
             self.addCleanup(shutil.rmtree, result.run_dir, ignore_errors=True)
-            self.assertFalse(result.ok)
-            self.assertTrue(any('observer exited' in error for error in result.errors))
+            # Carry the evidence: a bare "True is not false" cannot separate a
+            # specimen that failed to signal the observer from a runner that
+            # stopped noticing the observer died.
+            self.assertFalse(result.ok, f'exit={result.exit_code} '
+                                        f'errors={result.errors} '
+                                        f'coverage={result.meta.get("coverage")}')
+            self.assertTrue(any('observer exited' in error for error in result.errors),
+                            f'errors={result.errors}')
 
     def test_killing_outer_launcher_stops_detached_descendant(self):
         from airlock.sandbox import build_sandbox
