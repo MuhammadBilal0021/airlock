@@ -1,0 +1,8 @@
+# Keep executable fixtures and reproducibility hashes stable across Windows/Linux.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.pdf binary
