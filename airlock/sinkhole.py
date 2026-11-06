@@ -27,6 +27,7 @@ import base64
 import fcntl
 import json
 import os
+from pathlib import Path
 import socket
 import struct
 import threading
@@ -36,6 +37,7 @@ TCP_PORTS = (21, 22, 23, 25, 53, 80, 110, 143, 443, 445, 465, 587, 993, 995,
              1433, 3128, 3306, 5432, 5672, 6379, 8000, 8080, 8443, 8888,
              9000, 9200, 11211, 27017)
 MAX_CAPTURE = 65_536
+MAX_CAPTURE_FILE = 4 * 1024 * 1024
 _WRITE_LOCK = threading.Lock()
 
 
@@ -44,6 +46,9 @@ def emit(path: str, event: dict) -> None:
     line = json.dumps(event, ensure_ascii=False, separators=(",", ":"))
     with _WRITE_LOCK:
         try:
+            if (os.path.getsize(path) if os.path.exists(path) else 0) + len(line.encode('utf-8')) + 1 > MAX_CAPTURE_FILE:
+                Path(path).with_suffix('.truncated').touch()
+                return
             with open(path, "a", encoding="utf-8") as fh:
                 fh.write(line + "\n")
         except OSError:
@@ -98,15 +103,18 @@ def _build_answer(query: bytes, ip: str = "127.0.0.1") -> bytes:
     return header + question + answer
 
 
-def run_dns(out_path: str, stop: threading.Event) -> None:
+def run_dns(out_path: str, stop: threading.Event, ready=None) -> None:
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     try:
         sock.bind(("127.0.0.1", 53))
     except OSError as exc:
         emit(out_path, {"type": "sinkhole_error", "component": "dns", "error": str(exc)})
+        sock.close()
         return
     sock.settimeout(0.5)
+    if ready is not None:
+        ready.set()
     while not stop.is_set():
         try:
             data, addr = sock.recvfrom(2048)
@@ -269,7 +277,7 @@ def _handle_conn(conn: socket.socket, port: int, out_path: str) -> None:
         pass
 
 
-def run_tcp(out_path: str, stop: threading.Event) -> None:
+def run_tcp(out_path: str, stop: threading.Event, ready=None) -> None:
     import selectors
     sel = selectors.DefaultSelector()
     servers = []
@@ -284,6 +292,14 @@ def run_tcp(out_path: str, stop: threading.Event) -> None:
             servers.append(s)
         except OSError as exc:
             emit(out_path, {"type": "sinkhole_error", "component": f"tcp:{port}", "error": str(exc)})
+            s.close()
+    if len(servers) != len(TCP_PORTS):
+        for s in servers:
+            s.close()
+        sel.close()
+        return
+    if ready is not None:
+        ready.set()
     while not stop.is_set():
         try:
             events = sel.select(timeout=0.25)
@@ -308,17 +324,32 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="airlock network sinkhole (internal)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--duration", type=float, default=120.0)
+    ap.add_argument("--ready-fd", type=int)
     args = ap.parse_args()
 
+    from ._nsinit import protect_supervisor
+    protect_supervisor()
+
     up = bring_up_loopback()
+    if not up:
+        return 2
     emit(args.out, {"type": "sinkhole_start", "loopback_up": up, "pid": os.getpid(),
                     "ports": list(TCP_PORTS)})
     stop = threading.Event()
-    threads = [threading.Thread(target=run_dns, args=(args.out, stop), daemon=True),
-               threading.Thread(target=run_tcp, args=(args.out, stop), daemon=True)]
+    dns_ready, tcp_ready = threading.Event(), threading.Event()
+    threads = [threading.Thread(target=run_dns, args=(args.out, stop, dns_ready), daemon=True),
+               threading.Thread(target=run_tcp, args=(args.out, stop, tcp_ready), daemon=True)]
     for t in threads:
         t.start()
     try:
+        deadline = time.monotonic() + 5
+        while not (dns_ready.is_set() and tcp_ready.is_set()):
+            if time.monotonic() >= deadline or not all(t.is_alive() for t in threads):
+                return 2
+            time.sleep(0.01)
+        if args.ready_fd is not None:
+            os.write(args.ready_fd, b'R')
+            os.close(args.ready_fd)
         time.sleep(args.duration)
     except KeyboardInterrupt:
         pass

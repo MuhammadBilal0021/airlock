@@ -25,7 +25,9 @@ from __future__ import annotations
 import argparse
 import ctypes
 import json
+import math
 import os
+import resource
 import signal
 import subprocess
 import sys
@@ -42,18 +44,90 @@ MS_BIND, MS_REMOUNT, MS_REC, MS_PRIVATE = 4096, 32, 16384, 1 << 18
 HOST_RO_BINDS = ("usr", "bin", "lib", "lib32", "lib64", "libx32", "sbin")
 
 
+def specimen_limits(timeout):
+    return {"address_space_bytes": 512 * 1024 * 1024,
+            "file_size_bytes": 8 * 1024 * 1024, "open_files": 128,
+            "cpu_seconds": max(1, math.ceil(timeout)), "core_bytes": 0}
+
+
+def apply_specimen_limits(limits):
+    for key, kind in (("address_space_bytes", resource.RLIMIT_AS),
+                      ("file_size_bytes", resource.RLIMIT_FSIZE),
+                      ("open_files", resource.RLIMIT_NOFILE),
+                      ("cpu_seconds", resource.RLIMIT_CPU),
+                      ("core_bytes", resource.RLIMIT_CORE)):
+        resource.setrlimit(kind, (limits[key], limits[key]))
+
+
+def restrict_specimen():
+    """Prevent namespace-root privileges from surviving or returning at exec."""
+    # NOROOT and NOROOT_LOCKED disable UID 0's special capability treatment.
+    for option, value in ((28, 3), (38, 1)):
+        if libc.prctl(option, value, 0, 0, 0) != 0:
+            raise OSError(ctypes.get_errno(), 'cannot restrict specimen privileges')
+    class Header(ctypes.Structure):
+        _fields_ = [('version', ctypes.c_uint32), ('pid', ctypes.c_int)]
+    class Caps(ctypes.Structure):
+        _fields_ = [('effective', ctypes.c_uint32), ('permitted', ctypes.c_uint32),
+                    ('inheritable', ctypes.c_uint32)]
+    header = Header(0x20080522, 0)
+    empty = (Caps * 2)()
+    if libc.capset(ctypes.byref(header), ctypes.byref(empty)) != 0:
+        raise OSError(ctypes.get_errno(), 'cannot clear specimen capabilities')
+
+
+def protect_supervisor():
+    # Same-UID /proc fd/memory access must not expose the outside-chroot helpers.
+    if libc.prctl(4, 0, 0, 0, 0) != 0:  # PR_SET_DUMPABLE=0
+        raise OSError(ctypes.get_errno(), 'cannot protect supervisor process')
+
+
 def _mount(src, target, fstype, flags, data=None):
-    os.makedirs(target, exist_ok=True)
+    # Individual device binds use a pre-created regular-file mountpoint.
+    if not os.path.exists(target):
+        os.makedirs(target, exist_ok=True)
     r = libc.mount(src.encode() if src else _NULL, target.encode(),
                    fstype.encode() if fstype else _NULL, flags,
                    data.encode() if data else _NULL)
     return (True, "") if r == 0 else (False, f"errno={ctypes.get_errno()} {os.strerror(ctypes.get_errno())}")
 
 
+def _required_mount(src, target, fstype, flags, data=None):
+    ok, error = _mount(src, target, fstype, flags, data)
+    if not ok:
+        raise RuntimeError(f"required mount failed at {target}: {error}")
+    return ok, error
+
+
 class MountLog:
     def __init__(self): self.entries = []
     def add(self, what, target, ok, err=""):
         self.entries.append({"what": what, "target": target, "ok": ok, "error": err})
+
+
+def bind_runtime(source, target):
+    # WSL locks some inherited submounts, so a nonrecursive bind can fail.
+    # Apply read-only/nosuid recursively to the cloned mount tree instead.
+    _required_mount(source, str(target), None, MS_BIND | MS_REC)
+    _required_mount(None, str(target), None, MS_BIND | MS_REMOUNT | MS_RDONLY | MS_NOSUID)
+    class MountAttr(ctypes.Structure):
+        _fields_ = [(name, ctypes.c_uint64) for name in
+                    ('attr_set', 'attr_clr', 'propagation', 'userns_fd')]
+    attr = MountAttr(3, 0, 0, 0)  # MOUNT_ATTR_RDONLY | MOUNT_ATTR_NOSUID
+    import platform
+    if platform.machine() not in ('x86_64', 'aarch64', 'riscv64'):
+        raise RuntimeError('recursive mount attributes unsupported on this architecture')
+    if libc.syscall(ctypes.c_long(442), ctypes.c_int(-100),
+                    ctypes.c_char_p(os.fsencode(target)), ctypes.c_uint(0x8000),
+                    ctypes.byref(attr), ctypes.c_size_t(ctypes.sizeof(attr))) != 0:
+        raise OSError(ctypes.get_errno(), 'recursive read-only mount failed')
+    if not os.statvfs(target).f_flag & os.ST_RDONLY:
+        raise RuntimeError('runtime bind is not read-only')
+    for line in Path('/proc/self/mountinfo').read_text().splitlines():
+        mounted = line.split()[4]
+        if mounted == str(target) or mounted.startswith(str(target).rstrip('/') + '/'):
+            if not {'ro', 'nosuid'} <= set(line.split()[5].split(',')):
+                raise RuntimeError('runtime submount is not read-only/nosuid')
 
 
 def _fake_proc(proc: Path) -> None:
@@ -73,9 +147,9 @@ def _fake_proc(proc: Path) -> None:
 
 def setup_mounts(cfg: dict, mlog: MountLog) -> dict:
     rootfs, run = Path(cfg["rootfs"]), Path(cfg["run_dir"])
-    coverage = {"proc": "none", "dev": "none", "network_isolated": True, "etc": "none"}
+    coverage = {"proc": "none", "dev": "none", "network_isolated": False, "etc": "none"}
 
-    ok, err = _mount(None, "/", None, MS_REC | MS_PRIVATE)
+    ok, err = _required_mount(None, "/", None, MS_REC | MS_PRIVATE)
     mlog.add("make-rprivate /", "/", ok, err)
     coverage["mount_isolation"] = ok
 
@@ -83,22 +157,33 @@ def setup_mounts(cfg: dict, mlog: MountLog) -> dict:
         if not os.path.isdir("/" + d):
             continue
         tgt = rootfs / d
-        ok, err = _mount("/" + d, str(tgt), None, MS_BIND | MS_REC | MS_RDONLY)
-        mlog.add(f"bind /{d}", str(tgt), ok, err)
-        if ok:
-            # Bind mounts stay writable until remounted read-only.
-            _mount(None, str(tgt), None, MS_BIND | MS_REMOUNT | MS_RDONLY | MS_NOSUID)
+        bind_runtime('/' + d, tgt)
+        mlog.add(f"recursively read-only bind /{d}", str(tgt), True)
+    coverage['runtime_mounts'] = 'recursively read-only and nosuid; verified'
 
     for host_rel, sandbox_rel in (("decoy/home", "home"), ("work", "work"),
                                   ("scratch", "tmp"), ("out", "output")):
         src, tgt = run / host_rel, rootfs / sandbox_rel
         src.mkdir(parents=True, exist_ok=True)
-        ok, err = _mount(str(src), str(tgt), None, MS_BIND | MS_REC)
+        ok, err = _required_mount(str(src), str(tgt), None, MS_BIND | MS_REC)
         mlog.add(f"bind {host_rel}/ -> /{sandbox_rel}", str(tgt), ok, err)
 
-    ok, err = _mount("/dev", str(rootfs / "dev"), None, MS_BIND | MS_REC | MS_NOSUID)
-    mlog.add("bind /dev", str(rootfs / "dev"), ok, err)
-    coverage["dev"] = "host-bind" if ok else "none"
+    dev = rootfs / "dev"
+    _required_mount("tmpfs", str(dev), "tmpfs", MS_NOSUID | MS_NOEXEC,
+                    "size=1m,mode=755")
+    # Bind only basic character devices. Never expose host disks, terminals,
+    # /dev/shm, or host-specific interfaces through a recursive /dev bind.
+    for name in ("null", "zero", "random", "urandom"):
+        target = dev / name
+        target.touch()
+        _required_mount("/dev/" + name, str(target), None, MS_BIND)
+        _required_mount(None, str(target), None, MS_BIND | MS_REMOUNT | MS_NOSUID | MS_NOEXEC)
+    for name, target in (("fd", "/proc/self/fd"), ("stdin", "/proc/self/fd/0"),
+                         ("stdout", "/proc/self/fd/1"), ("stderr", "/proc/self/fd/2")):
+        (dev / name).symlink_to(target)
+    _required_mount(None, str(dev), None, MS_REMOUNT | MS_RDONLY | MS_NOSUID | MS_NOEXEC)
+    mlog.add("minimal /dev", str(dev), True)
+    coverage["dev"] = "minimal"
 
     ok, err = _mount("proc", str(rootfs / "proc"), "proc", MS_NOSUID | MS_NODEV | MS_NOEXEC)
     if ok:
@@ -106,10 +191,12 @@ def setup_mounts(cfg: dict, mlog: MountLog) -> dict:
     else:
         mlog.add("fresh procfs (blocked by kernel)", str(rootfs / "proc"), False, err)
         ok2, err2 = _mount("tmpfs", str(rootfs / "proc"), "tmpfs",
-                           MS_NOSUID | MS_NODEV | MS_NOEXEC)
+                           MS_NOSUID | MS_NODEV | MS_NOEXEC, 'size=1m,nr_inodes=128')
         if ok2:
             coverage["proc"] = "inert-tmpfs"
             _fake_proc(rootfs / "proc")
+            _required_mount(None, str(rootfs / 'proc'), None,
+                            MS_REMOUNT | MS_RDONLY | MS_NOSUID | MS_NODEV | MS_NOEXEC)
         else:
             mlog.add("tmpfs /proc", str(rootfs / "proc"), False, err2)
     mlog.add(f"/proc mode: {coverage['proc']}", str(rootfs / "proc"), True)
@@ -127,12 +214,14 @@ def setup_mounts(cfg: dict, mlog: MountLog) -> dict:
                 os.chmod(etcroot / f.name, 0o644)
             except OSError:
                 pass
-    ok, err = _mount(str(etcroot), str(rootfs / "etc"), None, MS_BIND | MS_REC)
+    ok, err = _required_mount(str(etcroot), str(rootfs / "etc"), None, MS_BIND | MS_REC)
     mlog.add("bind etcroot/ -> /etc", str(rootfs / "etc"), ok, err)
     coverage["etc"] = "synthetic" if ok else "none"
 
     # (e) inert /sys so interface enumeration and tools probing it do not crash.
-    ok, err = _mount("tmpfs", str(rootfs / "sys"), "tmpfs", MS_NOSUID | MS_NODEV | MS_NOEXEC)
+    ok, err = _required_mount("tmpfs", str(rootfs / "sys"), "tmpfs",
+                              MS_RDONLY | MS_NOSUID | MS_NODEV | MS_NOEXEC,
+                              'size=1m,nr_inodes=128')
     mlog.add("tmpfs /sys", str(rootfs / "sys"), ok, err)
     return coverage
 
@@ -140,6 +229,9 @@ def setup_mounts(cfg: dict, mlog: MountLog) -> dict:
 def sample_proc(rootfs: Path, seen: dict, stop: dict, excluded=()) -> None:
     """Poll the sandbox's own /proc to reconstruct the process tree."""
     proc = rootfs / "proc"
+    # A forked child briefly inherits init's argv before exec. Do not cache that
+    # transitional state as specimen activity or suppress its later real argv.
+    init_argv = (proc / str(os.getpid()) / "cmdline").read_bytes()
     while not stop["done"]:
         try:
             entries = list(proc.iterdir())
@@ -152,7 +244,10 @@ def sample_proc(rootfs: Path, seen: dict, stop: dict, excluded=()) -> None:
             if pid in seen or pid in excluded:
                 continue
             try:
-                cmdline = (e / "cmdline").read_bytes().replace(b"\x00", b" ").decode("utf-8", "replace").strip()
+                raw = (e / "cmdline").read_bytes()
+                if raw == init_argv:
+                    continue
+                cmdline = raw.replace(b"\x00", b" ").decode("utf-8", "replace").strip()
             except OSError:
                 continue
             if not cmdline:
@@ -168,6 +263,41 @@ def sample_proc(rootfs: Path, seen: dict, stop: dict, excluded=()) -> None:
         time.sleep(0.04)
 
 
+def verify_network_interfaces():
+    """Verify loopback-only topology separately from observer readiness."""
+    import socket
+    names = sorted(name for _, name in socket.if_nameindex())
+    if names != ['lo']:
+        raise RuntimeError('network namespace is not loopback-only: ' + repr(names))
+    return 'kernel interface inventory: lo only; mandatory new network namespace'
+
+
+def start_observer(command, env, ready_timeout=10):
+    """Wait for the private readiness pipe, never a fixed startup delay."""
+    import select
+    read_fd, write_fd = os.pipe()
+    proc = None
+    try:
+        proc = subprocess.Popen(command + ['--ready-fd', str(write_fd)],
+                                env=env, pass_fds=(write_fd,),
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        os.close(write_fd)
+        write_fd = None
+        available, _, _ = select.select([read_fd], [], [], ready_timeout)
+        if not available or os.read(read_fd, 1) != b'R' or proc.poll() is not None:
+            raise RuntimeError('network observer did not become ready; refusing specimen launch')
+        return proc
+    except BaseException:
+        if proc is not None:
+            proc.kill()
+            proc.wait()
+        raise
+    finally:
+        os.close(read_fd)
+        if write_fd is not None:
+            os.close(write_fd)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True)
@@ -178,23 +308,38 @@ def main() -> int:
     mlog = MountLog()
     started = time.time()
     coverage = setup_mounts(cfg, mlog)
+    if os.environ.get('AIRLOCK_STORAGE_ROOT'):
+        from .storage import verify_storage
+        storage_root = Path(os.environ['AIRLOCK_STORAGE_ROOT']).resolve()
+        if storage_root not in run.resolve().parents:
+            raise RuntimeError('run directory lies outside bounded storage')
+        coverage['storage_limits'] = verify_storage(storage_root)
+    else:
+        coverage['storage_limits'] = {'verified': False}
+    limits = specimen_limits(timeout)
+    coverage["resource_limits"] = {"scope": "per-process", **limits,
+                                   "aggregate_limits": False}
+    from .bounded import verify_limits, DEFAULTS
+    try:
+        coverage['aggregate_resources'] = verify_limits(DEFAULTS)
+        coverage['resource_limits']['aggregate_limits'] = True
+    except (OSError, ValueError, RuntimeError, StopIteration):
+        coverage['aggregate_resources'] = {'verified': False}
     meta = {"phase": "mounts_done", "pid_in_ns": os.getpid(), "coverage": coverage,
             "mounts": mlog.entries, "started_at": started}
 
     env = dict(os.environ)
     env["PYTHONPATH"] = cfg.get("repo_root", "") + os.pathsep + env.get("PYTHONPATH", "")
     capture = str(run / "capture.jsonl")
-    sink_proc = None
-    try:
-        sink_proc = subprocess.Popen(
-            [sys.executable, "-m", "airlock.sinkhole", "--out", capture,
-             "--duration", str(timeout + 10)],
-            env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        meta["sinkhole_pid"] = sink_proc.pid
-    except OSError as exc:
-        meta["sinkhole_error"] = str(exc)
-
-    time.sleep(0.6)  # let listeners bind before the skill starts
+    sink_proc = start_observer(
+        [sys.executable, "-m", "airlock.sinkhole", "--out", capture,
+         "--duration", str(timeout + 20)], env)
+    meta["sinkhole_pid"] = sink_proc.pid
+    coverage['network_observer_ready'] = True
+    coverage['network_isolation_basis'] = verify_network_interfaces()
+    coverage['network_isolated'] = True
+    protect_supervisor()
+    coverage['supervisor_access'] = 'nondumpable helpers; observer liveness checked'
 
     procs, stop = {}, {"done": False}
     sampler = None
@@ -218,6 +363,12 @@ def main() -> int:
         if libc.chroot(str(rootfs).encode()) != 0:
             os.write(2, b"airlock: chroot failed\n"); os._exit(127)
         os.chdir("/work")
+        try:
+            apply_specimen_limits(limits)
+            restrict_specimen()
+        except (OSError, ValueError) as exc:
+            os.write(2, f"airlock: specimen restriction failed: {exc}\n".encode())
+            os._exit(127)
         child_env = {
             "HOME": "/home", "USER": "user", "LOGNAME": "user", "SHELL": "/bin/sh",
             "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "PWD": "/work",
@@ -238,7 +389,7 @@ def main() -> int:
         except OSError as exc:
             os.write(2, f"airlock: exec {entry[0]} failed: {exc}\n".encode()); os._exit(127)
 
-    exit_code, timed_out, deadline = None, False, time.time() + timeout
+    exit_code, timed_out, deadline = None, False, time.monotonic() + timeout
     while True:
         try:
             pid, status = os.waitpid(child, os.WNOHANG)
@@ -252,7 +403,7 @@ def main() -> int:
             else:
                 exit_code = status >> 8
             break
-        if time.time() > deadline:
+        if time.monotonic() > deadline:
             timed_out = True
             for sig in (signal.SIGKILL,):
                 try:
@@ -275,6 +426,8 @@ def main() -> int:
     out_fh.close(); err_fh.close()
 
     if sink_proc is not None:
+        if sink_proc.poll() is not None:
+            raise RuntimeError('network observer exited during run; evidence incomplete')
         try:
             sink_proc.send_signal(signal.SIGTERM); sink_proc.wait(timeout=3)
         except Exception:

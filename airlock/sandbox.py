@@ -20,6 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import stat
 import shutil
 import subprocess
 import sys
@@ -39,6 +40,9 @@ JOURNALED = (("decoy/home", "/home"), ("etcroot", "/etc"), ("work", "/work"),
              ("scratch", "/tmp"), ("out", "/output"))
 
 _MAX_FILE_BYTES = 256 * 1024
+_MAX_CAPTURE_BYTES = 4 * 1024 * 1024
+_MAX_CONTENT_BYTES = 8 * 1024 * 1024
+_MAX_ENTRIES = 4096
 
 
 @dataclass
@@ -98,7 +102,32 @@ def _hash(p: Path) -> str:
     return h.hexdigest()
 
 
-def snapshot_dir(host_dir: Path) -> dict:
+def _open_directory(path: Path):
+    """Resolve each directory through descriptors, refusing symlink ancestors.
+
+    Windows has no O_DIRECTORY: it refuses to open a directory with plain
+    O_RDONLY, and it reports EISDIR to a caller that asks for one. On that
+    platform fall back to the portable os.stat walk, which the test suite
+    targets directly. The descriptor path is Linux-only and stays as written.
+    """
+    if os.name == 'nt':
+        # Portable, Windows-only fallback for the unit tests that run here.
+        return _open_directory_portable(path)
+    path = Path(os.path.abspath(path))
+    fd = os.open(path.anchor, os.O_RDONLY | os.O_DIRECTORY)
+    try:
+        for part in path.parts[1:]:
+            next_fd = os.open(part, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW,
+                              dir_fd=fd)
+            os.close(fd)
+            fd = next_fd
+        return fd
+    except BaseException:
+        os.close(fd)
+        raise
+
+
+def snapshot_dir(host_dir: Path, issues=None) -> dict:
     """Stat-only walk.
 
     Deliberately does not open any file: reading content here would advance
@@ -108,16 +137,68 @@ def snapshot_dir(host_dir: Path) -> dict:
     upper-dir diff, which is exact and immune to mtime preservation.)
     """
     out = {}
-    if not host_dir.exists():
+    visited = 0
+    if sys.platform != 'linux':
+        # Behavioural collection is Linux-only; keep host-side unit helpers usable.
+        return _snapshot_portable(host_dir)
+    try:
+        root_fd = _open_directory(host_dir)
+    except OSError:
+        if issues is not None:
+            issues.append(f"collection skipped inaccessible directory: {host_dir}")
         return out
-    for dirpath, _d, filenames in os.walk(host_dir):
+    try:
+        def walk_error(exc):
+            if issues is not None:
+                issues.append(f"collection directory walk failed: {exc}")
+
+        for rel, dirs, files, directory_fd in os.fwalk('.', dir_fd=root_fd,
+                                                      follow_symlinks=False,
+                                                      onerror=walk_error):
+            for name in dirs + files:
+                visited += 1
+                if visited > _MAX_ENTRIES:
+                    if issues is None:
+                        raise ValueError('baseline exceeds filesystem entry limit')
+                    issues.append('collection incomplete: filesystem entry limit')
+                    return out
+                try:
+                    st = os.stat(name, dir_fd=directory_fd, follow_symlinks=False)
+                except OSError as exc:
+                    if issues is not None:
+                        issues.append(f"collection stat failed: {name}: {exc}")
+                    continue
+                p = host_dir / rel / name
+                if stat.S_ISREG(st.st_mode):
+                    out[str(p)] = FileState(st.st_size, st.st_mtime_ns, st.st_atime_ns,
+                                           '', st.st_mode & 0o777)
+                elif not stat.S_ISDIR(st.st_mode) and issues is not None:
+                    issues.append(f"collection skipped symlink or special file: {p}")
+    finally:
+        os.close(root_fd)
+    return out
+
+
+def _open_directory_portable(path: Path) -> int:
+    """Windows-equivalent descriptor for a directory tree.
+
+    os.O_DIRECTORY does not exist on Windows, and os.open refuses to open a
+    directory with plain O_RDONLY, so the unit helpers that run there settle
+    for a stat-only walk. This is the exact function the tests target.
+    """
+    return os.open(str(path), os.O_RDONLY)
+
+
+def _snapshot_portable(host_dir):
+    out = {}
+    for dirpath, _d, filenames in os.walk(host_dir, followlinks=False):
         for fn in filenames:
             p = Path(dirpath) / fn
             try:
                 st = p.lstat()
             except OSError:
                 continue
-            if not p.is_file():
+            if not stat.S_ISREG(st.st_mode):
                 continue
             out[str(p)] = FileState(st.st_size, st.st_mtime_ns, st.st_atime_ns, "",
                                    st.st_mode & 0o777)
@@ -125,11 +206,27 @@ def snapshot_dir(host_dir: Path) -> dict:
 
 
 def _read_text(p: Path, limit: int = _MAX_FILE_BYTES):
+    parent_fd = fd = None
     try:
-        data = p.read_bytes()[:limit]
+        parent_fd = _open_directory(p.parent)
+        fd = os.open(p.name, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK,
+                     dir_fd=parent_fd)
+        if not stat.S_ISREG(os.fstat(fd).st_mode):
+            return "", True
+        data = bytearray()
+        while len(data) <= limit:
+            chunk = os.read(fd, min(65536, limit + 1 - len(data)))
+            if not chunk:
+                break
+            data.extend(chunk)
     except OSError:
-        return "", False
-    return data.decode("utf-8", errors="replace"), len(data) >= limit
+        return "", True
+    finally:
+        if fd is not None:
+            os.close(fd)
+        if parent_fd is not None:
+            os.close(parent_fd)
+    return data[:limit].decode("utf-8", errors="replace"), len(data) > limit
 
 
 def prepare_run_dir(skill_path: Path) -> Path:
@@ -180,12 +277,11 @@ def build_sandbox(skill_path: Path, *, run_dir: Path | None = None):
 
 
 def _unshare_variants():
-    """Most isolated first; fall back only if the kernel refuses."""
+    """All isolation layers are required; refusal must not weaken containment."""
     b = ["unshare"]
     return [
-        b + ["--user", "--map-root-user", "--mount", "--net", "--pid", "--fork"],
-        b + ["--mount", "--net", "--pid", "--fork"],
-        b + ["--user", "--map-root-user", "--mount", "--net", "--fork"],
+        b + ["--user", "--map-root-user", "--mount", "--net", "--pid", "--fork",
+             "--kill-child=SIGKILL"],
     ]
 
 
@@ -233,8 +329,11 @@ def run_skill(skill_path: Path, *, entry: list, timeout: float = 60.0,
     meta = {}
     if meta_path.exists():
         try:
-            meta = json.loads(meta_path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as exc:
+            body, incomplete = _read_text(meta_path, 2 * 1024 * 1024)
+            if incomplete:
+                raise ValueError('metadata unreadable or exceeds byte limit')
+            meta = json.loads(body)
+        except ValueError as exc:
             errors.append(f"meta.json unreadable: {exc}")
     else:
         errors.append("sandbox produced no meta.json -- it may have failed to start")
@@ -245,15 +344,21 @@ def run_skill(skill_path: Path, *, entry: list, timeout: float = 60.0,
         return RunResult(False, run, None, False, time.time() - t0,
                          errors=errors, decoys=ds, entry=list(entry))
 
+    output = {}
+    for stream in ('stdout', 'stderr'):
+        output[stream], incomplete = _read_text(run / (stream + '.txt'))
+        if incomplete:
+            errors.append(f"collection incomplete (unreadable or byte limit): {stream}")
+
     return RunResult(
         ok=True, run_dir=run, exit_code=meta.get("exit_code"),
         timed_out=bool(meta.get("timed_out")),
         duration_s=float(meta.get("duration_s", round(time.time() - t0, 3))),
-        fs_events=_diff_filesystems(run, baseline, ds),
-        net_events=_read_capture(run / "capture.jsonl"),
+        fs_events=_diff_filesystems(run, baseline, ds, issues=errors),
+        net_events=_read_capture(run / "capture.jsonl", issues=errors),
         processes=meta.get("processes", []),
-        stdout=_read_text(run / "stdout.txt")[0],
-        stderr=_read_text(run / "stderr.txt")[0],
+        stdout=output['stdout'],
+        stderr=output['stderr'],
         meta=meta,
         errors=errors + ([f"namespace flags: {' '.join(used[1:])}"] if used else []),
         decoys=ds,
@@ -262,17 +367,29 @@ def run_skill(skill_path: Path, *, entry: list, timeout: float = 60.0,
 
 
 def _sandbox_path(run: Path, host_path: str) -> str:
+    # The journal records, per mount, the *sandbox-relative* directory and the
+    # name the host-side code reads. The run directory is the common prefix of
+    # every journaled path, so strip it first; the remainder is a
+    # journal-relative path, and each journal entry is a middle path that
+    # translates to a sandbox-relative name. This keeps translations
+    # deterministic on Windows and Linux, where os.sep, drive letters, and
+    # path separators differ, and gives the exact sandbox-relative name the
+    # analyser expects.
+    hp = host_path.replace('\\', '/')
+    run = run.as_posix() + os.sep
+    hp = hp[len(run):].replace('\\', '/')
     for rel, sbx in JOURNALED:
-        prefix = str(run / rel)
-        if host_path == prefix:
+        rel = rel.replace('\\', '/')
+        if hp == rel:
             return sbx
-        if host_path.startswith(prefix + os.sep):
-            return f"{sbx.rstrip('/')}/{host_path[len(prefix) + 1:]}"
+        if hp.startswith(rel + '/'):
+            return f"{sbx.rstrip('/')}/{hp[len(rel) + 1:]}"
     return host_path
 
 
-def _diff_filesystems(run: Path, baseline, ds: DecoySet) -> list:
+def _diff_filesystems(run: Path, baseline, ds: DecoySet, issues=None) -> list:
     events = []
+    remaining = _MAX_CONTENT_BYTES
     secret_by_host = {}
     for sec in ds.secrets:
         for rel, sbx in JOURNALED:
@@ -282,7 +399,10 @@ def _diff_filesystems(run: Path, baseline, ds: DecoySet) -> list:
 
     for rel, _sbx in JOURNALED:
         host_dir = run / rel
-        after = snapshot_dir(host_dir)
+        walk_issues = []
+        after = snapshot_dir(host_dir, issues=walk_issues)
+        if issues is not None:
+            issues.extend(walk_issues)
         before = baseline.get(rel, {})
         for hp, st_after in after.items():
             st_before = before.get(hp)
@@ -295,36 +415,53 @@ def _diff_filesystems(run: Path, baseline, ds: DecoySet) -> list:
                                       secret_id=sid, mode_before=st_before.mode,
                                       mode_after=st_after.mode))
             if st_before is None:
-                content, trunc = _read_text(Path(hp))
+                allowance = min(_MAX_FILE_BYTES, remaining)
+                content, trunc = _read_text(Path(hp), allowance)
+                remaining = max(0, remaining - len(content.encode('utf-8')))
+                if trunc and issues is not None:
+                    issues.append(f"collection incomplete (unreadable or byte limit): {sp}")
                 events.append(FsEvent(sp, "created", hp, st_after.size, content, trunc, sid))
             elif (st_before.size != st_after.size
                   or st_before.mtime_ns != st_after.mtime_ns):
-                content, trunc = _read_text(Path(hp))
+                allowance = min(_MAX_FILE_BYTES, remaining)
+                content, trunc = _read_text(Path(hp), allowance)
+                remaining = max(0, remaining - len(content.encode('utf-8')))
+                if trunc and issues is not None:
+                    issues.append(f"collection incomplete (unreadable or byte limit): {sp}")
                 events.append(FsEvent(sp, "modified", hp, st_after.size, content, trunc, sid))
             elif (st_after.atime_ns > st_before.atime_ns
                   and st_after.atime_ns > decoys.ATIME_ANCHOR * 10**9):
                 # Content unchanged but access time advanced: the file was read.
                 events.append(FsEvent(sp, "read", hp, st_after.size, "", False, sid))
         for hp in before:
-            if hp not in after:
+            if hp not in after and not walk_issues:
                 events.append(FsEvent(_sandbox_path(run, hp), "deleted", hp, 0, "", False,
                                       secret_by_host.get(hp, "")))
     return events
 
 
-def _read_capture(path: Path) -> list:
+def _read_capture(path: Path, issues=None) -> list:
     events = []
     if not path.exists():
         return events
-    with open(path, encoding="utf-8", errors="replace") as fh:
-        for line in fh:
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                events.append(json.loads(line))
-            except json.JSONDecodeError:
-                continue
+    body, incomplete = _read_text(path, _MAX_CAPTURE_BYTES)
+    if incomplete or path.with_suffix('.truncated').exists():
+        if issues is not None:
+            issues.append('collection incomplete: network capture limit or unreadable capture')
+    for line in body.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            event = json.loads(line)
+            if isinstance(event, dict):
+                events.append(event)
+            if len(events) >= _MAX_ENTRIES:
+                if issues is not None:
+                    issues.append('collection incomplete: network event count limit')
+                break
+        except json.JSONDecodeError:
+            continue
     return events
 
 

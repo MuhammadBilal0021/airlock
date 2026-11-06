@@ -276,7 +276,9 @@ class TestSandboxBehaviour(unittest.TestCase):
         self.assertEqual(findings[0].observed, "0600 -> 0644")
         self.assertFalse(any(f.rule_id in ("ALK-001", "ALK-002")
                              for f in verdict.findings))
-        self.assertEqual(result.net_events, [])
+        # Listener startup is scanner bookkeeping, not specimen network activity.
+        self.assertEqual([e for e in result.net_events
+                          if e.get("type") != "sinkhole_start"], [])
         self.assertEqual(verdict.observed_summary["permissions_changed"],
                          [{"path": "/home/.ssh/id_rsa", "before": "0600", "after": "0644"}])
         for name in ("01-benign-weather", "06-over-broad"):
