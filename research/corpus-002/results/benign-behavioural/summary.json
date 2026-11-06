@@ -1,0 +1,16 @@
+{
+  "total": 245,
+  "statuses": {
+    "static_only": 240,
+    "completed": 5
+  },
+  "skills_per_rule": {
+    "completed": {
+      "ALK-007": 1
+    },
+    "static_only": {
+      "ALK-092": 240
+    }
+  },
+  "denominator_note": "Rule counts are unique skills, separated by coverage. Completed means exit 0, not proof of safety."
+}

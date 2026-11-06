@@ -1,0 +1,1219 @@
+[
+  {
+    "id": "I1-00",
+    "source": "synthetic:airlock-corpus-001:I1",
+    "revision": "seed-20261107",
+    "report": "0000.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I1-01",
+    "source": "synthetic:airlock-corpus-001:I1",
+    "revision": "seed-20261107",
+    "report": "0001.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I1-02",
+    "source": "synthetic:airlock-corpus-001:I1",
+    "revision": "seed-20261107",
+    "report": "0002.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I1-03",
+    "source": "synthetic:airlock-corpus-001:I1",
+    "revision": "seed-20261107",
+    "report": "0003.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I1-04",
+    "source": "synthetic:airlock-corpus-001:I1",
+    "revision": "seed-20261107",
+    "report": "0004.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I2-00",
+    "source": "synthetic:airlock-corpus-001:I2",
+    "revision": "seed-20261107",
+    "report": "0005.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I2-01",
+    "source": "synthetic:airlock-corpus-001:I2",
+    "revision": "seed-20261107",
+    "report": "0006.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I2-02",
+    "source": "synthetic:airlock-corpus-001:I2",
+    "revision": "seed-20261107",
+    "report": "0007.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I2-03",
+    "source": "synthetic:airlock-corpus-001:I2",
+    "revision": "seed-20261107",
+    "report": "0008.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I2-04",
+    "source": "synthetic:airlock-corpus-001:I2",
+    "revision": "seed-20261107",
+    "report": "0009.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I3-00",
+    "source": "synthetic:airlock-corpus-001:I3",
+    "revision": "seed-20261107",
+    "report": "0010.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I3-01",
+    "source": "synthetic:airlock-corpus-001:I3",
+    "revision": "seed-20261107",
+    "report": "0011.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I3-02",
+    "source": "synthetic:airlock-corpus-001:I3",
+    "revision": "seed-20261107",
+    "report": "0012.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I3-03",
+    "source": "synthetic:airlock-corpus-001:I3",
+    "revision": "seed-20261107",
+    "report": "0013.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I3-04",
+    "source": "synthetic:airlock-corpus-001:I3",
+    "revision": "seed-20261107",
+    "report": "0014.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I4-00",
+    "source": "synthetic:airlock-corpus-001:I4",
+    "revision": "seed-20261107",
+    "report": "0015.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I4-01",
+    "source": "synthetic:airlock-corpus-001:I4",
+    "revision": "seed-20261107",
+    "report": "0016.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I4-02",
+    "source": "synthetic:airlock-corpus-001:I4",
+    "revision": "seed-20261107",
+    "report": "0017.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I4-03",
+    "source": "synthetic:airlock-corpus-001:I4",
+    "revision": "seed-20261107",
+    "report": "0018.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I4-04",
+    "source": "synthetic:airlock-corpus-001:I4",
+    "revision": "seed-20261107",
+    "report": "0019.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I5-00",
+    "source": "synthetic:airlock-corpus-001:I5",
+    "revision": "seed-20261107",
+    "report": "0020.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I5-01",
+    "source": "synthetic:airlock-corpus-001:I5",
+    "revision": "seed-20261107",
+    "report": "0021.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I5-02",
+    "source": "synthetic:airlock-corpus-001:I5",
+    "revision": "seed-20261107",
+    "report": "0022.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I5-03",
+    "source": "synthetic:airlock-corpus-001:I5",
+    "revision": "seed-20261107",
+    "report": "0023.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I5-04",
+    "source": "synthetic:airlock-corpus-001:I5",
+    "revision": "seed-20261107",
+    "report": "0024.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I6-00",
+    "source": "synthetic:airlock-corpus-001:I6",
+    "revision": "seed-20261107",
+    "report": "0025.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I6-01",
+    "source": "synthetic:airlock-corpus-001:I6",
+    "revision": "seed-20261107",
+    "report": "0026.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I6-02",
+    "source": "synthetic:airlock-corpus-001:I6",
+    "revision": "seed-20261107",
+    "report": "0027.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I6-03",
+    "source": "synthetic:airlock-corpus-001:I6",
+    "revision": "seed-20261107",
+    "report": "0028.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I6-04",
+    "source": "synthetic:airlock-corpus-001:I6",
+    "revision": "seed-20261107",
+    "report": "0029.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I7-00",
+    "source": "synthetic:airlock-corpus-001:I7",
+    "revision": "seed-20261107",
+    "report": "0030.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I7-01",
+    "source": "synthetic:airlock-corpus-001:I7",
+    "revision": "seed-20261107",
+    "report": "0031.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I7-02",
+    "source": "synthetic:airlock-corpus-001:I7",
+    "revision": "seed-20261107",
+    "report": "0032.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I7-03",
+    "source": "synthetic:airlock-corpus-001:I7",
+    "revision": "seed-20261107",
+    "report": "0033.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I7-04",
+    "source": "synthetic:airlock-corpus-001:I7",
+    "revision": "seed-20261107",
+    "report": "0034.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-009",
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I8-00",
+    "source": "synthetic:airlock-corpus-001:I8",
+    "revision": "seed-20261107",
+    "report": "0035.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I8-01",
+    "source": "synthetic:airlock-corpus-001:I8",
+    "revision": "seed-20261107",
+    "report": "0036.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I8-02",
+    "source": "synthetic:airlock-corpus-001:I8",
+    "revision": "seed-20261107",
+    "report": "0037.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I8-03",
+    "source": "synthetic:airlock-corpus-001:I8",
+    "revision": "seed-20261107",
+    "report": "0038.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "I8-04",
+    "source": "synthetic:airlock-corpus-001:I8",
+    "revision": "seed-20261107",
+    "report": "0039.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  {
+    "id": "B1-00",
+    "source": "synthetic:airlock-corpus-001:B1",
+    "revision": "seed-20261107",
+    "report": "0040.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B1-01",
+    "source": "synthetic:airlock-corpus-001:B1",
+    "revision": "seed-20261107",
+    "report": "0041.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B1-02",
+    "source": "synthetic:airlock-corpus-001:B1",
+    "revision": "seed-20261107",
+    "report": "0042.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B1-03",
+    "source": "synthetic:airlock-corpus-001:B1",
+    "revision": "seed-20261107",
+    "report": "0043.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B1-04",
+    "source": "synthetic:airlock-corpus-001:B1",
+    "revision": "seed-20261107",
+    "report": "0044.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B2-00",
+    "source": "synthetic:airlock-corpus-001:B2",
+    "revision": "seed-20261107",
+    "report": "0045.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B2-01",
+    "source": "synthetic:airlock-corpus-001:B2",
+    "revision": "seed-20261107",
+    "report": "0046.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B2-02",
+    "source": "synthetic:airlock-corpus-001:B2",
+    "revision": "seed-20261107",
+    "report": "0047.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B2-03",
+    "source": "synthetic:airlock-corpus-001:B2",
+    "revision": "seed-20261107",
+    "report": "0048.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B2-04",
+    "source": "synthetic:airlock-corpus-001:B2",
+    "revision": "seed-20261107",
+    "report": "0049.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B3-00",
+    "source": "synthetic:airlock-corpus-001:B3",
+    "revision": "seed-20261107",
+    "report": "0050.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B3-01",
+    "source": "synthetic:airlock-corpus-001:B3",
+    "revision": "seed-20261107",
+    "report": "0051.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B3-02",
+    "source": "synthetic:airlock-corpus-001:B3",
+    "revision": "seed-20261107",
+    "report": "0052.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B3-03",
+    "source": "synthetic:airlock-corpus-001:B3",
+    "revision": "seed-20261107",
+    "report": "0053.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B3-04",
+    "source": "synthetic:airlock-corpus-001:B3",
+    "revision": "seed-20261107",
+    "report": "0054.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B4-00",
+    "source": "synthetic:airlock-corpus-001:B4",
+    "revision": "seed-20261107",
+    "report": "0055.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B4-01",
+    "source": "synthetic:airlock-corpus-001:B4",
+    "revision": "seed-20261107",
+    "report": "0056.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B4-02",
+    "source": "synthetic:airlock-corpus-001:B4",
+    "revision": "seed-20261107",
+    "report": "0057.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B4-03",
+    "source": "synthetic:airlock-corpus-001:B4",
+    "revision": "seed-20261107",
+    "report": "0058.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B4-04",
+    "source": "synthetic:airlock-corpus-001:B4",
+    "revision": "seed-20261107",
+    "report": "0059.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B5-00",
+    "source": "synthetic:airlock-corpus-001:B5",
+    "revision": "seed-20261107",
+    "report": "0060.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B5-01",
+    "source": "synthetic:airlock-corpus-001:B5",
+    "revision": "seed-20261107",
+    "report": "0061.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B5-02",
+    "source": "synthetic:airlock-corpus-001:B5",
+    "revision": "seed-20261107",
+    "report": "0062.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B5-03",
+    "source": "synthetic:airlock-corpus-001:B5",
+    "revision": "seed-20261107",
+    "report": "0063.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B5-04",
+    "source": "synthetic:airlock-corpus-001:B5",
+    "revision": "seed-20261107",
+    "report": "0064.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B6-00",
+    "source": "synthetic:airlock-corpus-001:B6",
+    "revision": "seed-20261107",
+    "report": "0065.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B6-01",
+    "source": "synthetic:airlock-corpus-001:B6",
+    "revision": "seed-20261107",
+    "report": "0066.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B6-02",
+    "source": "synthetic:airlock-corpus-001:B6",
+    "revision": "seed-20261107",
+    "report": "0067.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B6-03",
+    "source": "synthetic:airlock-corpus-001:B6",
+    "revision": "seed-20261107",
+    "report": "0068.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B6-04",
+    "source": "synthetic:airlock-corpus-001:B6",
+    "revision": "seed-20261107",
+    "report": "0069.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B7-00",
+    "source": "synthetic:airlock-corpus-001:B7",
+    "revision": "seed-20261107",
+    "report": "0070.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B7-01",
+    "source": "synthetic:airlock-corpus-001:B7",
+    "revision": "seed-20261107",
+    "report": "0071.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B7-02",
+    "source": "synthetic:airlock-corpus-001:B7",
+    "revision": "seed-20261107",
+    "report": "0072.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B7-03",
+    "source": "synthetic:airlock-corpus-001:B7",
+    "revision": "seed-20261107",
+    "report": "0073.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B7-04",
+    "source": "synthetic:airlock-corpus-001:B7",
+    "revision": "seed-20261107",
+    "report": "0074.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-005",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B8-00",
+    "source": "synthetic:airlock-corpus-001:B8",
+    "revision": "seed-20261107",
+    "report": "0075.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-003",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B8-01",
+    "source": "synthetic:airlock-corpus-001:B8",
+    "revision": "seed-20261107",
+    "report": "0076.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-003",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B8-02",
+    "source": "synthetic:airlock-corpus-001:B8",
+    "revision": "seed-20261107",
+    "report": "0077.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-003",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B8-03",
+    "source": "synthetic:airlock-corpus-001:B8",
+    "revision": "seed-20261107",
+    "report": "0078.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-003",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B8-04",
+    "source": "synthetic:airlock-corpus-001:B8",
+    "revision": "seed-20261107",
+    "report": "0079.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-003",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B9-00",
+    "source": "synthetic:airlock-corpus-001:B9",
+    "revision": "seed-20261107",
+    "report": "0080.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B9-01",
+    "source": "synthetic:airlock-corpus-001:B9",
+    "revision": "seed-20261107",
+    "report": "0081.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B9-02",
+    "source": "synthetic:airlock-corpus-001:B9",
+    "revision": "seed-20261107",
+    "report": "0082.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B9-03",
+    "source": "synthetic:airlock-corpus-001:B9",
+    "revision": "seed-20261107",
+    "report": "0083.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B9-04",
+    "source": "synthetic:airlock-corpus-001:B9",
+    "revision": "seed-20261107",
+    "report": "0084.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B10-00",
+    "source": "synthetic:airlock-corpus-001:B10",
+    "revision": "seed-20261107",
+    "report": "0085.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B10-01",
+    "source": "synthetic:airlock-corpus-001:B10",
+    "revision": "seed-20261107",
+    "report": "0086.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B10-02",
+    "source": "synthetic:airlock-corpus-001:B10",
+    "revision": "seed-20261107",
+    "report": "0087.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B10-03",
+    "source": "synthetic:airlock-corpus-001:B10",
+    "revision": "seed-20261107",
+    "report": "0088.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B10-04",
+    "source": "synthetic:airlock-corpus-001:B10",
+    "revision": "seed-20261107",
+    "report": "0089.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-002",
+      "ALK-004",
+      "ALK-010",
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B11-00",
+    "source": "synthetic:airlock-corpus-001:B11",
+    "revision": "seed-20261107",
+    "report": "0090.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B11-01",
+    "source": "synthetic:airlock-corpus-001:B11",
+    "revision": "seed-20261107",
+    "report": "0091.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B11-02",
+    "source": "synthetic:airlock-corpus-001:B11",
+    "revision": "seed-20261107",
+    "report": "0092.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B11-03",
+    "source": "synthetic:airlock-corpus-001:B11",
+    "revision": "seed-20261107",
+    "report": "0093.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B11-04",
+    "source": "synthetic:airlock-corpus-001:B11",
+    "revision": "seed-20261107",
+    "report": "0094.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011"
+    ]
+  },
+  {
+    "id": "B12-00",
+    "source": "synthetic:airlock-corpus-001:B12",
+    "revision": "seed-20261107",
+    "report": "0095.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011",
+      "ALK-013"
+    ]
+  },
+  {
+    "id": "B12-01",
+    "source": "synthetic:airlock-corpus-001:B12",
+    "revision": "seed-20261107",
+    "report": "0096.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011",
+      "ALK-013"
+    ]
+  },
+  {
+    "id": "B12-02",
+    "source": "synthetic:airlock-corpus-001:B12",
+    "revision": "seed-20261107",
+    "report": "0097.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011",
+      "ALK-013"
+    ]
+  },
+  {
+    "id": "B12-03",
+    "source": "synthetic:airlock-corpus-001:B12",
+    "revision": "seed-20261107",
+    "report": "0098.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011",
+      "ALK-013"
+    ]
+  },
+  {
+    "id": "B12-04",
+    "source": "synthetic:airlock-corpus-001:B12",
+    "revision": "seed-20261107",
+    "report": "0099.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-011",
+      "ALK-013"
+    ]
+  }
+]

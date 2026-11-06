@@ -1,0 +1,3027 @@
+{
+  "population": "public agent-skill packages, five repositories",
+  "scope": "text artefacts only; nothing installed or executed",
+  "selection": "first N repository-relative skill dirs ordered by sha256(path) within each source; packages whose SKILL.md content duplicates an earlier package are dropped",
+  "target_n": 200,
+  "acquired_n": 245,
+  "revisions": {
+    "wshobson/agents": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "openclaw/openclaw": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+    "anthropics/skills": "ca45fc496a3436251f191354091d557da31c15b5",
+    "obra/superpowers": "22f0b463e7a5e579904dd6211a520321035526f7",
+    "modelcontextprotocol/servers": "36380287ed3b15d115b55f546617d723072b1296"
+  },
+  "skills": [
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/mobile-ios-design",
+      "path": "000",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/mobile-ios-design",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/hig-patterns.md": "1d893427552da55887ed14a344532f40f736d5cc6d153ce385b9cc8c73c55302",
+        "references/ios-navigation.md": "8d6ab13ad2f6bf13b6555b2137f8861d4af374322f85fa3b06f10a6c0b70ef82",
+        "references/swiftui-components.md": "3eb82e50121d529ee664685da10f42f59aa8dee4cc14acaca4c5d377d8cd8700",
+        "SKILL.md": "2b3b2405aee645a345d137ce93bd86bac65d33da4ad40c4b6f007bf4a51b6c96"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/saga-orchestration",
+      "path": "001",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/saga-orchestration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "0134efa44616be80b4eff1576847a05a1e6742df69eb31446a4e2b5135375b34",
+        "references/details.md": "cbf86878798e444c22a8669bbd74d0d5344cf7d129dec9ce5bd21688b29a61ed",
+        "SKILL.md": "95372f5b8235053557c135d9d8a6d785d2feb9af1187230a72c8285aa38793f5"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/gitops-workflow",
+      "path": "002",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/gitops-workflow",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/argocd-setup.md": "a3c40bac1613b7453856e01be9a263c05a83e24a2da709da8a4e147887f5385d",
+        "references/sync-policies.md": "abd386160b2e8c4d25ceea1e8a8bf142cae72f5587ddcb7c62851c9c6aaa81c7",
+        "SKILL.md": "f9f620a4a4beb07c160794ecc0d471960a1aa98a18910d9096be018ffb34ec28"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/hybrid-search-implementation",
+      "path": "003",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/hybrid-search-implementation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "79d1fff9c8376c0ec955cde5a6a6a7dfc848047157685e217afffeffb76ac2df",
+        "SKILL.md": "38d33722a545862205d1216be79a09d4101e7cef839d673bfaae2b34974fc640"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/uv-package-manager",
+      "path": "004",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/uv-package-manager",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "5750de438fa2456c37640f6efcb87c423fe2919510da4e67e564b2af7972c0bc",
+        "SKILL.md": "14df843d2d7958257e47933961914ff6598adb8422e4759000586c43ce80ab2c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-background-jobs",
+      "path": "005",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-background-jobs",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "96268f59787cba8297e5d0a811fcc3c1fe70ec2ea1a4f1fcb939f67c6ca45ba2",
+        "SKILL.md": "ea99e3f1d4df0e0c7260e3d6436003ea980c55d8b1ad6950ba63048491eb531e"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/vector-index-tuning",
+      "path": "006",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/vector-index-tuning",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "d8c2d6381a3a92ceb7bd4a259e7ba92e00fc4cfb407645973e702669311dd44b",
+        "SKILL.md": "fc6a365161f5fd7ea08792759db7b358683aed8b410a4418c65bc1e61b971355"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-code-style",
+      "path": "007",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-code-style",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "82699eefa7996bf06bbf85219f547eae0140a181ee3699444e2cbd665b7caba7"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/threat-mitigation-mapping",
+      "path": "008",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/threat-mitigation-mapping",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "767e373e9a7b321095352f856499965a4abe999f247cde2415edcf2e038a045b",
+        "SKILL.md": "40cf933689b7783480fbf567c9b7573a9626977912acf7fcb808287934c7dfa8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-error-handling",
+      "path": "009",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-error-handling",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "022c6c6bfb362d861258763712a05f62ccac09120866355582f874db14735c82",
+        "SKILL.md": "796346a50615010c4fea52ecb93784ebf232c5d4c9f0691bfc668529d9592543"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/dgx-spark-ops/skills/spark-memory-thermal-ops",
+      "path": "010",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/dgx-spark-ops/skills/spark-memory-thermal-ops",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "assets/thermal-sample.sh": "9caa3a5a02d9d5b84a65e8086d2024cab099f22aeddc34662494931450829d9b",
+        "references/uma-accounting.md": "2c24e310be126e733cbea6ca4ba5b4c348ebe9bcc32890274bae27e9f4bda434",
+        "SKILL.md": "7b3e8184ac1c5610e31d04f76aa6f292349704beaf79b10324453bebc62bd7ac"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/stripe-integration",
+      "path": "011",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/stripe-integration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "3250e4e0a94bd4ade630c771b925d88b8e002966c424c48292762ba4ac547a7b",
+        "SKILL.md": "32b5a60d3f6cad896b3dc468ee7b81e55afa61adf740512e95a411efdb4ae0f6"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-finetuning/skills/eval-harness-first",
+      "path": "012",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-finetuning/skills/eval-harness-first",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/grader-templates.md": "6435cf01bc60d83db7a5aa895284d2407e12530b0ea3d55c9d99e2e4a7e33878",
+        "references/judge-calibration.md": "a88c1cc519e7129e0aaff17856ba86d63f39a1a1e1641ee1b62dce834e1cc94b",
+        "SKILL.md": "6bc3a9942e461ca8e400ccfc3e6962de07cd72c685768d630ab02ce3a0221f22"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/data-engineering/skills/data-quality-frameworks",
+      "path": "013",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/data-engineering/skills/data-quality-frameworks",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "224757dd2c96e2c13fddea88cfe74297f35bf7aae00ec1622bfec0585210f812",
+        "SKILL.md": "58e61444165ba7caa572fb7f1ba2d23cfd5038cfa6699f86b5648e7fcb71d34d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/prompt-engineering-patterns",
+      "path": "014",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/prompt-engineering-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "assets/few-shot-examples.json": "8e1ade9727b0bb1fb5540a781192b67e2692fbb5908ffe9eac3ec7cc2fbc6216",
+        "assets/prompt-template-library.md": "c5756b6f9c5558d8ca82d845fd50492b53f1f4d6d02cf27585f411440a4723c2",
+        "references/chain-of-thought.md": "155af3b1d240b67970870940cc90396ba9e66580a9487bb0f7bd288ad10622f5",
+        "references/details.md": "406934586a34cd1aa0084d3dbd21e5e77be75de934a791cae962e1e16f55a133",
+        "references/few-shot-learning.md": "d8784634f7beb4c60c51add45203ef2d9d0e4e3accbb81ba3295f87d893dba10",
+        "references/prompt-optimization.md": "5c25ad9b49045ef35c55b531bd227f04628b0018080b0d4f05cb20b01b44ee41",
+        "references/prompt-templates.md": "18db56a32be1639072631f0f7256b153acd678fe6092edad23b2a4a44016e3da",
+        "references/system-prompts.md": "88aa10639dad981b07f3bba05539c4eefcc5fba5ed255c60eab0df238778e000",
+        "scripts/optimize-prompt.py": "374323ec15ca40b5e2a43f580664913a61e998adb30f4087e9cc66710cfdf9da",
+        "SKILL.md": "6a210b15be01bc6f76a74ec1e46302dee310ddf79d2def63fc9b7c54221fe329"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/responsive-design",
+      "path": "015",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/responsive-design",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/breakpoint-strategies.md": "d086c14641856aacdd38fd8aebf2988fb0055b7ed1b8773feb3104e69c7d1506",
+        "references/container-queries.md": "67b1697186a531751ec2aa364506919b9ae44680744603613c511d5132eb5a24",
+        "references/details.md": "6b8d84250249319719fc5d4a545628267edd16b8763c107536cf7341d37740b4",
+        "references/fluid-layouts.md": "d67ad19e57b015101da5d4c4a9208015909f60b89db5b7922d0bf9ca17673860",
+        "SKILL.md": "c8bd56f8fc0f122c4ff392b02617f0e6bb4a353b2d0189235c6ee77cdcfe8690"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/shell-scripting/skills/shellcheck-configuration",
+      "path": "016",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/shell-scripting/skills/shellcheck-configuration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "65ba7c3e5ac0132e1fa4f75fe9776a68cb3c14b60d2b504f63e3ffad781e5723",
+        "SKILL.md": "0442d7cb63b35ac5eccb60450822b66bf036381d476f5aed7a148aa635c5c598"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-packaging",
+      "path": "017",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-packaging",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "598e75519ce9cfd44e3a47ee9ed829cd23509ba16b99d09a4737cc807c47ce64",
+        "references/details.md": "4bf009076d1e89cd2bf9bfffeea645095f10cd88f8fcc8b03c137303ebef27dc",
+        "SKILL.md": "744653d7bca3b0cfcb50155a3bb9ef56c7aba7eb4923091d07e75171261e5b49"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-configuration",
+      "path": "018",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-configuration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "10f2cb813e20ab446a9578c0200955875c63ff98918b6a84e44f1fc6a0eef209",
+        "SKILL.md": "a9095f4388f7c61c4d5eb0fd2d2a6192e872b6da7a59baac66a10422e333d65f"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/startup-business-analyst/skills/startup-metrics-framework",
+      "path": "019",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/startup-business-analyst/skills/startup-metrics-framework",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/universal-and-saas-metrics.md": "2253918ce539cbb7876f3c7ddadf7a513925bc36671fc94e117c3a675bd41fc5",
+        "SKILL.md": "89d3e39365b55b29dbffed7c46d474056281a008c9b9ec7c0bdaf757063d8a82"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/plugin-eval/skills/evaluation-methodology",
+      "path": "020",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/plugin-eval/skills/evaluation-methodology",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/improving-scores.md": "2bdccb1fb3e37f04a49d3b127f562e9a0b26bfab00ae56e7640bdaa7e793a342",
+        "references/rubrics.md": "d2343aab178fa49ce174447f3845d2ac45ed00de773d0c9b3ff838dbb559c9f7",
+        "SKILL.md": "d937b6d8c2a853bdffd53ea5c900e8e650e372506d48b8f64808d82fb87014ee"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/hr-legal-compliance/skills/employment-contract-templates",
+      "path": "021",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/hr-legal-compliance/skills/employment-contract-templates",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "f24a601e66c2993f43b8f0af7dd29e6f94936a439cd57b6c2039f81107c56666",
+        "SKILL.md": "8e32bf3bcdc43b2b2f9844147823c8cfb42997643c12263afc634a3c2815adc8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/hr-legal-compliance/skills/gdpr-data-handling",
+      "path": "022",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/hr-legal-compliance/skills/gdpr-data-handling",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "0fe12eb338bced048a2f140952e9883886bbd2dd92b2543448dd6424f96f9e0c",
+        "SKILL.md": "cb33aa8fbfbcddc42968d4ba1ed00cc76e3b2d0f4ff089bd17076e438fbafec5"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/bazel-build-optimization",
+      "path": "023",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/bazel-build-optimization",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "08a4c12a5c4dc9132e4ad9222e0cfe69ae363e5a74294ba4510eec39dceee133",
+        "SKILL.md": "7d9b2a350ed7d6837d78cb7237091c08ac2a912cc546997030cacdda43cb7ba0"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/security-requirement-extraction",
+      "path": "024",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/security-requirement-extraction",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "e304b0e15e876dfc99e09302491fa1c635e0a509e5a04b91ed1047b6400f12da",
+        "SKILL.md": "bf391927dc404280e0f4d8c0ec20513c579fc6c277dfd04ad5a8e0a730ce8dde"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/ship-mate/skills/scan",
+      "path": "025",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ship-mate/skills/scan",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/agents-template.md": "e4b387cb180b9b0339d91c8556e3c47a8a8b75086e09bc82f1e742410def5a57",
+        "SKILL.md": "ea94c8b6e00990bf358331dbf0a414d6c28383b1d2df08dbcea27f61a129571f"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/file-conversion/skills/file-conversion",
+      "path": "026",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/file-conversion/skills/file-conversion",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "7622ea29bc61ac692fcd6c8b13c4a47e11b70a7c8f095e87f17f714c9a2d2602"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/quantitative-trading/skills/risk-metrics-calculation",
+      "path": "027",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/quantitative-trading/skills/risk-metrics-calculation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "641d46ca37d050b17862e99dd0c8463b3c81926248ac9de50d1cb147ce6cef9e",
+        "SKILL.md": "d42f5937e253a072ad6fee37762fa0455d28314b31bd4ff088bd92c5e219e6c8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-testing-patterns",
+      "path": "028",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-testing-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "f560ee8b3cffc0fe971e78269bed21dc74f541c2056eae58d34259d9e537176a",
+        "references/details.md": "39411069cafe265c7000e9a605aa3c17448981756799f3981137ed2d9cc24c20",
+        "SKILL.md": "a1020718f31629c2a5b20731cad1804dbb81b18800495c5cebdf16e6cac9c175"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/cloud-infrastructure/skills/mtls-configuration",
+      "path": "029",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cloud-infrastructure/skills/mtls-configuration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "f5c1f3d385dafcf02a1c4a55c7ec66758eac7e773f996073bcd6d62fce56a942",
+        "SKILL.md": "1527e7f31e5e160dd7ff5c194fe0ce0705fbbf6b7912307666b8508ffd3ac04d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/paypal-integration",
+      "path": "030",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/paypal-integration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "b6bdb832ad3521b10981c6646bf0281c2a3b78e3ebe4e7de9f65932eea9a4dc6",
+        "SKILL.md": "1c48cf66ed8c085eb73f79b6736541e93645786c48294bd8a1b04781b8457278"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/javascript-typescript/skills/typescript-advanced-types",
+      "path": "031",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/javascript-typescript/skills/typescript-advanced-types",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "036a1dd41283384f086ac0eeb4f63c899b042ad68815a8ce00afebf606b55c44",
+        "SKILL.md": "c32101c65134d94ef1a3305ef486020b57be6408f97ed952c9c560e3fe04188d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/langchain-architecture",
+      "path": "032",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/langchain-architecture",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "6b277544290c0c4f2b5e470e85aa2212d5d73a44ad054f42c9d8e924b66a4f6e",
+        "SKILL.md": "0c8dcec1d171a00467eda176a0716866c5bf6c9e86fd0830a74dcabd626bc06a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/agent-teams/skills/team-composition-patterns",
+      "path": "033",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/agent-teams/skills/team-composition-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/agent-type-selection.md": "55a19d72af4b4dd4d94c72ead428f9b5dedebbd67944e85c49e1cdc5824d7dbb",
+        "references/preset-teams.md": "40c072b475b56a33da10cb0fbf14b1296dfeb454828d84c1655257f1fda8edfc",
+        "SKILL.md": "e158dd0e38d875f7efd8d22fc00f800293585c9a44cce7c0715715f87feb164a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/reverse-engineering/skills/protocol-reverse-engineering",
+      "path": "034",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/reverse-engineering/skills/protocol-reverse-engineering",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/binary-encryption-analysis.md": "621f8502cca0214b8d4ef23e249604e6d154d7c404d0c45f8587eb27670280ad",
+        "references/protocol-documentation.md": "af898a09814143b78359cdb22bbe87bf017ce1335883ce60746a8138acd35f4e",
+        "SKILL.md": "89e4f51f398554ce74dbe72a0f2090c3252ea99cc25b3c227a7a4f11bbd43384"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/react-state-management",
+      "path": "035",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/react-state-management",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "30bc6c3a9a05ab3649d6fbbbccf3f9806e97688c76b64af85e369353ccd37404",
+        "SKILL.md": "71abf349b19fe5cef64f4e4f2dd4a89011a5e947d8ce278d53a489292f508032"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/agent-teams/skills/team-communication-protocols",
+      "path": "036",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/agent-teams/skills/team-communication-protocols",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/messaging-patterns.md": "0f02b4962a06ad596e55a08492d26887bae24f3e9378c9502c97bb9c2bef9fe6",
+        "SKILL.md": "5a356d8814f2b38312b83b6e3b4e5bf06e26423338a8ea568b9ff2ed3266ff1d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/cicd-automation/skills/github-actions-templates",
+      "path": "037",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cicd-automation/skills/github-actions-templates",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "fc3c06ddb2423804be275defbb8a2c35f1564ba28aaeb07dcf01ec9c4cc8f023"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/skill-forge-essentials/skills/visual-edit-precision",
+      "path": "038",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/skill-forge-essentials/skills/visual-edit-precision",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "3abb25ad646cbc8d67cbd07baa06db8331cc0f384be513db8f31dd7ab08e4b74"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/javascript-typescript/skills/javascript-testing-patterns",
+      "path": "039",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/javascript-typescript/skills/javascript-testing-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-testing-patterns.md": "c7aece88f868bb54b57cc7ea2ca87d3df0868ab32f974c22af247bb047ea353f",
+        "SKILL.md": "d99e1d7344ca7b87395c7e49f6c635ea67fe16d57f4698d72c78d405020f5782"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/systems-programming/skills/go-concurrency-patterns",
+      "path": "040",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/systems-programming/skills/go-concurrency-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "dbf343a724dd98a6ccdca4a4bf8719b0423196334767ee35e5adddfbc1af25b2",
+        "SKILL.md": "a66d04f2c616aecc3dd53c23d08cb06903f30a2c190c99e6ba82b3e5315b36b2"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/shell-scripting/skills/bash-defensive-patterns",
+      "path": "041",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/shell-scripting/skills/bash-defensive-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "79483306c2f5297c3fa1c5e6d05ff2e98a1ea73ea760b6a62230b0822236f981",
+        "SKILL.md": "741b42d1fa3167f2131a17f3e0fe891e93be4fc87aa3c19e1de5fd26d763f711"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/incident-response/skills/on-call-handoff-patterns",
+      "path": "042",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/incident-response/skills/on-call-handoff-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "7270323f269f96af621686db8ac558315b5c5ff42cd719866070d8aabc9827ff",
+        "SKILL.md": "46d03bf3a2922e77d0393dc6c0f0342056a25af15bee7c7523b0adc6d1e5d49e"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/blockchain-web3/skills/web3-testing",
+      "path": "043",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/blockchain-web3/skills/web3-testing",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "790a72d6d2ded6c3b178daf87350156e2283d25c146be8a898ef87185a3ad1d8",
+        "SKILL.md": "563c541469d9f23d7aa36c26ae39bfa5095f93c12ba52b3d2e2b8f226ac6776e"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/javascript-typescript/skills/modern-javascript-patterns",
+      "path": "044",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/javascript-typescript/skills/modern-javascript-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "bd44770188cfa14d453b1c3026289cfaf7beff78f0eedbe47a9c6b9f24dfe3af",
+        "references/details.md": "c9ef5c72ef42ff58b87b5f7a506a8cadae195d2b38fe45e118c7ad05fcf905c5",
+        "SKILL.md": "32e203b8d944115102986dcb3cf4c48918edc5dbf6942668875970121809c064"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/e2e-testing-patterns",
+      "path": "045",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/e2e-testing-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "1b46db6aafff0bdacadfcba48d3c834a0a590e500f28fb6b89bf7f4339267808",
+        "SKILL.md": "b59a3d80c852f41bb73d6941410cd0fc98bbdb63a61d2ed0da2415f8dde0e1c7"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-quality-gates",
+      "path": "046",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-quality-gates",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/audit-checklist.md": "30876e0b417bf2a2d11dae059627ff1ee4893a2b56621dfd04439b429401aaa0",
+        "SKILL.md": "449219113bda3d26a176399213c8834e131a3f38c76e3ef96a03b8ee2ae625ac"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/signed-audit-trails/skills/signed-audit-trails-recipe",
+      "path": "047",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/signed-audit-trails/skills/signed-audit-trails-recipe",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/cedar-policy.md": "260c65ab7e86a817fa28ca3fc2d0998e9812e9cede41df9c7153dc80d14273b9",
+        "references/ci-cd.md": "2c8d6e8187e57cfb62dd6c60d5c12467596bd2c8f9ac444fda3c5e77531726ec",
+        "references/hook-wiring.md": "055aa6371cb1a36b33da0122ed57beae15af6206fd939a2245793af24333309a",
+        "references/receipt-format.md": "e39220906ddbed047a8bd83814615deda7b575124690e8e2f5d118337a392d2d",
+        "SKILL.md": "c021f598e6af7c638a1e28bb171941aba47aab1e7e28dd96004800ee174510dd"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/react-native-design",
+      "path": "048",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/react-native-design",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "46c4f302d86c5493d6b7ebc9d72750124b925851c3b48f3d2d9717fe0567a171",
+        "references/navigation-patterns.md": "fef43e6a8f768b34f6c7e54989872c6fcc03e0883b4ace27258ec480440f3e45",
+        "references/reanimated-patterns.md": "861706a5ea0fd6d908eaf7159f156d1bbb6600d406b8e0d892624f059b341a35",
+        "references/styling-patterns.md": "3fddb0ebf1c12b5b077906a72a388d447797c1e1cdf9f51a4d71fc24e3b88c32",
+        "SKILL.md": "71eacfb8d4a62142e135e8b1934ffb540b0d2703d6b6b273d4c0f255bb1aa68d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/observability-monitoring/skills/slo-implementation",
+      "path": "049",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/observability-monitoring/skills/slo-implementation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "5ec829a44c438dd828e910ab7db9986768d79e5b9cb550ca217ed71376cedce9",
+        "SKILL.md": "538e560a1c10be5f643d0a048e4e828605420e9b1867a9d4449f8a3471c14049"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/shell-scripting/skills/bats-testing-patterns",
+      "path": "050",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/shell-scripting/skills/bats-testing-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "b3a82965886d700debae915949a6eccd7768568d97c0d996d7354abb43fee4b5",
+        "SKILL.md": "d7992dbf589789f1ae446161d86c1cab026b9dfc4acfed5491d552be97338e62"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/cicd-automation/skills/secrets-management",
+      "path": "051",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cicd-automation/skills/secrets-management",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "293527164f627d889cebdf78a2b45455952cc402797236461644b376af8dfe53"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/machine-learning-ops/skills/ml-pipeline-workflow",
+      "path": "052",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/machine-learning-ops/skills/ml-pipeline-workflow",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "3049880901f70761137ef8818c6e0e5c357e5d108b82be48003e98c882a31c8b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/architecture-patterns",
+      "path": "053",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/architecture-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "a3513435c141f177ae6603697e1fbbaeec404943ea89dab14c6b76a0b51b03e3",
+        "references/details.md": "a53411600b253b343247db9d86140f3136ee7bd26a67aa8411962bcc1f5ff981",
+        "SKILL.md": "350caf22b856b7d2908a10a69a8cc13e743c757ba9838716051b4e29fc1d7595"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/stride-analysis-patterns",
+      "path": "054",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/stride-analysis-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "c386eb04dacbbb52eaaed318e7681549c40bd4686cce2f0d17d24f1c03ae1049",
+        "SKILL.md": "b7cfab85be4d04a81d22f79cc3b0e95aab8aa3ae4dfacbcf44de076dbeb16f1e"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/dotnet-contribution/skills/dotnet-backend-patterns",
+      "path": "055",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/dotnet-contribution/skills/dotnet-backend-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/dapper-patterns.md": "f68bc6b5bbf05680603c11d1e0a9571e28fe8225282131ea490daad383041ff2",
+        "references/ef-core-best-practices.md": "45fc78673b7f2a825082c13b235442ae0aaba686051b65f83fdb1039a82b85c0",
+        "SKILL.md": "0c5abad798ef47ba0c0d785ea5bc4fc156c0dd17aef40d18239479447daeb949"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-deck-context",
+      "path": "056",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-deck-context",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/design-profiles.md": "84fe61ef59bc853556650f5a6d8165ed6d1e731248a7c8a9e8046e8dae5686f1",
+        "SKILL.md": "da789aeefef879f3b6755565472829c7367fe47bea686caa30b13e4267e3570b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/nextjs-app-router-patterns",
+      "path": "057",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/nextjs-app-router-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "ce694daee93b0bba3373ae77bc3dbe66583807fee394088a24b33b8adae1d96e",
+        "SKILL.md": "8de4ab196350d6bb2d191260e13d1645822b7ec1bae205a2018a24cdc3f9b26c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-finetuning/skills/grpo-rlvr-training",
+      "path": "058",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-finetuning/skills/grpo-rlvr-training",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/grpo-memory.md": "f0003e092b2d5d961e4b70098d39015bb8b9555c29ad9a4d9e4024fc0d075ec4",
+        "references/reward-functions.md": "279c047c4babab0d67229a205bb284894a5e72e82c9e97da4e444165117ac7d4",
+        "SKILL.md": "7249cbd21480fc2fe5b27dd5e40aa85b90db9c2a6c9238e4f9cb70fb6acb02a1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/microservices-patterns",
+      "path": "059",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/microservices-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "968c9446da2a61491f7c007a8fba6524268b09be995f9b340cc2b103583116c0",
+        "SKILL.md": "c9d34026de5eb5b9f730604d1979df9aaa58dd7fa40c022e071da5ca65d68759"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/brand-landingpage/skills/brand-landingpage",
+      "path": "060",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/brand-landingpage/skills/brand-landingpage",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/interview-framework.md": "3b8399e5e0f64f8558549150377d85eb2d097ea340da4c095fa4aa2aade61ba4",
+        "references/state-and-pitfalls.md": "06847c20a2227218b1a70782beafb152c0fdcc22624335dcf5bda3d400636e10",
+        "references/stitch-architecture.md": "ce5adc9d142721f5962e8a20d6da32674fe2e97f9cc1252db5e43dd0a6c59dfa",
+        "SKILL.md": "ba8245d80e76189d1ed0dfa1d8bab00c47854eb5b55a34ee97bd0319b46cbe3a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/accessibility-compliance/skills/screen-reader-testing",
+      "path": "061",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/accessibility-compliance/skills/screen-reader-testing",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/jaws-talkback.md": "86b18b0d04eff50edb36c33fb6eb0269f9f6f0f87a36997b6b4f15837b1972c4",
+        "references/nvda.md": "ff4d8d308fd61d64d2ad0f412294edbd430822c83edb7139922fe436e097c00b",
+        "references/voiceover-ios.md": "719751258a709df4c05dc71bb186a15cd6f0dc4a62b4a6caf3ef10a35d4a9886",
+        "references/voiceover.md": "b573c0ec462565493072edd6d7a77742b638a92ce762532ef4d3cce1ef0a1763",
+        "SKILL.md": "d7a4190a8869fcd60e38e1dc0d92d62573d025e46afb3a03eba140e841d7185d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/incident-response/skills/postmortem-writing",
+      "path": "062",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/incident-response/skills/postmortem-writing",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "d1f5711753e7a7a95aff4d353dd39422d96c80417e54244272472b10ba8296f0",
+        "SKILL.md": "1a9d5b19b9ab32acb6616fb0990b8307888da0169537929916762d91501b84e0"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/visual-design-foundations",
+      "path": "063",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/visual-design-foundations",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/color-systems.md": "9ba288fbead974f0b6424ca04acee68e6ede07be62c5121142084e6afa82f871",
+        "references/spacing-iconography.md": "04835fad7ba356d9d10b46a9f6911a6b535095964a238f39f100b0dd1c4d90b5",
+        "references/typography-systems.md": "93be8eeb9c2a5e26205f657ea13a34bb832ba686c0458ee3db2877e6b4b066fc",
+        "SKILL.md": "0c6970d14f5d5df55c63d1be995205d140489e2d0c39896657fabee6f6a5df84"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/event-store-design",
+      "path": "064",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/backend-development/skills/event-store-design",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "485be108607252e1a7ba2948c5c81c4ee7573c9b5386e7a62f98a5f0f0c1ec51",
+        "SKILL.md": "66bcb9ad668a029829ad5b573457f61ebb987018dc4d60023352fac8cd5d5400"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/sql-optimization-patterns",
+      "path": "065",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/sql-optimization-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "27034cb3c3bdddf8f5b9593c882e0be95c7e48289b2507c95d0df88850cf1c37",
+        "SKILL.md": "cfe8234323daaeb47577261c96933f519004fad2f45f1460f340b883af5d7354"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/billing-automation",
+      "path": "066",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/billing-automation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "71967552e1dfdf4ee23e94f18e8788b1a42a27213139f169adc86a15624c243f",
+        "SKILL.md": "95b32527f4e185712a1f9b903e001b623fe01f9bc1ff2beefb13b517b30790c5"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/react-native-architecture",
+      "path": "067",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/react-native-architecture",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "72b69297e14daa2f3d16be629e986ebd07d6146b646a4449cf96516d2e291de5",
+        "SKILL.md": "84895e8207c68928f30896a0b4da38c6e0d3abd2d9ac39227bf279bb08c2a79e"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/nx-workspace-patterns",
+      "path": "068",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/nx-workspace-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "c799667de35c2a3134c79eb6e2e8c057b0759f03a8551e3193ba0ac503454980",
+        "SKILL.md": "fe6d0cd7db8c86d77fa916ffd11073b2598f9a1a4be5bb3f0a85f81944af4227"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-design-patterns",
+      "path": "069",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-design-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "5d85b7a1745446432060bb31ee1fa686d5a41d86cfaf3687dd2710b47b72e5ea",
+        "SKILL.md": "42c99b3bc55a56a65cd3f16aa24ea50672ce0fa4893eb0f34bba0cdb8a0e3319"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-generation/skills/openapi-spec-generation",
+      "path": "070",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-generation/skills/openapi-spec-generation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/code-first-and-tooling.md": "533398d65b933040d13e642414e6b9846adbe7d5c95947223beffdb3ebe1590f",
+        "references/details.md": "b7c681062118a47126662bc6463b9be9430a45b983ddde71d1bdaf7fd091ad51",
+        "SKILL.md": "8071736973f8a99cbe8644e21f638493ac062c77d650d8fabc4a469285485d7e"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/rag-implementation",
+      "path": "071",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/rag-implementation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "be21c38da342969f70d788bf55d027bae57f757f26dc0e434afc7e1f5515534d",
+        "SKILL.md": "d10cae11471ad26fcfa830ff25a345cda2fa99fd6c4fc56b5a64445c954c7045"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/business-analytics/skills/data-storytelling",
+      "path": "072",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/business-analytics/skills/data-storytelling",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "b3442d4692d4470091f3aee50a092aebae32df0c26ccc3526b1b2e3bfe614407",
+        "SKILL.md": "0244a9ef6bca2df0762425b78912d27061b9b93f9b09987ad7bc074752a0cb50"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/conductor/skills/workflow-patterns",
+      "path": "073",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/conductor/skills/workflow-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "47e4605811dc5ee31e6d3ea801eb05f74fd77e11cc4891b1f6f5d2b1dbe0bfd8",
+        "SKILL.md": "dc156fe16f39e37c3d7011d3ec7569c0b479846ed92626694ad6aafadc4d32f8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-standards/skills/hads",
+      "path": "074",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-standards/skills/hads",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "02e8fab07e66768e32eb5c20afccd00c2c1ed52d142ec533fbe608a0037edba1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/web-component-design",
+      "path": "075",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/web-component-design",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/accessibility-patterns.md": "cecf82569bb7cbe89c96bd1d00ac0bee91d121515f19908a26e15634d13d3e3b",
+        "references/component-patterns.md": "a258c10793aae4b2628ff291fc7557d5605c73821d4946b98b923d6ef014c787",
+        "references/css-styling-approaches.md": "fe34ea85c3c3116982783c9148217c5642a15fcb73207458326ed91de05e592e",
+        "SKILL.md": "a7978f5e9e3fa7129cf3eb8d607cedece4e207011321893d9a3c5dd92cf32603"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/llm-evaluation",
+      "path": "076",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-application-dev/skills/llm-evaluation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "22cef4c0bd3cbceda2719d6f4a8e76c3248cbb3c14ab6c3ce2f025759bb6270b",
+        "SKILL.md": "d1c980c9674e3ed5d9c067bc7972c88953f5e3dfd06a5cd09877fb16021e3d39"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/game-development/skills/unity-ecs-patterns",
+      "path": "077",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/game-development/skills/unity-ecs-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "031cc2f576b3e03803a356469d8bd3da15a216649208a3460d055042b1c2300c",
+        "SKILL.md": "18c3305e118e330e352b3e85011640385bb2bed1602e88d7447f55ae3447c973"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/protect-mcp/skills/protect-mcp-setup",
+      "path": "078",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/protect-mcp/skills/protect-mcp-setup",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/receipt-format.md": "3cc11e1b7aa0a2975907790bc8c834bc1b0ee2984836abac36b202ffce61498a",
+        "SKILL.md": "c1aad7bc2145d5ded598a6cf9ea17b27410bd6ff4c4e17180090bcc4f3b80029"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/k8s-security-policies",
+      "path": "079",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/k8s-security-policies",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "assets/network-policy-template.yaml": "719734ad1a92abad28556c3c421c3f848923854f3228f0424b7f409182c9df6f",
+        "references/rbac-patterns.md": "0b63b0f25e81e5b941a4eec3415e63ebd931d88402f0278c155550b635ab7010",
+        "SKILL.md": "13c693f24c8b8a6a23b4441e6f7528b18e735b8da4b9b5a642fef5b6969445a7"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+      "path": "080",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/chart-structure.md": "33bc7dc78368282ce0cc6b21f9df9551afe2482a2886c21082cba6b746373b5d",
+        "references/details.md": "ff0511db5366f0cea3dfa98800e2d921bab2e22f423d5c331853826b54dd39b6",
+        "scripts/validate-chart.sh": "f1de1b886fc8e171fd4c6e10f1cb53796d47dac9b7a76babd710e2a86471089a",
+        "SKILL.md": "d277c3d3a1b669e4fb8bcd3a36fdec7d7ad1becc2f2ff908c841ddf306e622ed"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/observability-monitoring/skills/prometheus-configuration",
+      "path": "081",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/observability-monitoring/skills/prometheus-configuration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "5c2f5e07012c033a0b8eb58f728287f1ff0230bc1f32bc3b199e54387eecd32c",
+        "SKILL.md": "e28770f8645d98ce351e6de07535af743a126cd61fc7576485175f9f49e0d9a9"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/machine-learning-ops/skills/recsys-pipeline-architect",
+      "path": "082",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/machine-learning-ops/skills/recsys-pipeline-architect",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "74c056a02a065adb7acada49a3bdb0886ffa6f03c902ea9661cf93e5b34e2cd8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/design-system-patterns",
+      "path": "083",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/ui-design/skills/design-system-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/component-architecture.md": "84dc16ed581c1ad72e34b93ba84bcfa9223d30f9c42eb7e36654bbbe8daefc61",
+        "references/design-tokens.md": "44bd27e26f072a3facd6cd841140d403805106c9c5d5e39fc33bf6ffccf8af64",
+        "references/details.md": "1f1792e8b20c24c2be2acd46e7da85928578d108006594f3ae35d93f9108ff6d",
+        "references/theming-architecture.md": "24c9efec7c809a4d6797e6a11bc66ce08c5d708211caac14266ce5754c83cc75",
+        "SKILL.md": "618355f0e6c6ba8ca5d231035c9da18302fe6894aedce565743e9181b6c928ee"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-anti-patterns",
+      "path": "084",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-anti-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "5d8074ae2408afca827b384e26d151630901a6e6f876dad6acad299e497e8be3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/agent-teams/skills/parallel-debugging",
+      "path": "085",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/agent-teams/skills/parallel-debugging",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/hypothesis-testing.md": "2042eb0d8b358bca9a098ad6d2d5e4091cfd8887e15ec6482232e87737b8c358",
+        "SKILL.md": "31b6e288504f465cfecb2ff18ec014a836448a246f61f7a8e10c5462df5520d4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/cloud-infrastructure/skills/terraform-module-library",
+      "path": "086",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cloud-infrastructure/skills/terraform-module-library",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/aws-modules.md": "fdec33a85c9fc14107f482ae0d1d29920a965cd56d4c12e2aa41a4afc2461cf2",
+        "references/oci-modules.md": "f0cd599c2e2a1be54300033b52622a5f6d40b7e045bd9c1e9d515f5e599c14bc",
+        "SKILL.md": "4bf215264e4e485a47a57a72f56d0da6a3e207ec3160535f838f5b1d4ba771b3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/skill-forge-essentials/skills/session-guard",
+      "path": "087",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/skill-forge-essentials/skills/session-guard",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "2bdc028582d5a6b818155153ec27e23c0fa088a65b8fbe09278927dfdbce72ce"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/error-handling-patterns",
+      "path": "088",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/error-handling-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "705db82352df6a5f7d6d0a96bf848aecef734ca8dc3446904ddceead6aaf91d2",
+        "SKILL.md": "5fb7f4d995fc05386a8c04b045f96fd3cb652cbd31fd52d78966f86323b373b8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/cicd-automation/skills/gitlab-ci-patterns",
+      "path": "089",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/cicd-automation/skills/gitlab-ci-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "152b2b89bbbb14eebe2a78517d80ee7d52b6052345beea631ca9658d34e614ea"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/framework-migration/skills/angular-migration",
+      "path": "090",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/framework-migration/skills/angular-migration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "19d2101db58c095d4cf2dfcf8b2686ed7baa08661fce0c8e580b14ba2205662a",
+        "SKILL.md": "71aba7584ac885fc1feb9741ad2f62ec20103e60cf14e4733a4ae63509664b1d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/data-engineering/skills/airflow-dag-patterns",
+      "path": "091",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/data-engineering/skills/airflow-dag-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "7ee04b0d4ae58b49a1977d8b41fcb2173e026e20b97330ec963eebbd5c45bab2",
+        "SKILL.md": "99cf58e6d32b977e02a9c7ae2ed0ae4894e24ece95260134ac22925497c2a732"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/auth-implementation-patterns",
+      "path": "092",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/developer-essentials/skills/auth-implementation-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "1243a4798f303f03e8c7977efd0f0cc594166b52c175d67a8169a5c2ba39efcc",
+        "SKILL.md": "1fc61d6074ace3d3db9d527ef92a7188118ff305b6ea98e0f9356545c6e15996"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/dgx-spark-ops/skills/spark-environment-setup",
+      "path": "093",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/dgx-spark-ops/skills/spark-environment-setup",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/container-workflow.md": "1daaf8bfc02b00e054d8107fac9c3ad367a58529f1361f3ae2a329d0f0434ccc",
+        "references/stack-matrix.md": "8e9fccea72e8ffba0b143f01d159e100485ce1838d1e42c02221fa9cd1ed2980",
+        "SKILL.md": "4fe4b4328a52dae83b2224c577ad29abc499215cd15e987f8255d33b1ca5e55f"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/game-development/skills/godot-gdscript-patterns",
+      "path": "094",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/game-development/skills/godot-gdscript-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "659531834c96b493caeeba32303eeacafe0ed482439933beb0a1765af7288bec",
+        "references/details.md": "f5ba3e068b89ff216f7de50862d8c02c7d7d4be02c76ff19c0f63973fa232bbc",
+        "SKILL.md": "baee8a6df1556a517dcff9df8ebca0b763c3c8275752f12a146fd12eac994b55"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-standards/skills/grounded-vault",
+      "path": "095",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-standards/skills/grounded-vault",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "e15de64a884df2ae9569c77d2285c73be82dd2cb53f496148caf9ee95375c7ed",
+        "SKILL.md": "8c646c8dd078029950f9d6292a1b79a8c97cb290c02c496d869c80c8089ae80b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/incident-response/skills/connectivity-triage",
+      "path": "096",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/incident-response/skills/connectivity-triage",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "38244fb0faf77e0a213a490c7e87208f4da477500542d6a92360c92a2f3cfd4f",
+        "SKILL.md": "08cd3ebe37f8ea4d623e23f61f78f06ab897e69b19865ddf370e6d4f89df2c2b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-slide-specification",
+      "path": "097",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-slide-specification",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/layout-contract.md": "4370e56396fd912d24e0965dc8d0ed82184118611cf73745baa87a2e19a8f70c",
+        "SKILL.md": "98b159d92943d5c21adfb87a4029e4eb9e039a30bbb01af1e7a937dbfe67fdc6"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-finetuning/skills/lora-qlora-recipes",
+      "path": "098",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/llm-finetuning/skills/lora-qlora-recipes",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/hyperparameters.md": "bf20a0427d4205e1a3f6cd2685c9bb05612ec43ed398bb4d17aadd7aa9427825",
+        "references/unsloth-trl-mapping.md": "d702034241d6bc1b332b3ab72abbaf3b317993d0181c10f63d6910fea3fb0d22",
+        "SKILL.md": "83171f8287ee41c799bd6b1c8dd04695286599abc9f4a5d4175d3bcfed6ddf96"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-generation/skills/changelog-automation",
+      "path": "099",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/documentation-generation/skills/changelog-automation",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "bb85b108b101f76ec02cd678e34e83181148a2bb49e240f23131c51288c76c32",
+        "SKILL.md": "b9748be2063023ba754d47ab9e727bcfa053041fd6f83c524eb8ae4a257cb6a1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/pci-compliance",
+      "path": "100",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/payment-processing/skills/pci-compliance",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "4267e2904bd95e6275cac61f1ba8dc3aee15b0721c9bb35a2140e6585d283aac",
+        "SKILL.md": "c9e9f09f66cf8faedfba24c5e611b8ccee4b103ff7dc91e759a06aee23f2ee16"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/async-python-patterns",
+      "path": "101",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/async-python-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "c5a97988fb96562bdcf436ba4e022e8e67df46e69f373fe3a93315bcd2a8474c",
+        "SKILL.md": "c2da0b41953cda62a960d37126c0a5cb387b8f8b0093e3f71cc1c78455cb815a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/data-engineering/skills/dbt-transformation-patterns",
+      "path": "102",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/data-engineering/skills/dbt-transformation-patterns",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/details.md": "f560a1ba857fdf4a2a78ac3c634c1a952afaee2ffc3a13baa21811284586d6e2",
+        "SKILL.md": "c402788b6294bdd4b613a27e65cdcdb5a2509e7b2655ac3c18ce8804ea2bff07"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/content-marketing/skills/social-evidence-research",
+      "path": "103",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/content-marketing/skills/social-evidence-research",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/acceptance-examples.md": "76bad7816fac4b5f8ac7a62c648e7483abcc64f90ba3183d401c2c51b9148dc1",
+        "references/evidence-record.md": "57e736c3852355df75d856b2a15814d5e16a867653110c9d0c05834853c93386",
+        "references/report-template.md": "b8965e8270359fcdb15f94494a76435ea7f16a887cf34a01f705338c628bdd74",
+        "SKILL.md": "344fa1b35ff1c480768635337526fb3bee23ef0c52821ae71ad82c4b40a4fe1d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-performance-optimization",
+      "path": "104",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-performance-optimization",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "3109ef651c7591017505aeed1d171fbf9000ee522c1b4dac35f90192974b20f0",
+        "references/details.md": "8643031fabcbaf555ae1b4e702f1b5159689a31a4b286280d4df2822c9731281",
+        "SKILL.md": "807aa725cc2b46b4d68a11a52e5b345be0449e80b7f4b60c32bfd2c35345afb5"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-reference-deck-analysis",
+      "path": "105",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/pptx-deck-creation/skills/pptx-reference-deck-analysis",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/ooxml-parsing.md": "6fa87067c6a65e039fee14cda114a93cf9a704763773ee2791f29c542d997351",
+        "references/reference-deck-analysis-patterns.md": "1a726c886998709560d8744c5a2727f988365f5ac8c3f6740f4dfbaa81320892",
+        "references/reference-deck-analysis.md": "3bfbcabcfd8dd31ee7fbbdc18dcaee2a2221e3246bcfa6c852b4e4e9cef34759",
+        "requirements.txt": "caa78720fbe8e598fdc77e1dca3bdbdb1a7ccb06a99b20b611a7f038cecca27f",
+        "scripts/inspect.py": "bfa9d2ec60aa26f222c2b95721df7ce08f7fd2fe09218cfd8b075ed0e77abe65",
+        "scripts/unpack.py": "7333f40a9c703c96ef4bc2627b38d26aae8271df60806b48d43a33be68ea3a52",
+        "scripts/validate_package.py": "edc9e0d4938af7fe94391e98cd67b315562001f2d488c18cfe383ebd31f8f10a",
+        "SKILL.md": "596aee8b94f02917fb61938af4d8d2552fc0ad71789bee9a478253aea913f4a4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/tailwind-design-system",
+      "path": "106",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/frontend-mobile-development/skills/tailwind-design-system",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "references/advanced-patterns.md": "40a4a9fa931f4bc95213870ea1fe7c32ce50aacf3531af07954b660c4f51e1a2",
+        "references/details.md": "06db0dc31dabeced9ea5ee27dfe2f98fd1783756a3930e6aeacf09ab4fc6562a",
+        "SKILL.md": "b6577edb7b7f71a6954f68b80c7eea1748ccdf31862759f864bce558fb2bcf83"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/k8s-manifest-generator",
+      "path": "107",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/k8s-manifest-generator",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "assets/configmap-template.yaml": "d991cec7e5653ea24bdec1b0e76ec9de70cc0a7ac4e13c647cdfd893e31cb064",
+        "assets/deployment-template.yaml": "9cbaf979af9c66f8fb64e3430a6751820f8ff3161a3af351fa3728e4eddd1245",
+        "assets/service-template.yaml": "87f085b5502182b7503d332f7c62da69bb3f737cb8f38f65ceb520d7e5557711",
+        "references/deployment-spec.md": "e86131be416480baa0a4dc2b2bb99d0da4b5f361f5616bd18556038013abc394",
+        "references/details.md": "69bf500ff981ab6b5aeb9c7bdb34a461c49f8bfd665e03c1311dafe9aa4b91b1",
+        "references/service-spec.md": "0fecd8ba3e8badca2dd58c2f0a81bf7aec70d7e1817e0fdda36602182a5f7b55",
+        "SKILL.md": "489acd7b8fef07286a9b7d37879252e340e297f51a718d1e4ff30cfaf3b5f262"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/sast-configuration",
+      "path": "108",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/security-scanning/skills/sast-configuration",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "9fdd58afb507f1256c7fde3b385e214deabad39874bb9511121915dbda935965"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-project-structure",
+      "path": "109",
+      "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/python-development/skills/python-project-structure",
+      "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+      "files": {
+        "SKILL.md": "c53696fb8d9014abc280fc0e64220cae0d087766a16380e211a6745e481dae65"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/feishu/skills/feishu-perm",
+      "path": "110",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/feishu/skills/feishu-perm",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "cac96b74d35fd7f08f2349572cd451c4a35e425d553151afca29b1148162b9bc"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/discord/skills/discord",
+      "path": "111",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/discord/skills/discord",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "5e9eff6ca02b59e692e7255799283fa7654d598286531f6970fea6b1806e2cf0"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/security-triage",
+      "path": "112",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/security-triage",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "7eac4f2c85c121da269a3f91a6c540c9f311e3b8efac2a93807c6c862f26c42d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-ci-limits",
+      "path": "113",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-ci-limits",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "43ff16597d078a2338b0964504c42d77fe1d203cfe86cf5ad429aa7c94a19280",
+        "SKILL.md": "3f9139ccaf9d8f5014e84275a74f48587c99316af93a226922547401b376517d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/tag-duplicate-prs-issues",
+      "path": "114",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/tag-duplicate-prs-issues",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "7cbceb5aa11e2c848ddb286e8100d1b4332a237b99cc3c3966a6c1ace197c936",
+        "SKILL.md": "84c1d4e491e76e3f24e3a47a02833d6946ae906de2dbaefbf47d5cde0a10a845"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:custodian-skills/diagnose-gateway",
+      "path": "115",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/custodian-skills/diagnose-gateway",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "e0448d96d55cb459ada8a1f475a6f1fb62e6d75dcaa63aee08e15360b8ca1a7d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/browser/skills/browser-automation",
+      "path": "116",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/browser/skills/browser-automation",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/page-triage.md": "32a22ecade4801c25129e7344cd5b8547c988013fedbba7f23eb35e8229151ba",
+        "SKILL.md": "fc3f2563b69e6a737ef58f8370909ede2fe2df403c12532b665aa89c2c369a01"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/xurl",
+      "path": "117",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/xurl",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "0e5e736c382f0943e2c4ab974b593fe5b0b0a6ff7471f56f7ef9db69c19025f6"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/graincrawl",
+      "path": "118",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/graincrawl",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "4f2b90014e1e3d499e98cc47a0df445bf7fb8512ea89627c0e8c643dd281778e",
+        "SKILL.md": "d8f15d0eba6a1a1a38ec7b5059110dcc0fe2c5f54ffcb189e5e42c8b1f4346c1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-automation",
+      "path": "119",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-automation",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "79aad0ca8bb637dbf3650a32aa121affcc6fee80c66eca565c97cdabde06c98a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/model-usage",
+      "path": "120",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/model-usage",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/codexbar-cli.md": "58e57a7bf1359ed32b1fe80c7285e75f88127e82db6b0dbab2ec4dda6ffaca42",
+        "scripts/model_usage.py": "cd13c65d9d10faaff20bdf40d5f45f6d26a29dacc3e13d8a1e481a3a8a0f4874",
+        "scripts/test_model_usage.py": "1bc6fceb436d836532e6901edb6eb473a68a16eda25f45f94322d99beea4a3b2",
+        "SKILL.md": "f4e40f006365acc5f519a55f4efacb6c722788026792e498fcf46dc1a0f0c1d1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/peekaboo",
+      "path": "121",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/peekaboo",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "4369238bd780adc502acc48eef83a41d1a5fb8e6369b6cd258e11779043bfcb4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/feishu/skills/feishu-drive",
+      "path": "122",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/feishu/skills/feishu-drive",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "8df105d7f607f457026da9e8a93e97aa0b356712f628e5f61934be7a8c4ec34c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-debugging",
+      "path": "123",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-debugging",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "0d1581e258bd536cbdef389449130e75e893e89a336947a88e1df44a2a8ab5a0",
+        "SKILL.md": "b8fb9dda4f561418289315c999741416c8b7767dffd5e7d4fce0ba05e207bae6"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-test-performance",
+      "path": "124",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-test-performance",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "068736f5f68ab510d8b39925892ee8692b3bbdea670a25cc6a725988a3abf2de",
+        "SKILL.md": "244e592d6a8d6430bd5f73a9a9a6a359e31b97dedaca619a3bdbc89299490106"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-ingest",
+      "path": "125",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-ingest",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/assertions.md": "f560f8042167e4e92a89035c39763726629d4f8f740c6a3fe77cef22ff6a644f",
+        "references/conventions.md": "0a7cfca52277294b35d47917bcdccad4889b87b795517f8f8941f9d2b9924d93",
+        "references/identity.md": "cd35cb9935a0eab93e67f58726183c18ef4bf5a61d6eccde6bb7e4fc967e24be",
+        "references/meeting-entity-example.md": "affb9ac349095af2425a59819db7777889e82342c8846d5bfa010c89fa6a3d24",
+        "references/profiles.md": "13114aedd36c57dc4a522e014452c93896e2c0b4ea7bd6ecdd7c5cf7d220b1f5",
+        "references/publication.md": "292a3d6342f15a9522bacb20ed2d4cdf19df8e58be2ecfe0783fbaf16bcfe431",
+        "references/publish.md": "c7fa9de5a14fe04ae6642a710919f968e808de3c2b58eacf9d86b8cfd502ec1c",
+        "references/recovery.md": "ea81c547255ccbfb770c0498fa871f63b86453c44df7d91bc84ba5ac6a5e4d32",
+        "references/setup.md": "98b67900238b5ac88f7495aafaa903cfe73c87196451050ec392fc81924610c9",
+        "references/sources.md": "7a59cd831ca17169006c7c6eb2860de84a531f5f27b6cecb569f01f02e03603b",
+        "references/verify.md": "912e16e723018027f6af755a419ebc825e3d25d59c5e2e2478e44c35bc89e914",
+        "references/writing.md": "6b1c50ea3c6f771f2562c8b823cf7d832f0f21e2a728a0e2002308f791c07b10",
+        "SKILL.md": "14c79c89aeb129a9d8b8f849eb6957c5fe87959a16a0270fa8724c74e94c491a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/node-inspect-debugger",
+      "path": "126",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/node-inspect-debugger",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "50d2f6828eaf4bbf7ccbaec5af928f9af978e93b7c679b0f3c8afe2a80ab7d52"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/notion",
+      "path": "127",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/notion",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "d45e2c1270d58c7878c13467ab27780530de2af89fb8b307c662b5d4859dc555"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/1password",
+      "path": "128",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/1password",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/cli-examples.md": "7df8fb39623b7cd222766e33255d47c271f772ca53198f256f1270fd9054d20e",
+        "references/get-started.md": "492c2c77f54f2071560f5e80c0b39255430ce1dd4688e27bdd42ba14ace495e2",
+        "SKILL.md": "31721928c499579bad04ab1a61e14b22b6fd01c5dfa328aa911f9ea3e22ebfdf"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/release-openclaw-plugin-testing",
+      "path": "129",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/release-openclaw-plugin-testing",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "98640f15c81293fdbbb8911dc34fb31b2326c45a3a6f2bd9e8caa56392286b40",
+        "SKILL.md": "1cc1de6a6ef261d128653e5453b3dba9aa60ab5b1ce3c32f5272f10dbaf4ac84"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/spike",
+      "path": "130",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/spike",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "1258cde2d0e5326706536aeeef06d5366fd65e7e1c174c66130b2ac53a4344d1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-performance",
+      "path": "131",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-performance",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "617cd4dfb501a096e92525a2345acc1a85d5220c0b8e1596833189b6f6861753"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/oracle",
+      "path": "132",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/oracle",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "b150b967b1326bec594bf24f8bddf10aeb78b49a64c91091dcdf5fdad35402c1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/things-mac",
+      "path": "133",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/things-mac",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "917110e26bc6a630d614acf47d05e84da5f81fb88c0d263f5987962dca2a05c2"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/blucli",
+      "path": "134",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/blucli",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "977fde68700d0839357acdd3926cd19d646de5be3acbc3d0a1d71e00694bd619"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/release-openclaw-mac",
+      "path": "135",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/release-openclaw-mac",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "369b6f99c3ed102b998b1790dec3d466ee82ee1e7763d4e0789a1a6f6d809923"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/feishu/skills/feishu-doc",
+      "path": "136",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/feishu/skills/feishu-doc",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/block-types.md": "f5ea1250b7938be8d48c4a645bd49ca99d51574fa011b39b57b5d17110f25b14",
+        "SKILL.md": "cb9eaa23e166c917c8d764516f5253f773de5bee54422f6771f9f43c5b7b6619"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/gemini",
+      "path": "137",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/gemini",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "1aad57691db927cf26b489e15bab4eb909e390ebca361c128f98ab5bcf4bdf43"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/memory-wiki/skills/wiki-maintainer",
+      "path": "138",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/memory-wiki/skills/wiki-maintainer",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "3463fc683e92572560e4381337a49affeed226d1858bb7ccbc274f95e7ea619c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/visualize",
+      "path": "139",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/visualize",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "94259bbb4d06ab0927d540780c2ef095c6bfe17cbb7248ce485c82656290338a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/control-ui",
+      "path": "140",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/control-ui",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/dashboards.md": "615ec9849acf53325a2552553951ff90fff71efdc1ca24d0128533a0835e07bf",
+        "references/hosting.md": "e1a5045eb73101e2daeeeac489d25ee95399c35d6a499789b5fa38a607006fd6",
+        "SKILL.md": "aa54d5df5f8097fd3d2afeb0901502772919b226075d78b7fd9e5b12c25e0aea"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/telegram-e2e-userbot",
+      "path": "141",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/telegram-e2e-userbot",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "b0e3fe88adbc26c01a9e2c45cd529c7a0d6e5766ef126ae557a449edf77870cd",
+        "features/basic-turns.md": "efcaadf45c639df1b9eb51c03a7e8d45a2fe3347a56ee587968f0d1d329496fc",
+        "features/delivery-lifecycle.md": "97a2854c259836e04b1c5a579ef35d9587b8b05a9bd198b5292d6066c59e09fe",
+        "features/dm-topics.md": "ec7582f0cc20d77cbbd2eaf6f24012be8113783c4abdef3b66c5a12fff78d540",
+        "features/private-yield-reply-policy.md": "1bf4f607b1324ed3912753aa887ef1902f79c535319ed38ddc7906ac9499b570",
+        "features/reaction-lifecycle.md": "305c2a0a2aa867153d05768521351dc891e463c4717882a8bb6e24cce31b3419",
+        "features/README.md": "d41dbf607c57842149b0e40287b8d749f514a33906a5f9a7a69b70f240f77575",
+        "features/restart-attribution.md": "bd047f81ad61488e598306aa3698130a90effd3487f728f08e3ec604cb5b82bd",
+        "features/runtime-reference.md": "5d1033e9375e5b3bd31470b6d26a3dece126f2116707667f2e3ce2a4a3734090",
+        "scripts/telegram-binding-forum.py": "b9eee5066415af5e53845c5df135b8c9960f11695e311a8ac3f6cc6c39872beb",
+        "scripts/user-driver.py": "60a4730734dbf112391024c58fad062d173171a297a6d88622916111e896b366",
+        "scripts/user-driver.test.py": "2a4851ebc2786785910b07351b85f2ad82b36119abc1d408e39cc7394535ff1a",
+        "scripts/user-proof-ownership.test.py": "6fbece1c0abd9d525b25240c83e1b2378d968570c9bbf022a696f1ead4e7ddfd",
+        "scripts/user-record.py": "fe59744efb29b0f9dec81ea300ce2870f76dd53eb6484f25edb49a325df8e2d0",
+        "scripts/user-record.test.py": "5fd4c38d5ff14f45784a0d69120f4c7473e1dfeef1734653e87202a400dfd42a",
+        "SKILL.md": "a550d6023ed8ea24d024eca506b569e321349100612142ad12b9b6d296d1a0e3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-source-ingest",
+      "path": "142",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-source-ingest",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/assertions.md": "f560f8042167e4e92a89035c39763726629d4f8f740c6a3fe77cef22ff6a644f",
+        "references/conventions.md": "0a7cfca52277294b35d47917bcdccad4889b87b795517f8f8941f9d2b9924d93",
+        "references/identity.md": "cd35cb9935a0eab93e67f58726183c18ef4bf5a61d6eccde6bb7e4fc967e24be",
+        "references/meeting-entity-example.md": "affb9ac349095af2425a59819db7777889e82342c8846d5bfa010c89fa6a3d24",
+        "references/profiles.md": "13114aedd36c57dc4a522e014452c93896e2c0b4ea7bd6ecdd7c5cf7d220b1f5",
+        "references/publication.md": "292a3d6342f15a9522bacb20ed2d4cdf19df8e58be2ecfe0783fbaf16bcfe431",
+        "references/publish.md": "c7fa9de5a14fe04ae6642a710919f968e808de3c2b58eacf9d86b8cfd502ec1c",
+        "references/recovery.md": "ea81c547255ccbfb770c0498fa871f63b86453c44df7d91bc84ba5ac6a5e4d32",
+        "references/setup.md": "98b67900238b5ac88f7495aafaa903cfe73c87196451050ec392fc81924610c9",
+        "references/source-manifest.md": "409162ba876d8941f05e287291209e6f12ac512a959014871075c653340ca9fe",
+        "references/sources.md": "7a59cd831ca17169006c7c6eb2860de84a531f5f27b6cecb569f01f02e03603b",
+        "references/verify.md": "912e16e723018027f6af755a419ebc825e3d25d59c5e2e2478e44c35bc89e914",
+        "references/writing.md": "6b1c50ea3c6f771f2562c8b823cf7d832f0f21e2a728a0e2002308f791c07b10",
+        "SKILL.md": "f680baab7cf4989944074465b6500ef3f849f53f4737a80b6c91fd17c9cbc8fc"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/obsidian",
+      "path": "143",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/obsidian",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "d4ed3ce53146bd6538c47f81da2382fc790598ec1400d34b7d1f73a8839053b4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/clawhub",
+      "path": "144",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/clawhub",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "70c40324f195450da36cb5b7898831cbb3603ccdc4c781660ddcd051b7b5d7f4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/healthcheck",
+      "path": "145",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/healthcheck",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "b41044aeb25afe95daa5c8ef6f2d6b8d197f6a0b113b0888deaa4dd69e42b59b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/slack/skills/block-kit",
+      "path": "146",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/slack/skills/block-kit",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/official-block-kit.md": "5b5c792b21d6d9bc95d46a9f11e9b274beb45c3fd3b540b9deeec070ea1a57d2",
+        "references/official-common-patterns.md": "b106cdeaf9a76dee386f489e37f709a3e56610c26e18246066a7ec540c90ca55",
+        "SKILL.md": "b9e7a6207b0bd4f5a4db48572c9720a20d98925de27e58f933a3dd02767b347a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/plugin-sdk-impact",
+      "path": "147",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/plugin-sdk-impact",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "8063616d1a25779815db12c8e005ce0567fe4df15a714d3b81937f16c80f6b80"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-update",
+      "path": "148",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-update",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "d2931264b6cc3707358e08e2b18747058b94bf50d14641b64e7f2c89968eb868",
+        "SKILL.md": "eeb7de5c47775f837ec3c9f5dc1767f5a1ce846a182a1f8290e0420429e0c8d0"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/github",
+      "path": "149",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/github",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "88a912c2ec7437cda4775994efb2f45d79fdd5823fe2394050c3ab93b525e6d8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/clawdtributor",
+      "path": "150",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/clawdtributor",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "42a64b5934bab95385b6dfeca1306705dcabb5a605526e71ac815e68c6f4a9f2"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:custodian-skills/cloud-image-bake",
+      "path": "151",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/custodian-skills/cloud-image-bake",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "13c8eccdba99dde0649063ea561f424e398f30b630cf838814fdd95d2ac96c96"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/agent-transcript",
+      "path": "152",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/agent-transcript",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "eb367e819a4161004d0c2d877397850efff7bbef2e7e47c7315a3b402d901f79"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/proof-video",
+      "path": "153",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/proof-video",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/annotations.md": "821cf789f5e940e83d2589822595d58a713606c8f28b0f4c6f25de902f6eff52",
+        "SKILL.md": "6d94b1539f43f95dc2a88f93f00ccf21bb7494e19989bfaaaad1a2fa47831d17"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/canvas/skills/canvas",
+      "path": "154",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/canvas/skills/canvas",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "9ca39f02832fe15e6ad0706cc391113c2864452255447cd5e4b38141a7f10587"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/weather",
+      "path": "155",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/weather",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "62ab4821aa873949d1c1091836be1659a42b32caadce4bd145f5505a1ceaeec1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/meme-maker",
+      "path": "156",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/meme-maker",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/templates.json": "414847dc28da8556bdd9a3ddf350f3d859d4668ecc237c1889b289d42d2879b8",
+        "SKILL.md": "682db7cba34a3d3ca791f7cccaee9488810c731d6622d8886a9bcca77c59d2f3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/tmux",
+      "path": "157",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/tmux",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "scripts/find-sessions.sh": "8df6ac8e5824b0fa4d791235bd944ce86b0d12dcbf98af7abeb6d6de50e96823",
+        "scripts/wait-for-text.sh": "b7efb785d3f2a4f1194e2ae18d7191135ad5a2fff4f08e6a4c7ad8412f3a7309",
+        "SKILL.md": "8aeaa6f3dfe06d58e09721778b8c9e654bcbd47590f26f442c4dc87c9349c572"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-entities",
+      "path": "158",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-entities",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/assertions.md": "f560f8042167e4e92a89035c39763726629d4f8f740c6a3fe77cef22ff6a644f",
+        "references/conventions.md": "0a7cfca52277294b35d47917bcdccad4889b87b795517f8f8941f9d2b9924d93",
+        "references/enrichment.md": "164136c31e444b691cf5212fb3ed8358e8ac28b26d278b84282d2b5ab23622b7",
+        "references/evidence-repair.md": "482189d8d6182568c27bf5d41d3bd5694de718e96a20cd994a8f4421d1de8ee7",
+        "references/identity.md": "cd35cb9935a0eab93e67f58726183c18ef4bf5a61d6eccde6bb7e4fc967e24be",
+        "references/meeting-entity-example.md": "affb9ac349095af2425a59819db7777889e82342c8846d5bfa010c89fa6a3d24",
+        "references/profiles.md": "13114aedd36c57dc4a522e014452c93896e2c0b4ea7bd6ecdd7c5cf7d220b1f5",
+        "references/publication.md": "292a3d6342f15a9522bacb20ed2d4cdf19df8e58be2ecfe0783fbaf16bcfe431",
+        "references/publish.md": "c7fa9de5a14fe04ae6642a710919f968e808de3c2b58eacf9d86b8cfd502ec1c",
+        "references/recovery.md": "ea81c547255ccbfb770c0498fa871f63b86453c44df7d91bc84ba5ac6a5e4d32",
+        "references/setup.md": "98b67900238b5ac88f7495aafaa903cfe73c87196451050ec392fc81924610c9",
+        "references/sources.md": "7a59cd831ca17169006c7c6eb2860de84a531f5f27b6cecb569f01f02e03603b",
+        "references/verify.md": "912e16e723018027f6af755a419ebc825e3d25d59c5e2e2478e44c35bc89e914",
+        "references/writing.md": "6b1c50ea3c6f771f2562c8b823cf7d832f0f21e2a728a0e2002308f791c07b10",
+        "SKILL.md": "6323a27db54ca9ed9b77c59c0b55e9d695a23d19de45cdf3c10072bd46c060bb"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/diagram-maker",
+      "path": "159",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/diagram-maker",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/excalidraw-patterns.md": "6fc8799815adc1ef0171f25f59431e7e60bfa072ad570a60c335383bd872bf56",
+        "references/svg-template.md": "3a8b47dbaeb341377a4999ff227f088a3a7fe2bee7b1353929f11a1f30b20c71",
+        "SKILL.md": "6195e03fcb04a1a68c4af72165e0c85efcd2719af79380d82e42996ea89ad74a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/goplaces",
+      "path": "160",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/goplaces",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "81139f4e645a6355e23d15f94ee6d6ef3bfce8eb4a5716dad298880e2b38e24b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:custodian-skills/configure-channel",
+      "path": "161",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/custodian-skills/configure-channel",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "205df0fc88c4ab27b6efc581505242bb2d6a890be9f656750e0c51d9ab41c973"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/technical-documentation",
+      "path": "162",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/technical-documentation",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/docs-framework-agent.md": "ec4ad621db91695130d848f3a2ed292843fc7200c9933f0f79aadab05ae1ecf1",
+        "agents/governance-agent.md": "2236ddba4855ba1fa369eb00af73f6f548d31e8457a73bd5a5f264e48a14194f",
+        "agents/inventory-agent.md": "58a3d915a7581da840e577b732c46f261b331d0e0ae5fad3520937163160e9cb",
+        "agents/openai.yaml": "d2fa2febf8a213fbe5e5b976e46a8f04fa04c53d9759287d261e27c41ac061e3",
+        "agents/synthesis-agent.md": "b84046b1a8b2ede7eb268e0b83b0b784f95ab8f8041ce44934ec0de2b02e7b35",
+        "references/agent-and-contributing.md": "5a373948284ff9d3539eb650e9ea4faa7f0fc99a41610b58f9097cb1be7e975c",
+        "references/build.md": "2fe24c5bb36eb3effbcb1613faf46f41a89417c70ce811a7a3c9fdb52432396b",
+        "references/openclaw.md": "0fce7c911fb3b9b43b07382bc805a8aaf2b8e23922b8b2347725b83338d63b68",
+        "references/principles.md": "d93092dcd3c2538b3bad148cda91a05e59e7520c5370088003dfb932d509b693",
+        "references/review.md": "ff91137f75d7403e260b88155005f0b0e6464d20d56aaf0fe8efa09841683cbf",
+        "references/tooling.md": "f937aa4ee596ccbc117f1bc7b03ca9a2e619accf01b28d1c88f92a359835b311",
+        "SKILL.md": "60060b356ac365cc2b039c9177563ce6a69ccf1464d04d4cde9114447e46a720"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/auto-qa",
+      "path": "163",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/auto-qa",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "e4322f447f7abc2dae106a83e8cf7ca0a72411b1cb84e04d8a64891caf7320e9",
+        "references/campaign-evidence.md": "8644514681d93cebf4c5473cdddf577016d243d3fd89dfc2354c9394cb5af4b2",
+        "references/evidence-ledger.md": "72477e9e88b167d8878575257d4eb1d57623f3722c105842e526ef90ada05240",
+        "references/live-proof-routing.md": "d4904f378d893ae275bc8b8b4d3e1b5cf8a402316eda75398cd3d568e396a90b",
+        "references/subsystem-lanes.md": "f35a7c48c692982bde5c9aaec97ff476f31121b16a91e65e0c644f1e6afb9377",
+        "SKILL.md": "28c2289daf9db15af85342147f7c6569bad150211d8733d4ed20a7ef73c40dae"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/autoreview",
+      "path": "164",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/autoreview",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "c4a1c7f254038bdfd91a83135f80f663008f7efa6093174cd6fe6a1c7d41055b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/gifgrep",
+      "path": "165",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/gifgrep",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "ac3981d030c96e79100328fb4cf84a317cecaef1c4e186d0acca21b9aef0dbe5"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/slack/skills/slack",
+      "path": "166",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/slack/skills/slack",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "ff35c12469d4590e784435ab1e14187d11f921b5bcff8f4b556a17ca7ad9f595"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/create-template",
+      "path": "167",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/create-template",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/draft-format.md": "7a8d76649e519251ebd1159a562f2c37aa615e0bf388fadff7874d4ba7737aef",
+        "SKILL.md": "33e10989e593f58531727b50ef58629b5cd0f5b579d5ef886fbdba8cdc47a69a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-claim-consolidation",
+      "path": "168",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-claim-consolidation",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/assertions.md": "f560f8042167e4e92a89035c39763726629d4f8f740c6a3fe77cef22ff6a644f",
+        "references/conventions.md": "0a7cfca52277294b35d47917bcdccad4889b87b795517f8f8941f9d2b9924d93",
+        "references/identity.md": "cd35cb9935a0eab93e67f58726183c18ef4bf5a61d6eccde6bb7e4fc967e24be",
+        "references/meeting-entity-example.md": "affb9ac349095af2425a59819db7777889e82342c8846d5bfa010c89fa6a3d24",
+        "references/profiles.md": "13114aedd36c57dc4a522e014452c93896e2c0b4ea7bd6ecdd7c5cf7d220b1f5",
+        "references/publication.md": "292a3d6342f15a9522bacb20ed2d4cdf19df8e58be2ecfe0783fbaf16bcfe431",
+        "references/publish.md": "c7fa9de5a14fe04ae6642a710919f968e808de3c2b58eacf9d86b8cfd502ec1c",
+        "references/recovery.md": "ea81c547255ccbfb770c0498fa871f63b86453c44df7d91bc84ba5ac6a5e4d32",
+        "references/setup.md": "98b67900238b5ac88f7495aafaa903cfe73c87196451050ec392fc81924610c9",
+        "references/sources.md": "7a59cd831ca17169006c7c6eb2860de84a531f5f27b6cecb569f01f02e03603b",
+        "references/verify.md": "912e16e723018027f6af755a419ebc825e3d25d59c5e2e2478e44c35bc89e914",
+        "references/writing.md": "6b1c50ea3c6f771f2562c8b823cf7d832f0f21e2a728a0e2002308f791c07b10",
+        "SKILL.md": "8ca77b89c5f894f2f3f1792a9a6b3abdee27032cac936fe57179547d6d3bed6e"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/skill-creator",
+      "path": "169",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/skill-creator",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "license.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "scripts/package_skill.py": "fa2f7ba4915464221cd71c7048e6eb71a920cf94c793332b4172d2ac353dd65a",
+        "scripts/quick_validate.py": "580ccffbd9d4370bc35bca22c551da0353424e248d7499e8cd578eaec67dfd75",
+        "scripts/test_package_skill.py": "9d47d5a26c47cbe70b788a39141e453a54626ed391ee12952eef6ffb5b73a3f7",
+        "scripts/test_quick_validate.py": "349258a18c0130f0bf11dd60d361abffa493e426355bc14df4d1d3fc09a46f8a",
+        "SKILL.md": "7da0631cb21fbd87630b5dbeb48010f66776c28e396c276235f5d245903fa6ed"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/facetime/skills/facetime",
+      "path": "170",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/facetime/skills/facetime",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "05510787dfa41966c7788ecc66c988835d237b5a409d394b97814b1268afe040",
+        "SKILL.md": "e41c8e1f9168743dd54742d8a7f735b93d67c8dcbfe580d6489d8ac7fe20a891"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/openhue",
+      "path": "171",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/openhue",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "2ab6c80280e9d7f19fa0fdadf8f37f096e30f52012edaaceb2175f513249494c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-release-validation",
+      "path": "172",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-release-validation",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "assets/tooling-feedback.md": "2df0d533319570421b37ba8db02ed3b9825600a4c464c4714c748f01d9bac989",
+        "assets/validation-worksheet.md": "ad56cbdc7474cddc55ce0532fca6892d3498d517e85f203d530941153abc83ee",
+        "references/campaign-artifact.md": "ae1419675fc64e550b78dbd70a42c236979a52e59e4a1597fd01e82067a1c2fa",
+        "references/campaign.md": "9338a703bd7e819f4ca1d05bb544e4a1089adf050f477cef23f58ebd1dff92ef",
+        "references/gateway-preparation.md": "1d67916fff8ce796b81502635d9539417cfcfc275b1485ea7528ccab40264fb8",
+        "references/human-testing.md": "b087f6e71ccf1c7149e7f4c3d7adc07d9a01ee7051c830b7f4398dd728e46d8f",
+        "references/local-diagnostics.md": "262305d9b88ca0d4ceaea3e15f9c42d3e0ff497914c864fd83b1a1eef97fb41f",
+        "references/report-closeout.md": "ddfe4ab9ac20e67c58d9a0d8e50c05580ca7edfc8e7344eaea6fad273f8fc1da",
+        "references/skill-update.md": "412df684b97e6751b8d15ca14eb3b9a8dd592476fb79762784a7ed17701b71a2",
+        "references/structured-report.md": "5ed1b1db93b8bee5af126b2f820f147f23f96bbdb7b2f0b1585432191e5d1712",
+        "references/tooling-feedback.md": "2e1e391cc5d21c55f32274343866c6703d1436a87176bbcdb64484801feaa520",
+        "SKILL.md": "3d26dacebe67e42902c6c2515742dbb90b44f78515a7986bed0dacee6fb23a50"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/nano-pdf",
+      "path": "173",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/nano-pdf",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "d8ab6db7572b0df862820dd3481c14ae306173a1dbcad7f07f9e48ada8efbe91"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/apple-reminders",
+      "path": "174",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/apple-reminders",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "08413d063e71c7ad7e4691e81a1063b455b816957ce7898576c2653542e8303d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/camsnap",
+      "path": "175",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/camsnap",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "53a7e4cb6c1903d3c4022ee15943d38b7ac8b894dd96e1466935c5a043b37efc"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/release-openclaw-maintainer",
+      "path": "176",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/release-openclaw-maintainer",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/backport-discovery.md": "3da25003352d2101ec8f39e0c9e08ce7cd1156445d0c27f78cee0416b4a5ccf9",
+        "references/extended-stable-backports.md": "316704c0f5fdd58351ea41132923393358c821112ec695fb0fd0597c2d72f908",
+        "references/extended-stable-publish.md": "5cbeaddce34ddc495d153f7becd8c00c75af5bafd2fd8cf34369581ff03848b0",
+        "references/first-package.md": "785d9e0cee3a3157bf09d08ee0677914f7a6053feaad9c99c9816577527bb8cc",
+        "references/hotfix-ledger-management.md": "0ee41477181deca517df9cd37fc482a7c7c28ea75d717630485a47fce1d388ce",
+        "references/platform-publication.md": "ff24395e93dc56cf501d9752679b0c47d84b55b67c85584b9523f7f6e0b52a94",
+        "references/preparation.md": "878eb4328a2c90df3c963cd822dccd66b3187e1732559c6eaf45d0c8ba8b7489",
+        "references/publication-recovery.md": "a69f36a5c5e7016066d82cf2c30c762dbc399afa5f1e36ff117f04fec2126a21",
+        "references/regular-release.md": "ae39c30bf81600e83294df935e1c78098eee602630d77672dc748e02f2541e43",
+        "references/release-handoff-template.md": "ad3469a40012e24e282699de5f9a74380cc4d5f6d9899ffbb34210eff151bdbb",
+        "references/release-manager.md": "55ee3b93c30eab24926fcf2394627eee7e84128c7f2c4015957bb5568cb9dc0b",
+        "references/release-owner.md": "d58a7c0ca5d572aafbba8bc0224c56a2617499e0bfd7db23ebef37876872e1fe",
+        "references/retrospective.md": "cad8742735f77ae0c633e59a1c4c50705108255585b0ce62bc72072eb76f36e4",
+        "references/stable-main-closeout.md": "eca4786a03603e093ef300da51b08da46dd7ac4de4678c71889cc1068cf716f4",
+        "references/validation.md": "bf9a4d6dcdd9c55de116e4a7a5af1eb677cf785d91de7d0e0c064a848a8dab48",
+        "SKILL.md": "312837a171734e570684bcac92e5949d3335072f90d3b961625058d03a7d12bb"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/node-connect",
+      "path": "177",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/node-connect",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "40f47cc3c6922049acb5b9a6871572a1f0d4c5b01eb7abfa9f36d0b933fe91ba"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/himalaya",
+      "path": "178",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/himalaya",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/configuration.md": "a1838b3f370abef2c6c45226115158aee095623701a4ffb48ea633bce14ccf0f",
+        "references/message-composition.md": "ba45ed7506280c20b652ccbad3042d7a6b3b261a68a25f33e189f940fc8fda36",
+        "SKILL.md": "dde091b15e99a2ca63363f110f045c7c2347ec9cb3a88dc51b109d75cc2dcae2"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-ghsa-maintainer",
+      "path": "179",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-ghsa-maintainer",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "d516ee1587d64678966eaca8b6775801fe6bcc202b95a095ca9071f9e06c156d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/slack-e2e",
+      "path": "180",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/slack-e2e",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "features.md": "7aeb7e2bf2b8400409ffdb4c562598d4b70ae351c35821f0ab472c7ebcc5ad2d",
+        "runtime.md": "a978f751a19a4f78c029fa29d10be57a8693142c173d633d4e45d08499f38720",
+        "SKILL.md": "ac796b6745c8a1f77a0472a1127d305754a0af945aef583d81ca07eb856a2c11",
+        "user-oauth.md": "89b9a85ddeb3189b5245373cbcd689ebd7fffec3e6b6c4694d977c30288d8e3f"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/gog",
+      "path": "181",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/gog",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "d54a8e52b1e00bb5d33b46915fd549f8b792ef3a383fe40e92b195d11d2d5255"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-live-updater",
+      "path": "182",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-live-updater",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "272d7fc45e2bcbf3bcee9b55f7b538919eac201d2342389d6b1dcf84868b31ee",
+        "SKILL.md": "4b1aca49c66a2671c2795e9089b7cfaa9fc2e2a71a0dd7fdf29d2cbfb3af7bf3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-repair-sweep",
+      "path": "183",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-repair-sweep",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "b9eb579450e661b1bb7bd1212b8b5fd7fc3e347822c1ca44d5faaf75c878155c",
+        "SKILL.md": "256d0e020421ce3871d75d35b9ef040b2d918e478370c506dd439051008c19aa"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-parallels-smoke",
+      "path": "184",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-parallels-smoke",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "b083e755bf9a99f85fd606bfa9edf343445e6c5236421f410c637e07b01454b8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/ordercli",
+      "path": "185",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/ordercli",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "890a7c2b4bbcec79c894ac9a4b76c11f734fa01b76b258a77e6429230b95a3c8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-changelog-update",
+      "path": "186",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/openclaw-changelog-update",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "610559f5322ff79dc8e854a28e2ed5d06eb7257cb0c844ad9ead030bc93fb0ac"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/sag",
+      "path": "187",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/sag",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "d8efa1bea9d9b441eb289a6f64826b5ded51837a30a66103bb91223f3bb2cc7f"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-correct",
+      "path": "188",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-correct",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/assertions.md": "f560f8042167e4e92a89035c39763726629d4f8f740c6a3fe77cef22ff6a644f",
+        "references/conventions.md": "0a7cfca52277294b35d47917bcdccad4889b87b795517f8f8941f9d2b9924d93",
+        "references/identity.md": "cd35cb9935a0eab93e67f58726183c18ef4bf5a61d6eccde6bb7e4fc967e24be",
+        "references/meeting-entity-example.md": "affb9ac349095af2425a59819db7777889e82342c8846d5bfa010c89fa6a3d24",
+        "references/profiles.md": "13114aedd36c57dc4a522e014452c93896e2c0b4ea7bd6ecdd7c5cf7d220b1f5",
+        "references/publication.md": "292a3d6342f15a9522bacb20ed2d4cdf19df8e58be2ecfe0783fbaf16bcfe431",
+        "references/publish.md": "c7fa9de5a14fe04ae6642a710919f968e808de3c2b58eacf9d86b8cfd502ec1c",
+        "references/recovery.md": "ea81c547255ccbfb770c0498fa871f63b86453c44df7d91bc84ba5ac6a5e4d32",
+        "references/setup.md": "98b67900238b5ac88f7495aafaa903cfe73c87196451050ec392fc81924610c9",
+        "references/sources.md": "7a59cd831ca17169006c7c6eb2860de84a531f5f27b6cecb569f01f02e03603b",
+        "references/verify.md": "912e16e723018027f6af755a419ebc825e3d25d59c5e2e2478e44c35bc89e914",
+        "references/writing.md": "6b1c50ea3c6f771f2562c8b823cf7d832f0f21e2a728a0e2002308f791c07b10",
+        "SKILL.md": "f3154e0e038e5c75d120be90ae7248a3026e310c382bb7eef253f555b7951f01"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/python-debugpy",
+      "path": "189",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/python-debugpy",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "dd4600a228fcdce153e4e318c2b8644e6f7f3964826958e89b5bae90db4877d3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/crabbox/skills/crabbox-apps",
+      "path": "190",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/crabbox/skills/crabbox-apps",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "aba7513c9fdce68e4cf8258e24cb7cd0b149ad9bfafa4c1f646be2f225bf7a77"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/sonoscli",
+      "path": "191",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/sonoscli",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "d048a8c8eb9ebbb1e6000baca132f581c7d74bebf81df18f81b11410e466f6e8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-recall",
+      "path": "192",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-recall",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/assertions.md": "f560f8042167e4e92a89035c39763726629d4f8f740c6a3fe77cef22ff6a644f",
+        "references/conventions.md": "07e4b9b9c4f098e6226e0da062e7639641484a08bd14a581f352f5540b10abdd",
+        "references/identity.md": "cd35cb9935a0eab93e67f58726183c18ef4bf5a61d6eccde6bb7e4fc967e24be",
+        "references/meeting-entity-example.md": "affb9ac349095af2425a59819db7777889e82342c8846d5bfa010c89fa6a3d24",
+        "references/profiles.md": "13114aedd36c57dc4a522e014452c93896e2c0b4ea7bd6ecdd7c5cf7d220b1f5",
+        "references/publish.md": "c7fa9de5a14fe04ae6642a710919f968e808de3c2b58eacf9d86b8cfd502ec1c",
+        "references/recovery.md": "ea81c547255ccbfb770c0498fa871f63b86453c44df7d91bc84ba5ac6a5e4d32",
+        "references/setup.md": "98b67900238b5ac88f7495aafaa903cfe73c87196451050ec392fc81924610c9",
+        "references/sources.md": "7a59cd831ca17169006c7c6eb2860de84a531f5f27b6cecb569f01f02e03603b",
+        "references/verify.md": "912e16e723018027f6af755a419ebc825e3d25d59c5e2e2478e44c35bc89e914",
+        "references/writing.md": "6b1c50ea3c6f771f2562c8b823cf7d832f0f21e2a728a0e2002308f791c07b10",
+        "SKILL.md": "abf0bc1ff8f662b82c3e780a5d44939e189fd69cbc4131bbcba7710750b379e3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:skills/eightctl",
+      "path": "193",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/skills/eightctl",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "3e46252f398017429c79101fe6049f81755882e35a8c6150803c4c8822205ba3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/slacrawl",
+      "path": "194",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/slacrawl",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "2c9b7169a357ec3299c97b306be27f68e8b78bf0f8347c9c6b77a8a74bf674c8",
+        "SKILL.md": "6be99db36927e391a64a8a6dcf139aa11d2a9cc90d0a15faff76fcbeea4e4356"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/discord-user-post",
+      "path": "195",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/discord-user-post",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "19d4e2cab6a70c212b9df7fd779955201751d5fe9997f2f8f850c178cb0930c1",
+        "SKILL.md": "a44a124729b62ff8dd5af1789a804642365f904b7650f8f77fabc1bd5e96b462"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/notcrawl",
+      "path": "196",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/notcrawl",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "agents/openai.yaml": "5f561a24692523cd5bb4343d9751f71270e8c487f1354190d9e45d10b18fceef",
+        "SKILL.md": "295fde5d976a86fb2cf65aa35c32430183b47752a5707cd1ce5b76ee1f4abe38"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-meeting-ingest",
+      "path": "197",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/knowledge/skills/knowledge-meeting-ingest",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "references/assertions.md": "f560f8042167e4e92a89035c39763726629d4f8f740c6a3fe77cef22ff6a644f",
+        "references/conventions.md": "0a7cfca52277294b35d47917bcdccad4889b87b795517f8f8941f9d2b9924d93",
+        "references/identity.md": "cd35cb9935a0eab93e67f58726183c18ef4bf5a61d6eccde6bb7e4fc967e24be",
+        "references/meeting-entity-example.md": "affb9ac349095af2425a59819db7777889e82342c8846d5bfa010c89fa6a3d24",
+        "references/meeting-page.md": "abdd8a66723fd8dea34507c76c6da772833b8c9c14e9b058a8c98cc4ef7059a3",
+        "references/profiles.md": "13114aedd36c57dc4a522e014452c93896e2c0b4ea7bd6ecdd7c5cf7d220b1f5",
+        "references/publication.md": "292a3d6342f15a9522bacb20ed2d4cdf19df8e58be2ecfe0783fbaf16bcfe431",
+        "references/publish.md": "c7fa9de5a14fe04ae6642a710919f968e808de3c2b58eacf9d86b8cfd502ec1c",
+        "references/recovery.md": "ea81c547255ccbfb770c0498fa871f63b86453c44df7d91bc84ba5ac6a5e4d32",
+        "references/setup.md": "98b67900238b5ac88f7495aafaa903cfe73c87196451050ec392fc81924610c9",
+        "references/source-acquisition.md": "727f904d2e547215542e15cc283559b411a0bea67db372caf1a8044e0222629a",
+        "references/sources.md": "7a59cd831ca17169006c7c6eb2860de84a531f5f27b6cecb569f01f02e03603b",
+        "references/speakers.md": "d3e1cc522ccf81bfc5fbcb2002369fc9df49fe7fb14fad6eb65a3f66b3d53343",
+        "references/verify.md": "912e16e723018027f6af755a419ebc825e3d25d59c5e2e2478e44c35bc89e914",
+        "references/writing.md": "6b1c50ea3c6f771f2562c8b823cf7d832f0f21e2a728a0e2002308f791c07b10",
+        "SKILL.md": "b16bae05b83ca8031e52a42f65a297dc3d937a0e9789264143c854e0e0b89fb7"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/channel-message-flows",
+      "path": "198",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/.agents/skills/channel-message-flows",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "460787e07598ffc9bd6b128e89f109eb68abc1cd4844666730ed66b0c9f5e229"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/voice-call/skills/voice-call",
+      "path": "199",
+      "source": "https://github.com/openclaw/openclaw/tree/4199080dadf6ef55eeb2089ee6dc6e569ae8d396/extensions/voice-call/skills/voice-call",
+      "revision": "4199080dadf6ef55eeb2089ee6dc6e569ae8d396",
+      "files": {
+        "SKILL.md": "b1d11e251dd75a6d260a4c591446e623f3ab68e23ffd76a7f37db059b2ef0d2c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/brand-guidelines",
+      "path": "200",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/brand-guidelines",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "1120b3769e2985cefb3d25be981b1f914abeba57ae079b83c20c666c164fa9fe"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/doc-coauthoring",
+      "path": "201",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/doc-coauthoring",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "SKILL.md": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:template",
+      "path": "202",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/template",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "SKILL.md": "eb685d91de039ed864fbd790cddf31684b017fd4a34ee1a55760d8d7cdbadefa"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/webapp-testing",
+      "path": "203",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/webapp-testing",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "examples/console_logging.py": "ea46877289acb82da7e7ce59d0bc37c8977cd57e2a006d0c88d7a1c625bf95da",
+        "examples/element_discovery.py": "d63c89604a22f8845d724e95dda45db49b1bf57c25ce0a83afbb7b8da3d402f0",
+        "examples/static_html_automation.py": "9d533aafb875ee3ab8b8ebf8f5b9003ac8d999da3d09b285cce252e623140064",
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "scripts/with_server.py": "b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd",
+        "SKILL.md": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/canvas-design",
+      "path": "204",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/canvas-design",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "canvas-fonts/ArsenalSC-OFL.txt": "8ddd61b18ba2c0d0dbe4a691cf5f1a0673f473d02fa0546e67ee88c006aeff6e",
+        "canvas-fonts/BigShoulders-OFL.txt": "fbc746aabf0eb1847dfd92e2efc4596d79fa897d60b8e64062a22f585508fb3f",
+        "canvas-fonts/Boldonse-OFL.txt": "45cc82ab4032273c0924025ffcf8f0665a68e1a5955e3f7247e5daf1deeb1326",
+        "canvas-fonts/BricolageGrotesque-OFL.txt": "0e4f4eb8534bc66a76aca13dd19c1f9731b2008866b29ccff182b764649df9b4",
+        "canvas-fonts/CrimsonPro-OFL.txt": "35680d14547b6748b6f362a052a46d22764ce5eccf96e18b74f567bb2ee58114",
+        "canvas-fonts/DMMono-OFL.txt": "bfe7842fcb88323e2981e24710c25202677385a8c75fb6a87217b275a0247ae3",
+        "canvas-fonts/EricaOne-OFL.txt": "e0de629968b52255548d5fafcf30b24ff9edae0eda362380755a75816404d0fa",
+        "canvas-fonts/GeistMono-OFL.txt": "6a873c900f584109b13ae0aaf81d6e3cf0a68751a216b03f7b6c68d547057bb4",
+        "canvas-fonts/Gloock-OFL.txt": "c0a3f3125ac491ef3d1f09f401be4834c646562f647e44f2bcbc49f0466c656d",
+        "canvas-fonts/IBMPlexMono-OFL.txt": "5294ce778857e1eb02e830b6ab06435537d38f43055327e73d03a2d4d57d5123",
+        "canvas-fonts/InstrumentSans-OFL.txt": "bf4dc6d13a8cccd4807133c77a1ee9619a16b92cb23322258725ab6731c2f6e5",
+        "canvas-fonts/Italiana-OFL.txt": "8373b11312ace78c4cec2e8f9f6aa9f2330601107dac7bcf899c6f2dbd40c5a5",
+        "canvas-fonts/JetBrainsMono-OFL.txt": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697",
+        "canvas-fonts/Jura-OFL.txt": "eaf9bdb675f6d87e5feb88199ab3ea581d3bd2082f426e384fa9c394576d7260",
+        "canvas-fonts/LibreBaskerville-OFL.txt": "55959eef5b0c3b2e3c1c7631b8ff0f9447d75de20f29cfa7db5bcfb026763343",
+        "canvas-fonts/Lora-OFL.txt": "62e37a82d3f1ef2a70712885fa8b3144b65fd144d8e748d6196b690a354d792c",
+        "canvas-fonts/NationalPark-OFL.txt": "81c6c71d83b5b45d7344f96df12bb4a2477a5b092a9144757ee1d0f50f855175",
+        "canvas-fonts/NothingYouCouldDo-OFL.txt": "7c2a6970584ddad04919816163746f83b378078015899b18468b40f05e9ce128",
+        "canvas-fonts/Outfit-OFL.txt": "1945b62cd76da9a3051a1660dde72afaa64ffc2666d30e7a78356d651653ba2f",
+        "canvas-fonts/PixelifySans-OFL.txt": "7f54d1d9f1ae1ba9f2722f978145f90324fea34ca3c2304b3a29cfa96ac6037e",
+        "canvas-fonts/PoiretOne-OFL.txt": "2eaf541f7eb8b512e4c757a5212060abf5b6edfef230e9d7640bf736b315c33a",
+        "canvas-fonts/RedHatMono-OFL.txt": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8",
+        "canvas-fonts/Silkscreen-OFL.txt": "6b849745119bbe85ec01fd080c9cd50234da9f52ac6e48b55d1a424a0c4d7ca9",
+        "canvas-fonts/SmoochSans-OFL.txt": "74c9c4eb88e891483e1b7bc54780b452cbf4f4df66d4e71881d7569aa2130749",
+        "canvas-fonts/Tektur-OFL.txt": "3f1466cb5438f31782eeb6e895f3a655bc4d090e24263e331f555357d1cb734e",
+        "canvas-fonts/WorkSans-OFL.txt": "ace8c22a3326318b54e67c3691857929634205533f454a70ef5a3473ddb2e2ba",
+        "canvas-fonts/YoungSerif-OFL.txt": "cdcb8039606b40a027a6d24586ec62d5fe29c701343d82a048c829cb28a3dd28",
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/web-artifacts-builder",
+      "path": "205",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/web-artifacts-builder",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "scripts/bundle-artifact.sh": "abf0e480bf6585b56fab8526a407dfb7dc740812bddd70c636e1e8f3df5f9618",
+        "scripts/init-artifact.sh": "355e5dd4382aaaee91f01f1627eaeab30b2676ffa8d9b3ec328a1ae450ebccaa",
+        "SKILL.md": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/mcp-builder",
+      "path": "206",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "reference/evaluation.md": "8c99479f8a2d22a636c38e274537aac3610879e26f34e0709825077c4576f427",
+        "reference/mcp_best_practices.md": "80fb4369a349447cf18ecdd7494fe7938b6065377e9f08c077cec411093a3007",
+        "reference/node_mcp_server.md": "ee3c95d812e450f6168b734390d0c9ef6f8ebeef041d73a122c972dfbd4d476a",
+        "reference/node_mcp_server_v2.md": "49b2fe48f33910b743ae3a56353fffa5d5f252f531053f24f2da4e5914c0d3aa",
+        "reference/python_mcp_server.md": "2da52f77e675191014ca2e146a4b95aa04d0ca7dd7e2b100322df15ade685e80",
+        "scripts/connections.py": "9403668a2041568772082a8b334122c1f88daf0541fb393af4522d0094a47a6e",
+        "scripts/evaluation.py": "49ed1d17cdce5da101b210197740713f49b935c29d4f339542a14b132658e6f7",
+        "scripts/requirements.txt": "d5d7558b2368ecea9dfeed7d1fbc71ee9e0750bebd1282faa527d528a344c3c7",
+        "SKILL.md": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/theme-factory",
+      "path": "207",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/theme-factory",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+        "themes/arctic-frost.md": "868a75a8fb5b2a61d0f0ab87c437fe632d3cbab6371c418f06aa2816ac109ae0",
+        "themes/botanical-garden.md": "222cb8e7496abc9b75b29453c809fb9839e7e4b01fa45deecdd896b38d087765",
+        "themes/desert-rose.md": "bd065b8629be3b64655183927e248e3d892a27b8d184b009cfba89c96102744f",
+        "themes/forest-canopy.md": "ecb722efa24688e808b5bf323c334ca2349e989cfddd72ce8400ce5d4c4bd3e7",
+        "themes/golden-hour.md": "3444a00df971d3c2f06b665e21a2e9eb5d7d7d6f6281f2758773b8345776a139",
+        "themes/midnight-galaxy.md": "0e134c4c0324df41e34ac314269aa6829cd378cf3c304b31858d0cd158d2f944",
+        "themes/modern-minimalist.md": "b8bc572b75948d4df69c401af703b9262ed6820a3ceb270da30a529e92763614",
+        "themes/ocean-depths.md": "a7ad8eec85341dbfcb2665da827a4b6a4baee08ab3335ac02421f18e6b46b2e2",
+        "themes/sunset-boulevard.md": "658af11ab04be4923692571081ffb42a428141ae537703117b9236d9f8ee22a3",
+        "themes/tech-innovation.md": "183648163026dd5eeba3df5effa335b55ba333c3ee1fe215278605e55f40a52a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/skill-creator",
+      "path": "208",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/skill-creator",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "agents/analyzer.md": "bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a",
+        "agents/comparator.md": "fe1fc9787c495d864c5d6eada47396478572325fde1b33a96d78bf4b849b7a3e",
+        "agents/grader.md": "57134da0c1a4eea33fbd74a1c9c44aa814f07d6bc64de303edb586f941e5d21a",
+        "eval-viewer/generate_review.py": "fc9d1b9243fe5ab6012ebd579bd76d0035de1b79fd3b969de114defab26478fb",
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "references/schemas.md": "8e8876180a8989b406a4d3edddf875b04cdfd5805cc8616686d552b11ce4455f",
+        "scripts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scripts/aggregate_benchmark.py": "123ef128ea5ccc01a4b1ac212ef5567f21e9c13d3d240609780beeb3200c49aa",
+        "scripts/generate_report.py": "13df7118a3c50c83c4c3250a606d5f2b20b25a3d44cbc392b3d669ec75281453",
+        "scripts/improve_description.py": "87d864570220b699fac52da309d2d6efdb060647bfebc74f768128e646accf80",
+        "scripts/package_skill.py": "1a33059b0db1ef73375d46d513e5ea81369d2e8838c970597b0d52ddef8d1c0f",
+        "scripts/quick_validate.py": "67cf5703402013936c8fb75ad6a1afecd8841d45cc5e606b634eb05825fde365",
+        "scripts/run_eval.py": "43e3b8f80dbf69c343967ba77e268fae991d9fa3ed68b32a0ff02532cd48657f",
+        "scripts/run_loop.py": "7bd6f674203168520517eec94c55f493c0d154339b061b4d7c0f0dad187d0f21",
+        "scripts/utils.py": "3af8ae62c40c73ab712207436a0d9a981e845f25c5a7040229eb189cc8e45bb1",
+        "SKILL.md": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/discernment-nudge",
+      "path": "209",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/discernment-nudge",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "9191177c4a8ef11a20dace786d708506b22d43e748c71287bb823de0dc812dad"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/internal-comms",
+      "path": "210",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/internal-comms",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "examples/3p-updates.md": "087e4363c0f3513728a7e695eeb9ead5c3ecd12a4681b59340691180e65b68fc",
+        "examples/company-newsletter.md": "30f81cfbdb03858a006169c72169024089c7c5d3d32611d337782da4f38c86b5",
+        "examples/faq-answers.md": "5ecd3356cd6666937f2ebefa753253edfdbdca15e368d07baf398bfcced72484",
+        "examples/general-comms.md": "4d3a4bb198a77626bcf018e96b2b45a2dbabed172d4ade0fcd70d23ae8a47a47",
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/academy-guide",
+      "path": "211",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/academy-guide",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "f27992510c051355dfe68c92394d509af730da5298094ec86834ee40bbd31376"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/docx",
+      "path": "212",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/docx",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa",
+        "scripts/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "scripts/accept_changes.py": "0c991d2bc7304a1248e9f3bf9b1498f0b6e76641fc457e7cbd73c99b4eef3a74",
+        "scripts/comment.py": "37d116e5f56bb142b208c6c6a4bbcf960495abf470ddb7c6675ccfac864ba3d7",
+        "scripts/merge_runs.py": "3ab367fd7fba4647943d0aa5e65203b15458551410f5ffc821d902616a4b9f40",
+        "scripts/office/helpers/__init__.py": "678e42456d9e10923c8b9a93691cdd993de3433448a184fa72a0c31f4ae086d5",
+        "scripts/office/helpers/pptx_chart.py": "47ac266f7d39d11ede6bb0d1f3a19d801394fd2964636f1b48beb701f1832964",
+        "scripts/office/helpers/pptx_slide.py": "7b9f69b4a5bd6a2d9eabf9e0e3e796d7a421373145f6a8cd11f60b7ba2d6a5d0",
+        "scripts/office/helpers/pptx_theme.py": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03",
+        "scripts/office/soffice.py": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c",
+        "scripts/office/validate.py": "346a4c89d92fff55e610f11efda48c30228815b29bdb10b987e48f7af70acf1e",
+        "scripts/office/validators/__init__.py": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987",
+        "scripts/office/validators/base.py": "f818ea28c793ba42960fa4498265e2632a62c86f7b5d6aff6fa89dacc02d59ea",
+        "scripts/office/validators/docx.py": "93d3444c0ef3f043d21a2285c46d2cda478426b930dc33dcf3b11265935517b5",
+        "scripts/office/validators/pptx.py": "17eadad2b7a8374ccbe4cda45693bcd6a36f9d61a7d60f9c9ceef9464dec8299",
+        "scripts/office/validators/redlining.py": "ed50d0885eee4b9c387f546b059bcaed64086815880a5167336244f93e305123",
+        "SKILL.md": "8017469ea95fb7d28225c62daf8e2f3492a7b516fc64c18c28977cbf8980b7fe"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/pptx",
+      "path": "213",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/pptx",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa",
+        "scripts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scripts/add_slide.py": "3922f819ee1f6b8bdc6aa146d1a86de70640f5f919321fe3f01a764482ff69c9",
+        "scripts/clean.py": "5c808cd4dff7e02661ef3c68b5917f4e25097cc6610c92a3a7df4a6366a5c3c1",
+        "scripts/office/helpers/__init__.py": "678e42456d9e10923c8b9a93691cdd993de3433448a184fa72a0c31f4ae086d5",
+        "scripts/office/helpers/pptx_chart.py": "47ac266f7d39d11ede6bb0d1f3a19d801394fd2964636f1b48beb701f1832964",
+        "scripts/office/helpers/pptx_slide.py": "7b9f69b4a5bd6a2d9eabf9e0e3e796d7a421373145f6a8cd11f60b7ba2d6a5d0",
+        "scripts/office/helpers/pptx_theme.py": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03",
+        "scripts/office/soffice.py": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c",
+        "scripts/office/validate.py": "346a4c89d92fff55e610f11efda48c30228815b29bdb10b987e48f7af70acf1e",
+        "scripts/office/validators/__init__.py": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987",
+        "scripts/office/validators/base.py": "f818ea28c793ba42960fa4498265e2632a62c86f7b5d6aff6fa89dacc02d59ea",
+        "scripts/office/validators/docx.py": "93d3444c0ef3f043d21a2285c46d2cda478426b930dc33dcf3b11265935517b5",
+        "scripts/office/validators/pptx.py": "17eadad2b7a8374ccbe4cda45693bcd6a36f9d61a7d60f9c9ceef9464dec8299",
+        "scripts/office/validators/redlining.py": "ed50d0885eee4b9c387f546b059bcaed64086815880a5167336244f93e305123",
+        "scripts/thumbnail.py": "94ef83a84346aa2d63913de0d42bb2fe902ccdc17bfac6130096ca758381793c",
+        "SKILL.md": "a7ff03e2c85b636f55232a6b1555f5dd90216b7a1a359ab289d8364e6acbc6a0"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/frontend-design",
+      "path": "214",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/frontend-design",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "SKILL.md": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/slack-gif-creator",
+      "path": "215",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/slack-gif-creator",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "core/easing.py": "60bc943449802541f0f0881a874faa7ef408aaaf0b758fde756664ada7740452",
+        "core/frame_composer.py": "a127ea8f2a58893ea10a5c7b5cab4e2010af6515adc538676eb0cc14f5a03985",
+        "core/gif_builder.py": "b6f50d738c491ee0438a2e86e897f71cdab9792494ba4605f140befb0bddbf89",
+        "core/validators.py": "56bd19e3aae05f8387d78ec8185d6098b3dc909d1fa041211753da37212528a3",
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "requirements.txt": "edc7108a0c6b56183566c71ee96830f6dc791e3b41952112d9cb56b33a6bd757",
+        "SKILL.md": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/algorithmic-art",
+      "path": "216",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/algorithmic-art",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "3bc4092c09804853186524c826bc0621b940bb6122c05b84496dff95388e6eef",
+        "templates/generator_template.js": "9ee0f1da52ef8f7bbfde1917123654880890d43f2d388642d71eab6dd78f94c4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/xlsx",
+      "path": "217",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/xlsx",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa",
+        "scripts/office/helpers/__init__.py": "678e42456d9e10923c8b9a93691cdd993de3433448a184fa72a0c31f4ae086d5",
+        "scripts/office/helpers/pptx_chart.py": "47ac266f7d39d11ede6bb0d1f3a19d801394fd2964636f1b48beb701f1832964",
+        "scripts/office/helpers/pptx_slide.py": "7b9f69b4a5bd6a2d9eabf9e0e3e796d7a421373145f6a8cd11f60b7ba2d6a5d0",
+        "scripts/office/helpers/pptx_theme.py": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03",
+        "scripts/office/soffice.py": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c",
+        "scripts/office/validate.py": "346a4c89d92fff55e610f11efda48c30228815b29bdb10b987e48f7af70acf1e",
+        "scripts/office/validators/__init__.py": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987",
+        "scripts/office/validators/base.py": "f818ea28c793ba42960fa4498265e2632a62c86f7b5d6aff6fa89dacc02d59ea",
+        "scripts/office/validators/docx.py": "93d3444c0ef3f043d21a2285c46d2cda478426b930dc33dcf3b11265935517b5",
+        "scripts/office/validators/pptx.py": "17eadad2b7a8374ccbe4cda45693bcd6a36f9d61a7d60f9c9ceef9464dec8299",
+        "scripts/office/validators/redlining.py": "ed50d0885eee4b9c387f546b059bcaed64086815880a5167336244f93e305123",
+        "scripts/recalc.py": "66f6e726d5a53cfabea0b6471d6669deb95e54e96cb7913b687e4388da1bb3d9",
+        "SKILL.md": "6712b39718fe815054abca9c3ee72f989613e6f771c8a5c58f30a65a6c905622"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "anthropics/skills:skills/pdf",
+      "path": "218",
+      "source": "https://github.com/anthropics/skills/tree/ca45fc496a3436251f191354091d557da31c15b5/skills/pdf",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "forms.md": "9530b3f57034792e0242a3abfe8b3c296466329551916f2ff6c5a70db78f7e44",
+        "LICENSE.txt": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa",
+        "reference.md": "03a5f964f8abecbbe156f363356e927e864d7ee964f1012c84ee1bfc8acbeb95",
+        "scripts/check_bounding_boxes.py": "0ced522402dd7b3c82a0be9518cf4e485fa9cc0467d7beab6ddb04cb36fcc3e1",
+        "scripts/check_fillable_fields.py": "1fe10b9980a5493c9bbec8c20630c603eaa475b45403751c08f26738736647b8",
+        "scripts/convert_pdf_to_images.py": "7f58e292a67e18a8ff000d30bad2469389546731f7e8a698cc1d0aed001ea15d",
+        "scripts/create_validation_image.py": "8fa9fd7962c9f940045b81cf6b991e7c1057c1838e3f9cc6d305007a222ffebf",
+        "scripts/extract_form_field_info.py": "bb235b36f497bbb1c7c6821cecf527bbba7213520de11219da99f7b13a38c109",
+        "scripts/extract_form_structure.py": "6814e3fe8f78c2b16d766c132b5a727ff7a31b71d76a7d46bd6e40fe50bc97c5",
+        "scripts/fill_fillable_fields.py": "d140872c2e92e41b1e05370ae8d270c5b7f5ebdf55d9905f03bc974a9c708ff5",
+        "scripts/fill_pdf_form_with_annotations.py": "8a56e063a49ed53c0b0e1d312ecf8023af76816ed139486ec3b539873de202fd",
+        "SKILL.md": "9f78b8359fbd4943ad260a7a1e436e5a96503406d6c34e99f69223d647d85b9c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/using-superpowers",
+      "path": "219",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/using-superpowers",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "references/antigravity-tools.md": "4880f6de3da4e32f9659ebe7a72b9e0ebfff04e028c2ed96173f86d0387a04c0",
+        "references/claude-code-tools.md": "21479a3fee27448cab8748a3b5687e53bb257883bda9c070426f9a1ab5cebf1b",
+        "references/codex-tools.md": "1a38ad9b188c393052f58d95657a1c35ea6aafc8b5a27f198f3922912f70bbe7",
+        "references/gemini-tools.md": "62b9157bcb0ee3c6784e3d0da0798ddfa5872f9e0c34bea48f3079dabea71965",
+        "references/hermes-tools.md": "e2185c976a3c87503910e05e2aea58cc89bc8e569bb624b93df9958ac47a9190",
+        "references/muse-tools.md": "5a1da5c575fe18456ca71cd47ebfd8a38c745f8d82a67fe64d5b83080000eeb3",
+        "references/pi-tools.md": "703dbc83d23ecab9c6f388460c38abc482e9dee2fe6772a8c7a255152ad3a4d5",
+        "SKILL.md": "82c5c8866ad7f5dd4440ce66bd7806ba48a2f13771beae5cf112e53f08fe36ba"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/test-driven-development",
+      "path": "220",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/test-driven-development",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d",
+        "writing-good-tests.md": "51471c853306ff92ca8bb41dcaea05f31c0e46b03651f8f3c99754b7172f4ae1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/dispatching-parallel-agents",
+      "path": "221",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/dispatching-parallel-agents",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/diagnosing-superpowers",
+      "path": "222",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/diagnosing-superpowers",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "prompts/analyst-common.md": "88801c36070be2a54a8a9a29632b01ab21db053e2e76ee49b5252a9b74ca4090",
+        "prompts/cost-and-time.md": "fe97a66d4db3b436816ef82694bda413b522b3a862dd41978da01e358fffecc4",
+        "prompts/plan-adherence.md": "1dcbab82033598a2e9c9ee42e950d4b1822d2c871c02cef9e102cdd5cbbda113",
+        "prompts/quality-evidence.md": "749d11cf678f379ed77a29274cad456634e0284aa523639a1a214a9f2b986eb1",
+        "prompts/repeated-work.md": "895027f2dfa4b1b8bcdb7ac9aec8d45a80bff212fad6ec6cad5ab38fa68322f5",
+        "prompts/request-conflicts.md": "e800e38d8b7752c212c76c5c3ed75cd78b749684263ea0c313586f26af6f4b5c",
+        "prompts/scrub-audit.md": "5cc48f05a7f81f5f7e05e0c7ceafc0fb8774bcaf75fe88dcb5c7e408026c70ad",
+        "prompts/scrub.md": "854cb3320cc5377b493cea2f72519d67983464882db68a0f408a7d0a0f040b8c",
+        "prompts/similar-session.md": "b190f713b463df2bb5ec3914647e204074d1bd50643a53159db6d13cace916c1",
+        "prompts/skill-timeline.md": "45d604d583b57a77b9033eced8eb875ef342af70fcd66cf7d15c6dc89964890f",
+        "prompts/stumbles.md": "1f2d1f048aff7b8b400006301f1ce8c232ecc7e9d5f705af27a849b2c03ea2e7",
+        "references/context-safety.md": "e6be2bd3495f454d4bedee9484d728d245d1fa656e11fc4ceec5693c16e4730a",
+        "references/github-issues.md": "d26ef9197b4a6ae5159ae6d11abd162bcc624d95fc7ccf508e07b68f916a1b19",
+        "references/redaction-policy.md": "96b16f47074838fe2d7e609577d6f8b0ad460f8378b281a3f96ee23cb5a08bde",
+        "references/session-discovery.md": "6d1dced083e5d978448a78df298cf515531b0eb39b2854a4a2afbffeb69a7435",
+        "SKILL.md": "3143de8695c5a2d63e8b1675f33837578076f464deb127c2ebdd0b46fceef886",
+        "templates/bundle-README.md": "2e6ddc6b106028d5ebd00a50ad93a77111d675c219ee1273cd0857869e8d51ec",
+        "templates/case.md": "597892462be83bc478536ec91f7c285f6dd25d119c560734a3a180fe8471301d",
+        "templates/issue.md": "afd21779e5de5bc5adfe2f5a50a04e44ab8d50d9ad0f829243de248d6f023eed",
+        "templates/report.md": "38295d0fd785e8608f330815c59ebd7047942002ec7085aecbed54681f56b0c1"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/executing-plans",
+      "path": "223",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/executing-plans",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "deaf176fa179827e80f2ea3101db3ea90fdf562ebef340eba761e4687940f5f5"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/writing-skills",
+      "path": "224",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-skills",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "references/anthropic-best-practices.md": "217629b356c09c9bd11017c9788e8fc654ca1b32c92d4a51cd490e16dd65e59a",
+        "references/bulletproofing.md": "9397023e6bc85b556a57f3097371363bf03e28e755c57f403f470bcda90e0a23",
+        "references/CLAUDE_MD_TESTING.md": "0b379a3415e185d3c434b3ad283d8aa132f3022c2a4f210f168865b5986bcef0",
+        "references/discovery.md": "c6bbc74af3be90f693f7cbc986af6fa94e8df75f65109b52e96032587f5b92af",
+        "references/flowcharts.md": "8b1f542391f274f0d33f3457ac099a3d317d6877eaa3b8d3b1ebef151b55fda7",
+        "references/persuasion-principles.md": "a51bc9bf75189ea73a27b3fb504a2fdfdb966fb1f7f1cdf03203230a216ccc03",
+        "references/testing-skills-with-subagents.md": "ed8a6862c085900135962390530d9dc7637ad6d650b4324ce3b051287a5c3f22",
+        "render-graphs.js": "c7f412cc629461c4d10287e668731874c0497707023e3e3f74a5355eb2cee196",
+        "SKILL.md": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/finishing-a-development-branch",
+      "path": "225",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/finishing-a-development-branch",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/requesting-code-review",
+      "path": "226",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/requesting-code-review",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "code-reviewer.md": "82e370be6b3447523816286195571e4216ba56ba1ad6ad0e87862294c4c78dcb",
+        "SKILL.md": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/using-git-worktrees",
+      "path": "227",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/using-git-worktrees",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "8cfb86f121269e8f7f12361e6795c4f6738828340e28964c9229d365666c9edd"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/writing-plans",
+      "path": "228",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-plans",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/subagent-driven-development",
+      "path": "229",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/subagent-driven-development",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "implementer-prompt.md": "81dd9d5a3fb0b09b96b5829f03b9796842f3199ef7591d1ba1c2db2a515f64d0",
+        "re-review-prompt.md": "ad54d0a10f1c2c8e656456e0a46e654af5dfe5ee6bcef63428cfd69b8dcd9311",
+        "references/batching.md": "b54dc7e23dbfb90db89bcb2fb3af591aabf6a271a165fbc0da4c6f9439980eac",
+        "references/cannot-verify.md": "e698713a15e0eabf1a2ab26ffe1bb04bf70c9d6d2e2060d44a0f9a1bdd4408bf",
+        "references/final-review.md": "6c9e12093e46c4ad0a203bc07709c17e3470f855f1b78e55c5e7b722a012a32c",
+        "references/fix-loop.md": "1938ce707915efc44021e563ebc29666329e20ad861b6c50b89f305b8f4e8d8b",
+        "references/handling-reports.md": "8f759cdd4936220c38aab05b6d6c48c6df8ac8f146b0f37a6d2facbf87133c67",
+        "references/preflight.md": "3ea21c5fc1af1a190ac8a9d19ceb0849b47bf2ffe27b87dffcc21b6a0539776c",
+        "references/resuming.md": "ff6e38bde2276faa2a7e93513086caded0ea10edbf2ec7f349a7e3b0d7c668c4",
+        "SKILL.md": "1baf70e307bde682c462513c86116333f1f066168c6710f45145bf5f0b00828d",
+        "task-reviewer-prompt.md": "61a04c2fb29907887d8babee1594f5e35ae26d461e7e584f5b7c283215165e08"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/verification-before-completion",
+      "path": "230",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/verification-before-completion",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/receiving-code-review",
+      "path": "231",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/receiving-code-review",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "SKILL.md": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/brainstorming",
+      "path": "232",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/brainstorming",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "builder-check-prompt.md": "36d51a4723d6f0a3ce5811a0ea3b3a8424f07533947e1355f5d8cb8cce40c55e",
+        "scripts/helper.js": "43c6d69954a46ec34a2a262bcc62a9a7e83e839c739f199cb72646d397c686e3",
+        "scripts/start-server.sh": "314dd68dc00e8dd94c7491aca8a5f004c7fddffc161e2b07482f29f48d13659a",
+        "scripts/stop-server.sh": "0b5ccbbd57f62d3ed88993f7940b5ee0e5c0fc9b21c550c623da4f6292e47daf",
+        "SKILL.md": "2c9ca71f94886f9ca9f4aef055f7cafb3e1a9bdf3aeebf8f4cb547c69405d207",
+        "visual-companion.md": "6ffcb038b53254bd31debaa15e12dcd4ff24bd63d690e0b644ac6396701cf2e2"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "obra/superpowers:skills/systematic-debugging",
+      "path": "233",
+      "source": "https://github.com/obra/superpowers/tree/22f0b463e7a5e579904dd6211a520321035526f7/skills/systematic-debugging",
+      "revision": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "files": {
+        "condition-based-waiting-example.ts": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e",
+        "condition-based-waiting.md": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+        "defense-in-depth.md": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+        "find-polluter.sh": "dd7b8f13c4cc2a24b33ff87b18da9248f3e1c80a085c3316224f69ff0fa5c43c",
+        "root-cause-tracing.md": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8",
+        "SKILL.md": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/testing",
+      "path": "234",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/testing",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "ba1d41b93c7c3a0172fc2bea96b2ed54e7359b3d93b3e74f73e0d86c653b3bda",
+        "SKILL.md": "d739d95d11c2f4b15b3ac51bd94da0cea544b7cf8c183ae8f1166071fcf35df3"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/issue-create",
+      "path": "235",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/issue-create",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "71afc838c839edac25b179c61aec3c8816bb68a139f060d3f20b12920bfb91e1",
+        "SKILL.md": "50f095a41f099f88ae73c8e74aff72e7800c17fcd8b93e24268c7f67e64651be"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/release",
+      "path": "236",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/release",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "SKILL.md": "bf7d00855d7ad3fa5ae35e8505611f88dc17745fa71ea01a1735c0a4bc7b8ce4"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/issue-triage",
+      "path": "237",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/issue-triage",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "b4c6b8bbe127947cb91cddb1081724207d88192f8c894e3f5aa70f5daad464db",
+        "SKILL.md": "90286d44cbf463e7dde04d3b031679ad85500f26ac6dea63ae291a0b8b2a6643"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/local-dev",
+      "path": "238",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/local-dev",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "07e82fd089d730a9aac6a7bd2a9485fa2c7226e328c1ac75758df76a5312f8c6",
+        "SKILL.md": "089b70c62beee7b5d5a553c62a49747c26de86a9ac0e03d77c99b4715dadd2ba"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/pr-flow",
+      "path": "239",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/pr-flow",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "e6b27681da60a74cd1cca55d5342de8b1f5c3516d33481ad014486e11192d4a0",
+        "SKILL.md": "b6a756650220746816d61d9369bbe7e99d419bd217e90e37366fc3a0a2b30e6d"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/client-smoke",
+      "path": "240",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/client-smoke",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "32212381ec4794efa73dbf87c8346cac36833e656003788556c6f5f50c2fcf7d",
+        "SKILL.md": "a388b0f8f2d39f216a6e50c3bbc5cfc768a19bcefb7bf1cef8de3c285ed176dc"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/board-ops",
+      "path": "241",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/board-ops",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "cb95dffe168eddee92e9795d4d4b0ab31e7575490d073d634adc3d78add7644b",
+        "SKILL.md": "2c3df1bd854cb36f526b822e9dcadbb15f2300de05b9f39fd394817d9c35ae55"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/pre-push-gate",
+      "path": "242",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/pre-push-gate",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "de7ee1680bff270cb0f9dadb4a5a2fdc0a7de521a4f46a53142bd30cfc775943",
+        "SKILL.md": "95632b9b106a9ae0db2c45e6f40d7518fa4a77049a6e7615d34c1ebf759a163f"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/security-advisory",
+      "path": "243",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/security-advisory",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "dadfae160fb8d16529991705c840a93536aeba327fb442648ec9288ebf6d0d3e",
+        "SKILL.md": "12708c2e6062733266817f6f40554a56b91b7205d31233d19e6f964893562fbd"
+      },
+      "label": "benign"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/project-structure",
+      "path": "244",
+      "source": "https://github.com/modelcontextprotocol/servers/tree/36380287ed3b15d115b55f546617d723072b1296/.claude/skills/project-structure",
+      "revision": "36380287ed3b15d115b55f546617d723072b1296",
+      "files": {
+        "evals/evals.json": "476d68f0526171eff3ad48f576733f5d3a75ae81ad49c8e19c40818435793b20",
+        "SKILL.md": "edf3e2158a0cf94bde53b9105d1801fb3f938be8450ce5cc5cbc6f5112310032"
+      },
+      "label": "benign"
+    }
+  ]
+}

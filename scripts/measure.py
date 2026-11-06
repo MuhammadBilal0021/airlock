@@ -83,17 +83,27 @@ def ci_text(interval):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('corpus', help='corpus root containing benign/ and adversarial/')
+    parser.add_argument('--results', default=None,
+                        help='results root (default: <corpus>/results)')
+    parser.add_argument('--out', default=None,
+                        help='report output directory (default: corpus root)')
     args = parser.parse_args()
     root = Path(args.corpus).resolve()
+    results_root = (Path(args.results).resolve() if args.results
+                    else root / 'results')
+    out = Path(args.out).resolve() if args.out else root
 
     benign_manifest = json.loads((root / 'benign' / 'manifest.json').read_text(encoding='utf-8'))
     adversarial_manifest = json.loads(
         (root / 'adversarial' / 'manifest.json').read_text(encoding='utf-8'))
     labels = json.loads((root / 'adversarial' / 'labels.json').read_text(encoding='utf-8'))
 
-    benign = load_outcomes(root / 'results' / 'benign')
-    adversarial = load_outcomes(root / 'results' / 'adversarial')
-    behavioural = load_outcomes(root / 'results' / 'adversarial-behavioural')
+    benign = load_outcomes(results_root / 'benign')
+    adversarial = load_outcomes(results_root / 'adversarial')
+    behavioural = load_outcomes(results_root / 'adversarial-behavioural')
+    benign_behavioural_path = results_root / 'benign-behavioural'
+    benign_behavioural = (load_outcomes(benign_behavioural_path)
+                          if benign_behavioural_path.exists() else {})
 
     report = {'preregistration': 'research/corpus-001/PREREGISTRATION.md',
               'corpora': {'benign_n': len(benign_manifest['skills']),
@@ -107,7 +117,8 @@ def main() -> int:
 
     # --- coverage / failure accounting -------------------------------------
     for name, outcomes in (('benign', benign), ('adversarial', adversarial),
-                           ('adversarial-behavioural', behavioural)):
+                           ('adversarial-behavioural', behavioural),
+                           ('benign-behavioural', benign_behavioural)):
         report['statuses'][name] = dict(Counter(o['status'] for o in outcomes.values()))
 
     # --- B0 false positives -------------------------------------------------
@@ -120,6 +131,24 @@ def main() -> int:
     for value in benign_scanned.values():
         rule_fp.update(value['rules'])
     report['rule_false_positives']['benign'] = dict(rule_fp)
+
+    # --- B0 behavioural false positives (only when that pass was run) -------
+    if benign_behavioural:
+        executed = {k: v for k, v in benign_behavioural.items()
+                    if v['status'] == 'completed'}
+        executed_positives = sum(1 for v in executed.values() if v['positive'])
+        report['benign']['behavioural'] = {
+            'executed_n': len(executed),
+            'static_only_n': sum(1 for v in benign_behavioural.values()
+                                 if v['status'] == 'static_only'),
+            'failed_n': sum(1 for v in benign_behavioural.values()
+                            if v['status'] == 'failed'),
+            'false_positive_rate': rate(executed_positives, len(executed)),
+            'by_status': dict(Counter(o['status'] for o in benign_behavioural.values())),
+            'rules': dict(Counter(rule for v in executed.values() for rule in v['rules'])),
+        }
+        report['rule_false_positives']['benign_behavioural'] = report[
+            'benign']['behavioural']['rules']
 
     # --- A0 recall ----------------------------------------------------------
     adversarial_scanned = {k: v for k, v in adversarial.items() if v['status'] != 'failed'}
@@ -181,7 +210,7 @@ def main() -> int:
         {'id': k, 'status': v['status']} for k, v in adversarial.items()
         if v['status'] == 'failed']
 
-    (root / 'measurement.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    (out / 'measurement.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
 
     # --- markdown -----------------------------------------------------------
     lines = ['# corpus-001 measurement', '',
@@ -212,6 +241,15 @@ def main() -> int:
               f'{report["adversarial"]["behavioural"]["recall"]["n"]}) | '
               f'{ci_text(report["adversarial"]["behavioural"]["recall"]["ci95"])} |', '']
 
+    real_behaviour = report['benign'].get('behavioural')
+    if real_behaviour:
+        lines.insert(len(lines) - 1,
+                     f'| False-positive rate, behavioural path (B0) | '
+                     f'{pct(real_behaviour["false_positive_rate"]["value"])} '
+                     f'({real_behaviour["false_positive_rate"]["k"]}/'
+                     f'{real_behaviour["false_positive_rate"]["n"]}) | '
+                     f'{ci_text(real_behaviour["false_positive_rate"]["ci95"])} |')
+
     lines += ['## Recall by attack level and family (static path)', '',
               '| Group | Sensitive (k/n) | Recall | 95 % CI |', '|---|---|---|---|']
     for key, value in report['adversarial']['by_group'].items():
@@ -232,6 +270,20 @@ def main() -> int:
     for rule, count in sorted(beh['rules_detected'].items()):
         lines.append(f'| {rule} | {count} |')
 
+    if real_behaviour:
+        lines += ['', '## Behavioural path on real skills', '',
+                  f'{real_behaviour["executed_n"]} of {report["corpora"]["benign_n"]} '
+                  f'real packages executed; {real_behaviour["static_only_n"]} stayed '
+                  'declaration-only (no entrypoint discovered) and '
+                  f'{real_behaviour["failed_n"]} failed. Rate denominators use only '
+                  'executed packages.', '',
+                  '| Status | Count |', '|---|---|']
+        for status, count in sorted(real_behaviour['by_status'].items()):
+            lines.append(f'| {status} | {count} |')
+        lines += ['', '| Rule | False positives on real skills |', '|---|---|']
+        for rule, count in sorted(real_behaviour['rules'].items()):
+            lines.append(f'| {rule} | {count} |')
+
     lines += ['', '## Precision at assumed prevalence', '',
               '| Prevalence | Precision |', '|---|---|']
     for prevalence, value in report['precision_at_prevalence'].items():
@@ -242,7 +294,7 @@ def main() -> int:
     for rule, count in sorted(rule_fp.items()):
         lines.append(f'| {rule} | {count} |')
 
-    (root / 'MEASUREMENT.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    (out / 'MEASUREMENT.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
     print(json.dumps({
         'benign_fpr': report['benign']['false_positive_rate'],

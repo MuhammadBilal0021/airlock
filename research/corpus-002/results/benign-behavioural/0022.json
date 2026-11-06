@@ -1,0 +1,76 @@
+{
+  "provenance": {
+    "id": "wshobson/agents:plugins/hr-legal-compliance/skills/gdpr-data-handling",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/hr-legal-compliance/skills/gdpr-data-handling",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0022.json",
+    "status": "static_only",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "/mnt/d/Bilal_projects/airlock/research/corpus-001/benign/022",
+    "verdict": "LOW",
+    "risk_score": 8,
+    "coverage": {
+      "proc": "n/a",
+      "process_tree": false,
+      "network_isolated": false,
+      "mount_isolation": false,
+      "namespace_flags": "none (not executed)",
+      "timed_out": false,
+      "duration_s": 0.0,
+      "static_only": true
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [],
+      "external_communication": [],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "gdpr-data-handling",
+      "version": "",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [],
+      "fs_write_declared": false,
+      "fs_deny_write": [],
+      "net_allow": [],
+      "shell": null,
+      "tools": [],
+      "risk_tier": ""
+    },
+    "observed": {
+      "files_read": [],
+      "files_written": [],
+      "files_deleted": [],
+      "domains": [],
+      "dns_queries": [],
+      "processes": [],
+      "exit_code": null,
+      "duration_s": 0.0
+    },
+    "findings": [
+      {
+        "rule_id": "ALK-092",
+        "ast": "AST08",
+        "severity": "medium",
+        "title": "Dynamic analysis not possible for this target",
+        "detail": "no executable artefact found -- declaration checks only. airlock found no executable artefact, so there is no behaviour to observe and only the declaration was checked. This is the weakest form of assurance and is the entire reason pattern-only scanners get bypassed -- do not read this result as a clean bill of health.",
+        "evidence": [
+          "target: /mnt/d/Bilal_projects/airlock/research/corpus-001/benign/022"
+        ],
+        "declared": "",
+        "observed": "",
+        "confidence": "confirmed"
+      }
+    ]
+  }
+}

@@ -31,6 +31,13 @@ SEVERITY_WEIGHT = {"critical": 40, "high": 20, "medium": 8, "low": 3, "info": 0}
 IMDS_TARGETS = ("169.254.169.254", "metadata.google.internal",
                 "metadata.azure.internal", "169.254.170.2", "100.100.100.200")
 
+#: Paths whose *deletion* is evidence destruction rather than housekeeping.
+#: corpus-001 measured an anti-forensics family at 0/5: ALK-005 models writes to
+#: persistence locations, so wiping history and audit trails was invisible.
+EVIDENCE_PATHS = ("/.bash_history", "/.zsh_history", "/.python_history",
+                  "/.node_repl_history", "/audit.log", "/var/log/",
+                  "/.local/share/airlock/")
+
 
 @dataclass
 class Finding:
@@ -304,6 +311,23 @@ def analyse(result: RunResult, decl: CapabilityDeclaration) -> Verdict:
                     "straight into MEMORY.md and SOUL.md. The Universal Skill Format places "
                     "those files under deny_write by default."),
             evidence=[f"{ev.change}: {ev.sandbox_path} ({ev.size} bytes)"],
+            declared=", ".join(decl.fs_write) or "(no writes declared)",
+            observed=ev.sandbox_path))
+
+    # ------------------------------------------------- 4b. evidence destruction
+    for ev in result.fs_events:
+        if ev.change != "deleted":
+            continue
+        if not any(marker in ev.sandbox_path for marker in EVIDENCE_PATHS):
+            continue
+        findings.append(Finding(
+            rule_id="ALK-013", ast="AST01", severity="high",
+            title=f"Deleted shell history or audit evidence: {ev.sandbox_path}",
+            detail=("Removing history files and audit logs is anti-forensics: it destroys "
+                    "the record of what the skill just did. A skill with nothing to hide "
+                    "has no reason to delete the evidence of its own run, and the deletion "
+                    "itself is observable even when the earlier activity was not."),
+            evidence=[f"deleted: {ev.sandbox_path}"],
             declared=", ".join(decl.fs_write) or "(no writes declared)",
             observed=ev.sandbox_path))
 

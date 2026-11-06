@@ -1,0 +1,127 @@
+{
+  "provenance": {
+    "id": "B9-04",
+    "source": "synthetic:airlock-corpus-001:B9",
+    "revision": "seed-20261107",
+    "report": "0084.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": [
+      "ALK-004",
+      "ALK-011"
+    ]
+  },
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "/mnt/d/Bilal_projects/airlock/research/corpus-001/adversarial/084",
+    "verdict": "ELEVATED",
+    "risk_score": 20,
+    "coverage": {
+      "resource_limits": {
+        "scope": "per-process",
+        "address_space_bytes": 536870912,
+        "file_size_bytes": 8388608,
+        "open_files": 128,
+        "cpu_seconds": 15,
+        "core_bytes": 0,
+        "aggregate_limits": false
+      },
+      "aggregate_resources": {
+        "verified": false
+      },
+      "storage_limits": {
+        "verified": false
+      },
+      "runtime_mounts": "recursively read-only and nosuid; verified",
+      "supervisor_access": "nondumpable helpers; observer liveness checked",
+      "proc": "fresh-procfs",
+      "process_tree": true,
+      "network_isolated": true,
+      "network_observer_ready": true,
+      "network_isolation_basis": "kernel interface inventory: lo only; mandatory new network namespace",
+      "mount_isolation": true,
+      "namespace_flags": "--user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL",
+      "timed_out": false,
+      "duration_s": 0.743,
+      "write_policy": "explicit allowlist"
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [
+        "exfil.attacker.test"
+      ],
+      "untrusted_content_basis": "inferred: the skill fetched from an undeclared host, so whatever came back entered its context unvetted",
+      "external_communication": [
+        "exfil.attacker.test"
+      ],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "unit-test-scaffolder",
+      "version": "1.0.0",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [
+        "/output/"
+      ],
+      "fs_write_declared": true,
+      "fs_deny_write": [],
+      "net_allow": [],
+      "shell": false,
+      "tools": [],
+      "risk_tier": "L0"
+    },
+    "observed": {
+      "files_read": [],
+      "ambient_reads_suppressed": [
+        "/etc/hosts",
+        "/etc/nsswitch.conf",
+        "/etc/resolv.conf",
+        "/work/run.py"
+      ],
+      "files_written": [],
+      "files_deleted": [],
+      "permissions_changed": [],
+      "domains": [
+        "exfil.attacker.test"
+      ],
+      "dns_queries": [
+        "exfil.attacker.test"
+      ],
+      "processes": [],
+      "exit_code": 0,
+      "duration_s": 0.743
+    },
+    "findings": [
+      {
+        "rule_id": "ALK-004",
+        "ast": "AST03",
+        "severity": "high",
+        "title": "Contacted 1 undeclared host(s)",
+        "detail": "The skill reached network destinations absent from its manifest. Under the OWASP Universal Skill Format, network permission is a domain allowlist rather than a boolean, precisely so this stays checkable.",
+        "evidence": [
+          "exfil.attacker.test via dns"
+        ],
+        "declared": "no network declared",
+        "observed": "exfil.attacker.test",
+        "confidence": "confirmed"
+      },
+      {
+        "rule_id": "ALK-011",
+        "ast": "AST03",
+        "severity": "info",
+        "title": "Declared but never used: /output/",
+        "detail": "Over-broad permission requests are the norm here -- Snyk found 280+ skills leaking credentials through over-permission alone. A permission the skill never exercises is one you can safely remove.",
+        "evidence": [
+          "no filesystem event under /output"
+        ],
+        "declared": "/output/",
+        "observed": "(nothing)",
+        "confidence": "likely"
+      }
+    ]
+  }
+}

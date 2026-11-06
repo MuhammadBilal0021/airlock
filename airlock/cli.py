@@ -22,6 +22,13 @@ from .sarif import to_sarif
 
 ENTRY_CANDIDATES = ("run.sh", "entrypoint.sh", "main.sh", "start.sh", "install.sh",
                     "setup.sh", "main.py", "server.py", "run.py", "index.js")
+#: Real registry skills keep code beside SKILL.md rather than at the package
+#: root. Without a second look these can only ever be declaration-checked, which
+#: makes behavioural analysis unavailable for precisely the packages the tool
+#: exists to inspect.
+SUBDIR_ENTRY_DIRS = ("scripts", "bin", "tools", "hooks")
+ENTRY_STEMS = ("main", "run", "cli", "entry", "entrypoint", "start", "install",
+               "setup", "server")
 _SEV_BY_NAME = {"critical": 5, "high": 4, "medium": 3, "low": 2, "info": 1, "none": 99}
 
 
@@ -45,7 +52,39 @@ def detect_entry(work: Path):
         return ["/bin/sh", cand.name], f"auto-detected {cand.name}"
     for cand in sorted(work.glob("*.py")):
         return ["/usr/bin/python3", cand.name], f"auto-detected {cand.name}"
+    nested = _nested_entry(work)
+    if nested is not None:
+        relative = nested.relative_to(work).as_posix()
+        interpreter = "/usr/bin/python3" if nested.suffix == ".py" else "/bin/sh"
+        return [interpreter, relative], f"auto-detected {relative}"
     return [], "no executable artefact found -- declaration checks only"
+
+
+def _nested_entry(work: Path):
+    """Find a plausible entrypoint under a ``scripts/`` style directory.
+
+    Deliberately conservative: only a conventional subdirectory, and only either
+    a recognised entry stem (``main.py``, ``run.sh``, ...) or a single
+    unambiguous script. Anything else stays declaration-only rather than running
+    an arbitrary helper the author never meant as an entrypoint.
+    """
+    for name in SUBDIR_ENTRY_DIRS:
+        directory = work / name
+        if not directory.is_dir() or directory.is_symlink():
+            continue
+        candidates = sorted(
+            path for path in directory.iterdir()
+            if path.is_file() and not path.is_symlink()
+            and path.suffix in (".py", ".sh")
+            and not path.name.startswith(("_", ".")))
+        if not candidates:
+            continue
+        preferred = [path for path in candidates if path.stem in ENTRY_STEMS]
+        target = (preferred[0] if preferred
+                  else candidates[0] if len(candidates) == 1 else None)
+        if target is not None:
+            return target
+    return None
 
 
 def _static_only_verdict(decl, target: str, reason: str) -> Verdict:

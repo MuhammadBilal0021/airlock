@@ -33,7 +33,10 @@ MANIFEST_FILENAMES = (
 EMBEDDED_INSTRUCTION_PATTERNS = (
     (r"\bnote for the (?:assistant|model|agent)\b", "model-directed note"),
     (r"<\s*/?\s*important\s*>", "hidden <IMPORTANT> block"),
-    (r"\bsystem prompt\b", "references the system prompt"),
+    (r"\b(?:ignore|reveal|repeat|print|show|output|leak|share|disclose|bypass|"
+     r"override|dump|exfiltrate)\b[^.\n]{0,40}\bsystem prompt\b|\bsystem prompt\b"
+     r"[^.\n]{0,40}\b(?:ignore|reveal|repeat|print|show|output|leak|share|"
+     r"disclose|bypass|override|dump|exfiltrate)\b", "action targeting the system prompt"),
     (r"\bignore (?:all |any )?(?:previous|prior|above) (?:instructions?|rules?)\b", "instruction override"),
     (r"\bdo not (?:tell|inform|mention to|reveal to) the user\b", "concealment directive"),
     (r"\bwithout (?:asking|telling|informing|notifying) the user\b", "silent-action directive"),
@@ -447,11 +450,36 @@ def scan_tree(root: Path) -> CapabilityDeclaration:
     return decl
 
 
+def _masked_spans(text: str) -> list:
+    """Spans where an imperative reading is not justified.
+
+    Fenced code blocks and markdown headings mention concepts without directing
+    anyone to act on them. Corpus-001 found this to be the sole root cause of all
+    six false positives: "### System Prompt Design" as a heading and
+    ``AWS_SECRET_ACCESS_KEY: ${{ secrets... }}`` inside an example workflow were
+    both read as directives.
+    """
+    spans, in_fence, offset = [], False, 0
+    for line in text.splitlines(keepends=True):
+        stripped = line.strip()
+        if stripped.startswith(('```', '~~~')):
+            in_fence = not in_fence
+            spans.append((offset, offset + len(line)))
+        elif in_fence or stripped.startswith('#'):
+            spans.append((offset, offset + len(line)))
+        offset += len(line)
+    return spans
+
+
 def find_embedded_instructions(decl: CapabilityDeclaration) -> list:
     """Flag model-directed imperatives hidden in text a UI may never render."""
     findings = []
+    local_negation = re.compile(
+        r"\b(?:never|do\s+not|must\s+not|don\x27t|should\s+not|shouldn\x27t)\b"
+        r"[^.\n]{0,60}$")
     for source, text in decl.instruction_surface:
         low = text.lower()
+        masked = _masked_spans(text)
         # Only discount explicitly rejected quoted examples. Quotes alone are
         # not a trust boundary: an attacker can put an active directive in them.
         rejected = [m.span('quote') for m in re.finditer(
@@ -459,12 +487,16 @@ def find_embedded_instructions(decl: CapabilityDeclaration) -> list:
             r'(?P<quote>"[^"\n]*"|“[^”\n]*”)', low)]
         for pattern, why in EMBEDDED_INSTRUCTION_PATTERNS:
             for m in re.finditer(pattern, low):
+                if any(a <= m.start() < b for a, b in masked):
+                    continue
                 if any(a <= m.start() and m.end() <= b for a, b in rejected):
                     continue
                 # Local syntactic negation only; a warning elsewhere must not
                 # suppress an independent directive later in the same field.
-                if re.search(r'\b(?:never|do not|must not|don\x27t)\s+(?:ever\s+)?$',
-                             low[max(0, m.start() - 24):m.start()]):
+                # The window covers advice phrased with a verb between the
+                # negation and the action ("never ask the user to send ..."),
+                # which corpus-001 showed was being reported as an attack.
+                if local_negation.search(low[max(0, m.start() - 100):m.start()]):
                     continue
                 start, end = max(0, m.start() - 70), min(len(text), m.end() + 70)
                 findings.append({"source": source, "reason": why, "pattern": pattern,

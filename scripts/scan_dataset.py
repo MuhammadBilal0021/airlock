@@ -25,6 +25,13 @@ def fingerprint(root):
 
 
 def classify(report, returncode):
+    """Classify coverage, not specimen success.
+
+    A hostile specimen that crashes *after* attempting exfiltration is still an
+    observation, and corpus-001 showed that requiring exit 0 moved exactly that
+    class — CRLF-broken or failing payloads — out of the detection numerator.
+    The specimen's exit code stays recorded in the report itself.
+    """
     if returncode != 0 or report.get('verdict') == 'UNKNOWN':
         return 'failed'
     coverage = report.get('coverage', {})
@@ -32,7 +39,7 @@ def classify(report, returncode):
         return 'static_only'
     if coverage.get('timed_out'):
         return 'timed_out'
-    if not coverage.get('network_isolated') or report.get('observed', {}).get('exit_code') != 0:
+    if not coverage.get('network_isolated'):
         return 'failed'
     return 'completed'
 

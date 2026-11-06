@@ -1,0 +1,84 @@
+{
+  "provenance": {
+    "id": "wshobson/agents:plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+    "source": "https://github.com/wshobson/agents/tree/4bde3168b43c0655c4d00ea2726e631719908a6d/plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+    "revision": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+    "report": "0080.json",
+    "status": "completed",
+    "returncode": 0,
+    "rule_ids": []
+  },
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "/mnt/d/Bilal_projects/airlock/research/corpus-001/benign/080",
+    "verdict": "CLEAN",
+    "risk_score": 0,
+    "coverage": {
+      "resource_limits": {
+        "scope": "per-process",
+        "address_space_bytes": 536870912,
+        "file_size_bytes": 8388608,
+        "open_files": 128,
+        "cpu_seconds": 10,
+        "core_bytes": 0,
+        "aggregate_limits": false
+      },
+      "aggregate_resources": {
+        "verified": false
+      },
+      "storage_limits": {
+        "verified": false
+      },
+      "runtime_mounts": "recursively read-only and nosuid; verified",
+      "supervisor_access": "nondumpable helpers; observer liveness checked",
+      "proc": "fresh-procfs",
+      "process_tree": true,
+      "network_isolated": true,
+      "network_observer_ready": true,
+      "network_isolation_basis": "kernel interface inventory: lo only; mandatory new network namespace",
+      "mount_isolation": true,
+      "namespace_flags": "--user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL",
+      "timed_out": false,
+      "duration_s": 0.65,
+      "write_policy": "not declared"
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [],
+      "untrusted_content_basis": "inferred: the skill fetched from an undeclared host, so whatever came back entered its context unvetted",
+      "external_communication": [],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "helm-chart-scaffolding",
+      "version": "",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [],
+      "fs_write_declared": false,
+      "fs_deny_write": [],
+      "net_allow": [],
+      "shell": null,
+      "tools": [],
+      "risk_tier": ""
+    },
+    "observed": {
+      "files_read": [
+        "/work/scripts/validate-chart.sh"
+      ],
+      "ambient_reads_suppressed": [],
+      "files_written": [],
+      "files_deleted": [],
+      "permissions_changed": [],
+      "domains": [],
+      "dns_queries": [],
+      "processes": [],
+      "exit_code": 1,
+      "duration_s": 0.65
+    },
+    "findings": []
+  }
+}
