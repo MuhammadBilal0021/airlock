@@ -7,8 +7,9 @@ untrusted specimens in a disposable Linux environment without valuable secrets.
 ## Reporting a vulnerability
 
 Use [GitHub private vulnerability reporting](https://github.com/MuhammadBilal0021/airlock/security/advisories/new)
-(Security → Report a vulnerability). The maintainer has selected this channel;
-enablement is pending maintainer verification. If the button is unavailable,
+(Security → Report a vulnerability). The maintainer has selected this channel,
+but the GitHub API reported it disabled on November 7, 2026. Enabling it remains
+a release prerequisite. If the button is unavailable,
 open an issue requesting a private contact **without vulnerability details,
 exploit code, credentials or sensitive logs**. Do not disclose an unfixed
 vulnerability in a public issue.

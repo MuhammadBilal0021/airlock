@@ -18,7 +18,8 @@ deliberately; do not publish it with a blanket `git add .`.
   and reproduction scripts where redistribution is unnecessary.
 - Confirm GitHub private vulnerability reporting is enabled before publishing
   SECURITY.md as a verified reporting route. No mailbox or response-time promise
-  is assumed. The maintainer has agreed to perform this check.
+  is assumed. The API reported it disabled on November 7, 2026; enabling it
+  remains a release prerequisite.
 - Match README claims to the revision being released. Local test results do not
   validate older public code. Preserve evaluation failures and coverage limits.
 
