@@ -134,11 +134,11 @@ for path in Path('/proc').iterdir():
         time.sleep(0.02)
     else:
         seen.append('pid %d survived 2s' % pid)
-report = 'uid=%d euid=%d\n' % (os.getuid(), os.geteuid()) + '\n'.join(seen)
+report = 'uid=%d euid=%d :: ' % (os.getuid(), os.geteuid()) + ' | '.join(seen)
 try:
     Path('/output/probe.txt').write_text(report)
 except OSError as exc:
-    report += '\noutput write failed %r' % (exc,)
+    report += ' output write failed ' + repr(exc)
 Path('/tmp/probe.txt').write_text(report)
 ''')
             result = run_skill(skill, entry=['/usr/bin/python3', 'run.py'], timeout=3)
