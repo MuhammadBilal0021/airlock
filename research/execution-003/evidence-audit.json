@@ -1,0 +1,25 @@
+{
+  "checked_runs": 20,
+  "unique_packages": 10,
+  "preflight_tests": 63,
+  "verdict_counts_per_package": {
+    "CLEAN": 10
+  },
+  "packages_per_rule": {
+    "ALK-007": 2
+  },
+  "raw_network_event_types": {
+    "sinkhole_start": 20
+  },
+  "source_hashes_match": true,
+  "all_expected_outputs_confirmed": true,
+  "all_resource_controls_verified": true,
+  "collection_limit_warnings": 0,
+  "status_verdict_rule_sets_agree_across_repeats": true,
+  "not_claimed": [
+    "identical sampled process traces",
+    "full package workflow coverage",
+    "malware prevalence",
+    "proof packages are safe"
+  ]
+}

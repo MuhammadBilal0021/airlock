@@ -1,0 +1,250 @@
+{
+  "skills": [
+    {
+      "id": "model-usage",
+      "path": "model-usage",
+      "source": "https://github.com/openclaw/openclaw",
+      "revision": "57c2077776745fe0f65881b24611afbb21a6a7de",
+      "files": {
+        "SKILL.md": "f4e40f006365acc5f519a55f4efacb6c722788026792e498fcf46dc1a0f0c1d1",
+        "references/codexbar-cli.md": "58e57a7bf1359ed32b1fe80c7285e75f88127e82db6b0dbab2ec4dda6ffaca42",
+        "scripts/model_usage.py": "cd13c65d9d10faaff20bdf40d5f45f6d26a29dacc3e13d8a1e481a3a8a0f4874",
+        "scripts/test_model_usage.py": "1bc6fceb436d836532e6901edb6eb473a68a16eda25f45f94322d99beea4a3b2"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "skill-creator",
+      "path": "skill-creator",
+      "source": "https://github.com/openclaw/openclaw",
+      "revision": "57c2077776745fe0f65881b24611afbb21a6a7de",
+      "files": {
+        "SKILL.md": "7da0631cb21fbd87630b5dbeb48010f66776c28e396c276235f5d245903fa6ed",
+        "license.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "scripts/package_skill.py": "fa2f7ba4915464221cd71c7048e6eb71a920cf94c793332b4172d2ac353dd65a",
+        "scripts/quick_validate.py": "580ccffbd9d4370bc35bca22c551da0353424e248d7499e8cd578eaec67dfd75",
+        "scripts/test_package_skill.py": "9d47d5a26c47cbe70b788a39141e453a54626ed391ee12952eef6ffb5b73a3f7",
+        "scripts/test_quick_validate.py": "349258a18c0130f0bf11dd60d361abffa493e426355bc14df4d1d3fc09a46f8a"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "tmux",
+      "path": "tmux",
+      "source": "https://github.com/openclaw/openclaw",
+      "revision": "57c2077776745fe0f65881b24611afbb21a6a7de",
+      "files": {
+        "SKILL.md": "8aeaa6f3dfe06d58e09721778b8c9e654bcbd47590f26f442c4dc87c9349c572",
+        "scripts/find-sessions.sh": "8df6ac8e5824b0fa4d791235bd944ce86b0d12dcbf98af7abeb6d6de50e96823",
+        "scripts/wait-for-text.sh": "b7efb785d3f2a4f1194e2ae18d7191135ad5a2fff4f08e6a4c7ad8412f3a7309"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "figma-code-connect",
+      "path": "figma-code-connect",
+      "source": "https://github.com/openai/skills",
+      "source_path": "skills/.curated/figma-code-connect-components",
+      "revision": "49f948faa9258a0c61caceaf225e179651397431",
+      "files": {
+        "LICENSE.TXT": "36bdad8e8a43a282ba3a5af4ac022d8b117c5826b8b473fe6a32622e83856ae3",
+        "SKILL.md": "0f19edad8aed28063a3517c419fbcbef5421d024f189fd02a17fae25093ec69d",
+        "agents/openai.yaml": "e28b69cac3696d4c65816f79446e38e66551b31a3555be74b30098966de896c7",
+        "assets/figma-small.svg": "6a38267efbd872bbc215d0227a395eb0b0093bc6441c44a39a43f3210549e5e9",
+        "assets/figma.png": "4d16e1b19ae7bdac7d601d0b3bf3c0ea4a018a8cb0e38d19e5b00971968ecada",
+        "assets/icon.svg": "8936c5dcd619c41f5a27f7c08e8c50b22e428069c36217e4aa872099d6cc2cf7",
+        "references/mapping-checklist.md": "81f85e1eb6c59a35cfb22f156c7a9f9d3d05098a8b51b52314dd6f4f8fbdb919",
+        "scripts/normalize_node_id.py": "0dfb4f8275e5c6eae315f89e4a5e1a52cbd608995d1d388b81fa352732c780a3"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "figma-design-rules",
+      "path": "figma-design-rules",
+      "source": "https://github.com/openai/skills",
+      "source_path": "skills/.curated/figma-create-design-system-rules",
+      "revision": "49f948faa9258a0c61caceaf225e179651397431",
+      "files": {
+        "LICENSE.TXT": "36bdad8e8a43a282ba3a5af4ac022d8b117c5826b8b473fe6a32622e83856ae3",
+        "SKILL.md": "1f4d7e16ba5325a80da32e2e6bde0ea850ba9287f35f4675d51d55d2f0dc6e2a",
+        "agents/openai.yaml": "f4afb7716319c2f4c529abb0c41cc007632d9b9d0effd43f5b33626cf57b1f22",
+        "assets/figma-small.svg": "6a38267efbd872bbc215d0227a395eb0b0093bc6441c44a39a43f3210549e5e9",
+        "assets/figma.png": "4d16e1b19ae7bdac7d601d0b3bf3c0ea4a018a8cb0e38d19e5b00971968ecada",
+        "assets/icon.svg": "8936c5dcd619c41f5a27f7c08e8c50b22e428069c36217e4aa872099d6cc2cf7",
+        "references/rule-template.md": "78947775e307e6f8021fce4fabd6fe0112bcbed755fdcb607cf00b9199cd3f33",
+        "scripts/check_agents_md.sh": "daf9f09fc8f7f473259856c11e2df829912fc4194c9812a4e7ca4d51d49f1762"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "jupyter-notebook",
+      "path": "jupyter-notebook",
+      "source": "https://github.com/openai/skills",
+      "source_path": "skills/.curated/jupyter-notebook",
+      "revision": "49f948faa9258a0c61caceaf225e179651397431",
+      "files": {
+        "LICENSE.txt": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+        "SKILL.md": "62f102e8554b25716dccef0ffab4572d4e3eaf05ccc76562d33a065bc9c521fb",
+        "agents/openai.yaml": "3a2d6a8f9ed10e18f6caa66aeb26a02305bc61f36fc4b333c904e02f9988fb9c",
+        "assets/experiment-template.ipynb": "25f85914103cd84244e20ef378f59097479c72481cd18d3a931354d107c3f300",
+        "assets/jupyter-small.svg": "a36bd27bef3775f111309241754b386db81e7d356f07672190e2fcb24478a250",
+        "assets/jupyter.png": "852fd5468885bb176d266d547e61684792332e44a88cfbc8cd07323937040ccb",
+        "assets/tutorial-template.ipynb": "704a809c09c7c9e6e5c437860df95524412b50c58571a14204610d73e0744765",
+        "references/experiment-patterns.md": "1ff9c04281c01e8e2209bde9f1fd910b8e4b620dd1f1f040e2101f1d88513a91",
+        "references/notebook-structure.md": "a85051a2e88fd3424bbed2636e952ec5f858e7efa4e076c28d62a8cc2cc9dc06",
+        "references/quality-checklist.md": "ed01afe6ff47714d85935d11053b64c414772f02250fdc604e3fca65e5139136",
+        "references/tutorial-patterns.md": "8c194bb640de2fb7747e3db87006ecec5219252d301f53670975dbb5310ff659",
+        "scripts/new_notebook.py": "a004e2ea3115edb24313928be0be6d1dc07e571d7ca6c1b24375f0569c616d2f"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "plugin-creator",
+      "path": "plugin-creator",
+      "source": "https://github.com/openai/skills",
+      "source_path": "skills/.system/plugin-creator",
+      "revision": "49f948faa9258a0c61caceaf225e179651397431",
+      "files": {
+        "LICENSE.txt": "b87a529a13d5294f97bb847936a82f39e4f8adae2425a3a5fb5f1a7b75d43e6a",
+        "SKILL.md": "3b43cb214f458a1ae13e1b93a69e493241d8e12c5a474afe8ae81ae0507aa216",
+        "agents/openai.yaml": "9d4409fa52b1527ee4a9b69b2484499825ca6bf65ea96bb1d5c1b4d8a31e3757",
+        "references/plugin-json-spec.md": "5d7223255decc44fcb93f3aa80bb17afc1469b2d3c339d65d9473c5c0c54fcdd",
+        "scripts/create_basic_plugin.py": "63ce72d2854c07a42382115c471cfcd42a743be3b84f398fa2d4cdb2fca13362"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "anthropic-pdf",
+      "path": "anthropic-pdf",
+      "source": "https://github.com/anthropics/skills",
+      "source_path": "skills/pdf",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa",
+        "SKILL.md": "9f78b8359fbd4943ad260a7a1e436e5a96503406d6c34e99f69223d647d85b9c",
+        "forms.md": "9530b3f57034792e0242a3abfe8b3c296466329551916f2ff6c5a70db78f7e44",
+        "reference.md": "03a5f964f8abecbbe156f363356e927e864d7ee964f1012c84ee1bfc8acbeb95",
+        "scripts/check_bounding_boxes.py": "0ced522402dd7b3c82a0be9518cf4e485fa9cc0467d7beab6ddb04cb36fcc3e1",
+        "scripts/check_fillable_fields.py": "1fe10b9980a5493c9bbec8c20630c603eaa475b45403751c08f26738736647b8",
+        "scripts/convert_pdf_to_images.py": "7f58e292a67e18a8ff000d30bad2469389546731f7e8a698cc1d0aed001ea15d",
+        "scripts/create_validation_image.py": "8fa9fd7962c9f940045b81cf6b991e7c1057c1838e3f9cc6d305007a222ffebf",
+        "scripts/extract_form_field_info.py": "bb235b36f497bbb1c7c6821cecf527bbba7213520de11219da99f7b13a38c109",
+        "scripts/extract_form_structure.py": "6814e3fe8f78c2b16d766c132b5a727ff7a31b71d76a7d46bd6e40fe50bc97c5",
+        "scripts/fill_fillable_fields.py": "d140872c2e92e41b1e05370ae8d270c5b7f5ebdf55d9905f03bc974a9c708ff5",
+        "scripts/fill_pdf_form_with_annotations.py": "8a56e063a49ed53c0b0e1d312ecf8023af76816ed139486ec3b539873de202fd"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "anthropic-pptx",
+      "path": "anthropic-pptx",
+      "source": "https://github.com/anthropics/skills",
+      "source_path": "skills/pptx",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "79f6d8f5b427252fa3b1c11ecdbdb6bf610b944f7530b4de78f770f38741cfaa",
+        "SKILL.md": "a7ff03e2c85b636f55232a6b1555f5dd90216b7a1a359ab289d8364e6acbc6a0",
+        "scripts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scripts/add_slide.py": "3922f819ee1f6b8bdc6aa146d1a86de70640f5f919321fe3f01a764482ff69c9",
+        "scripts/clean.py": "5c808cd4dff7e02661ef3c68b5917f4e25097cc6610c92a3a7df4a6366a5c3c1",
+        "scripts/office/helpers/__init__.py": "678e42456d9e10923c8b9a93691cdd993de3433448a184fa72a0c31f4ae086d5",
+        "scripts/office/helpers/pptx_chart.py": "47ac266f7d39d11ede6bb0d1f3a19d801394fd2964636f1b48beb701f1832964",
+        "scripts/office/helpers/pptx_slide.py": "7b9f69b4a5bd6a2d9eabf9e0e3e796d7a421373145f6a8cd11f60b7ba2d6a5d0",
+        "scripts/office/helpers/pptx_theme.py": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2",
+        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a",
+        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8",
+        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24",
+        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26",
+        "scripts/office/schemas/mce/mc.xsd": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413",
+        "scripts/office/schemas/microsoft/wml-2010.xsd": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2",
+        "scripts/office/schemas/microsoft/wml-2012.xsd": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74",
+        "scripts/office/schemas/microsoft/wml-2018.xsd": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad",
+        "scripts/office/schemas/microsoft/wml-cex-2018.xsd": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081",
+        "scripts/office/schemas/microsoft/wml-cid-2016.xsd": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d",
+        "scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604",
+        "scripts/office/schemas/microsoft/wml-symex-2015.xsd": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b",
+        "scripts/office/soffice.py": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c",
+        "scripts/office/validate.py": "346a4c89d92fff55e610f11efda48c30228815b29bdb10b987e48f7af70acf1e",
+        "scripts/office/validators/__init__.py": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987",
+        "scripts/office/validators/base.py": "f818ea28c793ba42960fa4498265e2632a62c86f7b5d6aff6fa89dacc02d59ea",
+        "scripts/office/validators/docx.py": "93d3444c0ef3f043d21a2285c46d2cda478426b930dc33dcf3b11265935517b5",
+        "scripts/office/validators/pptx.py": "17eadad2b7a8374ccbe4cda45693bcd6a36f9d61a7d60f9c9ceef9464dec8299",
+        "scripts/office/validators/redlining.py": "ed50d0885eee4b9c387f546b059bcaed64086815880a5167336244f93e305123",
+        "scripts/thumbnail.py": "94ef83a84346aa2d63913de0d42bb2fe902ccdc17bfac6130096ca758381793c"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "webapp-testing",
+      "path": "webapp-testing",
+      "source": "https://github.com/anthropics/skills",
+      "source_path": "skills/webapp-testing",
+      "revision": "ca45fc496a3436251f191354091d557da31c15b5",
+      "files": {
+        "LICENSE.txt": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "SKILL.md": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+        "examples/console_logging.py": "ea46877289acb82da7e7ce59d0bc37c8977cd57e2a006d0c88d7a1c625bf95da",
+        "examples/element_discovery.py": "d63c89604a22f8845d724e95dda45db49b1bf57c25ce0a83afbb7b8da3d402f0",
+        "examples/static_html_automation.py": "9d533aafb875ee3ab8b8ebf8f5b9003ac8d999da3d09b285cce252e623140064",
+        "scripts/with_server.py": "b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd"
+      },
+      "status": "staged_not_executed"
+    },
+    {
+      "id": "migrate-to-codex",
+      "path": "migrate-to-codex",
+      "source": "https://github.com/openai/skills",
+      "source_path": "skills/.curated/migrate-to-codex",
+      "revision": "49f948faa9258a0c61caceaf225e179651397431",
+      "files": {
+        "LICENSE.txt": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "SKILL.md": "145b7fe48360642cb7a42bad3a817f10833fa8a387ffcb4c2df8a47c01a832e2",
+        "agents/openai.yaml": "d59cec74a85ea881e5ddf8517302026242af004f1d2a7667e1efc433b51295c2",
+        "references/differences.md": "6e32f5b3140863863ba89b1736b92e4a378f6ccc4785b9f427fc1f13a625916c",
+        "scripts/cli.py": "b392ec310e683d6a42eae00b88e7b9851ed42b3d4aa99bd6aa327e5a8d5545c8",
+        "scripts/migrate-to-codex.py": "6c0b8cd8c0ea610ebe1c4c9184fad3dd5f71520f6341e7a605976544417d12ea",
+        "scripts/migrate/__init__.py": "45c26b88f1b130dfd4294b1ff1c18eb7f8ab9cf14508589292d7f5a7c6133ac9",
+        "scripts/migrate/agents.py": "7859242aaaa9efcaf05ed03564610a96d371e085d90f77babac93d437a645bd5",
+        "scripts/migrate/codex_config.py": "5b092657150e24a938a55f2f17602aa8a6f4dfb6548f77613f8c7f9ed142c25d",
+        "scripts/migrate/common.py": "c12107cca109dcc171b3dd48e93e5ee56d7e805e7a86c3341d0cc72c1a33845c",
+        "scripts/migrate/hooks.py": "4465c0537a3750a6e7095db0f2a41f087eb3e63053482dc33f876967e87d8616",
+        "scripts/migrate/instructions.py": "321284ce5b0b17b5691b7a4f4020d813e28e336578e8c6764f34626f2b449ea1",
+        "scripts/migrate/mcps.py": "3e5903a3d0a7e09d1a6d8f6d702107b81e661486eef7cdc10012014dc734e4e5",
+        "scripts/migrate/plugins.py": "fec8ca75b4e9467aadc5dc822aa24c8c7f44415debde77ce8761d1d8014eaf26",
+        "scripts/migrate/settings.py": "13a659e2dbba2895b6d4289b1eb62c33924f95bf45d5e4f2fbdd07fe4f35639a",
+        "scripts/migrate/skills.py": "738f25b09345d84f79cc517e3d0862e4c154b612cf459ab6db00099b827e6eea",
+        "scripts/utils/__init__.py": "884b593e41718aed59d3fd46ff77ddafccf422554f0ca0e39a37722ad4b148b4",
+        "scripts/utils/scan.py": "d7fcce39222a732cc91eff58c23e4319e3bd437e10eaf4e2084193c245a21ab0",
+        "scripts/utils/util.py": "d8eb5a1e99d60bbef3b17b118fc6a082edd6c39edacadab5d9c89a11311a5c0c"
+      },
+      "status": "staged_not_executed"
+    }
+  ]
+}

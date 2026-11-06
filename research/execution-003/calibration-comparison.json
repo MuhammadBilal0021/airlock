@@ -1,0 +1,400 @@
+{
+  "same_pinned_inputs": true,
+  "same_entrypoints": true,
+  "runs": [
+    {
+      "package": "anthropic-pdf",
+      "repetition": 1,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "anthropic-pdf",
+      "repetition": 2,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "anthropic-pptx",
+      "repetition": 1,
+      "before": "HIGH",
+      "after": "CLEAN",
+      "score_before": 60,
+      "score_after": 0,
+      "findings_after": [
+        {
+          "rule": "ALK-007",
+          "severity": "info",
+          "evidence_count": 1
+        },
+        {
+          "rule": "ALK-007",
+          "severity": "info",
+          "evidence_count": 4
+        }
+      ],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/work/_deck/[Content_Types].xml",
+        "/work/_deck/ppt/_rels/presentation.xml.rels",
+        "/work/_deck/ppt/presentation.xml",
+        "/work/_deck/ppt/slides/slide2.xml",
+        "/work/scripts/office/helpers/__pycache__/__init__.cpython-314.pyc"
+      ],
+      "files_written_after": [
+        "/work/_deck/[Content_Types].xml",
+        "/work/_deck/ppt/_rels/presentation.xml.rels",
+        "/work/_deck/ppt/presentation.xml",
+        "/work/_deck/ppt/slides/slide2.xml",
+        "/work/scripts/office/helpers/__pycache__/__init__.cpython-314.pyc"
+      ]
+    },
+    {
+      "package": "anthropic-pptx",
+      "repetition": 2,
+      "before": "HIGH",
+      "after": "CLEAN",
+      "score_before": 60,
+      "score_after": 0,
+      "findings_after": [
+        {
+          "rule": "ALK-007",
+          "severity": "info",
+          "evidence_count": 1
+        },
+        {
+          "rule": "ALK-007",
+          "severity": "info",
+          "evidence_count": 4
+        }
+      ],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/work/_deck/[Content_Types].xml",
+        "/work/_deck/ppt/_rels/presentation.xml.rels",
+        "/work/_deck/ppt/presentation.xml",
+        "/work/_deck/ppt/slides/slide2.xml",
+        "/work/scripts/office/helpers/__pycache__/__init__.cpython-314.pyc"
+      ],
+      "files_written_after": [
+        "/work/_deck/[Content_Types].xml",
+        "/work/_deck/ppt/_rels/presentation.xml.rels",
+        "/work/_deck/ppt/presentation.xml",
+        "/work/_deck/ppt/slides/slide2.xml",
+        "/work/scripts/office/helpers/__pycache__/__init__.cpython-314.pyc"
+      ]
+    },
+    {
+      "package": "figma-code-connect",
+      "repetition": 1,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "figma-code-connect",
+      "repetition": 2,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "figma-design-rules",
+      "repetition": 1,
+      "before": "ELEVATED",
+      "after": "CLEAN",
+      "score_before": 20,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/tmp/synthetic-repository/AGENTS.md"
+      ],
+      "files_written_after": [
+        "/tmp/synthetic-repository/AGENTS.md"
+      ]
+    },
+    {
+      "package": "figma-design-rules",
+      "repetition": 2,
+      "before": "ELEVATED",
+      "after": "CLEAN",
+      "score_before": 20,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/tmp/synthetic-repository/AGENTS.md"
+      ],
+      "files_written_after": [
+        "/tmp/synthetic-repository/AGENTS.md"
+      ]
+    },
+    {
+      "package": "jupyter-notebook",
+      "repetition": 1,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/output/tutorial.ipynb"
+      ],
+      "files_written_after": [
+        "/output/tutorial.ipynb"
+      ]
+    },
+    {
+      "package": "jupyter-notebook",
+      "repetition": 2,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/output/tutorial.ipynb"
+      ],
+      "files_written_after": [
+        "/output/tutorial.ipynb"
+      ]
+    },
+    {
+      "package": "migrate-to-codex",
+      "repetition": 1,
+      "before": "CRITICAL",
+      "after": "CLEAN",
+      "score_before": 100,
+      "score_after": 0,
+      "findings_after": [
+        {
+          "rule": "ALK-007",
+          "severity": "info",
+          "evidence_count": 14
+        }
+      ],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/output/migrated/.agents/skills/synthetic-skill/SKILL.md",
+        "/output/migrated/.codex/migrate-to-codex-report.txt",
+        "/work/scripts/__pycache__/cli.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/agents.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/codex_config.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/common.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/hooks.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/instructions.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/mcps.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/plugins.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/settings.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/skills.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/scan.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/util.cpython-314.pyc"
+      ],
+      "files_written_after": [
+        "/output/migrated/.agents/skills/synthetic-skill/SKILL.md",
+        "/output/migrated/.codex/migrate-to-codex-report.txt",
+        "/work/scripts/__pycache__/cli.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/agents.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/codex_config.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/common.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/hooks.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/instructions.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/mcps.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/plugins.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/settings.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/skills.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/scan.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/util.cpython-314.pyc"
+      ]
+    },
+    {
+      "package": "migrate-to-codex",
+      "repetition": 2,
+      "before": "CRITICAL",
+      "after": "CLEAN",
+      "score_before": 100,
+      "score_after": 0,
+      "findings_after": [
+        {
+          "rule": "ALK-007",
+          "severity": "info",
+          "evidence_count": 14
+        }
+      ],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/output/migrated/.agents/skills/synthetic-skill/SKILL.md",
+        "/output/migrated/.codex/migrate-to-codex-report.txt",
+        "/work/scripts/__pycache__/cli.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/agents.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/codex_config.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/common.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/hooks.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/instructions.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/mcps.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/plugins.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/settings.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/skills.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/scan.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/util.cpython-314.pyc"
+      ],
+      "files_written_after": [
+        "/output/migrated/.agents/skills/synthetic-skill/SKILL.md",
+        "/output/migrated/.codex/migrate-to-codex-report.txt",
+        "/work/scripts/__pycache__/cli.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/agents.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/codex_config.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/common.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/hooks.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/instructions.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/mcps.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/plugins.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/settings.cpython-314.pyc",
+        "/work/scripts/migrate/__pycache__/skills.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/__init__.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/scan.cpython-314.pyc",
+        "/work/scripts/utils/__pycache__/util.cpython-314.pyc"
+      ]
+    },
+    {
+      "package": "model-usage",
+      "repetition": 1,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "model-usage",
+      "repetition": 2,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "plugin-creator",
+      "repetition": 1,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/output/plugins/airlock-sample/.codex-plugin/plugin.json",
+        "/output/plugins/airlock-sample/.mcp.json"
+      ],
+      "files_written_after": [
+        "/output/plugins/airlock-sample/.codex-plugin/plugin.json",
+        "/output/plugins/airlock-sample/.mcp.json"
+      ]
+    },
+    {
+      "package": "plugin-creator",
+      "repetition": 2,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [
+        "/output/plugins/airlock-sample/.codex-plugin/plugin.json",
+        "/output/plugins/airlock-sample/.mcp.json"
+      ],
+      "files_written_after": [
+        "/output/plugins/airlock-sample/.codex-plugin/plugin.json",
+        "/output/plugins/airlock-sample/.mcp.json"
+      ]
+    },
+    {
+      "package": "skill-creator",
+      "repetition": 1,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "skill-creator",
+      "repetition": 2,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "webapp-testing",
+      "repetition": 1,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    },
+    {
+      "package": "webapp-testing",
+      "repetition": 2,
+      "before": "CLEAN",
+      "after": "CLEAN",
+      "score_before": 0,
+      "score_after": 0,
+      "findings_after": [],
+      "write_policy": "not declared",
+      "files_written_before": [],
+      "files_written_after": []
+    }
+  ]
+}

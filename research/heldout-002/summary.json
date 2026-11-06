@@ -1,0 +1,58 @@
+{
+  "rules_unchanged": true,
+  "text_confusion_counts": {
+    "true_negative": 5,
+    "false_positive": 3,
+    "true_positive": 4,
+    "false_negative": 4
+  },
+  "real_helper_runs": [
+    {
+      "id": "security-ownership-map",
+      "repetition": 1,
+      "status": "completed",
+      "verdict": "CLEAN",
+      "scored_rules": []
+    },
+    {
+      "id": "security-ownership-map",
+      "repetition": 2,
+      "status": "completed",
+      "verdict": "CLEAN",
+      "scored_rules": []
+    },
+    {
+      "id": "gh-fix-ci",
+      "repetition": 1,
+      "status": "completed",
+      "verdict": "CLEAN",
+      "scored_rules": []
+    },
+    {
+      "id": "gh-fix-ci",
+      "repetition": 2,
+      "status": "completed",
+      "verdict": "CLEAN",
+      "scored_rules": []
+    },
+    {
+      "id": "skill-installer",
+      "repetition": 1,
+      "status": "completed",
+      "verdict": "CLEAN",
+      "scored_rules": []
+    },
+    {
+      "id": "skill-installer",
+      "repetition": 2,
+      "status": "completed",
+      "verdict": "CLEAN",
+      "scored_rules": []
+    }
+  ],
+  "limitations": [
+    "Developer-authored labels, not independent annotation",
+    "Unused package directories from a previously used repository",
+    "Local helpers only, not full service workflows or prevalence estimates"
+  ]
+}
