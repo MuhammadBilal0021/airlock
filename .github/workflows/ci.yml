@@ -36,6 +36,23 @@ jobs:
             && echo "namespaces OK" \
             || { echo "::error::user namespaces unavailable; sandbox tests would skip"; exit 1; }
 
+      # GitHub-hosted runners have a systemd user manager but do not delegate
+      # the memory/pids/cpu controllers to it, so the bounded launcher refuses
+      # to run. Report the real capability instead of assuming either way.
+      - name: Probe aggregate-limit support
+        run: |
+          set +e
+          echo "manager: $(systemctl --user is-system-running 2>&1)"
+          echo "::notice title=cgroup-path::$(tr '\n' ' ' < /proc/self/cgroup)"
+          sudo systemctl set-property --runtime user.slice \
+            MemoryAccounting=yes CPUAccounting=yes TasksAccounting=yes >/dev/null 2>&1
+          echo "::notice title=subtree::$(tr '\n' ' ' < /sys/fs/cgroup/user.slice/cgroup.subtree_control 2>&1)"
+          systemd-run --user --scope --quiet --unit=airlock-probe \
+            -p MemoryMax=67108864 -p MemorySwapMax=0 -p TasksMax=8 -p CPUQuota=10% \
+            python3 -c "import sys; sys.path.insert(0,'.'); from airlock.bounded import inspect_limits; print(inspect_limits())" \
+            >/tmp/limits.out 2>/tmp/limits.err
+          echo "::notice title=scoped-limits::rc=$? out=$(tr '\n' ' ' < /tmp/limits.out) err=$(tr '\n' ' ' < /tmp/limits.err)"
+
       - name: Run tests
         run: python scripts/run_tests.py
 
