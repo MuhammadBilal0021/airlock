@@ -142,9 +142,16 @@ def analyse(result: RunResult, decl: CapabilityDeclaration) -> Verdict:
 
     cov = result.meta.get("coverage", {}) if result.meta else {}
     coverage = {
+        "resource_limits": cov.get("resource_limits", {}),
+        "aggregate_resources": cov.get("aggregate_resources", {"verified": False}),
+        "storage_limits": cov.get("storage_limits", {"verified": False}),
+        "runtime_mounts": cov.get("runtime_mounts", "unverified"),
+        "supervisor_access": cov.get("supervisor_access", "unverified"),
         "proc": cov.get("proc", "unknown"),
         "process_tree": cov.get("process_tree", False),
         "network_isolated": cov.get("network_isolated", False),
+        "network_observer_ready": cov.get("network_observer_ready", False),
+        "network_isolation_basis": cov.get("network_isolation_basis", "unverified"),
         "mount_isolation": cov.get("mount_isolation", False),
         "namespace_flags": next((e.split("namespace flags: ")[1] for e in result.errors
                                  if "namespace flags:" in e), "unknown"),
@@ -302,24 +309,46 @@ def analyse(result: RunResult, decl: CapabilityDeclaration) -> Verdict:
 
     # ------------------------------------------------- 5. undeclared writes
     reported = {f.observed for f in findings if f.rule_id == "ALK-005"}
+    write_groups = {}
+    has_allowlist = decl.fs_write_declared or bool(decl.fs_write)
+    coverage['write_policy'] = ('explicit allowlist' if has_allowlist else
+                                'deny rules only' if decl.fs_deny_write else 'not declared')
     for ev in result.fs_events:
         if ev.change not in ("created", "modified"):
             continue
         # Scratch and output areas are expected; suppressing them is what keeps
         # the false-positive rate low enough that people do not ignore the tool.
-        if ev.sandbox_path.startswith(("/tmp/", "/output/")):
-            continue
         if ev.sandbox_path in reported or ev.is_secret:
             continue
-        if decl.declares_path(ev.sandbox_path, "write"):
+        denied = decl.declares_path(ev.sandbox_path, 'deny_write')
+        if not denied and not has_allowlist and ev.sandbox_path.startswith(("/tmp/", "/output/")):
             continue
+        if not denied and decl.declares_path(ev.sandbox_path, 'write'):
+            continue
+        cache_like = bool(re.search(r'/__pycache__/[^/]+\.cpython-\d+(?:\.opt-\d+)?\.pyc$', ev.sandbox_path))
+        group = ('denied' if denied else 'outside' if has_allowlist else
+                 'cache' if cache_like else 'unknown')
+        write_groups.setdefault(group, []).append(ev)
+    descriptions = {
+        'denied': ('high', 'Wrote to explicitly denied paths',
+                   'Observed writes match deny_write. Denials take precedence over allowlists and scratch/output defaults.'),
+        'outside': ('medium', 'Wrote outside the declared write allowlist',
+                    'An explicit write allowlist exists. These writes fall outside it; this confirms a scope mismatch, not malicious intent.'),
+        'cache': ('info', 'Created or modified Python cache-shaped files; write policy unavailable',
+                  'Paths resemble interpreter bytecode caches. This is a path-based classification, not proof of who wrote them. Raw writes remain available.'),
+        'unknown': ('info', 'Observed writes without a declared write policy',
+                    'No supported write allowlist was supplied. These writes cannot be classified as violating an absent policy; they remain recorded for review.'),
+    }
+    for group, events in write_groups.items():
+        severity, title, detail = descriptions[group]
         findings.append(Finding(
-            rule_id="ALK-007", ast="AST03", severity="medium",
-            title=f"Wrote outside its declared scope: {ev.sandbox_path}",
-            detail="A write landed somewhere the manifest did not claim.",
-            evidence=[f"{ev.change}: {ev.sandbox_path} ({ev.size} bytes)"],
-            declared=", ".join(decl.fs_write) or "(no writes declared)",
-            observed=ev.sandbox_path))
+            rule_id='ALK-007', ast='AST03', severity=severity, title=title,
+            detail=detail + ' Related writes are grouped to avoid multiplying risk by file count.',
+            evidence=[f'{e.change}: {e.sandbox_path} ({e.size} bytes)' for e in events],
+            declared=(', '.join(decl.fs_deny_write) if group == 'denied' else
+                      ', '.join(decl.fs_write) or ('[]' if has_allowlist else '(write policy unavailable)')),
+            observed=', '.join(e.sandbox_path for e in events),
+            confidence='heuristic' if group == 'cache' else 'confirmed'))
 
     # ------------------------------------------------- 6. remote code fetch
     cmdlines = " | ".join(p.get("cmdline", "") for p in result.processes)

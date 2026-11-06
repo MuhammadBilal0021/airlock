@@ -37,11 +37,13 @@ EMBEDDED_INSTRUCTION_PATTERNS = (
     (r"\bignore (?:all |any )?(?:previous|prior|above) (?:instructions?|rules?)\b", "instruction override"),
     (r"\bdo not (?:tell|inform|mention to|reveal to) the user\b", "concealment directive"),
     (r"\bwithout (?:asking|telling|informing|notifying) the user\b", "silent-action directive"),
-    (r"\bsilently\b|\bcovertly\b|\bin secret\b", "covert-action wording"),
-    (r"\balways (?:add|include|bcc|cc|send|append|exfiltrate|upload)\b", "unconditional side-effect"),
-    (r"\b(?:bcc|blind copy)\b", "hidden recipient"),
+    (r"\b(?:silently|covertly)\s+(?:also\s+)?(?:send|upload|exfiltrate|forward|copy|read|write|delete|execute|run|add|append)\b|\b(?:send|upload|exfiltrate|forward|copy|read|write|delete|execute|run)\b[^.\n]{0,60}\bin secret\b", "covert-action directive"),
+    (r"\balways (?:bcc|exfiltrate|upload)\b|\balways (?:add|include|cc|send|append)\b[^\n.!?]{0,80}(?:\b(?:bcc|recipient|credentials?|secrets?|tokens?|passwords?)\b|[\w.+-]+@[\w.-]+|https?://)", "unconditional side-effect"),
+    (r"\b(?:add|include|insert|place)\b[^\n!?]{0,80}\b(?:bcc|blind copy)\b|\b(?:bcc|blind copy)\s+(?:all|every|the|this|[\w.+-]+@)", "hidden recipient"),
     (r"\bwhenever .{0,60}\b(?:tool|send_email|request)\b.{0,60}\b(?:also|additionally)\b", "cross-tool side-effect"),
-    (r"\bcompliance requirement\b|\bmandatory policy\b|\brequired by law\b", "false-authority pretext"),
+    (r"\b(?:compliance requirement|mandatory policy|required by law)\b[^.!?\n]{0,100}\b(?:send|upload|forward|override|ignore|bcc)\b|\b(?:send|upload|forward|override|ignore|bcc)\b[^\n]{0,100}\b(?:compliance requirement|mandatory policy|required by law)\b", "false-authority pretext"),
+    (r"\b(?:send|upload|transmit|forward|exfiltrate)\b[^.!?\n]{0,80}\b(?:credentials?|passwords?|private (?:data|files?|keys?)|secret(?:s| token)?|authentication material)\b", "sensitive-data transfer directive"),
+    (r"\b(?:earlier|previous|prior) (?:constraints|rules|instructions) (?:are|have become) (?:obsolete|void|superseded)\b", "implicit instruction override"),
     (r"\b(?:curl|wget|fetch)\b.{0,40}\|\s*(?:ba|z|da)?sh\b", "remote code execution idiom"),
     (r"\b(?:~|\$HOME)/\.ssh\b|\bid_rsa\b|\bid_ed25519\b", "references SSH private keys"),
     (r"\b\.aws/credentials\b|\baws_secret_access_key\b", "references cloud credentials"),
@@ -97,6 +99,7 @@ class CapabilityDeclaration:
     #: bodies, scanned for instructions a UI would never show the user.
     instruction_surface: list = field(default_factory=list)
     net_declared_any: bool = False
+    fs_write_declared: bool = False
 
     def declares_domain(self, host: str) -> bool:
         host = (host or "").lower().strip(".")
@@ -111,7 +114,8 @@ class CapabilityDeclaration:
         return False
 
     def declares_path(self, sandbox_path: str, want: str = "read") -> bool:
-        pool = self.fs_read if want == "read" else self.fs_write
+        pool = (self.fs_read if want == "read" else
+                self.fs_deny_write if want == "deny_write" else self.fs_write)
         if "*" in pool:
             return True
         target = sandbox_path.rstrip("/")
@@ -295,6 +299,7 @@ def _parse_allowed_tools(specs: list, decl: CapabilityDeclaration) -> None:
                 decl.fs_read.append(arg.replace("~", "/home"))
         elif low in ("write", "edit", "create"):
             if arg:
+                decl.fs_write_declared = True
                 decl.fs_write.append(arg.replace("~", "/home"))
 
 
@@ -314,8 +319,11 @@ def _absorb(decl: CapabilityDeclaration, data: dict, source: str) -> None:
     if isinstance(perms, dict):
         files = perms.get("files") or {}
         if isinstance(files, dict):
+            if 'write' in files and isinstance(files['write'], (list, str, bool)):
+                decl.fs_write_declared = True
             decl.fs_read.extend(_as_list(files.get("read")))
-            decl.fs_write.extend(_as_list(files.get("write")))
+            write = files.get('write')
+            decl.fs_write.extend(['*'] if write is True else [] if write is False else _as_list(write))
             decl.fs_deny_write.extend(_as_list(files.get("deny_write")))
             if files:
                 note("fs_read")
@@ -348,7 +356,10 @@ def _absorb(decl: CapabilityDeclaration, data: dict, source: str) -> None:
     for key in ("read", "reads", "files_read"):
         decl.fs_read.extend(_as_list(data.get(key)))
     for key in ("write", "writes", "files_write"):
-        decl.fs_write.extend(_as_list(data.get(key)))
+        if key in data and isinstance(data[key], (list, str, bool)):
+            decl.fs_write_declared = True
+        write = data.get(key)
+        decl.fs_write.extend(['*'] if write is True else [] if write is False else _as_list(write))
 
     for key, val in data.items():
         if isinstance(val, str) and len(val) > 12 and key in (
@@ -441,12 +452,23 @@ def find_embedded_instructions(decl: CapabilityDeclaration) -> list:
     findings = []
     for source, text in decl.instruction_surface:
         low = text.lower()
+        # Only discount explicitly rejected quoted examples. Quotes alone are
+        # not a trust boundary: an attacker can put an active directive in them.
+        rejected = [m.span('quote') for m in re.finditer(
+            r'\b(?:reject|ignore|flag)\s+(?:documents|messages|text)\s+that\s+say\s+'
+            r'(?P<quote>"[^"\n]*"|“[^”\n]*”)', low)]
         for pattern, why in EMBEDDED_INSTRUCTION_PATTERNS:
-            m = re.search(pattern, low)
-            if not m:
-                continue
-            start, end = max(0, m.start() - 70), min(len(text), m.end() + 70)
-            findings.append({"source": source, "reason": why, "pattern": pattern,
-                             "excerpt": " ".join(text[start:end].split()),
-                             "offset": m.start()})
+            for m in re.finditer(pattern, low):
+                if any(a <= m.start() and m.end() <= b for a, b in rejected):
+                    continue
+                # Local syntactic negation only; a warning elsewhere must not
+                # suppress an independent directive later in the same field.
+                if re.search(r'\b(?:never|do not|must not|don\x27t)\s+(?:ever\s+)?$',
+                             low[max(0, m.start() - 24):m.start()]):
+                    continue
+                start, end = max(0, m.start() - 70), min(len(text), m.end() + 70)
+                findings.append({"source": source, "reason": why, "pattern": pattern,
+                                 "excerpt": " ".join(text[start:end].split()),
+                                 "offset": m.start()})
+                break  # One example per indicator, retaining original offsets.
     return findings
