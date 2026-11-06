@@ -44,6 +44,13 @@ Check your kernel allows the sandbox before debugging anything else:
 unshare --user --map-root-user --mount --net --pid --fork true && echo "namespaces OK"
 ```
 
+GitHub-hosted runners are a third case: they have a systemd user manager but
+delegate only `memory` and `pids` to it, so the bounded launcher's guard finds no
+`cpu.max` and refuses to run. `TestBoundedRuntime` detects that precondition and
+skips with `cgroup capability missing:`, which CI reports as a coverage notice
+rather than a pass. Run `python -m airlock.bounded scan …` on a machine with
+delegated controllers before claiming the aggregate limits work.
+
 If that fails, the nine `TestSandboxBehaviour` tests skip and the pure-logic
 tests still run — but you will not be able to develop detection rules. Inside
 nested containers a fresh `procfs` mount is often refused; airlock falls back to
