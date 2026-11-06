@@ -134,19 +134,27 @@ for path in Path('/proc').iterdir():
         time.sleep(0.02)
     else:
         seen.append('pid %d survived 2s' % pid)
-Path('/output/probe.txt').write_text('uid=%d euid=%d\n' % (os.getuid(), os.geteuid())
-                                     + '\n'.join(seen))
+report = 'uid=%d euid=%d\n' % (os.getuid(), os.geteuid()) + '\n'.join(seen)
+try:
+    Path('/output/probe.txt').write_text(report)
+except OSError as exc:
+    report += '\noutput write failed %r' % (exc,)
+Path('/tmp/probe.txt').write_text(report)
 ''')
             result = run_skill(skill, entry=['/usr/bin/python3', 'run.py'], timeout=3)
             self.addCleanup(shutil.rmtree, result.run_dir, ignore_errors=True)
             # Carry the evidence: a bare "True is not false" cannot separate a
             # specimen that failed to signal the observer from a runner that
             # stopped noticing the observer died.
-            probe = result.run_dir / 'out' / 'probe.txt'
-            seen = probe.read_text(errors='replace')[:800] if probe.exists() else 'no probe output'
+            seen = 'no probe output'
+            for probe in (result.run_dir / 'out' / 'probe.txt',
+                          result.run_dir / 'scratch' / 'probe.txt'):
+                if probe.exists():
+                    seen = probe.read_text(errors='replace')[:700]
+                    break
             self.assertFalse(result.ok, f'exit={result.exit_code} '
                                         f'errors={result.errors} '
-                                        f'coverage={result.meta.get("coverage")} '
+                                        f'stderr={result.stderr[-400:]!r} '
                                         f'probe={seen}')
             self.assertTrue(any('observer exited' in error for error in result.errors),
                             f'errors={result.errors}')
