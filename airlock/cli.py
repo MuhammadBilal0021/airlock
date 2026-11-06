@@ -10,6 +10,7 @@ import argparse
 import json
 import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 from . import __version__
@@ -97,7 +98,9 @@ def _verdict_json(v: Verdict, target: str) -> dict:
         "verdict": v.label, "risk_score": v.risk_score, "coverage": v.coverage,
         "lethal_trifecta": v.trifecta,
         "declared": {"name": d.name, "version": d.version, "manifests": d.manifests_found,
-                     "fs_read": d.fs_read, "fs_write": d.fs_write, "net_allow": d.net_allow,
+                     "fs_read": d.fs_read, "fs_write": d.fs_write,
+                     "fs_write_declared": d.fs_write_declared, "fs_deny_write": d.fs_deny_write,
+                     "net_allow": d.net_allow,
                      "shell": d.shell, "tools": d.tools, "risk_tier": d.risk_tier},
         "observed": v.observed_summary,
         "findings": [{"rule_id": f.rule_id, "ast": f.ast, "severity": f.severity,
@@ -107,26 +110,41 @@ def _verdict_json(v: Verdict, target: str) -> dict:
     }
 
 
+def run_target(target: Path, entry_spec, timeout: float, extra_env=None, require_bounded=False):
+    """Declare-then-observe one target: the single path behind every verdict.
+
+    ``scan`` and the MCP server both go through here so an agent-callable scan
+    cannot drift from the command-line one. Returns ``(verdict, run_dir)``, where
+    ``run_dir`` is None when the target could not be executed.
+    """
+    base = target if target.is_dir() else target.parent
+    decl = scan_tree(base)
+    entry = entry_spec.split() if entry_spec else None
+    if entry is None:
+        entry, reason = detect_entry(base)
+    if not entry:
+        return _static_only_verdict(decl, str(target), reason), None
+    if require_bounded:
+        import os
+        from .bounded import verify_limits, DEFAULTS
+        from .storage import verify_storage
+        verify_limits(DEFAULTS)
+        storage_root = os.environ.get('AIRLOCK_STORAGE_ROOT')
+        if not storage_root or Path(tempfile.gettempdir()).resolve() != Path(storage_root).resolve():
+            raise RuntimeError('MCP execution requires the bounded storage launcher')
+        verify_storage(storage_root)
+    result = run_skill(target, entry=entry, timeout=timeout, extra_env=extra_env)
+    return analyse(result, decl), result.run_dir
+
+
 def cmd_scan(args) -> int:
     target = Path(args.target).expanduser()
     if not target.exists():
         print(f"airlock: no such path: {target}", file=sys.stderr)
         return 2
 
-    base = target if target.is_dir() else target.parent
-    decl = scan_tree(base)
-    entry = args.entry.split() if args.entry else None
-    if entry is None:
-        entry, reason = detect_entry(base)
-
-    run_dir = None
-    if entry:
-        result = run_skill(target, entry=entry, timeout=args.timeout,
-                           extra_env=json.loads(args.env) if args.env else None)
-        verdict = analyse(result, decl)
-        run_dir = result.run_dir
-    else:
-        verdict = _static_only_verdict(decl, str(target), reason)
+    verdict, run_dir = run_target(target, args.entry, args.timeout,
+                                  json.loads(args.env) if args.env else None)
 
     if args.format == "json":
         text = json.dumps(_verdict_json(verdict, str(target)), indent=2)
@@ -278,18 +296,30 @@ def build_parser() -> argparse.ArgumentParser:
     d = sub.add_parser("demo", help="run the bundled fixtures and compare verdicts")
     d.add_argument("--timeout", type=float, default=30.0)
     d.set_defaults(func=cmd_demo)
+
+    v = sub.add_parser("serve", help="expose airlock to an agent as an MCP tool over stdio")
+    v.set_defaults(func=cmd_serve)
     return ap
 
 
+def cmd_serve(args) -> int:
+    """MCP server: an agent calls a real sandbox run as a tool."""
+    from .mcp import serve
+    return serve()
+
+
 def main(argv=None) -> int:
-    if sys.platform != "linux":
-        print("airlock: Linux is required (namespaces). On Windows, run inside WSL2.",
-              file=sys.stderr)
-        return 2
-    if not shutil.which("unshare"):
-        print("airlock: `unshare` not found. Install util-linux.", file=sys.stderr)
-        return 2
     args = build_parser().parse_args(argv)
+    # `serve` must start even where scans cannot run, so the agent gets a per-call
+    # error (or an honest ALK-093 report) instead of a server that never answers.
+    if args.command != "serve":
+        if sys.platform != "linux":
+            print("airlock: Linux is required (namespaces). On Windows, run inside WSL2.",
+                  file=sys.stderr)
+            return 2
+        if not shutil.which("unshare"):
+            print("airlock: `unshare` not found. Install util-linux.", file=sys.stderr)
+            return 2
     try:
         return args.func(args)
     except KeyboardInterrupt:
