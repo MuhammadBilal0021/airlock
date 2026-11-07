@@ -34,9 +34,19 @@ IMDS_TARGETS = ("169.254.169.254", "metadata.google.internal",
 #: Paths whose *deletion* is evidence destruction rather than housekeeping.
 #: corpus-001 measured an anti-forensics family at 0/5: ALK-005 models writes to
 #: persistence locations, so wiping history and audit trails was invisible.
-EVIDENCE_PATHS = ("/.bash_history", "/.zsh_history", "/.python_history",
-                  "/.node_repl_history", "/audit.log", "/var/log/",
-                  "/.local/share/airlock/")
+#: Matched as exact evidence artefacts, not substrings: a declared backup such as
+#: ``/output/audit.log.bak`` is housekeeping, and calling its deletion
+#: "anti-forensics" overstates intent.
+EVIDENCE_FILENAMES = frozenset({'.bash_history', '.zsh_history', '.python_history',
+                                '.node_repl_history', '.cmd_history', 'audit.log'})
+EVIDENCE_PREFIXES = ('/var/log/', '/home/.local/share/airlock/',
+                     '/home/.config/autostart/')
+
+
+def is_evidence_path(path: str) -> bool:
+    if path.startswith(EVIDENCE_PREFIXES):
+        return True
+    return path.rsplit('/', 1)[-1] in EVIDENCE_FILENAMES
 
 
 @dataclass
@@ -318,15 +328,33 @@ def analyse(result: RunResult, decl: CapabilityDeclaration) -> Verdict:
     for ev in result.fs_events:
         if ev.change != "deleted":
             continue
-        if not any(marker in ev.sandbox_path for marker in EVIDENCE_PATHS):
+        if not is_evidence_path(ev.sandbox_path):
+            continue
+        # The deletion is confirmed in both cases; the *intent* claim is not.
+        # A path the skill was explicitly allowed to write may legitimately hold
+        # its own audit output, so that is reported at medium and worded as a
+        # scope observation rather than as anti-forensics.
+        declared_scope = bool(decl.declares_path(ev.sandbox_path, 'write'))
+        hit_output = ev.sandbox_path.startswith(('/tmp/', '/output/'))
+        if declared_scope or hit_output:
+            findings.append(Finding(
+                rule_id="ALK-013", ast="AST01", severity="medium",
+                title=f"Deleted an audit-like path inside its declared scope: "
+                      f"{ev.sandbox_path}",
+                detail=("The deletion is confirmed. It is inside the skill's declared "
+                        "write scope, which is where a tool may keep its own audit output, "
+                        "so this is a scope observation, not evidence of anti-forensics."),
+                evidence=[f"deleted: {ev.sandbox_path}"],
+                declared=", ".join(decl.fs_write) or "(no writes declared)",
+                observed=ev.sandbox_path))
             continue
         findings.append(Finding(
             rule_id="ALK-013", ast="AST01", severity="high",
             title=f"Deleted shell history or audit evidence: {ev.sandbox_path}",
-            detail=("Removing history files and audit logs is anti-forensics: it destroys "
-                    "the record of what the skill just did. A skill with nothing to hide "
-                    "has no reason to delete the evidence of its own run, and the deletion "
-                    "itself is observable even when the earlier activity was not."),
+            detail=("Removing history files and audit logs that the skill never declared "
+                    "access to destroys the record of what it just did. A skill with nothing "
+                    "to hide has no reason to delete evidence of its own run, and the "
+                    "deletion itself is observable even when the earlier activity was not."),
             evidence=[f"deleted: {ev.sandbox_path}"],
             declared=", ".join(decl.fs_write) or "(no writes declared)",
             observed=ev.sandbox_path))

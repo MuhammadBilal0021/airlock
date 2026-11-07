@@ -1,0 +1,1626 @@
+{
+  "summary": {
+    "corpus": "/mnt/d/Bilal_projects/airlock/research/corpus-001/benign/manifest.json",
+    "total_packages": 245,
+    "addressable": 21,
+    "no_code": 224,
+    "hash_verified": 21,
+    "hash_mismatch": 0,
+    "established": 21,
+    "setup_failed": 0,
+    "coverage_of_addressable": 1.0,
+    "attempted_of_addressable": 1.0,
+    "clean_start": 8,
+    "clean_of_established": 0.38095238095238093,
+    "timed_out": 1,
+    "positives": 1,
+    "positive_ids": [
+      "anthropics/skills:skills/web-artifacts-builder"
+    ],
+    "harness_sources": {
+      "documented": 6,
+      "single_artefact": 6,
+      "priority_artefact": 9
+    },
+    "limits": {
+      "aggregate_limits": false,
+      "storage_limits": false,
+      "aggregate_limits_detail": "unavailable: invalid literal for int() with base 10: 'max\\n'",
+      "storage_limits_detail": "AIRLOCK_STORAGE_ROOT not set",
+      "degraded": true
+    },
+    "degraded": true
+  },
+  "rows": [
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/mobile-ios-design",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/saga-orchestration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/gitops-workflow",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/hybrid-search-implementation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/uv-package-manager",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-background-jobs",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/vector-index-tuning",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-code-style",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/threat-mitigation-mapping",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-error-handling",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/dgx-spark-ops/skills/spark-memory-thermal-ops",
+      "addressable": true,
+      "harness": "/bin/bash assets/thermal-sample.sh",
+      "harness_source": "documented",
+      "code_files": 1,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.692,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "nvidia-smi not found\n",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/stripe-integration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-finetuning/skills/eval-harness-first",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/data-engineering/skills/data-quality-frameworks",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/prompt-engineering-patterns",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/optimize-prompt.py --help",
+      "harness_source": "single_artefact",
+      "code_files": 1,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.694,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "\nIteration 1/5\nAccuracy: 1.00, Latency: 0.00s\nAchieved target accuracy!\n\n==================================================\nOptimization Complete!\nBest Accuracy: 1.00\nBest Prompt:\nClassify the sentiment of: {text}\nSentiment:\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/responsive-design",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/shell-scripting/skills/shellcheck-configuration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-packaging",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-configuration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/startup-business-analyst/skills/startup-metrics-framework",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/plugin-eval/skills/evaluation-methodology",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/hr-legal-compliance/skills/employment-contract-templates",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/hr-legal-compliance/skills/gdpr-data-handling",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/bazel-build-optimization",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/security-requirement-extraction",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/ship-mate/skills/scan",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/file-conversion/skills/file-conversion",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/quantitative-trading/skills/risk-metrics-calculation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-testing-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/cloud-infrastructure/skills/mtls-configuration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/paypal-integration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/javascript-typescript/skills/typescript-advanced-types",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/langchain-architecture",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/agent-teams/skills/team-composition-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/reverse-engineering/skills/protocol-reverse-engineering",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/react-state-management",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/agent-teams/skills/team-communication-protocols",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/cicd-automation/skills/github-actions-templates",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/skill-forge-essentials/skills/visual-edit-precision",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/javascript-typescript/skills/javascript-testing-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/systems-programming/skills/go-concurrency-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/shell-scripting/skills/bash-defensive-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/incident-response/skills/on-call-handoff-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/blockchain-web3/skills/web3-testing",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/javascript-typescript/skills/modern-javascript-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/e2e-testing-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-quality-gates",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/signed-audit-trails/skills/signed-audit-trails-recipe",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/react-native-design",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/observability-monitoring/skills/slo-implementation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/shell-scripting/skills/bats-testing-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/cicd-automation/skills/secrets-management",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/machine-learning-ops/skills/ml-pipeline-workflow",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/architecture-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/stride-analysis-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/dotnet-contribution/skills/dotnet-backend-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-deck-context",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/nextjs-app-router-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-finetuning/skills/grpo-rlvr-training",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/microservices-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/brand-landingpage/skills/brand-landingpage",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/accessibility-compliance/skills/screen-reader-testing",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/incident-response/skills/postmortem-writing",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/visual-design-foundations",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/backend-development/skills/event-store-design",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/sql-optimization-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/billing-automation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/react-native-architecture",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/nx-workspace-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-design-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-generation/skills/openapi-spec-generation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/rag-implementation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/business-analytics/skills/data-storytelling",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/conductor/skills/workflow-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-standards/skills/hads",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/web-component-design",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-application-dev/skills/llm-evaluation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/game-development/skills/unity-ecs-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/protect-mcp/skills/protect-mcp-setup",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/k8s-security-policies",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/helm-chart-scaffolding",
+      "addressable": true,
+      "harness": "/bin/bash scripts/validate-chart.sh",
+      "harness_source": "single_artefact",
+      "code_files": 1,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.728,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n  Helm Chart Validation\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\n\u001b[0;31m\u2717\u001b[0m Helm is not installed\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "wshobson/agents:plugins/observability-monitoring/skills/prometheus-configuration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/machine-learning-ops/skills/recsys-pipeline-architect",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/ui-design/skills/design-system-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-anti-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/agent-teams/skills/parallel-debugging",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/cloud-infrastructure/skills/terraform-module-library",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/skill-forge-essentials/skills/session-guard",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/error-handling-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/cicd-automation/skills/gitlab-ci-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/framework-migration/skills/angular-migration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/data-engineering/skills/airflow-dag-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/developer-essentials/skills/auth-implementation-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/dgx-spark-ops/skills/spark-environment-setup",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/game-development/skills/godot-gdscript-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-standards/skills/grounded-vault",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/incident-response/skills/connectivity-triage",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-slide-specification",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/llm-finetuning/skills/lora-qlora-recipes",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/documentation-generation/skills/changelog-automation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/payment-processing/skills/pci-compliance",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/async-python-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/data-engineering/skills/dbt-transformation-patterns",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/content-marketing/skills/social-evidence-research",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-performance-optimization",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/pptx-deck-creation/skills/pptx-reference-deck-analysis",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/inspect.py --help",
+      "harness_source": "priority_artefact",
+      "code_files": 3,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.721,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "Input package does not exist: /work/--help\n",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "wshobson/agents:plugins/frontend-mobile-development/skills/tailwind-design-system",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/kubernetes-operations/skills/k8s-manifest-generator",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/security-scanning/skills/sast-configuration",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "wshobson/agents:plugins/python-development/skills/python-project-structure",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/feishu/skills/feishu-perm",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/discord/skills/discord",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/security-triage",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-ci-limits",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/tag-duplicate-prs-issues",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:custodian-skills/diagnose-gateway",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/browser/skills/browser-automation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/xurl",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/graincrawl",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-automation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/model-usage",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/model_usage.py --help",
+      "harness_source": "single_artefact",
+      "code_files": 1,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.697,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "usage: model_usage.py [-h] [--provider {codex,claude}] [--mode {current,all}]\n                      [--model MODEL] [--input INPUT] [--days DAYS]\n                      [--format {text,json}] [--pretty]\n\nSummarize CodexBar model usage from local cost logs.\n\noptions:\n  -h, --help            show this help message and exit\n  --provider {codex,claude}\n  --mode {current,all}\n  --model MODEL         Explicit model name to report instead of auto-current.\n  --input INPUT         Path to codexbar cost JSON (or '-' for stdin).\n  --days DAYS           Limit to last N days (based on daily rows).\n  --forma",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "openclaw/openclaw:skills/peekaboo",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/feishu/skills/feishu-drive",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-debugging",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-test-performance",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-ingest",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/node-inspect-debugger",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/notion",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/1password",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/release-openclaw-plugin-testing",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/spike",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-performance",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/oracle",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/things-mac",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/blucli",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/release-openclaw-mac",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/feishu/skills/feishu-doc",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/gemini",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/memory-wiki/skills/wiki-maintainer",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/visualize",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/control-ui",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/telegram-e2e-userbot",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/telegram-binding-forum.py --help",
+      "harness_source": "priority_artefact",
+      "code_files": 6,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.765,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "{\"ok\": false, \"code\": \"TDLIB_OPERATION_FAILED\", \"method\": \"\", \"tdlibCode\": null}\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-source-ingest",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/obsidian",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/clawhub",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/healthcheck",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/slack/skills/block-kit",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/plugin-sdk-impact",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-update",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/github",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/clawdtributor",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:custodian-skills/cloud-image-bake",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/agent-transcript",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/proof-video",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/canvas/skills/canvas",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/weather",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/meme-maker",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/tmux",
+      "addressable": true,
+      "harness": "/bin/bash scripts/find-sessions.sh",
+      "harness_source": "priority_artefact",
+      "code_files": 2,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.749,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "No tmux server found on default socket\n",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-entities",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/diagram-maker",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/goplaces",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:custodian-skills/configure-channel",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/technical-documentation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/auto-qa",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/autoreview",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/gifgrep",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/slack/skills/slack",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/create-template",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-claim-consolidation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/skill-creator",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/package_skill.py --help",
+      "harness_source": "priority_artefact",
+      "code_files": 2,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.758,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "Packaging skill: --help\n\n[ERROR] Skill folder not found: /work/--help\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "openclaw/openclaw:extensions/facetime/skills/facetime",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/openhue",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-release-validation",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/nano-pdf",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/apple-reminders",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/camsnap",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/release-openclaw-maintainer",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/node-connect",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/himalaya",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-ghsa-maintainer",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/slack-e2e",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/gog",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-live-updater",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-repair-sweep",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-parallels-smoke",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/ordercli",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/openclaw-changelog-update",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/sag",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-correct",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/python-debugpy",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/crabbox/skills/crabbox-apps",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/sonoscli",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-recall",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:skills/eightctl",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/slacrawl",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/discord-user-post",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/notcrawl",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/knowledge/skills/knowledge-meeting-ingest",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:.agents/skills/channel-message-flows",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "openclaw/openclaw:extensions/voice-call/skills/voice-call",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/brand-guidelines",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/doc-coauthoring",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:template",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/webapp-testing",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/with_server.py --help",
+      "harness_source": "documented",
+      "code_files": 4,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.781,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "usage: with_server.py [-h] --server SERVERS --port PORTS [--timeout TIMEOUT]\n                      ...\n\nRun command with one or more servers\n\npositional arguments:\n  command            Command to run after server(s) ready\n\noptions:\n  -h, --help         show this help message and exit\n  --server SERVERS   Server command (can be repeated)\n  --port PORTS       Port for each server (must match --server count)\n  --timeout TIMEOUT  Timeout in seconds per server (default: 30)\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/canvas-design",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/web-artifacts-builder",
+      "addressable": true,
+      "harness": "/bin/bash scripts/init-artifact.sh",
+      "harness_source": "documented",
+      "code_files": 2,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CRITICAL",
+      "exit_code": -9,
+      "timed_out": true,
+      "duration_s": 10.78,
+      "positive": true,
+      "rules": [
+        "ALK-002",
+        "ALK-004",
+        "ALK-010"
+      ],
+      "severities": [
+        "critical",
+        "high",
+        "medium"
+      ],
+      "stderr": "",
+      "stdout": "\ud83d\udd0d Detected Node.js version: 20\n\u2705 Using Vite latest (Node 20+)\n\ud83d\udce6 pnpm not found. Installing pnpm...\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/mcp-builder",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/connections.py --help",
+      "harness_source": "priority_artefact",
+      "code_files": 2,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.678,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "Traceback (most recent call last):\n  File \"/work/scripts/connections.py\", line 7, in <module>\n    from mcp import ClientSession, StdioServerParameters\nModuleNotFoundError: No module named 'mcp'\n",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/theme-factory",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/skill-creator",
+      "addressable": true,
+      "harness": "/usr/bin/python3 eval-viewer/generate_review.py --help",
+      "harness_source": "priority_artefact",
+      "code_files": 9,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.771,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "usage: generate_review.py [-h] [--port PORT] [--skill-name SKILL_NAME]\n                          [--previous-workspace PREVIOUS_WORKSPACE]\n                          [--benchmark BENCHMARK] [--static STATIC]\n                          workspace\n\nGenerate and serve eval review\n\npositional arguments:\n  workspace             Path to workspace directory\n\noptions:\n  -h, --help            show this help message and exit\n  --port, -p PORT       Server port (default: 3117)\n  --skill-name, -n SKILL_NAME\n                        Skill name for header\n  --previous-workspace PREVIOUS_WORKSPACE\n              ",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/discernment-nudge",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/internal-comms",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/academy-guide",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/docx",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/office/soffice.py --help",
+      "harness_source": "documented",
+      "code_files": 12,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.785,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "Traceback (most recent call last):\n  File \"/work/scripts/office/soffice.py\", line 191, in <module>\n    result = run_soffice(sys.argv[1:])\n  File \"/work/scripts/office/soffice.py\", line 46, in run_soffice\n    return subprocess.run([\"soffice\"] + args, env=get_soffice_env(), **kwargs)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 555, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 1039, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                        pass_fds, cwd, env,\n                        ^^^^^^^^^^^^^^^^^^^\n    ...<5 lines>...\n                        gid, gids, uid, umask,\n                        ^^^^^^^^^^^^^^^^^^^^^^\n                        start_new_session, process_group)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/subprocess.py\", line 1990, in _execute_child\n    raise child_exception_type(errno_num, err_msg, err_filename)\nFileNotFoundError: [Errno 2] No such file or directory: 'soffice'\n",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/pptx",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/thumbnail.py --help",
+      "harness_source": "documented",
+      "code_files": 12,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.756,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "usage: thumbnail.py [-h] [--cols COLS] input [output_prefix]\n\nCreate thumbnail grids from PowerPoint slides.\n\npositional arguments:\n  input          Input PowerPoint file (.pptx)\n  output_prefix  Output prefix for image files (default: thumbnails)\n\noptions:\n  -h, --help     show this help message and exit\n  --cols COLS    Number of columns (default: 3, max: 6)\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/frontend-design",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "anthropics/skills:skills/slack-gif-creator",
+      "addressable": true,
+      "harness": "/usr/bin/python3 core/easing.py --help",
+      "harness_source": "priority_artefact",
+      "code_files": 4,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.762,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/algorithmic-art",
+      "addressable": true,
+      "harness": "/usr/local/bin/node templates/generator_template.js --help",
+      "harness_source": "single_artefact",
+      "code_files": 1,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.729,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/xlsx",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/recalc.py --help",
+      "harness_source": "documented",
+      "code_files": 10,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.804,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "{\n  \"error\": \"File --help does not exist\"\n}\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "anthropics/skills:skills/pdf",
+      "addressable": true,
+      "harness": "/usr/bin/python3 scripts/check_bounding_boxes.py --help",
+      "harness_source": "priority_artefact",
+      "code_files": 8,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.734,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "Traceback (most recent call last):\n  File \"/work/scripts/check_bounding_boxes.py\", line 62, in <module>\n    with open(sys.argv[1]) as f:\n         ~~~~^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '--help'\n",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "obra/superpowers:skills/using-superpowers",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/test-driven-development",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/dispatching-parallel-agents",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/diagnosing-superpowers",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/executing-plans",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/writing-skills",
+      "addressable": true,
+      "harness": "/usr/local/bin/node render-graphs.js --help",
+      "harness_source": "single_artefact",
+      "code_files": 1,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.786,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "(node:6) Warning: To load an ES module, set \"type\": \"module\" in the package.json or use the .mjs extension.\n(Use `node --trace-warnings ...` to show where the warning was created)\n/work/render-graphs.js:16\nimport * as fs from 'fs';\n^^^^^^\n\nSyntaxError: Cannot use import statement outside a module\n    at wrapSafe (node:internal/modules/cjs/loader:1378:20)\n    at Module._compile (node:internal/modules/cjs/loader:1428:41)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)\n    at Module.load (node:internal/modules/cjs/loader:1288:32)\n    at Module._load (node:internal/modules/cjs/loader:1104:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)\n    at node:internal/main/run_main_module:28:49\n\nNode.js v20.18.1\n",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "obra/superpowers:skills/finishing-a-development-branch",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/requesting-code-review",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/using-git-worktrees",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/writing-plans",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/subagent-driven-development",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/verification-before-completion",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/receiving-code-review",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "obra/superpowers:skills/brainstorming",
+      "addressable": true,
+      "harness": "/usr/local/bin/node scripts/helper.js --help",
+      "harness_source": "priority_artefact",
+      "code_files": 3,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.746,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "obra/superpowers:skills/systematic-debugging",
+      "addressable": true,
+      "harness": "/bin/bash find-polluter.sh",
+      "harness_source": "single_artefact",
+      "code_files": 1,
+      "aggregate_limits_verified": false,
+      "storage_limits_verified": false,
+      "status": "established",
+      "verdict": "CLEAN",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.767,
+      "positive": false,
+      "rules": [],
+      "severities": [],
+      "stderr": "",
+      "stdout": "Usage: find-polluter.sh <file_to_check> <test_pattern>\nExample: find-polluter.sh '.git' 'src/**/*.test.ts'\n",
+      "runner_errors": [
+        "namespace flags: --user --map-root-user --mount --net --pid --fork --kill-child=SIGKILL"
+      ]
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/testing",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/issue-create",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/release",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/issue-triage",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/local-dev",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/pr-flow",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/client-smoke",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/board-ops",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/pre-push-gate",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/security-advisory",
+      "addressable": false,
+      "status": "no_code"
+    },
+    {
+      "id": "modelcontextprotocol/servers:.claude/skills/project-structure",
+      "addressable": false,
+      "status": "no_code"
+    }
+  ]
+}

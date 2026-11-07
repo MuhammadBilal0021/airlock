@@ -100,7 +100,9 @@ def main() -> int:
 
     benign = load_outcomes(results_root / 'benign')
     adversarial = load_outcomes(results_root / 'adversarial')
-    behavioural = load_outcomes(results_root / 'adversarial-behavioural')
+    adversarial_behavioural_path = results_root / 'adversarial-behavioural'
+    behavioural = (load_outcomes(adversarial_behavioural_path)
+                   if adversarial_behavioural_path.exists() else {})
     benign_behavioural_path = results_root / 'benign-behavioural'
     benign_behavioural = (load_outcomes(benign_behavioural_path)
                           if benign_behavioural_path.exists() else {})
@@ -171,28 +173,30 @@ def main() -> int:
     report['rule_false_positives']['adversarial_detected'] = dict(Counter(
         rule for v in adversarial_scanned.values() for rule in v['rules']))
 
-    # --- A0 behavioural recall (behaviour-level samples only) --------------
-    b_ids = {sid for sid, meta in labels.items() if meta.get('level') == 'B'}
-    b_scanned = {k: v for k, v in behavioural.items()
-                 if k in b_ids and v['status'] != 'failed'}
-    b_positives = sum(1 for v in b_scanned.values() if v['positive'])
-    b_families = {}
-    for sample_id, value in b_scanned.items():
-        bucket = b_families.setdefault(labels[sample_id]['family'], {'k': 0, 'n': 0})
-        bucket['n'] += 1
-        bucket['k'] += 1 if value['positive'] else 0
-    report['adversarial']['behavioural'] = {
-        'target_n': len(b_ids),
-        'scanned_n': len(b_scanned),
-        'excluded_failed': len(b_ids) - len(b_scanned),
-        'recall': rate(b_positives, len(b_scanned)),
-        'by_family': {key: {'k': value['k'], 'n': value['n'],
-                            'recall': value['k'] / value['n'] if value['n'] else None,
-                            'ci95': wilson(value['k'], value['n'])}
-                      for key, value in sorted(b_families.items())},
-        'rules_detected': dict(Counter(rule for value in b_scanned.values()
-                                       for rule in value['rules'])),
-    }
+    # --- A0 behavioural recall (only when that pass was run) ----------------
+    if behavioural:
+        b_ids = {sid for sid, meta in labels.items() if meta.get('level') == 'B'}
+        b_scanned = {k: v for k, v in behavioural.items()
+                     if k in b_ids and v['status'] != 'failed'}
+        b_positives = sum(1 for v in b_scanned.values() if v['positive'])
+        b_families = {}
+        for sample_id, value in b_scanned.items():
+            bucket = b_families.setdefault(labels[sample_id]['family'],
+                                           {'k': 0, 'n': 0})
+            bucket['n'] += 1
+            bucket['k'] += 1 if value['positive'] else 0
+        report['adversarial']['behavioural'] = {
+            'target_n': len(b_ids),
+            'scanned_n': len(b_scanned),
+            'excluded_failed': len(b_ids) - len(b_scanned),
+            'recall': rate(b_positives, len(b_scanned)),
+            'by_family': {key: {'k': value['k'], 'n': value['n'],
+                                'recall': value['k'] / value['n'] if value['n'] else None,
+                                'ci95': wilson(value['k'], value['n'])}
+                          for key, value in sorted(b_families.items())},
+            'rules_detected': dict(Counter(rule for value in b_scanned.values()
+                                           for rule in value['rules'])),
+        }
 
     # --- prevalence-adjusted precision --------------------------------------
     recall = report['adversarial']['recall']
@@ -225,21 +229,25 @@ def main() -> int:
                      f'`{json.dumps(report["statuses"][name])}` | '
                      f'{report[name]["excluded_failed"]} failed |')
 
+    result_rows = [
+        f'| False-positive rate (B0, benign) | '
+        f'{pct(report["benign"]["false_positive_rate"]["value"])} '
+        f'({benign_positives}/{len(benign_scanned)}) | '
+        f'{ci_text(report["benign"]["false_positive_rate"]["ci95"])} |',
+        f'| Recall (A0, adversarial) | '
+        f'{pct(report["adversarial"]["recall"]["value"])} '
+        f'({positives}/{len(adversarial_scanned)}) | '
+        f'{ci_text(report["adversarial"]["recall"]["ci95"])} |']
+    if 'behavioural' in report['adversarial']:
+        result_rows.append(
+            f'| Recall, behavioural path (A0 level B) | '
+            f'{pct(report["adversarial"]["behavioural"]["recall"]["value"])} '
+            f'({report["adversarial"]["behavioural"]["recall"]["k"]}/'
+            f'{report["adversarial"]["behavioural"]["recall"]["n"]}) | '
+            f'{ci_text(report["adversarial"]["behavioural"]["recall"]["ci95"])} |')
     lines += ['', '## Results', '',
               '| Metric | Value | 95 % Wilson CI |', '|---|---|---|',
-              f'| False-positive rate (B0, benign) | '
-              f'{pct(report["benign"]["false_positive_rate"]["value"])} '
-              f'({benign_positives}/{len(benign_scanned)}) | '
-              f'{ci_text(report["benign"]["false_positive_rate"]["ci95"])} |',
-              f'| Recall (A0, adversarial) | '
-              f'{pct(report["adversarial"]["recall"]["value"])} '
-              f'({positives}/{len(adversarial_scanned)}) | '
-              f'{ci_text(report["adversarial"]["recall"]["ci95"])} |',
-              f'| Recall, behavioural path (A0 level B) | '
-              f'{pct(report["adversarial"]["behavioural"]["recall"]["value"])} '
-              f'({report["adversarial"]["behavioural"]["recall"]["k"]}/'
-              f'{report["adversarial"]["behavioural"]["recall"]["n"]}) | '
-              f'{ci_text(report["adversarial"]["behavioural"]["recall"]["ci95"])} |', '']
+              *result_rows, '']
 
     real_behaviour = report['benign'].get('behavioural')
     if real_behaviour:
@@ -256,19 +264,20 @@ def main() -> int:
         lines.append(f'| {key} | {value["k"]}/{value["n"]} | {pct(value["recall"])} | '
                      f'{ci_text(value["ci95"])} |')
 
-    beh = report['adversarial']['behavioural']
-    lines += ['', '## Behavioural path (samples executed in the sandbox)', '',
-              f'Behaviour-level samples executed: {beh["scanned_n"]}/{beh["target_n"]} '
-              f'({beh["excluded_failed"]} failed and excluded from the denominator). '
-              'Instruction-level samples have no entrypoint, so they cannot be '
-              'executed by design and remain declaration-only.', '',
-              '| Family | Sensitive (k/n) | Recall | 95 % CI |', '|---|---|---|---|']
-    for key, value in beh['by_family'].items():
-        lines.append(f'| {key} | {value["k"]}/{value["n"]} | {pct(value["recall"])} | '
-                     f'{ci_text(value["ci95"])} |')
-    lines += ['', '| Rule | Behavioural detections |', '|---|---|']
-    for rule, count in sorted(beh['rules_detected'].items()):
-        lines.append(f'| {rule} | {count} |')
+    beh = report['adversarial'].get('behavioural')
+    if beh:
+        lines += ['', '## Behavioural path (samples executed in the sandbox)', '',
+                  f'Behaviour-level samples executed: {beh["scanned_n"]}/{beh["target_n"]} '
+                  f'({beh["excluded_failed"]} failed and excluded from the denominator). '
+                  'Instruction-level samples have no entrypoint, so they cannot be '
+                  'executed by design and remain declaration-only.', '',
+                  '| Family | Sensitive (k/n) | Recall | 95 % CI |', '|---|---|---|---|']
+        for key, value in beh['by_family'].items():
+            lines.append(f'| {key} | {value["k"]}/{value["n"]} | {pct(value["recall"])} | '
+                         f'{ci_text(value["ci95"])} |')
+        lines += ['', '| Rule | Behavioural detections |', '|---|---|']
+        for rule, count in sorted(beh['rules_detected'].items()):
+            lines.append(f'| {rule} | {count} |')
 
     if real_behaviour:
         lines += ['', '## Behavioural path on real skills', '',
@@ -299,7 +308,8 @@ def main() -> int:
     print(json.dumps({
         'benign_fpr': report['benign']['false_positive_rate'],
         'adversarial_recall': report['adversarial']['recall'],
-        'behavioural_recall': report['adversarial']['behavioural']['recall'],
+        'behavioural_recall': report['adversarial'].get(
+            'behavioural', {}).get('recall'),
         'by_group': report['adversarial']['by_group'],
         'statuses': report['statuses'],
     }, indent=2))

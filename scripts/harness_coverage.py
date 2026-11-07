@@ -15,8 +15,12 @@ produces the same harness on every run.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import math
+import os
 import re
+import shlex
 import sys
 import traceback
 from pathlib import Path
@@ -27,6 +31,9 @@ sys.path.insert(0, str(ROOT))
 from airlock.declared import scan_tree  # noqa: E402
 from airlock.engine import analyse  # noqa: E402
 from airlock.sandbox import run_skill  # noqa: E402
+from scripts.scan_dataset import fingerprint  # noqa: E402
+from airlock.bounded import verify_limits, DEFAULTS  # noqa: E402
+from airlock.storage import verify_storage  # noqa: E402
 
 CODE_SUFFIXES = ('.py', '.sh', '.js')
 # Absolute paths only: the sandbox executes the entry directly rather than
@@ -67,7 +74,9 @@ def choose(package: Path, files):
         for match in DOCUMENTED.finditer(text):
             candidate = package / match.group(1)
             if candidate.is_file() and candidate.suffix in CODE_SUFFIXES:
-                return candidate.relative_to(package), 'documented'
+                relative = candidate.resolve().relative_to(package.resolve())
+                if relative in files:
+                    return relative, 'documented'
     if len(files) == 1:
         return files[0], 'single_artefact'
     def priority(relative: Path):
@@ -89,14 +98,20 @@ def shebang_argv(first_line: str):
     as ``/usr/bin/env script``, which the kernel refuses ("use -[v]S to pass
     options in shebang lines") -- a harness bug that looked like a broken skill.
     """
-    tokens = first_line[2:].strip().split()
+    tokens = shlex.split(first_line[2:].strip())
     if not tokens:
         return None, []
     if tokens[0].rsplit('/', 1)[-1] == 'env':
-        rest = [token for token in tokens[1:] if not token.startswith('-')]
+        rest = tokens[1:]
+        if rest and rest[0] in ('-S', '--split-string'):
+            rest = rest[1:]
+        if rest and rest[0] == '--':
+            rest = rest[1:]
         if not rest:
             return None, []
-        return KNOWN_SHEBANG.get(rest[0], rest[0]), rest[1:]
+        if rest[0] not in KNOWN_SHEBANG:
+            raise ValueError('unsupported env shebang: ' + first_line)
+        return KNOWN_SHEBANG[rest[0]], rest[1:]
     return tokens[0], tokens[1:]
 
 
@@ -131,6 +146,46 @@ def positive_findings(verdict):
             and finding.rule_id not in DISCLOSURE_RULES]
 
 
+def preflight_limits():
+    """Verify the aggregate and storage limits the bounded path establishes.
+
+    corpus-003/004 reports presented behavioural coverage while both limits were
+    unverified. The harness may not silently inherit that weakness: it must try
+    to verify, record the result, and let the summary say "degraded" when the
+    host cannot provide them. Namespace isolation is separate and still applies.
+    """
+    limits = {'aggregate_limits': False, 'storage_limits': False}
+    try:
+        limits['aggregate_limits_detail'] = str(verify_limits(DEFAULTS))
+        limits['aggregate_limits'] = True
+    except Exception as exc:  # noqa: BLE001 - recorded, not fatal
+        limits['aggregate_limits_detail'] = f'unavailable: {exc}'[:240]
+    storage_root = os.environ.get('AIRLOCK_STORAGE_ROOT')
+    if not storage_root:
+        limits['storage_limits_detail'] = 'AIRLOCK_STORAGE_ROOT not set'
+    else:
+        try:
+            limits['storage_limits_detail'] = str(verify_storage(storage_root))
+            limits['storage_limits'] = True
+        except Exception as exc:  # noqa: BLE001
+            limits['storage_limits_detail'] = f'unavailable: {exc}'[:240]
+    limits['degraded'] = not limits['aggregate_limits']
+    return limits
+
+
+def classify_run(result, verdict):
+    """Separate established execution from a merely attempted one.
+
+    coverage must not count a failed sandbox setup as a successful launch: a
+    runner that returns UNKNOWN (ALK-093) produced no behavioural assurance even
+    though a process started.
+    """
+    has_alk_093 = any(finding.rule_id == 'ALK-093' for finding in verdict.findings)
+    if not result.ok or verdict.label == 'UNKNOWN' or has_alk_093:
+        return 'setup_failed'
+    return 'established'
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--manifest', required=True)
@@ -141,6 +196,7 @@ def main() -> int:
     manifest_path = Path(args.manifest).resolve()
     spec = json.loads(manifest_path.read_text(encoding='utf-8'))
     corpus = manifest_path.parent
+    limits = preflight_limits()
 
     rows = []
     for item in spec['skills']:
@@ -150,23 +206,35 @@ def main() -> int:
             rows.append({'id': item['id'], 'addressable': False,
                          'status': 'no_code'})
             continue
+        # The corpus is pinned by per-file SHA-256. A run against changed bytes
+        # is not a run against the frozen corpus and must not count as coverage.
+        try:
+            if fingerprint(package) != item['files']:
+                rows.append({'id': item['id'], 'addressable': True,
+                             'status': 'hash_mismatch'})
+                continue
+        except Exception as exc:  # noqa: BLE001
+            rows.append({'id': item['id'], 'addressable': True,
+                         'status': 'hash_mismatch', 'error': str(exc)[:240]})
+            continue
         relative, why = choose(package, files)
         argv = entry_argv(package, relative)
         row = {'id': item['id'], 'addressable': True, 'harness': ' '.join(argv),
-               'harness_source': why, 'code_files': len(files)}
+               'harness_source': why, 'code_files': len(files),
+               'aggregate_limits_verified': limits['aggregate_limits'],
+               'storage_limits_verified': limits['storage_limits']}
         try:
             # Call the same primitives run_target() uses, but keep the RunResult:
             # the specimen's stderr is what distinguishes "missing dependency"
-            # from "no input document provided". Without it, twelve exit-1
-            # packages are indistinguishable and the next work item is a guess.
+            # from "no input document provided".
             declaration = scan_tree(package)
             result = run_skill(package, entry=list(argv), timeout=args.timeout)
             verdict = analyse(result, declaration)
             observed = verdict.observed_summary or {}
             coverage = verdict.coverage or {}
-            positives = positive_findings(verdict)
+            positives = positive_findings(verdict) if result.ok else []
             row.update({
-                'status': 'launched',
+                'status': classify_run(result, verdict),
                 'verdict': verdict.label,
                 'exit_code': observed.get('exit_code'),
                 'timed_out': bool(coverage.get('timed_out')),
@@ -187,20 +255,31 @@ def main() -> int:
         print(f"{row['id']}: {state} harness={row['harness']}", flush=True)
 
     addressable = [r for r in rows if r['addressable']]
-    launched = [r for r in addressable if r['status'] == 'launched']
-    timed_out = [r for r in launched if r.get('timed_out')]
-    clean = [r for r in launched if r.get('exit_code') == 0 and not r.get('timed_out')]
-    positives = [r for r in launched if r.get('positive')]
+    established = [r for r in addressable if r['status'] == 'established']
+    timed_out = [r for r in established if r.get('timed_out')]
+    clean = [r for r in established
+             if r.get('exit_code') == 0 and not r.get('timed_out')]
+    positives = [r for r in established if r.get('positive')]
+    setup_failed = sum(1 for r in addressable
+                       if r['status'] in ('setup_failed', 'unreachable'))
+    attempted = len(established) + setup_failed
     summary = {
         'corpus': str(manifest_path),
         'total_packages': len(rows),
         'addressable': len(addressable),
         'no_code': len(rows) - len(addressable),
-        'launched': len(launched),
-        'coverage_of_addressable': (len(launched) / len(addressable)
+        'hash_verified': sum(1 for r in addressable
+                             if r['status'] != 'hash_mismatch'),
+        'hash_mismatch': sum(1 for r in addressable
+                             if r['status'] == 'hash_mismatch'),
+        'established': len(established),
+        'setup_failed': setup_failed,
+        'coverage_of_addressable': (len(established) / len(addressable)
                                     if addressable else None),
+        'attempted_of_addressable': (attempted / len(addressable)
+                                     if addressable else None),
         'clean_start': len(clean),
-        'clean_of_launched': len(clean) / len(launched) if launched else None,
+        'clean_of_established': len(clean) / len(established) if established else None,
         'timed_out': len(timed_out),
         'positives': len(positives),
         'positive_ids': [r['id'] for r in positives],
@@ -208,6 +287,8 @@ def main() -> int:
                                         if r.get('harness_source') == source)
                             for source in ('documented', 'single_artefact',
                                            'priority_artefact')},
+        'limits': limits,
+        'degraded': limits['degraded'],
     }
     output = Path(args.output).resolve()
     output.parent.mkdir(parents=True, exist_ok=True)

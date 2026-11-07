@@ -55,14 +55,13 @@ class TestBoundedRuntime(unittest.TestCase):
              '-p', 'MemorySwapMax=0',
              '-p', 'TasksMax=%d' % DEFAULTS['tasks'],
              '-p', 'CPUQuota=100%',
-             sys.executable, '-c',
-             'import sys; sys.path.insert(0, %r); '
-             'from airlock.bounded import inspect_limits; inspect_limits()'
-             % str(Path(__file__).resolve().parents[1])],
+             sys.executable, str(Path(__file__).resolve().parents[1] / 'scripts/probe_cgroup.py')],
             capture_output=True, text=True, timeout=60)
-        if probe.returncode != 0:
-            detail = (probe.stderr.strip().splitlines() or ['no detail'])[-1]
-            raise unittest.SkipTest('cgroup capability missing: ' + detail)
+        from scripts.probe_cgroup import check_probe_result, MissingControllers
+        try:
+            check_probe_result(probe.returncode, probe.stdout, probe.stderr)
+        except MissingControllers as exc:
+            raise unittest.SkipTest('cgroup capability missing: ' + str(exc))
 
     def test_kernel_task_limit_refuses_bounded_child_loop(self):
         with tempfile.TemporaryDirectory() as tmp:

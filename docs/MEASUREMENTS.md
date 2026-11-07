@@ -13,6 +13,7 @@ a correction or a new fix gets a new round.
 | **corpus-003** | How much of the registry can actually be run? | **91.4%** of real skills are pure text; addressable set is **21/245**; harness synthesis reaches **100% coverage** of it, clean start **4/21 = 19%** | [REPORT](../research/corpus-003/REPORT.md) |
 | **corpus-004** | Does supplying runtimes help? | Root-free runtime overlay eliminates every `command not found`; clean start still **19%** — the next wall is resources and inputs | [REPORT](../research/corpus-004/REPORT.md) |
 | **corpus-004 diagnosis** | Why exactly do executable skills fail? | stderr instrumentation names every cause; clean start **4/21 → 8/21 = 38%**; first behavioural false positive documented | [DIAGNOSIS](../research/corpus-004/DIAGNOSIS.md) |
+| **corpus-005** | External review: are there detection bypasses and measurement-validity flaws? | All reproduced: `ALK-009` fence/heading/negation bypasses closed, `ALK-013` intent narrowed, harness now separates **established** from attempted runs, verifies corpus hashes and records `degraded` when aggregate limits are unavailable; static results unchanged (0/245 FP, 22/100 recall) | [REPORT](../research/corpus-005/REPORT.md) |
 
 ## What the rounds together establish
 
@@ -39,7 +40,13 @@ a correction or a new fix gets a new round.
   corpus of real malicious skills exists at scale. The 100 adversarial packages
   were authored with knowledge of the rule set, so their recall is a ceiling.
 - **Behavioural false-positive rate at a usable sample size.** 8 real packages
-  executed at a clean start; 1 was flagged. That is a case, not a rate.
+  executed at a clean start; 1 was flagged. That is a case, not a rate. The
+  correct denominator is the 21 established runs (1/21 = 4.8%), never the eight
+  clean exits — those are different populations.
+- **Aggregate cgroup and storage limits on the measurement host.** The harness now
+  attempts verification and records it; this WSL2 host has no delegated
+  controllers, so behavioural results are reported as `degraded: true`
+  (namespace-isolated, aggregate-limit-unverified, storage-limit-unverified).
 - **MCP servers.** The corpus is skills. MCP is in the architecture but not in
   these measurements.
 - **Sandbox escape resistance.** The sandbox is built to be tested for it; no

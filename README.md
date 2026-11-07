@@ -100,7 +100,8 @@ Real-world malicious-skill recall is **not measured**. See
 [corpus-001](research/corpus-001/REPORT.md) — baseline ·
 [corpus-002](research/corpus-002/REPORT.md) — precision fix round ·
 [corpus-003](research/corpus-003/REPORT.md) — coverage ·
-[corpus-004](research/corpus-004/DIAGNOSIS.md) — runtime baseline.
+[corpus-004](research/corpus-004/DIAGNOSIS.md) — runtime baseline ·
+[corpus-005](research/corpus-005/REPORT.md) — external-review fixes.
 Consolidated: [docs/MEASUREMENTS.md](docs/MEASUREMENTS.md).
 
 ---

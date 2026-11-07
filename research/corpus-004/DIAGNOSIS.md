@@ -60,8 +60,16 @@ the declared-vs-observed comparison the tool already has — the harness just
 never declared that this package runs an installer.
 
 Publishing it as a true positive would be dishonest; publishing it as noise
-without explanation would be too. It is a **1/8 executed false-positive rate**,
-denominator far too small to publish as a rate.
+without explanation would be too. The correct denominator is the **21 established
+runs**, not the eight clean exits (the flagged package timed out and was never a
+clean exit): that is **1/21 = 4.8 %**, and 1/20 = 5.0 % excluding the timeout.
+Both are far too small a sample to publish as a rate, and they mix a
+timed-out observation with completed ones, so no rate is claimed.
+
+Separately, this measurement was taken with **aggregate cgroup limits and storage
+limits unverified** (`run_skill` was called directly). Namespace isolation still
+applied, but the bounded-execution guarantee did not; corpus-005 records those
+fields explicitly and labels a host that cannot provide them as degraded.
 
 ## The containment trade-off in cause B
 

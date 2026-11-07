@@ -451,14 +451,7 @@ def scan_tree(root: Path) -> CapabilityDeclaration:
 
 
 def _masked_spans(text: str) -> list:
-    """Spans where an imperative reading is not justified.
-
-    Fenced code blocks and markdown headings mention concepts without directing
-    anyone to act on them. Corpus-001 found this to be the sole root cause of all
-    six false positives: "### System Prompt Design" as a heading and
-    ``AWS_SECRET_ACCESS_KEY: ${{ secrets... }}`` inside an example workflow were
-    both read as directives.
-    """
+    """Formatting context for bare reference indicators, never a trust boundary."""
     spans, in_fence, offset = [], False, 0
     for line in text.splitlines(keepends=True):
         stripped = line.strip()
@@ -475,8 +468,9 @@ def find_embedded_instructions(decl: CapabilityDeclaration) -> list:
     """Flag model-directed imperatives hidden in text a UI may never render."""
     findings = []
     local_negation = re.compile(
-        r"\b(?:never|do\s+not|must\s+not|don\x27t|should\s+not|shouldn\x27t)\b"
-        r"[^.\n]{0,60}$")
+        r"\b(?:never|do\s+not|must\s+not|don\x27t|should\s+not|shouldn\x27t)\s+"
+        r"(?:ever\s+)?(?:(?:ask|tell|instruct)\s+(?:the\s+)?"
+        r"(?:user|agent|assistant)\s+to\s+)?$")
     for source, text in decl.instruction_surface:
         low = text.lower()
         masked = _masked_spans(text)
@@ -487,15 +481,21 @@ def find_embedded_instructions(decl: CapabilityDeclaration) -> list:
             r'(?P<quote>"[^"\n]*"|“[^”\n]*”)', low)]
         for pattern, why in EMBEDDED_INSTRUCTION_PATTERNS:
             for m in re.finditer(pattern, low):
-                if any(a <= m.start() < b for a, b in masked):
-                    continue
+                if why in {'references SSH private keys', 'references cloud credentials'}:
+                    # An example configuration may name a credential field.
+                    # An action involving it still matters, even inside a fence.
+                    line = low[low.rfind('\n', 0, m.start()) + 1:]
+                    line = line.split('\n', 1)[0]
+                    if (any(a <= m.start() < b for a, b in masked)
+                            and not re.search(r'\b(?:read|send|upload|copy|forward|'
+                                              r'print|cat|curl|wget|transmit|exfiltrate)\b', line)):
+                        continue
                 if any(a <= m.start() and m.end() <= b for a, b in rejected):
                     continue
                 # Local syntactic negation only; a warning elsewhere must not
                 # suppress an independent directive later in the same field.
-                # The window covers advice phrased with a verb between the
-                # negation and the action ("never ask the user to send ..."),
-                # which corpus-001 showed was being reported as an attack.
+                # Only recognized immediate negation applies; an unrelated
+                # "never" earlier in the clause must not silence the directive.
                 if local_negation.search(low[max(0, m.start() - 100):m.start()]):
                     continue
                 start, end = max(0, m.start() - 70), min(len(text), m.end() + 70)
