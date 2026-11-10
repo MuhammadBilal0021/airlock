@@ -1,0 +1,77 @@
+{
+  "provenance": {
+    "id": "J11-01",
+    "source": "synthetic:airlock-corpus-006:J11",
+    "revision": "seed-20261108",
+    "report": "0101.json",
+    "status": "static_only",
+    "rule_ids": [
+      "ALK-092"
+    ]
+  },
+  "airlock_report": {
+    "tool": "airlock",
+    "version": "0.1.0",
+    "target": "J11-01",
+    "verdict": "LOW",
+    "risk_score": 8,
+    "coverage": {
+      "proc": "n/a",
+      "process_tree": false,
+      "network_isolated": false,
+      "mount_isolation": false,
+      "namespace_flags": "none (not executed)",
+      "timed_out": false,
+      "duration_s": 0.0,
+      "static_only": true
+    },
+    "lethal_trifecta": {
+      "private_data_access": [],
+      "untrusted_content": [],
+      "external_communication": [],
+      "satisfied": false
+    },
+    "declared": {
+      "name": "csv-column-profiler",
+      "version": "1.0.0",
+      "manifests": [
+        "SKILL.md"
+      ],
+      "fs_read": [],
+      "fs_write": [
+        "/output/"
+      ],
+      "fs_write_declared": true,
+      "fs_deny_write": [],
+      "net_allow": [],
+      "shell": false,
+      "tools": [],
+      "risk_tier": "L0"
+    },
+    "observed": {
+      "files_read": [],
+      "files_written": [],
+      "files_deleted": [],
+      "domains": [],
+      "dns_queries": [],
+      "processes": [],
+      "exit_code": null,
+      "duration_s": 0.0
+    },
+    "findings": [
+      {
+        "rule_id": "ALK-092",
+        "ast": "AST08",
+        "severity": "medium",
+        "title": "Dynamic analysis not possible for this target",
+        "detail": "Dataset requested declaration-only analysis. airlock found no executable artefact, so there is no behaviour to observe and only the declaration was checked. This is the weakest form of assurance and is the entire reason pattern-only scanners get bypassed -- do not read this result as a clean bill of health.",
+        "evidence": [
+          "target: J11-01"
+        ],
+        "declared": "",
+        "observed": "",
+        "confidence": "confirmed"
+      }
+    ]
+  }
+}

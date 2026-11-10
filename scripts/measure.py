@@ -87,16 +87,27 @@ def main() -> int:
                         help='results root (default: <corpus>/results)')
     parser.add_argument('--out', default=None,
                         help='report output directory (default: corpus root)')
+    parser.add_argument('--benign-manifest', default=None,
+                        help='manifest for B0 (default: <corpus>/benign/manifest.json)')
+    parser.add_argument('--adversarial-manifest', default=None,
+                        help='manifest for A0 (default: <corpus>/adversarial/manifest.json)')
     args = parser.parse_args()
     root = Path(args.corpus).resolve()
     results_root = (Path(args.results).resolve() if args.results
                     else root / 'results')
     out = Path(args.out).resolve() if args.out else root
 
-    benign_manifest = json.loads((root / 'benign' / 'manifest.json').read_text(encoding='utf-8'))
+    benign_manifest_path = (Path(args.benign_manifest).resolve()
+                            if args.benign_manifest
+                            else root / 'benign' / 'manifest.json')
+    adversarial_manifest_path = (Path(args.adversarial_manifest).resolve()
+                                 if args.adversarial_manifest
+                                 else root / 'adversarial' / 'manifest.json')
+    benign_manifest = json.loads(benign_manifest_path.read_text(encoding='utf-8'))
     adversarial_manifest = json.loads(
-        (root / 'adversarial' / 'manifest.json').read_text(encoding='utf-8'))
-    labels = json.loads((root / 'adversarial' / 'labels.json').read_text(encoding='utf-8'))
+        adversarial_manifest_path.read_text(encoding='utf-8'))
+    labels = json.loads(
+        (adversarial_manifest_path.parent / 'labels.json').read_text(encoding='utf-8'))
 
     benign = load_outcomes(results_root / 'benign')
     adversarial = load_outcomes(results_root / 'adversarial')

@@ -1,0 +1,1209 @@
+{
+  "population": "authored adversarial packages (synthetic), structural bypass focus",
+  "scope": "instruction-level text only; nothing executable",
+  "selection": "deterministic generator, seed 20261108, 12 families x 10 variants",
+  "target_n": 120,
+  "acquired_n": 120,
+  "skills": [
+    {
+      "id": "J1-00",
+      "path": "000",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d3797cf2e3ffcddd2203f2d8312709cf7cc4b0cc6053fb808530a83ea5f09cf4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-01",
+      "path": "001",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "a618af5553ac6bea857a6539eba039c0cf7e8c3187c55f31d68b59c4d331e455"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-02",
+      "path": "002",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "e5c938c555ff758ad4f84e88b7d437dc2610361850c32d381861b6a7330f0eba"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-03",
+      "path": "003",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "960952a1bef8f42949819ad66854307d2b6bee62c0620e8b173629e3473d653d"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-04",
+      "path": "004",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "03a8714e3889ec0e5a92d484319e398ec5225904769af7b7deb3b676114112b1"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-05",
+      "path": "005",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "dd81176a71ec8ebf67256eaa02f33ec87d04014f1f7a9ac86737aaf17c8a0419"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-06",
+      "path": "006",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "63fccc6572ab636570d20cc7d83d6c25e759cda6a2126a5b5d9193d9f3d9e0fd"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-07",
+      "path": "007",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "dd81176a71ec8ebf67256eaa02f33ec87d04014f1f7a9ac86737aaf17c8a0419"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-08",
+      "path": "008",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "03a8714e3889ec0e5a92d484319e398ec5225904769af7b7deb3b676114112b1"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J1-09",
+      "path": "009",
+      "source": "synthetic:airlock-corpus-006:J1",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "66c21cf2e0efa48a343af6cd0ec45da7bb47207016a607c400319eb83e634939"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-00",
+      "path": "010",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "c3393a5cd729eea5395fcb5bd2186e5344fa699ea129a6e8707d385be9be41af"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-01",
+      "path": "011",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2beda518b63b6e01ab68d2938fc16c3b247186f915f814e08a9b46164d089747"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-02",
+      "path": "012",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0a41aab286d600cad74206a2ac9f2761d26af6efaeaff33585103db78c456316"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-03",
+      "path": "013",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "b72aecd443452fee53c3a8b49c9b0e89f05a7ef65ebf5230a5087fdb632fad14"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-04",
+      "path": "014",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "df949a263f8dbac1e8c10cdf399a84ba65e5b9edb9e6013794daab5abc511af7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-05",
+      "path": "015",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2fa8c4bace1940187c03a439d17fe4eaea9fd3e84442f1566c86494ad62650e1"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-06",
+      "path": "016",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "c3393a5cd729eea5395fcb5bd2186e5344fa699ea129a6e8707d385be9be41af"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-07",
+      "path": "017",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2beda518b63b6e01ab68d2938fc16c3b247186f915f814e08a9b46164d089747"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-08",
+      "path": "018",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "df949a263f8dbac1e8c10cdf399a84ba65e5b9edb9e6013794daab5abc511af7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J2-09",
+      "path": "019",
+      "source": "synthetic:airlock-corpus-006:J2",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "b72aecd443452fee53c3a8b49c9b0e89f05a7ef65ebf5230a5087fdb632fad14"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-00",
+      "path": "020",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2ac53d995e332206db94ca4f9915b92bc80a39bf08484365d53c48c4d223e098"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-01",
+      "path": "021",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "c6e223185990f1b418d60045a6929ba10d64f1cd9a73149229eb56503c12397a"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-02",
+      "path": "022",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2ac53d995e332206db94ca4f9915b92bc80a39bf08484365d53c48c4d223e098"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-03",
+      "path": "023",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "fada3501f7d81eafa0782b7ad488ea4c15718f6b9f2c65d17785dd486d5fc27a"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-04",
+      "path": "024",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "5072224b47bebafa1e468dd43691a1a330da990abee49a8119257b1f30b83f13"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-05",
+      "path": "025",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "49039b03655a6784b9df07bb28befa703ac126aafff1426d01d381b33f0e4acd"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-06",
+      "path": "026",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2ac53d995e332206db94ca4f9915b92bc80a39bf08484365d53c48c4d223e098"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-07",
+      "path": "027",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0e6f846dbdf39c0f155770d8e77f46454d409bb993dd523a97361194ecb5b354"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-08",
+      "path": "028",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2ac53d995e332206db94ca4f9915b92bc80a39bf08484365d53c48c4d223e098"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J3-09",
+      "path": "029",
+      "source": "synthetic:airlock-corpus-006:J3",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "49039b03655a6784b9df07bb28befa703ac126aafff1426d01d381b33f0e4acd"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-00",
+      "path": "030",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "49a9ddf0ba5f617937361cca093ec7567b0cf92a0035e4b3ffbd75e2ca936665"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-01",
+      "path": "031",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d69dc29ba97a18dca06e4abb267a2ad94e21571c02c9f09d7fff7e31ac210899"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-02",
+      "path": "032",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "f4bbeffb15763bd427b1eed814f5b016032fa73ad79178c5f9afa96f9dc05cb9"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-03",
+      "path": "033",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "193b74596bb0011c23cbf2011aaaafe3c458ffcdbbe9cafd814827ec49be0fa5"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-04",
+      "path": "034",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "f4bbeffb15763bd427b1eed814f5b016032fa73ad79178c5f9afa96f9dc05cb9"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-05",
+      "path": "035",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d69dc29ba97a18dca06e4abb267a2ad94e21571c02c9f09d7fff7e31ac210899"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-06",
+      "path": "036",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "f4bbeffb15763bd427b1eed814f5b016032fa73ad79178c5f9afa96f9dc05cb9"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-07",
+      "path": "037",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "193b74596bb0011c23cbf2011aaaafe3c458ffcdbbe9cafd814827ec49be0fa5"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-08",
+      "path": "038",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2392e677abf3ba8f9ee30e2920f48d6a24d4d8412657471837c84d5c26b642f2"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J4-09",
+      "path": "039",
+      "source": "synthetic:airlock-corpus-006:J4",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d69dc29ba97a18dca06e4abb267a2ad94e21571c02c9f09d7fff7e31ac210899"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-00",
+      "path": "040",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0f391422c3f347c9fa3b24fc7cdd0c9ccbf1a70f51ff66bf6756485556e160b6"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-01",
+      "path": "041",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "b1e49b4223529cc36d663a3e905be311aba20b48527789b97dd9337e99be6da7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-02",
+      "path": "042",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "4f728f4b2a30849ad82c4c588029ad876001d66396f48333066ac3816bd013c7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-03",
+      "path": "043",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "3dcac230d7e522fc59a3b15b34c6f22111d60ef30f33369d22090cdd63d46075"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-04",
+      "path": "044",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "4f728f4b2a30849ad82c4c588029ad876001d66396f48333066ac3816bd013c7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-05",
+      "path": "045",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "3dcac230d7e522fc59a3b15b34c6f22111d60ef30f33369d22090cdd63d46075"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-06",
+      "path": "046",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "c92c2b1f5134f87f574a1a1b689798914603964f7fe5764503983884ab653e11"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-07",
+      "path": "047",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0609a5d0ba384aefe2ad2fce34e39becd10331453a5ad1a9f8cabb420c620312"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-08",
+      "path": "048",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "4f728f4b2a30849ad82c4c588029ad876001d66396f48333066ac3816bd013c7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J5-09",
+      "path": "049",
+      "source": "synthetic:airlock-corpus-006:J5",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "3dcac230d7e522fc59a3b15b34c6f22111d60ef30f33369d22090cdd63d46075"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-00",
+      "path": "050",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "8758eaf5fee350f42288acfe6cfe35965bea112b1ef13a3841f1ed2bd0cca277"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-01",
+      "path": "051",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "cf687c5f18486e440f4d8fc01e25dded379f2f128ba49832ef467d259c735571"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-02",
+      "path": "052",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "efa1f3feca9d07426629c1a45eef0208574e49fd89fbdf1c741163d45e82bc1f"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-03",
+      "path": "053",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "3e9506c57f2a95b762351d027937a1868acd23d71de2b6874b15604b9504bb30"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-04",
+      "path": "054",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "cb32ef406529a699c95cf2d6f8a6ca4c29d647b01d1985cfcb07924711add9e5"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-05",
+      "path": "055",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "45326459984e8fec063004ef9cbfc31f082a024d80610baf7a1e61e321f9ec47"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-06",
+      "path": "056",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "efa1f3feca9d07426629c1a45eef0208574e49fd89fbdf1c741163d45e82bc1f"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-07",
+      "path": "057",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "435e63c489009749f8ab4783ba46ad3e292dae47c955479deb18407459cca8d3"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-08",
+      "path": "058",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "8758eaf5fee350f42288acfe6cfe35965bea112b1ef13a3841f1ed2bd0cca277"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J6-09",
+      "path": "059",
+      "source": "synthetic:airlock-corpus-006:J6",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "a95872ca3b0f3e5d4e1c7ed340411c7a5a79b02f24364d6a369145c774740beb"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-00",
+      "path": "060",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "354d71b7b4067532178e366b623aff87ddaadcdc80f88d3fe9bf607a4f4d6643"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-01",
+      "path": "061",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "6ad1ad1822a4b07a2f2b73cfcafe440840c2f56a5cec6d72c9125d3d1318f48b"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-02",
+      "path": "062",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "7cd1c85882dfa13c68db396537b04b58d476acd6c187e120286640ec2521b57a"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-03",
+      "path": "063",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "27759781402e7da399521e26ba60053baafa28c8ce9f68d5236239a019f19354"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-04",
+      "path": "064",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "1b126655e629cdb2894d00fa756c360217fc246b01abec44d827c6ae88417372"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-05",
+      "path": "065",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "27759781402e7da399521e26ba60053baafa28c8ce9f68d5236239a019f19354"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-06",
+      "path": "066",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "7cd1c85882dfa13c68db396537b04b58d476acd6c187e120286640ec2521b57a"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-07",
+      "path": "067",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "4172ea724ae7d6549af5fb19b08a25a1aedc98a4c587b6faa061a68c5750644f"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-08",
+      "path": "068",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "1b126655e629cdb2894d00fa756c360217fc246b01abec44d827c6ae88417372"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J7-09",
+      "path": "069",
+      "source": "synthetic:airlock-corpus-006:J7",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "27759781402e7da399521e26ba60053baafa28c8ce9f68d5236239a019f19354"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-00",
+      "path": "070",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "bf33f4060d14cfca3fec19ea99c353fffde43994da1052d387fced3c95b1e1df"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-01",
+      "path": "071",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "4d13260804a145afdd0e9015ba2199e6e54815c9823f71670dd5506e8847af5f"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-02",
+      "path": "072",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "eff8f285712e9e8690fbe8c077a34c05f587a1bf88e690e36f8adca9f39434c2"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-03",
+      "path": "073",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "cb37ebf8300e2b0bee0a673eb1cec3fd15a102b867bfada8aac2af72b2ed48a3"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-04",
+      "path": "074",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "41a290a39449d51d3d0aeed5aa53015c611cb2d3a04beb81ab39aec4c47bba78"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-05",
+      "path": "075",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "c3e95c32bcd5ab3c0f9c70e05bba0fe1a25ce1141f73a3aef3467df97a6b60e7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-06",
+      "path": "076",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "41a290a39449d51d3d0aeed5aa53015c611cb2d3a04beb81ab39aec4c47bba78"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-07",
+      "path": "077",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "c3e95c32bcd5ab3c0f9c70e05bba0fe1a25ce1141f73a3aef3467df97a6b60e7"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-08",
+      "path": "078",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2c62eae6f627f320459ebed46eafe358e1e1bdba20dcf841849c346574ee0a17"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J8-09",
+      "path": "079",
+      "source": "synthetic:airlock-corpus-006:J8",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "4d13260804a145afdd0e9015ba2199e6e54815c9823f71670dd5506e8847af5f"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-00",
+      "path": "080",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "cc535e1bfa7523c71b44671463b8f42b42f346cba82f9aa586f718feb57ce9e5"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-01",
+      "path": "081",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0b79fc69e64bc60a9d0fb3f800c4fba4abc9aa4bd9d1ba1530f109105bc93b76"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-02",
+      "path": "082",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "ab9e09aa83a927bc78ddbc042b9a701a4465a3ae05e7f6ee7ef8b78a1c62876f"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-03",
+      "path": "083",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "3c016ffbfa16a901b88c464da81ea909022bc682a523a1ae519dfb588c16d936"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-04",
+      "path": "084",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "cc535e1bfa7523c71b44671463b8f42b42f346cba82f9aa586f718feb57ce9e5"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-05",
+      "path": "085",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0b79fc69e64bc60a9d0fb3f800c4fba4abc9aa4bd9d1ba1530f109105bc93b76"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-06",
+      "path": "086",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "c3252e50d24915ed3cd58a1a3a0cf10b9f29521aaaff8b6e55df08b8ea5a831c"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-07",
+      "path": "087",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "a62adcf19e5de8cb1c8435154489a6e57eb8224875be1bf725119c59e8eda7fa"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-08",
+      "path": "088",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "cf301c52aeaf40626ac7aa1a3b8170a31c8245f32fd7ea35f870842584b92805"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J9-09",
+      "path": "089",
+      "source": "synthetic:airlock-corpus-006:J9",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "b75a80cd38a0a4cb550504b61bf87e4cd8c83ae8b9e296b22dcbe673eaf00310"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-00",
+      "path": "090",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "ec5b0ee617cbac34bc845e9567ac2fdd9c05f096aa7acc6c16c14a99d98f617d"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-01",
+      "path": "091",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "f47af9c6f37cb02d2c7de77d03d30e068440a5ed6623469905859d06193f0e0c"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-02",
+      "path": "092",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "ec5b0ee617cbac34bc845e9567ac2fdd9c05f096aa7acc6c16c14a99d98f617d"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-03",
+      "path": "093",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "4a4eabd0cc6f2035aa47d974e031fc509d1c2130f41fb116316ddbb8ea6a11d4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-04",
+      "path": "094",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "ec5b0ee617cbac34bc845e9567ac2fdd9c05f096aa7acc6c16c14a99d98f617d"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-05",
+      "path": "095",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "eda94d0bb03810bc815293b7541cfba362fc52ac47d403f468e19ad3eaf57766"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-06",
+      "path": "096",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "efad70973a99e6ab57e114e652a856b1535f988872b96a13f9795c7c4fd23ec2"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-07",
+      "path": "097",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "e298b2752b3bb30f436a0d04bb15d44dc1324484057a10792a082139cc18dcfd"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-08",
+      "path": "098",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "e92c6935f1efecb585da69c14579091f0ee08eacacb6a5df0cec65a5e6908e10"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J10-09",
+      "path": "099",
+      "source": "synthetic:airlock-corpus-006:J10",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "e298b2752b3bb30f436a0d04bb15d44dc1324484057a10792a082139cc18dcfd"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-00",
+      "path": "100",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "a2692e0390d38d80073282f953885d7f2931df38fcb5cf6577675719af1084ab"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-01",
+      "path": "101",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d24748324deb544a5dfbebcabdb696b146bd338e055dde23a2cf77fc5615e921"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-02",
+      "path": "102",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0e966c4899d4980329d17924865e7d58e27348714d486303678ee28ba43feb81"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-03",
+      "path": "103",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "e9105cf337201514a5c365cf8486dcca713572e9c2825f163ab0cb0abadea85e"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-04",
+      "path": "104",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "0e966c4899d4980329d17924865e7d58e27348714d486303678ee28ba43feb81"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-05",
+      "path": "105",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2aa96efc9195da8aad00a53a9e5e2e3c8fa3dc56c7f1c046381ebf7c801f49a4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-06",
+      "path": "106",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "df036a088b45888bee363acff0504c3083a6644a4bf45b6d4c6f08f06eeb7e7b"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-07",
+      "path": "107",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "6f7cdf27b07b2d65dc0068dd7991a6b1aba31d8b4fa31e54e03fc0398f903ad5"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-08",
+      "path": "108",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d841d10ff9f9c4e93bc10fb4848c0fad9f35a1b662f7b71c812ddfef630895d8"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J11-09",
+      "path": "109",
+      "source": "synthetic:airlock-corpus-006:J11",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "2aa96efc9195da8aad00a53a9e5e2e3c8fa3dc56c7f1c046381ebf7c801f49a4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-00",
+      "path": "110",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "dc073b9532d90fe31b0418b28b131c1378e885e36eeb19936969c1296b2b6ea4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-01",
+      "path": "111",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d335b6522962c1a10096ced112b35d9bfe4b525d512c100659101889b60d3f80"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-02",
+      "path": "112",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "dc073b9532d90fe31b0418b28b131c1378e885e36eeb19936969c1296b2b6ea4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-03",
+      "path": "113",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d335b6522962c1a10096ced112b35d9bfe4b525d512c100659101889b60d3f80"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-04",
+      "path": "114",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "dc073b9532d90fe31b0418b28b131c1378e885e36eeb19936969c1296b2b6ea4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-05",
+      "path": "115",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d335b6522962c1a10096ced112b35d9bfe4b525d512c100659101889b60d3f80"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-06",
+      "path": "116",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "dc073b9532d90fe31b0418b28b131c1378e885e36eeb19936969c1296b2b6ea4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-07",
+      "path": "117",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d335b6522962c1a10096ced112b35d9bfe4b525d512c100659101889b60d3f80"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-08",
+      "path": "118",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "dc073b9532d90fe31b0418b28b131c1378e885e36eeb19936969c1296b2b6ea4"
+      },
+      "label": "malicious"
+    },
+    {
+      "id": "J12-09",
+      "path": "119",
+      "source": "synthetic:airlock-corpus-006:J12",
+      "revision": "seed-20261108",
+      "files": {
+        "SKILL.md": "d335b6522962c1a10096ced112b35d9bfe4b525d512c100659101889b60d3f80"
+      },
+      "label": "malicious"
+    }
+  ]
+}
